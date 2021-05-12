@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>k个一组反转链表 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/k%E4%B8%AA%E4%B8%80%E7%BB%84%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">k个一组反转链表</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="如何k个一组反转链表"><a href="#如何k个一组反转链表" class="headerlink" title="如何k个一组反转链表"></a>如何k个一组反转链表</h1><p>之前的文章「递归反转链表的一部分」讲了如何递归地反转一部分链表，有读者就问如何迭代地反转链表，这篇文章解决的问题也需要反转链表的函数，我们不妨就用迭代方式来解决。<br>本文要解决「K 个一组反转链表」，不难理解：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/title.png"><br>这个问题经常在面经中看到，而且 LeetCode 上难度是 Hard，它真的有那么难吗？<br>对于基本数据结构的算法问题其实都不难，只要结合特点一点点拆解分析，一般都没啥难点。下面我们就来拆解一下这个问题。</p>
+<h3 id="一、分析问题"><a href="#一、分析问题" class="headerlink" title="一、分析问题"></a>一、分析问题</h3><p>首先，前文<a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%9A%84%E6%A1%86%E6%9E%B6%E6%80%9D%E7%BB%B4">学习数据结构的框架思维</a>提到过，链表是一种兼具递归和迭代性质的数据结构，认真思考一下可以发现<strong>这个问题具有递归性质</strong>。<br>什么叫递归性质？直接上图理解，比如说我们对这个链表调用 <code>reverseKGroup(head, 2)</code>，即以 2 个节点为一组反转链表：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/1.jpg"><br>如果我设法把前 2 个节点反转，那么后面的那些节点怎么处理？后面的这些节点也是一条链表，而且规模（长度）比原来这条链表小，这就叫<strong>子问题</strong>。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/2.jpg"><br>我们可以直接递归调用 <code>reverseKGroup(cur, 2)</code>，因为子问题和原问题的结构完全相同，这就是所谓的递归性质。<br>发现了递归性质，就可以得到大致的算法流程：<br><strong>1、先反转以 <code>head</code> 开头的 <code>k</code> 个元素</strong>。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/3.jpg"><br><strong>2、将第 <code>k + 1</code> 个元素作为 <code>head</code> 递归调用 <code>reverseKGroup</code> 函数</strong>。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/4.jpg"><br><strong>3、将上述两个过程的结果连接起来</strong>。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/5.jpg"><br>整体思路就是这样了，最后一点值得注意的是，递归函数都有个 base case，对于这个问题是什么呢？<br>题目说了，如果最后的元素不足 <code>k</code> 个，就保持不变。这就是 base case，待会会在代码里体现。</p>
+<h3 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h3><p>首先，我们要实现一个 <code>reverse</code> 函数反转一个区间之内的元素。在此之前我们再简化一下，给定链表头结点，如何反转整个链表？</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 反转以 a 为头结点的链表</span><br><span class="hljs-function">ListNode <span class="hljs-title">reverse</span><span class="hljs-params">(ListNode a)</span> </span>&#123;<br>    ListNode pre, cur, nxt;<br>    pre = <span class="hljs-keyword">null</span>; cur = a; nxt = a;<br>    <span class="hljs-keyword">while</span> (cur != <span class="hljs-keyword">null</span>) &#123;<br>        nxt = cur.next;<br>        <span class="hljs-comment">// 逐个结点反转</span><br>        cur.next = pre;<br>        <span class="hljs-comment">// 更新指针位置</span><br>        pre = cur;<br>        cur = nxt;<br>    &#125;<br>    <span class="hljs-comment">// 返回反转后的头结点</span><br>    <span class="hljs-keyword">return</span> pre;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/8.gif"><br>这次使用迭代思路来实现的，借助动画理解应该很容易。<br>「反转以 <code>a</code> 为头结点的链表」其实就是「反转 <code>a</code> 到 null 之间的结点」，那么如果让你「反转 <code>a</code> 到 <code>b</code> 之间的结点」，你会不会？<br>只要更改函数签名，并把上面的代码中 <code>null</code> 改成 <code>b</code> 即可：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/** 反转区间 [a, b) 的元素，注意是左闭右开 */</span><br><span class="hljs-function">ListNode <span class="hljs-title">reverse</span><span class="hljs-params">(ListNode a, ListNode b)</span> </span>&#123;<br>    ListNode pre, cur, nxt;<br>    pre = <span class="hljs-keyword">null</span>; cur = a; nxt = a;<br>    <span class="hljs-comment">// while 终止的条件改一下就行了</span><br>    <span class="hljs-keyword">while</span> (cur != b) &#123;<br>        nxt = cur.next;<br>        cur.next = pre;<br>        pre = cur;<br>        cur = nxt;<br>    &#125;<br>    <span class="hljs-comment">// 返回反转后的头结点</span><br>    <span class="hljs-keyword">return</span> pre;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>现在我们迭代实现了反转部分链表的功能，接下来就按照之前的逻辑编写 <code>reverseKGroup</code> 函数即可：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">ListNode <span class="hljs-title">reverseKGroup</span><span class="hljs-params">(ListNode head, <span class="hljs-keyword">int</span> k)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    <span class="hljs-comment">// 区间 [a, b) 包含 k 个待反转元素</span><br>    ListNode a, b;<br>    a = b = head;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; k; i++) &#123;<br>        <span class="hljs-comment">// 不足 k 个，不需要反转，base case</span><br>        <span class="hljs-keyword">if</span> (b == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> head;<br>        b = b.next;<br>    &#125;<br>    <span class="hljs-comment">// 反转前 k 个元素</span><br>    ListNode newHead = reverse(a, b);<br>    <span class="hljs-comment">// 递归反转后续链表并连接起来</span><br>    a.next = reverseKGroup(b, k);<br>    <span class="hljs-keyword">return</span> newHead;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>解释一下 <code>for</code> 循环之后的几句代码，注意 <code>reverse</code> 函数是反转区间 <code>[a, b)</code>，所以情形是这样的：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/6.jpg"><br>递归部分就不展开了，整个函数递归完成之后就是这个结果，完全符合题意：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/7.jpg"></p>
+<h3 id="三、最后说两句"><a href="#三、最后说两句" class="headerlink" title="三、最后说两句"></a>三、最后说两句</h3><p>从阅读量上看，基本数据结构相关的算法文章看的人都不多，我想说这是要吃亏的。<br>大家喜欢看动态规划相关的问题，可能因为面试很常见，但就我个人理解，很多算法思想都是源于数据结构的。我们公众号的成名之作之一，「学习数据结构的框架思维」就提过，什么动规、回溯、分治算法，其实都是树的遍历，树这种结构它不就是个多叉链表吗？你能处理基本数据结构的问题，解决一般的算法问题应该也不会太费事。<br>那么如何分解问题、发现递归性质呢？这个只能多练习，也许后续可以专门写一篇文章来探讨一下，本文就到此为止吧，希望对大家有帮助！</p>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2">上一篇：如何寻找最长回文子串</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%90%88%E6%B3%95%E6%8B%AC%E5%8F%B7%E5%88%A4%E5%AE%9A">下一篇：如何判定括号合法性</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%88%A4%E5%AE%9A%E5%AD%90%E5%BA%8F%E5%88%97/" rel="next" title="二分查找判定子序列"><i class="fas fa-angle-left"></i><span class="nav-title">二分查找判定子序列</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/koko%E5%81%B7%E9%A6%99%E8%95%89/" rel="prev" title="koko偷香蕉"><span class="nav-title">koko偷香蕉</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%A6%82%E4%BD%95k%E4%B8%AA%E4%B8%80%E7%BB%84%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8"><span class="toc-text">如何k个一组反转链表</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%80%E3%80%81%E5%88%86%E6%9E%90%E9%97%AE%E9%A2%98"><span class="toc-text">一、分析问题</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%8C%E3%80%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">二、代码实现</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%89%E3%80%81%E6%9C%80%E5%90%8E%E8%AF%B4%E4%B8%A4%E5%8F%A5"><span class="toc-text">三、最后说两句</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

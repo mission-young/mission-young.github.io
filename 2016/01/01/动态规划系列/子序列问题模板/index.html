@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>子序列问题模板 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98%E6%A8%A1%E6%9D%BF/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">子序列问题模板</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>title: 子序列问题模板<br>author: 远方<br>tags:</p>
+<ul>
+<li>LeetCode</li>
+<li>算法<br>categories:</li>
+<li>LeetCode破局攻略<br>date: 2016-01-01 19:20:00</li>
+</ul>
+<hr>
+<h1 id="动态规划之子序列问题解题模板"><a href="#动态规划之子序列问题解题模板" class="headerlink" title="动态规划之子序列问题解题模板"></a>动态规划之子序列问题解题模板</h1><p>子序列问题是常见的算法问题，而且并不好解决。<br>首先，子序列问题本身就相对子串、子数组更困难一些，因为前者是不连续的序列，而后两者是连续的，就算穷举你都不一定会，更别说求解相关的算法问题了。<br>而且，子序列问题很可能涉及到两个字符串，比如前文「最长公共子序列」，如果没有一定的处理经验，真的不容易想出来。所以本文就来扒一扒子序列问题的套路，其实就有两种模板，相关问题只要往这两种思路上想，十拿九稳。<br>一般来说，这类问题都是让你求一个<strong>最长子序列</strong>，因为最短子序列就是一个字符嘛，没啥可问的。一旦涉及到子序列和最值，那几乎可以肯定，**考察的是动态规划技巧，时间复杂度一般都是 O(n^2)**。<br>原因很简单，你想想一个字符串，它的子序列有多少种可能？起码是指数级的吧，这种情况下，不用动态规划技巧，还想怎么着？<br>既然要用动态规划，那就要定义 dp 数组，找状态转移关系。我们说的两种思路模板，就是 dp 数组的定义思路。不同的问题可能需要不同的 dp 数组定义来解决。</p>
+<h3 id="一、两种思路"><a href="#一、两种思路" class="headerlink" title="一、两种思路"></a>一、两种思路</h3><p><strong>1、第一种思路模板是一个一维的 dp 数组</strong>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> n = array.length;<br><span class="hljs-keyword">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; i; j++) &#123;<br>        dp[i] = 最值(dp[i], dp[j] + ...)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>举个我们写过的例子「最长递增子序列」，在这个思路中 dp 数组的定义是：<br><strong>在子数组 <code>array[0..i]</code> 中，我们要求的子序列（最长递增子序列）的长度是 <code>dp[i]</code>**。<br>为啥最长递增子序列需要这种思路呢？前文说得很清楚了，因为这样符合归纳法，可以找到状态转移的关系，这里就不具体展开了。<br>**2、第二种思路模板是一个二维的 dp 数组</strong>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> n = arr.length;<br><span class="hljs-keyword">int</span>[][] dp = <span class="hljs-keyword">new</span> dp[n][n];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) &#123;<br>        <span class="hljs-keyword">if</span> (arr[i] == arr[j]) <br>            dp[i][j] = dp[i][j] + ...<br>        <span class="hljs-keyword">else</span><br>            dp[i][j] = 最值(...)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这种思路运用相对更多一些，尤其是涉及两个字符串/数组的子序列，比如前文讲的「最长公共子序列」。本思路中 dp 数组含义又分为「只涉及一个字符串」和「涉及两个字符串」两种情况。<br><strong>2.1 涉及两个字符串/数组时</strong>（比如最长公共子序列），dp 数组的含义如下：<br><strong>在子数组 <code>arr1[0..i]</code> 和子数组 <code>arr2[0..j]</code> 中，我们要求的子序列（最长公共子序列）长度为 <code>dp[i][j]</code>**。<br>**2.2 只涉及一个字符串/数组时</strong>（比如本文要讲的最长回文子序列），dp 数组的含义如下：<br>**在子数组 <code>array[i..j]</code> 中，我们要求的子序列（最长回文子序列）的长度为 <code>dp[i][j]</code>**。<br>第一种情况可以参考这两篇旧文：「编辑距离」「公共子序列」<br>下面就借最长回文子序列这个问题，详解一下第二种情况下如何使用动态规划。</p>
+<h3 id="二、最长回文子序列"><a href="#二、最长回文子序列" class="headerlink" title="二、最长回文子序列"></a>二、最长回文子序列</h3><p>之前解决了「最长回文子串」的问题，这次提升难度，求最长回文子序列的长度：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/1.jpg"><br>我们说这个问题对 dp 数组的定义是：<strong>在子串 <code>s[i..j]</code> 中，最长回文子序列的长度为 <code>dp[i][j]</code>**。一定要记住这个定义才能理解算法。<br>为啥这个问题要这样定义二维的 dp 数组呢？我们前文多次提到，</strong>找状态转移需要归纳思维，说白了就是如何从已知的结果推出未知的部分<strong>，这样定义容易归纳，容易发现状态转移关系。<br>具体来说，如果我们想求 <code>dp[i][j]</code>，假设你知道了子问题 <code>dp[i+1][j-1]</code> 的结果（<code>s[i+1..j-1]</code> 中最长回文子序列的长度），你是否能想办法算出 <code>dp[i][j]</code> 的值（<code>s[i..j]</code> 中，最长回文子序列的长度）呢？<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/1.jpg"><br>可以！这取决于 <code>s[i]</code> 和 <code>s[j]</code> 的字符：<br>**如果它俩相等</strong>，那么它俩加上 <code>s[i+1..j-1]</code> 中的最长回文子序列就是 <code>s[i..j]</code> 的最长回文子序列：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/2.jpg"><br><strong>如果它俩不相等</strong>，说明它俩<strong>不可能同时</strong>出现在 <code>s[i..j]</code> 的最长回文子序列中，那么把它俩<strong>分别</strong>加入 <code>s[i+1..j-1]</code> 中，看看哪个子串产生的回文子序列更长即可：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/3.jpg"><br>以上两种情况写成代码就是这样：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (s[i] == s[j])<br>    <span class="hljs-comment">// 它俩一定在最长回文子序列中</span><br>    dp[i][j] = dp[i + <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>] + <span class="hljs-number">2</span>;<br><span class="hljs-keyword">else</span><br>    <span class="hljs-comment">// s[i+1..j] 和 s[i..j-1] 谁的回文子序列更长？</span><br>    dp[i][j] = max(dp[i + <span class="hljs-number">1</span>][j], dp[i][j - <span class="hljs-number">1</span>]);<br></code></pre></td></tr></table></figure>
+<p>至此，状态转移方程就写出来了，根据 dp 数组的定义，我们要求的就是 <code>dp[0][n - 1]</code>，也就是整个 <code>s</code> 的最长回文子序列的长度。</p>
+<h3 id="三、代码实现"><a href="#三、代码实现" class="headerlink" title="三、代码实现"></a>三、代码实现</h3><p>首先明确一下 base case，如果只有一个字符，显然最长回文子序列长度是 1，也就是 <code>dp[i][j] = 1 (i == j)</code>。<br>因为 <code>i</code> 肯定小于等于 <code>j</code>，所以对于那些 <code>i &gt; j</code> 的位置，根本不存在什么子序列，应该初始化为 0。<br>另外，看看刚才写的状态转移方程，想求 <code>dp[i][j]</code> 需要知道 <code>dp[i+1][j-1]</code>，<code>dp[i+1][j]</code>，<code>dp[i][j-1]</code> 这三个位置；再看看我们确定的 base case，填入 dp 数组之后是这样：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/4.jpg"><br><strong>为了保证每次计算 <code>dp[i][j]</code>，左下右方向的位置已经被计算出来，只能斜着遍历或者反着遍历</strong>：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/5.jpg"><br>我选择反着遍历，代码如下：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">longestPalindromeSubseq</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = s.size();<br>    <span class="hljs-comment">// dp 数组全部初始化为 0</span><br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">dp</span><span class="hljs-params">(n, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;(n, <span class="hljs-number">0</span>))</span></span>;<br>    <span class="hljs-comment">// base case</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        dp[i][i] = <span class="hljs-number">1</span>;<br>    <span class="hljs-comment">// 反着遍历保证正确的状态转移</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; n; j++) &#123;<br>            <span class="hljs-comment">// 状态转移方程</span><br>            <span class="hljs-keyword">if</span> (s[i] == s[j])<br>                dp[i][j] = dp[i + <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>] + <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">else</span><br>                dp[i][j] = max(dp[i + <span class="hljs-number">1</span>][j], dp[i][j - <span class="hljs-number">1</span>]);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 整个 s 的最长回文子串长度</span><br>    <span class="hljs-keyword">return</span> dp[<span class="hljs-number">0</span>][n - <span class="hljs-number">1</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>至此，最长回文子序列的问题就解决了。</p>
+<p><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E9%AB%98%E6%A5%BC%E6%89%94%E9%B8%A1%E8%9B%8B%E8%BF%9B%E9%98%B6">上一篇：经典动态规划问题：高楼扔鸡蛋（进阶）</a><br><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%8D%9A%E5%BC%88%E9%97%AE%E9%A2%98">下一篇：动态规划之博弈问题</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%8A%A2%E6%88%BF%E5%AD%90/" rel="next" title="抢房子"><i class="fas fa-angle-left"></i><span class="nav-title">抢房子</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AE%BE%E8%AE%A1%EF%BC%9A%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" rel="prev" title="动态规划设计：最长递增子序列"><span class="nav-title">动态规划设计：最长递增子序列</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98%E8%A7%A3%E9%A2%98%E6%A8%A1%E6%9D%BF"><span class="toc-text">动态规划之子序列问题解题模板</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%A4%E7%A7%8D%E6%80%9D%E8%B7%AF"><span class="toc-text">一、两种思路</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%8C%E3%80%81%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97"><span class="toc-text">二、最长回文子序列</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">三、代码实现</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

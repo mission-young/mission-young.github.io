@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>动态规划之正则表达 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">动态规划之正则表达</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>title: 动态规划之正则表达<br>author: 远方<br>tags:</p>
+<ul>
+<li>LeetCode</li>
+<li>算法<br>categories:</li>
+<li>LeetCode破局攻略<br>date: 2016-01-01 19:20:00</li>
+</ul>
+<hr>
+<h1 id="动态规划之正则表达"><a href="#动态规划之正则表达" class="headerlink" title="动态规划之正则表达"></a>动态规划之正则表达</h1><p>之前的文章「动态规划详解」收到了普遍的好评，今天写一个动态规划的实际应用：正则表达式。如果有读者对「动态规划」还不了解，建议先看一下上面那篇文章。<br>正则表达式匹配是一个很精妙的算法，而且难度也不小。本文主要写两个正则符号的算法实现：点号「.」和星号「*」，如果你用过正则表达式，应该明白他们的用法，不明白也没关系，等会会介绍。文章的最后，介绍了一种快速看出重叠子问题的技巧。<br>本文还有一个重要目的，就是教会读者如何设计算法。我们平时看别人的解法，直接看到一个面面俱到的完整答案，总觉得无法理解，以至觉得问题太难，自己太菜。我力求向读者展示，算法的设计是一个螺旋上升、逐步求精的过程，绝不是一步到位就能写出正确算法。本文会带你解决这个较为复杂的问题，让你明白如何化繁为简，逐个击破，从最简单的框架搭建出最终的答案。<br>前文无数次强调的框架思维，就是在这种设计过程中逐步培养的。下面进入正题，首先看一下题目：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%AD%A3%E5%88%99/title.png" alt="title"></p>
+<h3 id="一、热身"><a href="#一、热身" class="headerlink" title="一、热身"></a>一、热身</h3><p>第一步，我们暂时不管正则符号，如果是两个普通的字符串进行比较，如何进行匹配？我想这个算法应该谁都会写：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isMatch</span><span class="hljs-params">(<span class="hljs-built_in">string</span> text, <span class="hljs-built_in">string</span> pattern)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (text.size() != pattern.size()) <br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; pattern.size(); j++) &#123;<br>        <span class="hljs-keyword">if</span> (pattern[j] != text[j])<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>然后，我稍微改造一下上面的代码，略微复杂了一点，但意思还是一样的，很容易理解吧：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isMatch</span><span class="hljs-params">(<span class="hljs-built_in">string</span> text, <span class="hljs-built_in">string</span> pattern)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; <span class="hljs-comment">// text 的索引位置</span><br>    <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; <span class="hljs-comment">// pattern 的索引位置</span><br>    <span class="hljs-keyword">while</span> (j &lt; pattern.size()) &#123;<br>        <span class="hljs-keyword">if</span> (i &gt;= text.size()) <br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">if</span> (pattern[j++] != text[i++])<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-comment">// 相等则说明完成匹配</span><br>    <span class="hljs-keyword">return</span> j == text.size();<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>如上改写，是为了将这个算法改造成递归算法（伪码）：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isMatch</span>(<span class="hljs-params">text, pattern</span>) -&gt; bool:</span><br>    if pattern is empty: return (text is empty?)<br>    first_match = (text <span class="hljs-keyword">not</span> empty) <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">0</span>] == text[<span class="hljs-number">0</span>]<br>    <span class="hljs-keyword">return</span> first_match <span class="hljs-keyword">and</span> isMatch(text[<span class="hljs-number">1</span>:], pattern[<span class="hljs-number">1</span>:])<br></code></pre></td></tr></table></figure>
+<p>如果你能够理解这段代码，恭喜你，你的递归思想已经到位，正则表达式算法虽然有点复杂，其实是基于这段递归代码逐步改造而成的。</p>
+<h3 id="二、处理点号「-」通配符"><a href="#二、处理点号「-」通配符" class="headerlink" title="二、处理点号「.」通配符"></a>二、处理点号「.」通配符</h3><p>点号可以匹配任意一个字符，万金油嘛，其实是最简单的，稍加改造即可：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isMatch</span>(<span class="hljs-params">text, pattern</span>) -&gt; bool:</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> pattern: <span class="hljs-keyword">return</span> <span class="hljs-keyword">not</span> text<br>    first_match = bool(text) <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">0</span>] <span class="hljs-keyword">in</span> &#123;text[<span class="hljs-number">0</span>], <span class="hljs-string">&#x27;.&#x27;</span>&#125;<br>    <span class="hljs-keyword">return</span> first_match <span class="hljs-keyword">and</span> isMatch(text[<span class="hljs-number">1</span>:], pattern[<span class="hljs-number">1</span>:])<br></code></pre></td></tr></table></figure>
+<h3 id="三、处理「-」通配符"><a href="#三、处理「-」通配符" class="headerlink" title="三、处理「*」通配符"></a>三、处理「*」通配符</h3><p>星号通配符可以让前一个字符重复任意次数，包括零次。那到底是重复几次呢？这似乎有点困难，不过不要着急，我们起码可以把框架的搭建再进一步：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isMatch</span>(<span class="hljs-params">text, pattern</span>) -&gt; bool:</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> pattern: <span class="hljs-keyword">return</span> <span class="hljs-keyword">not</span> text<br>    first_match = bool(text) <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">0</span>] <span class="hljs-keyword">in</span> &#123;text[<span class="hljs-number">0</span>], <span class="hljs-string">&#x27;.&#x27;</span>&#125;<br>    <span class="hljs-keyword">if</span> len(pattern) &gt;= <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;*&#x27;</span>:<br>        <span class="hljs-comment"># 发现 &#x27;*&#x27; 通配符</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> first_match <span class="hljs-keyword">and</span> isMatch(text[<span class="hljs-number">1</span>:], pattern[<span class="hljs-number">1</span>:])<br></code></pre></td></tr></table></figure>
+<p>星号前面的那个字符到底要重复几次呢？这需要计算机暴力穷举来算，假设重复 N 次吧。前文多次强调过，写递归的技巧是管好当下，之后的事抛给递归。具体到这里，不管 N 是多少，当前的选择只有两个：匹配 0 次、匹配 1 次。所以可以这样处理：</p>
+<figure class="hljs highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">if</span> len(pattern) &gt;= <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;*&#x27;</span>:<br>    <span class="hljs-keyword">return</span> isMatch(text, pattern[<span class="hljs-number">2</span>:]) <span class="hljs-keyword">or</span> \<br>            first_match <span class="hljs-keyword">and</span> isMatch(text[<span class="hljs-number">1</span>:], pattern)<br><span class="hljs-comment"># 解释：如果发现有字符和 &#x27;*&#x27; 结合，</span><br>    <span class="hljs-comment"># 或者匹配该字符 0 次，然后跳过该字符和 &#x27;*&#x27;</span><br>    <span class="hljs-comment"># 或者当 pattern[0] 和 text[0] 匹配后，移动 text</span><br></code></pre></td></tr></table></figure>
+<p>可以看到，我们是通过保留 pattern 中的「*」，同时向后推移 text，来实现「*」将字符重复匹配多次的功能。举个简单的例子就能理解这个逻辑了。假设 <code>pattern = a*</code>, <code>text = aaa</code>，画个图看看匹配过程：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%AD%A3%E5%88%99/example.png" alt="example"><br>至此，正则表达式算法就基本完成了，</p>
+<h3 id="四、动态规划"><a href="#四、动态规划" class="headerlink" title="四、动态规划"></a>四、动态规划</h3><p>我选择使用「备忘录」递归的方法来降低复杂度。有了暴力解法，优化的过程及其简单，就是使用两个变量 i, j 记录当前匹配到的位置，从而避免使用子字符串切片，并且将 i, j 存入备忘录，避免重复计算即可。<br>我将暴力解法和优化解法放在一起，方便你对比，你可以发现优化解法无非就是把暴力解法「翻译」了一遍，加了个 memo 作为备忘录，仅此而已。</p>
+<figure class="hljs highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-comment"># 带备忘录的递归</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isMatch</span>(<span class="hljs-params">text, pattern</span>) -&gt; bool:</span><br>    memo = dict() <span class="hljs-comment"># 备忘录</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dp</span>(<span class="hljs-params">i, j</span>):</span><br>        <span class="hljs-keyword">if</span> (i, j) <span class="hljs-keyword">in</span> memo: <span class="hljs-keyword">return</span> memo[(i, j)]<br>        <span class="hljs-keyword">if</span> j == len(pattern): <span class="hljs-keyword">return</span> i == len(text)<br>        first = i &lt; len(text) <span class="hljs-keyword">and</span> pattern[j] <span class="hljs-keyword">in</span> &#123;text[i], <span class="hljs-string">&#x27;.&#x27;</span>&#125;<br>        <br>        <span class="hljs-keyword">if</span> j &lt;= len(pattern) - <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> pattern[j + <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;*&#x27;</span>:<br>            ans = dp(i, j + <span class="hljs-number">2</span>) <span class="hljs-keyword">or</span> \<br>                    first <span class="hljs-keyword">and</span> dp(i + <span class="hljs-number">1</span>, j)<br>        <span class="hljs-keyword">else</span>:<br>            ans = first <span class="hljs-keyword">and</span> dp(i + <span class="hljs-number">1</span>, j + <span class="hljs-number">1</span>)<br>            <br>        memo[(i, j)] = ans<br>        <span class="hljs-keyword">return</span> ans<br>    <br>    <span class="hljs-keyword">return</span> dp(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)<br><span class="hljs-comment"># 暴力递归</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isMatch</span>(<span class="hljs-params">text, pattern</span>) -&gt; bool:</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> pattern: <span class="hljs-keyword">return</span> <span class="hljs-keyword">not</span> text<br>    first = bool(text) <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">0</span>] <span class="hljs-keyword">in</span> &#123;text[<span class="hljs-number">0</span>], <span class="hljs-string">&#x27;.&#x27;</span>&#125;<br>    <span class="hljs-keyword">if</span> len(pattern) &gt;= <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;*&#x27;</span>:<br>        <span class="hljs-keyword">return</span> isMatch(text, pattern[<span class="hljs-number">2</span>:]) <span class="hljs-keyword">or</span> \<br>                first <span class="hljs-keyword">and</span> isMatch(text[<span class="hljs-number">1</span>:], pattern)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> first <span class="hljs-keyword">and</span> isMatch(text[<span class="hljs-number">1</span>:], pattern[<span class="hljs-number">1</span>:])<br></code></pre></td></tr></table></figure>
+<p><strong>有的读者也许会问，你怎么知道这个问题是个动态规划问题呢，你怎么知道它就存在「重叠子问题」呢，这似乎不容易看出来呀？</strong><br>解答这个问题，最直观的应该是随便假设一个输入，然后画递归树，肯定是可以发现相同节点的。这属于定量分析，其实不用这么麻烦，下面我来教你定性分析，一眼就能看出「重叠子问题」性质。<br>先拿最简单的斐波那契数列举例，我们抽象出递归算法的框架：</p>
+<figure class="hljs highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib</span>(<span class="hljs-params">n</span>):</span><br>    fib(n - <span class="hljs-number">1</span>) <span class="hljs-comment">#1</span><br>    fib(n - <span class="hljs-number">2</span>) <span class="hljs-comment">#2</span><br></code></pre></td></tr></table></figure>
+<p>看着这个框架，请问原问题 f(n) 如何触达子问题 f(n - 2) ？有两种路径，一是 f(n) -&gt; #1 -&gt; #1, 二是 f(n) -&gt; #2。前者经过两次递归，后者进过一次递归而已。两条不同的计算路径都到达了同一个问题，这就是「重叠子问题」，而且可以肯定的是，<strong>只要你发现一条重复路径，这样的重复路径一定存在千万条，意味着巨量子问题重叠。</strong><br>同理，对于本问题，我们依然先抽象出算法框架：</p>
+<figure class="hljs highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dp</span>(<span class="hljs-params">i, j</span>):</span><br>    dp(i, j + <span class="hljs-number">2</span>)     <span class="hljs-comment">#1</span><br>    dp(i + <span class="hljs-number">1</span>, j)     <span class="hljs-comment">#2</span><br>    dp(i + <span class="hljs-number">1</span>, j + <span class="hljs-number">1</span>) <span class="hljs-comment">#3</span><br></code></pre></td></tr></table></figure>
+<p>提出类似的问题，请问如何从原问题 dp(i, j) 触达子问题 dp(i + 2, j + 2) ？至少有两种路径，一是 dp(i, j) -&gt; #3 -&gt; #3，二是 dp(i, j) -&gt; #1 -&gt; #2 -&gt; #2。因此，本问题一定存在重叠子问题，一定需要动态规划的优化技巧来处理。</p>
+<h3 id="五、最后总结"><a href="#五、最后总结" class="headerlink" title="五、最后总结"></a>五、最后总结</h3><p>通过本文，你深入理解了正则表达式的两种常用通配符的算法实现。其实点号「.」的实现及其简单，关键是星号「*」的实现需要用到动态规划技巧，稍微复杂些，但是也架不住我们对问题的层层拆解，逐个击破。另外，你掌握了一种快速分析「重叠子问题」性质的技巧，可以快速判断一个问题是否可以使用动态规划套路解决。<br>回顾整个解题过程，你应该能够体会到算法设计的流程：从简单的类似问题入手，给基本的框架逐渐组装新的逻辑，最终成为一个比较复杂、精巧的算法。所以说，读者不必畏惧一些比较复杂的算法问题，多思考多类比，再高大上的算法在你眼里也不过一个脆皮。</p>
+<p><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%9B%9B%E9%94%AE%E9%94%AE%E7%9B%98">上一篇：动态规划之四键键盘</a><br><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97">下一篇：最长公共子序列</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/" rel="next" title="动态规划系列"><i class="fas fa-angle-left"></i><span class="nav-title">动态规划系列</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%9B%9B%E9%94%AE%E9%94%AE%E7%9B%98/" rel="prev" title="动态规划之四键键盘"><span class="nav-title">动态规划之四键键盘</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE"><span class="toc-text">动态规划之正则表达</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%80%E3%80%81%E7%83%AD%E8%BA%AB"><span class="toc-text">一、热身</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%8C%E3%80%81%E5%A4%84%E7%90%86%E7%82%B9%E5%8F%B7%E3%80%8C-%E3%80%8D%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="toc-text">二、处理点号「.」通配符</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%89%E3%80%81%E5%A4%84%E7%90%86%E3%80%8C-%E3%80%8D%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="toc-text">三、处理「*」通配符</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E5%9B%9B%E3%80%81%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-text">四、动态规划</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%94%E3%80%81%E6%9C%80%E5%90%8E%E6%80%BB%E7%BB%93"><span class="toc-text">五、最后总结</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

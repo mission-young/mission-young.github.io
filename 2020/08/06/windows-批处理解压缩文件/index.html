@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>windows 批处理解压缩文件 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2020/08/06/windows-%E6%89%B9%E5%A4%84%E7%90%86%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">windows 批处理解压缩文件</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-08-06T21:47:17+08:00">2020-08-06 21:47:17</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>今天在黑翼实习的过程中，廖师兄提到接下来数据处理要放到linux下的原因是数据解压的考虑。观察数据压缩的格式为7z后缀，而windows其实是有7z压缩软件的，相比能够通过命令行的形式来实现解压缩，从而结合脚本完成批量解压。</p>
+<p>数据处理用的语言为python，最初的想法是调用python的逻辑来实现解压，后来觉得又没有太大的必要。因而考虑用bat脚本来实现。</p>
+<p>7z的使用说明如下：</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>7z，全称7-Zip， 是一款开源软件。是目前公认的压缩比例最大的压缩解压软件。</p>
+<ul>
+<li>主页：<a target="_blank" rel="noopener" href="http://www.7-zip.org/">http://www.7-zip.org/</a></li>
+<li>中文主页：<a target="_blank" rel="noopener" href="http://7z.sparanoid.com/">http://7z.sparanoid.com/</a></li>
+<li>命令行版本下载：<a target="_blank" rel="noopener" href="http://7z.sparanoid.com/download.html">http://7z.sparanoid.com/download.html</a></li>
+<li>主要特征：<ul>
+<li>全新的LZMA算法加大了7z格式的压缩比</li>
+<li>支持格式：<ul>
+<li>压缩 / 解压缩：7z, XZ, BZIP2, GZIP, TAR, ZIP</li>
+<li>仅解压缩：ARJ, CAB, CHM, CPIO, DEB, DMG, FAT, HFS, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, RAR, RPM, UDF, VHD, WIM, XAR, Z</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="退出代码"><a href="#退出代码" class="headerlink" title="退出代码"></a>退出代码</h3><ul>
+<li>0 ： 正常，没有错误；</li>
+<li>1 ： 警告，没有致命的错误，例如某些文件正在被使用，没有被压缩；</li>
+<li>2 ： 致命错误；</li>
+<li>7 ： 命令行错误；</li>
+<li>8 ： 没有足够的内存；</li>
+<li>255 ： 用户停止了操作；</li>
+</ul>
+<h3 id="使用语法"><a href="#使用语法" class="headerlink" title="使用语法"></a>使用语法</h3><p>7z &lt;命令行&gt; [&lt;选项&gt;…] &lt;基本档案名称&gt; [&lt;参数变量&gt;…]</p>
+<ul>
+<li>在方括号内的表达式(“[” 和 “]”之间的字符)是可选的。</li>
+<li>在书名号内的表达式(“&lt;” 和 “&gt;”之间的字符)是必须替换的表达式(而且要去掉括号)。</li>
+</ul>
+<p>7-Zip 支持和 Windows 相类似的通配符：</p>
+<ul>
+<li>“*”可以使用星号代替零个或多个字符。 </li>
+<li>“?”可以用问号代替名称中的单个字符。</li>
+</ul>
+<p>如果只用*，7-Zip 会将其视为任何扩展名的全部文件。</p>
+<h3 id="命令及实例"><a href="#命令及实例" class="headerlink" title="命令及实例"></a>命令及实例</h3><ol>
+<li><p>a 添加文件到压缩档案。</p>
+<ul>
+<li>7z a archive1.zip subdir\ ：增加subdir文件夹下的所有的文件和子文件夹到archive1.zip中，archived1.zip中的文件名包含subdir\前缀。</li>
+<li>7z a archive2.zip .\subdir* ：增加subdir文件夹下的所有的文件和子文件夹到archive1.zip中，archived2.zip中的文件名不包含subdir\前缀。</li>
+<li>cd /D c:\dir1\ </li>
+<li>7z a c:\archive3.zip dir2\dir3\ ：archiive3.zip中的文件名将包含dir2\dir3\前缀，但是不包含c:\dir1前缀。</li>
+<li>7z a Files.7z *.txt -r ： 增加当前文件夹及其子文件夹下的所有的txt文件到Files.7z中。</li>
+</ul>
+</li>
+<li><p>b 测试 CPU 运行速度及检查内存错误。</p>
+</li>
+<li><p>d 从压缩档案删除文件。</p>
+<ul>
+<li>7z d archive.zip *.bak -r ：从archive.zip中删除所有的bak文件。</li>
+</ul>
+</li>
+<li><p>e 从压缩档案中释放文件到当前目录中。或者到指定的输出文件夹。输出文件夹设置可以通过 -o (设置输出文件夹) 选项来更改。此命令会将所有被释放的文件放置到一个文件夹。如果您想使用完整路径释放文件，您必须使用 x (完整路径释放) 命令。 </p>
+<ul>
+<li>7z e archive.zip ：从压缩档案 archive.zip 中释放所有文件到当前文件夹。</li>
+<li>7z e archive.zip -oc:\soft *.cpp ：从压缩档案 archive.zip 中释放 *.cpp 文件到 c:\soft 文件夹。</li>
+</ul>
+</li>
+<li><p>l 列出压缩档案内容。</p>
+<ul>
+<li>7z l archiv.zip ：列出压缩档案 archive.zip 的内容。</li>
+</ul>
+</li>
+<li><p>t 测试压缩档案文件的完整性。</p>
+<ul>
+<li>7z t archive.zip *.doc ：在压缩档案 archive.zip 中测试 *.doc 文件的完整性。</li>
+</ul>
+</li>
+<li><p>u 在压缩档案文件中使用较新的文件替换掉较旧的文件。</p>
+<ul>
+<li>7z u archive.zip *.doc ：在压缩档案 archive.zip 中更新 *.doc 文件。</li>
+</ul>
+</li>
+<li><p>x 在当前目录中，使用完整路径从压缩档案中释放文件.或者到指定的输出文件夹。<br> -7z x archive.zip ：从压缩档案 archive.zip 中释放所有文件到当前文件夹。<br> -7z x archive.zip -oc:\soft *.cpp ：从压缩档案 archive.zip 中释放 *.cpp 文件到 c:\soft 文件夹。</p>
+</li>
+</ol>
+<h3 id="更多的选项"><a href="#更多的选项" class="headerlink" title="更多的选项"></a>更多的选项</h3><ol>
+<li><p>–在命令行中使“–”后的选项开关“-”都失效。这样就允许在命令行中使用文件名以“-”开头的文件。</p>
+<ul>
+<li>7z t – -ArchiveName.7z ：测试 -ArchiveName.7z 压缩档案.</li>
+</ul>
+</li>
+<li><p>-i 指定压缩时附加文件或一类文件。此选项可附件添加多个类型。</p>
+<ul>
+<li>i[<recurse_type>]<file_ref> 其中<recurse_type>为可以为r[- | 0]（具体的-r选项见后面-r），<file_ref>可以为@{listfile} | !{wildcard}。</li>
+<li>7z a -tzip src.zip <em>.txt -ir!DIR1\</em>.cpp ：从当前目录中添加 *.txt 文件，和 DIR1 目录及其子目录中的 *.cpp 文件到 src.zip 压缩档案。</li>
+</ul>
+</li>
+<li><p>-x 指定某一文件或某一类文件从操作中排除。此选项可同时排除多个类型。</p>
+<ul>
+<li>x[<recurse_type>]<file_ref> 其中<recurse_type>为可以为r[- | 0]（具体的-r选项见后面-r），<file_ref>可以为@{listfile} | !{wildcard}。</li>
+<li>7z a -tzip archive.zip <em>.txt -x!temp.</em> ：添加除 temp.* 文件之外的所有 *.txt 文件到压缩档案 archive.zip。</li>
+</ul>
+</li>
+<li><p>-o 指定释放文件的输出文件夹。此选项只能和释放命令配合使用。</p>
+<ul>
+<li>7z x archive.zip -oc:\Doc ：从 archive.zip 压缩档案释放所有文件到 c:\Doc 文件夹。</li>
+</ul>
+</li>
+<li><p>-r 递归子目录选项。</p>
+</li>
+<li><p>-r 开启递归子目录。对于 e (释放)、l (列表)、t (测试)、x (完整路径释放) 这些在压缩档案中操作的命令， 会默认使用此选项。 </p>
+</li>
+<li><p>-r- 关闭递归子目录。对于 a (添加)、d (删除)、u (更新) 等所有需扫描磁盘文件的命令，会默认使用此选项。 </p>
+</li>
+<li><p>-r0 开启递归子目录。但只应用于通配符。 </p>
+<ul>
+<li>7z l archive.zip -r- *.doc ：列出在 archive.zip 压缩档案中根目录下的 *.doc 文件。 </li>
+<li>7z a -tzip archive.zip -r src*.cpp src*.h ：将 src 目录及其子目录中的 *.cpp 及 *.h 文件添加到 archive.zip 压缩档案。</li>
+</ul>
+</li>
+<li><p>-t 指定压缩档案格式。指定压缩档案格式。它们可以是：zip、7z、rar、cab、gzip、bzip2、tar 或其它格式。而 默认值是 7z 格式。 </p>
+<ul>
+<li>7z a -tzip archive.zip *.txt ：使用 zip 格式从当前目录中添加所有 *.txt 文件到压缩档案 archive.zip。</li>
+</ul>
+</li>
+<li><p>-y 使 7-Zip 执行命令时的大多数提示失效。您可以使用此选项来阻止在 e (释放) 和 x (完整路径释放) 命令中文件覆盖时的提示。</p>
+<ul>
+<li>7z x src.zip -y ：从 src.zip 释放所有文件。所有的覆盖提示将被阻止且所有相同文件名的文件将被覆盖。</li>
+</ul>
+</li>
+<li><p>-v指定分卷大小。</p>
+<ul>
+<li>{Size}[b | k | m | g] </li>
+<li>指定分卷大小，可以使用字节、KB(1 KB＝1024 字节)，MB(1 MB = 1024 KB)或 GB(1 GB = 1024 MB)。如果您只指定了 {Size}，7-zip 将把它视为字。 </li>
+<li>7z a a.7z *.txt -v10k -v15k -v2m ： 创建 a.7z 分卷压缩档案。第一个分卷为 10 KB，第二个为 15 KB，剩下全部为 2 MB。</li>
+</ul>
+</li>
+<li><p>-p 指定密码。</p>
+<ul>
+<li>7z x archive.zip -psecret ：将设有密码“secret”的压缩档案 archive.zip 中所有文件释放。</li>
+</ul>
+</li>
+<li><p>-ao 指定在释放期间如何覆盖硬盘上现有的同名文件。</p>
+<ul>
+<li>语法：-ao[a | s | u ]</li>
+<li>-aoa 直接覆盖现有文件，而没有任何提示。 </li>
+<li>-aos 跳过现有文件，其不会被覆盖。 </li>
+<li>-aou 如果相同文件名的文件以存在，将自动重命名被释放的文件。举个例子，文件 file.txt 将被自动重命名为 file_1.txt。 </li>
+<li>-aot 如果相同文件名的文件以存在，将自动重命名现有的文件。举个例子，文件 file.txt 将被自动重命名为 file_1.txt。 </li>
+<li>7z x test.zip -aoa ：从压缩档案 test.zip 中释放所有文件并却不做提示直接覆盖现有文件。</li>
+</ul>
+</li>
+<li><p>-an 不解析命令行中的 archive_name 区域。此选项必须和 -i (附加文件) 开关一起使用。比如您为压缩档案使用列表文件，您就需要指定 -ai 选项，所以您需要禁止解析命令行中的 archive_name 区域。<br>实例见后面的-ai和-ax中。</p>
+</li>
+<li><p>-ai 指定附加文件，包括压缩档案文件名及通配符。此选项可同时附加多个类型。</p>
+<ul>
+<li>ai[<recurse_type>]<file_ref> 其中<recurse_type>为可以为r[- | 0]（具体的-r选项见后面-r），<file_ref>可以为@{listfile} | !{wildcard}。</li>
+<li>7z t -an -air!*.7z ： 在当前目录及子目录下测试 *.7z 压缩档案。</li>
+</ul>
+</li>
+<li><p>-ax 指定必须从操作中排除的压缩档案。此选项可同时排除多个类型。</p>
+<ul>
+<li>ax[<recurse_type>]<file_ref> 其中<recurse_type>为可以为r[- | 0]（具体的-r选项见后面-r），<file_ref>可以为@{listfile} | !{wildcard}。</li>
+<li>7z t -an -ai!<em>.7z -ax!a</em>.7z ：测试除 a*.7z 之外的 *.7z 压缩档案。</li>
+</ul>
+</li>
+</ol>
+<p>更多的不常用的选项，可以查看帮助。例如：-m设置压缩算法；-scs 设置要压缩的文件的列表文件的字符集；-seml通过电子邮件发送压缩档；-sfx创建自释放档；-si从标准输入读入数据，-so从输出到标准输出；-slp设置大内存模式；-slt显示技术信息；-ssc设置区分大小写；-ssw压缩正在写入的文件；-u更新选项。</p>
+<p><code>7z -e</code> 后面跟的是相对路径，<code>7z -x</code>后面跟的是绝对路径。</p>
+<p>下面是bat的脚本</p>
+<figure class="hljs highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bat">@<span class="hljs-built_in">echo</span> off<br><span class="hljs-comment">REM %cd% 终端当前目录</span><br><span class="hljs-comment">REM %%~dp0 为脚本所在目录</span><br><span class="hljs-comment">REM %%用在脚本中</span><br><span class="hljs-comment">REM %s用在命令行中</span><br><span class="hljs-comment">REM 7z x 后面跟绝对路径</span><br><span class="hljs-comment">REM 7z e 后面跟相对路径</span><br><span class="hljs-comment">REM 7z -aos 表示若文件已存在，跳过解压</span><br><span class="hljs-comment">REM 两行cd 源于 7z x -aos %%s -o%%~dps 在for循环中无法正常执行，用反复进退目录的方式曲线救国。这么做效率会下降，以后再修正。</span><br><span class="hljs-comment">REM /R 表示递归搜索</span><br><br><span class="hljs-built_in">set</span> work_path=&quot;<span class="hljs-variable">%cd%</span>&quot;<br><span class="hljs-built_in">echo</span> work_path=<span class="hljs-variable">%work_path%</span><br><span class="hljs-keyword">for</span> /R <span class="hljs-variable">%work_path%</span> <span class="hljs-variable">%%s</span> <span class="hljs-keyword">in</span> (*.<span class="hljs-number">7</span>z.<span class="hljs-number">001</span>) <span class="hljs-keyword">do</span> (<br>    <span class="hljs-built_in">cd</span> <span class="hljs-variable">%%~</span>dps<br>    <span class="hljs-number">7</span>z x -aos <span class="hljs-variable">%%s</span><br>    <span class="hljs-built_in">cd</span> <span class="hljs-variable">%work_path%</span><br>)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>REM 表示bat脚本的注释</li>
+<li><code>7z x -aos</code> 表示 解压到当前目录</li>
+<li>%%s表示与<code>*.7z.001</code>匹配的文件全路径</li>
+</ul>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs log">%I 引用I<br>%~I         - expands %I removing any surrounding quotes (&quot;)<br>%~fI        - expands %I to a fully qualified path name<br>%~dI        - expands %I to a drive letter only<br>%~pI        - expands %I to a path only<br>%~nI        - expands %I to a file name only<br>%~xI        - expands %I to a file extension only<br>%~sI        - expanded path contains short names only<br>%~aI        - expands %I to file attributes of file<br>%~tI        - expands %I to date&#x2F;time of file<br>%~zI        - expands %I to size of file<br><br>The modifiers can be combined to get compound results:<br>%~dpI       - expands %I to a drive letter and path only<br>%~nxI       - expands %I to a file name and extension only<br>%~fsI       - expands %I to a full path name with short names only<br></code></pre></td></tr></table></figure>
+<p>在上面，给出了cmd下提取路径或文件名的一些操作，如果用在脚本中，<code>%</code>改为<code>%%</code>即可。其中<code>I</code>表示变量，在这里，我们用的是<code>S</code>. </p>
+
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2020/07/05/%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%90%91/" rel="next" title="工作方向"><i class="fas fa-angle-left"></i><span class="nav-title">工作方向</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2020/08/12/windows-rdp%E6%9C%8D%E5%8A%A1%E5%BC%80%E5%90%AF/" rel="prev" title="windows rdp服务开启"><span class="nav-title">windows rdp服务开启</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E9%80%80%E5%87%BA%E4%BB%A3%E7%A0%81"><span class="toc-text">退出代码</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BD%BF%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="toc-text">使用语法</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E5%91%BD%E4%BB%A4%E5%8F%8A%E5%AE%9E%E4%BE%8B"><span class="toc-text">命令及实例</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E6%9B%B4%E5%A4%9A%E7%9A%84%E9%80%89%E9%A1%B9"><span class="toc-text">更多的选项</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

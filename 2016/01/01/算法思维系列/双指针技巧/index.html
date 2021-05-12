@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>双指针技巧 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%8F%8C%E6%8C%87%E9%92%88%E6%8A%80%E5%B7%A7/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">双指针技巧</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="双指针技巧总结"><a href="#双指针技巧总结" class="headerlink" title="双指针技巧总结"></a>双指针技巧总结</h1><p>我把双指针技巧再分为两类，一类是「快慢指针」，一类是「左右指针」。前者解决主要解决链表中的问题，比如典型的判定链表中是否包含环；后者主要解决数组（或者字符串）中的问题，比如二分查找。</p>
+<h3 id="一、快慢指针的常见算法"><a href="#一、快慢指针的常见算法" class="headerlink" title="一、快慢指针的常见算法"></a>一、快慢指针的常见算法</h3><p>快慢指针一般都初始化指向链表的头结点 head，前进时快指针 fast 在前，慢指针 slow 在后，巧妙解决一些链表中的问题。<br><strong>1、判定链表中是否含有环</strong><br>这应该属于链表最基本的操作了，如果读者已经知道这个技巧，可以跳过。<br>单链表的特点是每个节点只知道下一个节点，所以一个指针的话无法判断链表中是否含有环的。<br>如果链表中不含环，那么这个指针最终会遇到空指针 null 表示链表到头了，这还好说，可以判断该链表不含环。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">hasCycle</span><span class="hljs-params">(ListNode head)</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (head != <span class="hljs-keyword">null</span>)<br>        head = head.next;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>但是如果链表中含有环，那么这个指针就会陷入死循环，因为环形数组中没有 null 指针作为尾部节点。<br>经典解法就是用两个指针，一个跑得快，一个跑得慢。如果不含有环，跑得快的那个指针最终会遇到 null，说明链表不含环；如果含有环，快指针最终会超慢指针一圈，和慢指针相遇，说明链表含有环。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">hasCycle</span><span class="hljs-params">(ListNode head)</span> </span>&#123;<br>    ListNode fast, slow;<br>    fast = slow = head;<br>    <span class="hljs-keyword">while</span> (fast != <span class="hljs-keyword">null</span> &amp;&amp; fast.next != <span class="hljs-keyword">null</span>) &#123;<br>        fast = fast.next.next;<br>        slow = slow.next;<br>        <br>        <span class="hljs-keyword">if</span> (fast == slow) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>2、已知链表中含有环，返回这个环的起始位置</strong><br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8F%8C%E6%8C%87%E9%92%88/1.png" alt="1"><br>这个问题一点都不困难，有点类似脑筋急转弯，先直接看代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">ListNode <span class="hljs-title">detectCycle</span><span class="hljs-params">(ListNode head)</span> </span>&#123;<br>    ListNode fast, slow;<br>    fast = slow = head;<br>    <span class="hljs-keyword">while</span> (fast != <span class="hljs-keyword">null</span> &amp;&amp; fast.next != <span class="hljs-keyword">null</span>) &#123;<br>        fast = fast.next.next;<br>        slow = slow.next;<br>        <span class="hljs-keyword">if</span> (fast == slow) <span class="hljs-keyword">break</span>;<br>    &#125;<br>    <span class="hljs-comment">// 上面的代码类似 hasCycle 函数</span><br>    slow = head;<br>    <span class="hljs-keyword">while</span> (slow != fast) &#123;<br>        fast = fast.next;<br>        slow = slow.next;<br>    &#125;<br>    <span class="hljs-keyword">return</span> slow;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>可以看到，当快慢指针相遇时，让其中任一个指针指向头节点，然后让它俩以相同速度前进，再次相遇时所在的节点位置就是环开始的位置。这是为什么呢？<br>第一次相遇时，假设慢指针 slow 走了 k 步，那么快指针 fast 一定走了 2k 步，也就是说比 slow 多走了 k 步（也就是环的长度）。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8F%8C%E6%8C%87%E9%92%88/2.png" alt="2"><br>设相遇点距环的起点的距离为 m，那么环的起点距头结点 head 的距离为 k - m，也就是说如果从 head 前进 k - m 步就能到达环起点。<br>巧的是，如果从相遇点继续前进 k - m 步，也恰好到达环起点。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8F%8C%E6%8C%87%E9%92%88/3.png" alt="3"><br>所以，只要我们把快慢指针中的任一个重新指向 head，然后两个指针同速前进，k - m 步后就会相遇，相遇之处就是环的起点了。<br><strong>3、寻找链表的中点</strong><br>类似上面的思路，我们还可以让快指针一次前进两步，慢指针一次前进一步，当快指针到达链表尽头时，慢指针就处于链表的中间位置。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">while</span> (fast != <span class="hljs-keyword">null</span> &amp;&amp; fast.next != <span class="hljs-keyword">null</span>) &#123;<br>    fast = fast.next.next;<br>    slow = slow.next;<br>&#125;<br><span class="hljs-comment">// slow 就在中间位置</span><br><span class="hljs-keyword">return</span> slow;<br></code></pre></td></tr></table></figure>
+<p>当链表的长度是奇数时，slow 恰巧停在中点位置；如果长度是偶数，slow 最终的位置是中间偏右：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8F%8C%E6%8C%87%E9%92%88/center.png" alt="center"><br>寻找链表中点的一个重要作用是对链表进行归并排序。<br>回想数组的归并排序：求中点索引递归地把数组二分，最后合并两个有序数组。对于链表，合并两个有序链表是很简单的，难点就在于二分。<br>但是现在你学会了找到链表的中点，就能实现链表的二分了。关于归并排序的具体内容本文就不具体展开了。</p>
+<p><strong>4、寻找链表的倒数第 k 个元素</strong><br>我们的思路还是使用快慢指针，让快指针先走 k 步，然后快慢指针开始同速前进。这样当快指针走到链表末尾 null 时，慢指针所在的位置就是倒数第 k 个链表节点（为了简化，假设 k 不会超过链表长度）：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java">ListNode slow, fast;<br>slow = fast = head;<br><span class="hljs-keyword">while</span> (k-- &gt; <span class="hljs-number">0</span>) <br>    fast = fast.next;<br><span class="hljs-keyword">while</span> (fast != <span class="hljs-keyword">null</span>) &#123;<br>    slow = slow.next;<br>    fast = fast.next;<br>&#125;<br><span class="hljs-keyword">return</span> slow;<br></code></pre></td></tr></table></figure>
+
+<h3 id="二、左右指针的常用算法"><a href="#二、左右指针的常用算法" class="headerlink" title="二、左右指针的常用算法"></a>二、左右指针的常用算法</h3><p>左右指针在数组中实际是指两个索引值，一般初始化为 left = 0, right = nums.length - 1 。<br><strong>1、二分查找</strong><br>前文「二分查找」有详细讲解，这里只写最简单的二分算法，旨在突出它的双指针特性：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>; <br>    <span class="hljs-keyword">int</span> right = nums.length - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(left &lt;= right) &#123;<br>        <span class="hljs-keyword">int</span> mid = (right + left) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span>(nums[mid] == target)<br>            <span class="hljs-keyword">return</span> mid; <br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &lt; target)<br>            left = mid + <span class="hljs-number">1</span>; <br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target)<br>            right = mid - <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>2、两数之和</strong><br>直接看一道 LeetCode 题目吧：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8F%8C%E6%8C%87%E9%92%88/title.png" alt="title"><br>只要数组有序，就应该想到双指针技巧。这道题的解法有点类似二分查找，通过调节 left 和 right 可以调整 sum 的大小：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span>[] twoSum(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) &#123;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = nums.length - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>        <span class="hljs-keyword">int</span> sum = nums[left] + nums[right];<br>        <span class="hljs-keyword">if</span> (sum == target) &#123;<br>            <span class="hljs-comment">// 题目要求的索引是从 1 开始的</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;left + <span class="hljs-number">1</span>, right + <span class="hljs-number">1</span>&#125;;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (sum &lt; target) &#123;<br>            left++; <span class="hljs-comment">// 让 sum 大一点</span><br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (sum &gt; target) &#123;<br>            right--; <span class="hljs-comment">// 让 sum 小一点</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;-<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>&#125;;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>3、反转数组</strong></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reverse</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> right = nums.length - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>        <span class="hljs-comment">// swap(nums[left], nums[right])</span><br>        <span class="hljs-keyword">int</span> temp = nums[left];<br>        nums[left] = nums[right];<br>        nums[right] = temp;<br>        left++; right--;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>4、滑动窗口算法</strong><br>这也许是双指针技巧的最高境界了，如果掌握了此算法，可以解决一大类子字符串匹配的问题，不过「滑动窗口」稍微比上述的这些算法复杂些。<br>幸运的是，这类算法是有框架模板的，而且<a href="%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%8A%80%E5%B7%A7">这篇文章</a>就讲解了「滑动窗口」算法模板，帮大家秒杀几道 LeetCode 子串匹配的问题。</p>
+<p><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%8A%80%E5%B7%A7">上一篇：滑动窗口解题框架</a><br><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/linux%E8%BF%9B%E7%A8%8B">下一篇：Linux的进程、线程、文件描述符是什么</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E4%BF%AE%E8%AE%A2%E7%89%88/" rel="next" title="回溯算法详解修订版"><i class="fas fa-angle-left"></i><span class="nav-title">回溯算法详解修订版</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%8C%BA%E9%97%B4%E8%B0%83%E5%BA%A6%E9%97%AE%E9%A2%98%E4%B9%8B%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6/" rel="prev" title="区间调度问题之区间合并"><span class="nav-title">区间调度问题之区间合并</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93"><span class="toc-text">双指针技巧总结</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%80%E3%80%81%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88%E7%9A%84%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95"><span class="toc-text">一、快慢指针的常见算法</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%8C%E3%80%81%E5%B7%A6%E5%8F%B3%E6%8C%87%E9%92%88%E7%9A%84%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95"><span class="toc-text">二、左右指针的常用算法</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

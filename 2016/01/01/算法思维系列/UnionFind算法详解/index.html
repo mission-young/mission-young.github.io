@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>UnionFind算法详解 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/UnionFind%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">UnionFind算法详解</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="Union-Find算法详解"><a href="#Union-Find算法详解" class="headerlink" title="Union-Find算法详解"></a>Union-Find算法详解</h1><p>今天讲讲 Union-Find 算法，也就是常说的并查集算法，主要是解决图论中「动态连通性」问题的。名词很高端，其实特别好理解，等会解释，另外这个算法的应用都非常有趣。<br>说起这个 Union-Find，应该算是我的「启蒙算法」了，因为《算法4》的开头就介绍了这款算法，可是把我秀翻了，感觉好精妙啊！后来刷了 LeetCode，并查集相关的算法题目都非常有意思，而且《算法4》给的解法竟然还可以进一步优化，只要加一个微小的修改就可以把时间复杂度降到 O(1)。<br>废话不多说，直接上干货，先解释一下什么叫动态连通性吧。</p>
+<h3 id="一、问题介绍"><a href="#一、问题介绍" class="headerlink" title="一、问题介绍"></a>一、问题介绍</h3><p>简单说，动态连通性其实可以抽象成给一幅图连线。比如下面这幅图，总共有 10 个节点，他们互不相连，分别用 0~9 标记：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/unionfind/1.jpg"><br>现在我们的 Union-Find 算法主要需要实现这两个 API：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UF</span> </span>&#123;<br>    <span class="hljs-comment">/* 将 p 和 q 连接 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q)</span></span>;<br>    <span class="hljs-comment">/* 判断 p 和 q 是否连通 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">connected</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q)</span></span>;<br>    <span class="hljs-comment">/* 返回图中有多少个连通分量 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">count</span><span class="hljs-params">()</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这里所说的「连通」是一种等价关系，也就是说具有如下三个性质：<br>1、自反性：节点<code>p</code>和<code>p</code>是连通的。<br>2、对称性：如果节点<code>p</code>和<code>q</code>连通，那么<code>q</code>和<code>p</code>也连通。<br>3、传递性：如果节点<code>p</code>和<code>q</code>连通，<code>q</code>和<code>r</code>连通，那么<code>p</code>和<code>r</code>也连通。<br>比如说之前那幅图，0～9 任意两个<strong>不同</strong>的点都不连通，调用<code>connected</code>都会返回 false，连通分量为 10 个。<br>如果现在调用<code>union(0, 1)</code>，那么 0 和 1 被连通，连通分量降为 9 个。<br>再调用<code>union(1, 2)</code>，这时 0,1,2 都被连通，调用<code>connected(0, 2)</code>也会返回 true，连通分量变为 8 个。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/unionfind/2.jpg"><br>判断这种「等价关系」非常实用，比如说编译器判断同一个变量的不同引用，比如社交网络中的朋友圈计算等等。<br>这样，你应该大概明白什么是动态连通性了，Union-Find 算法的关键就在于<code>union</code>和<code>connected</code>函数的效率。那么用什么模型来表示这幅图的连通状态呢？用什么数据结构来实现代码呢？</p>
+<h3 id="二、基本思路"><a href="#二、基本思路" class="headerlink" title="二、基本思路"></a>二、基本思路</h3><p>注意我刚才把「模型」和具体的「数据结构」分开说，这么做是有原因的。因为我们使用森林（若干棵树）来表示图的动态连通性，用数组来具体实现这个森林。<br>怎么用森林来表示连通性呢？我们设定树的每个节点有一个指针指向其父节点，如果是根节点的话，这个指针指向自己。比如说刚才那幅 10 个节点的图，一开始的时候没有相互连通，就是这样：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/unionfind/3.jpg"></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UF</span> </span>&#123;<br>    <span class="hljs-comment">// 记录连通分量</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> count;<br>    <span class="hljs-comment">// 节点 x 的节点是 parent[x]</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] parent;<br>    <span class="hljs-comment">/* 构造函数，n 为图的节点总数 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">UF</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-comment">// 一开始互不连通</span><br>        <span class="hljs-keyword">this</span>.count = n;<br>        <span class="hljs-comment">// 父节点指针初始指向自己</span><br>        parent = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>            parent[i] = i;<br>    &#125;<br>    <span class="hljs-comment">/* 其他函数 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>如果某两个节点被连通，则让其中的（任意）一个节点的根节点接到另一个节点的根节点上</strong>：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/unionfind/4.jpg"></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> rootP = find(p);<br>    <span class="hljs-keyword">int</span> rootQ = find(q);<br>    <span class="hljs-keyword">if</span> (rootP == rootQ)<br>        <span class="hljs-keyword">return</span>;<br>    <span class="hljs-comment">// 将两棵树合并为一棵</span><br>    parent[rootP] = rootQ;<br>    <span class="hljs-comment">// parent[rootQ] = rootP 也一样</span><br>    count--; <span class="hljs-comment">// 两个分量合二为一</span><br>&#125;<br><span class="hljs-comment">/* 返回某个节点 x 的根节点 */</span><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>    <span class="hljs-comment">// 根节点的 parent[x] == x</span><br>    <span class="hljs-keyword">while</span> (parent[x] != x)<br>        x = parent[x];<br>    <span class="hljs-keyword">return</span> x;<br>&#125;<br><span class="hljs-comment">/* 返回当前的连通分量个数 */</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">count</span><span class="hljs-params">()</span> </span>&#123; <br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>这样，如果节点<code>p</code>和<code>q</code>连通的话，它们一定拥有相同的根节点</strong>：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/unionfind/5.jpg"></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">connected</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> rootP = find(p);<br>    <span class="hljs-keyword">int</span> rootQ = find(q);<br>    <span class="hljs-keyword">return</span> rootP == rootQ;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>至此，Union-Find 算法就基本完成了。是不是很神奇？竟然可以这样使用数组来模拟出一个森林，如此巧妙的解决这个比较复杂的问题！<br>那么这个算法的复杂度是多少呢？我们发现，主要 API<code>connected</code>和<code>union</code>中的复杂度都是<code>find</code>函数造成的，所以说它们的复杂度和<code>find</code>一样。<br><code>find</code>主要功能就是从某个节点向上遍历到树根，其时间复杂度就是树的高度。我们可能习惯性地认为树的高度就是<code>logN</code>，但这并不一定。<code>logN</code>的高度只存在于平衡二叉树，对于一般的树可能出现极端不平衡的情况，使得「树」几乎退化成「链表」，树的高度最坏情况下可能变成<code>N</code>。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/unionfind/6.jpg"><br>所以说上面这种解法，<code>find</code>,<code>union</code>,<code>connected</code>的时间复杂度都是 O(N)。这个复杂度很不理想的，你想图论解决的都是诸如社交网络这样数据规模巨大的问题，对于<code>union</code>和<code>connected</code>的调用非常频繁，每次调用需要线性时间完全不可忍受。<br><strong>问题的关键在于，如何想办法避免树的不平衡呢</strong>？只需要略施小计即可。</p>
+<h3 id="三、平衡性优化"><a href="#三、平衡性优化" class="headerlink" title="三、平衡性优化"></a>三、平衡性优化</h3><p>我们要知道哪种情况下可能出现不平衡现象，关键在于<code>union</code>过程：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> rootP = find(p);<br>    <span class="hljs-keyword">int</span> rootQ = find(q);<br>    <span class="hljs-keyword">if</span> (rootP == rootQ)<br>        <span class="hljs-keyword">return</span>;<br>    <span class="hljs-comment">// 将两棵树合并为一棵</span><br>    parent[rootP] = rootQ;<br>    <span class="hljs-comment">// parent[rootQ] = rootP 也可以</span><br>    count--; <br></code></pre></td></tr></table></figure>
+<p>我们一开始就是简单粗暴的把<code>p</code>所在的树接到<code>q</code>所在的树的根节点下面，那么这里就可能出现「头重脚轻」的不平衡状况，比如下面这种局面：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/unionfind/7.jpg"><br>长此以往，树可能生长得很不平衡。<strong>我们其实是希望，小一些的树接到大一些的树下面，这样就能避免头重脚轻，更平衡一些</strong>。解决方法是额外使用一个<code>size</code>数组，记录每棵树包含的节点数，我们不妨称为「重量」：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UF</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> count;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] parent;<br>    <span class="hljs-comment">// 新增一个数组记录树的“重量”</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] size;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">UF</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.count = n;<br>        parent = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>        <span class="hljs-comment">// 最初每棵树只有一个节点</span><br>        <span class="hljs-comment">// 重量应该初始化 1</span><br>        size = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            parent[i] = i;<br>            size[i] = <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/* 其他函数 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>比如说<code>size[3] = 5</code>表示，以节点<code>3</code>为根的那棵树，总共有<code>5</code>个节点。这样我们可以修改一下<code>union</code>方法：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> rootP = find(p);<br>    <span class="hljs-keyword">int</span> rootQ = find(q);<br>    <span class="hljs-keyword">if</span> (rootP == rootQ)<br>        <span class="hljs-keyword">return</span>;<br>    <br>    <span class="hljs-comment">// 小树接到大树下面，较平衡</span><br>    <span class="hljs-keyword">if</span> (size[rootP] &gt; size[rootQ]) &#123;<br>        parent[rootQ] = rootP;<br>        size[rootP] += size[rootQ];<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        parent[rootP] = rootQ;<br>        size[rootQ] += size[rootP];<br>    &#125;<br>    count--;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样，通过比较树的重量，就可以保证树的生长相对平衡，树的高度大致在<code>logN</code>这个数量级，极大提升执行效率。<br>此时，<code>find</code>,<code>union</code>,<code>connected</code>的时间复杂度都下降为 O(logN)，即便数据规模上亿，所需时间也非常少。</p>
+<h3 id="四、路径压缩"><a href="#四、路径压缩" class="headerlink" title="四、路径压缩"></a>四、路径压缩</h3><p>这步优化特别简单，所以非常巧妙。我们能不能进一步压缩每棵树的高度，使树高始终保持为常数？<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/unionfind/8.jpg"><br>这样<code>find</code>就能以 O(1) 的时间找到某一节点的根节点，相应的，<code>connected</code>和<code>union</code>复杂度都下降为 O(1)。<br>要做到这一点，非常简单，只需要在<code>find</code>中加一行代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (parent[x] != x) &#123;<br>        <span class="hljs-comment">// 进行路径压缩</span><br>        parent[x] = parent[parent[x]];<br>        x = parent[x];<br>    &#125;<br>    <span class="hljs-keyword">return</span> x;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这个操作有点匪夷所思，看个 GIF 就明白它的作用了（为清晰起见，这棵树比较极端）：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/unionfind/9.gif"><br>可见，调用<code>find</code>函数每次向树根遍历的同时，顺手将树高缩短了，最终所有树高都不会超过 3（<code>union</code>的时候树高可能达到 3）。<br>PS：读者可能会问，这个 GIF 图的find过程完成之后，树高恰好等于 3 了，但是如果更高的树，压缩后高度依然会大于 3 呀？不能这么想。这个 GIF 的情景是我编出来方便大家理解路径压缩的，但是实际中，每次find都会进行路径压缩，所以树本来就不可能增长到这么高，你的这种担心应该是多余的。</p>
+<h3 id="五、最后总结"><a href="#五、最后总结" class="headerlink" title="五、最后总结"></a>五、最后总结</h3><p>我们先来看一下完整代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UF</span> </span>&#123;<br>    <span class="hljs-comment">// 连通分量个数</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> count;<br>    <span class="hljs-comment">// 存储一棵树</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] parent;<br>    <span class="hljs-comment">// 记录树的“重量”</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] size;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">UF</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.count = n;<br>        parent = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>        size = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            parent[i] = i;<br>            size[i] = <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> rootP = find(p);<br>        <span class="hljs-keyword">int</span> rootQ = find(q);<br>        <span class="hljs-keyword">if</span> (rootP == rootQ)<br>            <span class="hljs-keyword">return</span>;<br>        <br>        <span class="hljs-comment">// 小树接到大树下面，较平衡</span><br>        <span class="hljs-keyword">if</span> (size[rootP] &gt; size[rootQ]) &#123;<br>            parent[rootQ] = rootP;<br>            size[rootP] += size[rootQ];<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            parent[rootP] = rootQ;<br>            size[rootQ] += size[rootP];<br>        &#125;<br>        count--;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">connected</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> rootP = find(p);<br>        <span class="hljs-keyword">int</span> rootQ = find(q);<br>        <span class="hljs-keyword">return</span> rootP == rootQ;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>        <span class="hljs-keyword">while</span> (parent[x] != x) &#123;<br>            <span class="hljs-comment">// 进行路径压缩</span><br>            parent[x] = parent[parent[x]];<br>            x = parent[x];<br>        &#125;<br>        <span class="hljs-keyword">return</span> x;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">count</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Union-Find 算法的复杂度可以这样分析：构造函数初始化数据结构需要 O(N) 的时间和空间复杂度；连通两个节点<code>union</code>、判断两个节点的连通性<code>connected</code>、计算连通分量<code>count</code>所需的时间复杂度均为 O(1)。</p>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%BA%A7%E4%BD%8D%E8%B0%83%E5%BA%A6">上一篇：如何调度考生的座位</a><br><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/UnionFind%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8">下一篇：Union-Find算法应用</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/twoSum%E9%97%AE%E9%A2%98%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3/" rel="next" title="twoSum问题的核心思想"><i class="fas fa-angle-left"></i><span class="nav-title">twoSum问题的核心思想</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/UnionFind%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8/" rel="prev" title="UnionFind算法应用"><span class="nav-title">UnionFind算法应用</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#Union-Find%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3"><span class="toc-text">Union-Find算法详解</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%80%E3%80%81%E9%97%AE%E9%A2%98%E4%BB%8B%E7%BB%8D"><span class="toc-text">一、问题介绍</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%8C%E3%80%81%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="toc-text">二、基本思路</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%89%E3%80%81%E5%B9%B3%E8%A1%A1%E6%80%A7%E4%BC%98%E5%8C%96"><span class="toc-text">三、平衡性优化</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E5%9B%9B%E3%80%81%E8%B7%AF%E5%BE%84%E5%8E%8B%E7%BC%A9"><span class="toc-text">四、路径压缩</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%94%E3%80%81%E6%9C%80%E5%90%8E%E6%80%BB%E7%BB%93"><span class="toc-text">五、最后总结</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

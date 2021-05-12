@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>回溯算法详解修订版 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E4%BF%AE%E8%AE%A2%E7%89%88/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">回溯算法详解修订版</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="回溯算法详解"><a href="#回溯算法详解" class="headerlink" title="回溯算法详解"></a>回溯算法详解</h1><p>这篇文章是很久之前的一篇《回溯算法详解》的进阶版，之前那篇不够清楚，就不必看了，看这篇就行。把框架给你讲清楚，你会发现回溯算法问题都是一个套路。<br>废话不多说，直接上回溯算法框架。<strong>解决一个回溯问题，实际上就是一个决策树的遍历过程</strong>。你只需要思考 3 个问题：<br>1、路径：也就是已经做出的选择。<br>2、选择列表：也就是你当前可以做的选择。<br>3、结束条件：也就是到达决策树底层，无法再做选择的条件。<br>如果你不理解这三个词语的解释，没关系，我们后面会用「全排列」和「N 皇后问题」这两个经典的回溯算法问题来帮你理解这些词语是什么意思，现在你先留着印象。<br>代码方面，回溯算法的框架：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">result = []<br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">backtrack</span>(<span class="hljs-params">路径, 选择列表</span>):</span><br>    <span class="hljs-keyword">if</span> 满足结束条件:<br>        result.add(路径)<br>        <span class="hljs-keyword">return</span><br>    <br>    <span class="hljs-keyword">for</span> 选择 <span class="hljs-keyword">in</span> 选择列表:<br>        做选择<br>        backtrack(路径, 选择列表)<br>        撤销选择<br></code></pre></td></tr></table></figure>
+<p><strong>其核心就是 for 循环里面的递归，在递归调用之前「做选择」，在递归调用之后「撤销选择」</strong>，特别简单。<br>什么叫做选择和撤销选择呢，这个框架的底层原理是什么呢？下面我们就通过「全排列」这个问题来解开之前的疑惑，详细探究一下其中的奥妙！</p>
+<h3 id="一、全排列问题"><a href="#一、全排列问题" class="headerlink" title="一、全排列问题"></a>一、全排列问题</h3><p>我们在高中的时候就做过排列组合的数学题，我们也知道 <code>n</code> 个不重复的数，全排列共有 n! 个。<br>PS：<strong>为了简单清晰起见，我们这次讨论的全排列问题不包含重复的数字</strong>。<br>那么我们当时是怎么穷举全排列的呢？比方说给三个数 <code>[1,2,3]</code>，你肯定不会无规律地乱穷举，一般是这样：<br>先固定第一位为 1，然后第二位可以是 2，那么第三位只能是 3；然后可以把第二位变成 3，第三位就只能是 2 了；然后就只能变化第一位，变成 2，然后再穷举后两位……<br>其实这就是回溯算法，我们高中无师自通就会用，或者有的同学直接画出如下这棵回溯树：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/backtracking/1.jpg"><br>只要从根遍历这棵树，记录路径上的数字，其实就是所有的全排列。<strong>我们不妨把这棵树称为回溯算法的「决策树」</strong>。<br><strong>为啥说这是决策树呢，因为你在每个节点上其实都在做决策</strong>。比如说你站在下图的红色节点上：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/backtracking/2.jpg"><br>你现在就在做决策，可以选择 1 那条树枝，也可以选择 3 那条树枝。为啥只能在 1 和 3 之中选择呢？因为 2 这个树枝在你身后，这个选择你之前做过了，而全排列是不允许重复使用数字的。<br><strong>现在可以解答开头的几个名词：<code>[2]</code> 就是「路径」，记录你已经做过的选择；<code>[1,3]</code> 就是「选择列表」，表示你当前可以做出的选择；「结束条件」就是遍历到树的底层，在这里就是选择列表为空的时候</strong>。<br>如果明白了这几个名词，<strong>可以把「路径」和「选择」列表作为决策树上每个节点的属性</strong>，比如下图列出了几个节点的属性：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/backtracking/3.jpg"><br><strong>我们定义的 <code>backtrack</code> 函数其实就像一个指针，在这棵树上游走，同时要正确维护每个节点的属性，每当走到树的底层，其「路径」就是一个全排列</strong>。<br>再进一步，如何遍历一棵树？这个应该不难吧。回忆一下之前「学习数据结构的框架思维」写过，各种搜索问题其实都是树的遍历问题，而多叉树的遍历框架就是这样：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">traverse</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (TreeNode child : root.childern)<br>        <span class="hljs-comment">// 前序遍历需要的操作</span><br>        traverse(child);<br>        <span class="hljs-comment">// 后序遍历需要的操作</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>而所谓的前序遍历和后序遍历，他们只是两个很有用的时间点，我给你画张图你就明白了：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/backtracking/4.jpg"><br><strong>前序遍历的代码在进入某一个节点之前的那个时间点执行，后序遍历代码在离开某个节点之后的那个时间点执行</strong>。<br>回想我们刚才说的，「路径」和「选择」是每个节点的属性，函数在树上游走要正确维护节点的属性，那么就要在这两个特殊时间点搞点动作：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/backtracking/5.jpg"><br>现在，你是否理解了回溯算法的这段核心框架？</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> 选择 <span class="hljs-keyword">in</span> 选择列表:<br>    <span class="hljs-comment"># 做选择</span><br>    将该选择从选择列表移除<br>    路径.add(选择)<br>    backtrack(路径, 选择列表)<br>    <span class="hljs-comment"># 撤销选择</span><br>    路径.remove(选择)<br>    将该选择再加入选择列表<br></code></pre></td></tr></table></figure>
+<p><strong>我们只要在递归之前做出选择，在递归之后撤销刚才的选择</strong>，就能正确得到每个节点的选择列表和路径。<br>下面，直接看全排列代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java">List&lt;List&lt;Integer&gt;&gt; res = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br><span class="hljs-comment">/* 主函数，输入一组不重复的数字，返回它们的全排列 */</span><br>List&lt;List&lt;Integer&gt;&gt; permute(<span class="hljs-keyword">int</span>[] nums) &#123;<br>    <span class="hljs-comment">// 记录「路径」</span><br>    LinkedList&lt;Integer&gt; track = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>    backtrack(nums, track);<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-comment">// 路径：记录在 track 中</span><br><span class="hljs-comment">// 选择列表：nums 中不存在于 track 的那些元素</span><br><span class="hljs-comment">// 结束条件：nums 中的元素全都在 track 中出现</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">backtrack</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, LinkedList&lt;Integer&gt; track)</span> </span>&#123;<br>    <span class="hljs-comment">// 触发结束条件</span><br>    <span class="hljs-keyword">if</span> (track.size() == nums.length) &#123;<br>        res.add(<span class="hljs-keyword">new</span> LinkedList(track));<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>        <span class="hljs-comment">// 排除不合法的选择</span><br>        <span class="hljs-keyword">if</span> (track.contains(nums[i]))<br>            <span class="hljs-keyword">continue</span>;<br>        <span class="hljs-comment">// 做选择</span><br>        track.add(nums[i]);<br>        <span class="hljs-comment">// 进入下一层决策树</span><br>        backtrack(nums, track);<br>        <span class="hljs-comment">// 取消选择</span><br>        track.removeLast();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>我们这里稍微做了些变通，没有显式记录「选择列表」，而是通过 <code>nums</code> 和 <code>track</code> 推导出当前的选择列表：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/backtracking/6.jpg"><br>至此，我们就通过全排列问题详解了回溯算法的底层原理。当然，这个算法解决全排列不是很高效，应为对链表使用 <code>contains</code> 方法需要 O(N) 的时间复杂度。有更好的方法通过交换元素达到目的，但是难理解一些，这里就不写了，有兴趣可以自行搜索一下。<br>但是必须说明的是，不管怎么优化，都符合回溯框架，而且时间复杂度都不可能低于 O(N!)，因为穷举整棵决策树是无法避免的。<strong>这也是回溯算法的一个特点，不像动态规划存在重叠子问题可以优化，回溯算法就是纯暴力穷举，复杂度一般都很高</strong>。<br>明白了全排列问题，就可以直接套回溯算法框架了，下面简单看看 N 皇后问题。</p>
+<h3 id="二、N-皇后问题"><a href="#二、N-皇后问题" class="headerlink" title="二、N 皇后问题"></a>二、N 皇后问题</h3><p>这个问题很经典了，简单解释一下：给你一个 N×N 的棋盘，让你放置 N 个皇后，使得它们不能互相攻击。<br>PS：皇后可以攻击同一行、同一列、左上左下右上右下四个方向的任意单位。<br>这个问题本质上跟全排列问题差不多，决策树的每一层表示棋盘上的每一行；每个节点可以做出的选择是，在该行的任意一列放置一个皇后。<br>直接套用框架:</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">string</span>&gt;&gt; res;<br><span class="hljs-comment">/* 输入棋盘边长 n，返回所有合法的放置 */</span><br><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">string</span>&gt;&gt; <span class="hljs-title">solveNQueens</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    <span class="hljs-comment">// &#x27;.&#x27; 表示空，&#x27;Q&#x27; 表示皇后，初始化空棋盘。</span><br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">string</span>&gt; <span class="hljs-title">board</span><span class="hljs-params">(n, <span class="hljs-built_in">string</span>(n, <span class="hljs-string">&#x27;.&#x27;</span>))</span></span>;<br>    backtrack(board, <span class="hljs-number">0</span>);<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-comment">// 路径：board 中小于 row 的那些行都已经成功放置了皇后</span><br><span class="hljs-comment">// 选择列表：第 row 行的所有列都是放置皇后的选择</span><br><span class="hljs-comment">// 结束条件：row 超过 board 的最后一行</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">backtrack</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">string</span>&gt;&amp; board, <span class="hljs-keyword">int</span> row)</span> </span>&#123;<br>    <span class="hljs-comment">// 触发结束条件</span><br>    <span class="hljs-keyword">if</span> (row == board.size()) &#123;<br>        res.push_back(board);<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <br>    <span class="hljs-keyword">int</span> n = board[row].size();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> col = <span class="hljs-number">0</span>; col &lt; n; col++) &#123;<br>        <span class="hljs-comment">// 排除不合法选择</span><br>        <span class="hljs-keyword">if</span> (!isValid(board, row, col)) <br>            <span class="hljs-keyword">continue</span>;<br>        <span class="hljs-comment">// 做选择</span><br>        board[row][col] = <span class="hljs-string">&#x27;Q&#x27;</span>;<br>        <span class="hljs-comment">// 进入下一行决策</span><br>        backtrack(board, row + <span class="hljs-number">1</span>);<br>        <span class="hljs-comment">// 撤销选择</span><br>        board[row][col] = <span class="hljs-string">&#x27;.&#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这部分主要代码，其实跟全排列问题差不多，<code>isValid</code> 函数的实现也很简单：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/* 是否可以在 board[row][col] 放置皇后？ */</span><br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isValid</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">string</span>&gt;&amp; board, <span class="hljs-keyword">int</span> row, <span class="hljs-keyword">int</span> col)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = board.size();<br>    <span class="hljs-comment">// 检查列是否有皇后互相冲突</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        <span class="hljs-keyword">if</span> (board[i][col] == <span class="hljs-string">&#x27;Q&#x27;</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-comment">// 检查右上方是否有皇后互相冲突</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = row - <span class="hljs-number">1</span>, j = col + <span class="hljs-number">1</span>; <br>            i &gt;= <span class="hljs-number">0</span> &amp;&amp; j &lt; n; i--, j++) &#123;<br>        <span class="hljs-keyword">if</span> (board[i][j] == <span class="hljs-string">&#x27;Q&#x27;</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-comment">// 检查左上方是否有皇后互相冲突</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = row - <span class="hljs-number">1</span>, j = col - <span class="hljs-number">1</span>;<br>            i &gt;= <span class="hljs-number">0</span> &amp;&amp; j &gt;= <span class="hljs-number">0</span>; i--, j--) &#123;<br>        <span class="hljs-keyword">if</span> (board[i][j] == <span class="hljs-string">&#x27;Q&#x27;</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>函数 <code>backtrack</code> 依然像个在决策树上游走的指针，通过 <code>row</code> 和 <code>col</code> 就可以表示函数遍历到的位置，通过 <code>isValid</code> 函数可以将不符合条件的情况剪枝：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/backtracking/7.jpg"><br>如果直接给你这么一大段解法代码，可能是懵逼的。但是现在明白了回溯算法的框架套路，还有啥难理解的呢？无非是改改做选择的方式，排除不合法选择的方式而已，只要框架存于心，你面对的只剩下小问题了。<br>当 <code>N = 8</code> 时，就是八皇后问题，数学大佬高斯穷尽一生都没有数清楚八皇后问题到底有几种可能的放置方法，但是我们的算法只需要一秒就可以算出来所有可能的结果。<br>不过真的不怪高斯。这个问题的复杂度确实非常高，看看我们的决策树，虽然有 <code>isValid</code> 函数剪枝，但是最坏时间复杂度仍然是 O(N^(N+1))，而且无法优化。如果 <code>N = 10</code> 的时候，计算就已经很耗时了。<br><strong>有的时候，我们并不想得到所有合法的答案，只想要一个答案，怎么办呢</strong>？比如解数独的算法，找所有解法复杂度太高，只要找到一种解法就可以。<br>其实特别简单，只要稍微修改一下回溯算法的代码即可：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 函数找到一个答案后就返回 true</span><br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">backtrack</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">string</span>&gt;&amp; board, <span class="hljs-keyword">int</span> row)</span> </span>&#123;<br>    <span class="hljs-comment">// 触发结束条件</span><br>    <span class="hljs-keyword">if</span> (row == board.size()) &#123;<br>        res.push_back(board);<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>    ...<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> col = <span class="hljs-number">0</span>; col &lt; n; col++) &#123;<br>        ...<br>        board[row][col] = <span class="hljs-string">&#x27;Q&#x27;</span>;<br>        <span class="hljs-keyword">if</span> (backtrack(board, row + <span class="hljs-number">1</span>))<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        <br>        board[row][col] = <span class="hljs-string">&#x27;.&#x27;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样修改后，只要找到一个答案，for 循环的后续递归穷举都会被阻断。也许你可以在 N 皇后问题的代码框架上，稍加修改，写一个解数独的算法？</p>
+<h3 id="三、最后总结"><a href="#三、最后总结" class="headerlink" title="三、最后总结"></a>三、最后总结</h3><p>回溯算法就是个多叉树的遍历问题，关键就是在前序遍历和后序遍历的位置做一些操作，算法框架如下：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">backtrack</span>(<span class="hljs-params">...</span>):</span><br>    <span class="hljs-keyword">for</span> 选择 <span class="hljs-keyword">in</span> 选择列表:<br>        做选择<br>        backtrack(...)<br>        撤销选择<br></code></pre></td></tr></table></figure>
+<p><strong>写 <code>backtrack</code> 函数时，需要维护走过的「路径」和当前可以做的「选择列表」，当触发「结束条件」时，将「路径」记入结果集</strong>。<br>其实想想看，回溯算法和动态规划是不是有点像呢？我们在动态规划系列文章中多次强调，动态规划的三个需要明确的点就是「状态」「选择」和「base case」，是不是就对应着走过的「路径」，当前的「选择列表」和「结束条件」？<br>某种程度上说，动态规划的暴力求解阶段就是回溯算法。只是有的问题具有重叠子问题性质，可以用 dp table 或者备忘录优化，将递归树大幅剪枝，这就变成了动态规划。而今天的两个问题，都没有重叠子问题，也就是回溯算法问题了，复杂度非常高是不可避免的。</p>
+<p><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%9C%80%E4%BC%98%E5%AD%90%E7%BB%93%E6%9E%84">上一篇：动态规划答疑篇</a><br><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E8%AF%A6%E8%A7%A3">下一篇：二分查找解题框架</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%98%E6%B3%95/" rel="next" title="字符串乘法"><i class="fas fa-angle-left"></i><span class="nav-title">字符串乘法</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%8F%8C%E6%8C%87%E9%92%88%E6%8A%80%E5%B7%A7/" rel="prev" title="双指针技巧"><span class="nav-title">双指针技巧</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3"><span class="toc-text">回溯算法详解</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%80%E3%80%81%E5%85%A8%E6%8E%92%E5%88%97%E9%97%AE%E9%A2%98"><span class="toc-text">一、全排列问题</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%8C%E3%80%81N-%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98"><span class="toc-text">二、N 皇后问题</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%89%E3%80%81%E6%9C%80%E5%90%8E%E6%80%BB%E7%BB%93"><span class="toc-text">三、最后总结</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

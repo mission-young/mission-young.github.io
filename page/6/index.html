@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+
+<div id="index" class="index page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2019/08/04/%E8%AE%BA%E6%96%87-%E4%B8%AD%E6%96%87%E7%89%88%E7%BC%96%E5%86%99/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/08/04/%E8%AE%BA%E6%96%87-%E4%B8%AD%E6%96%87%E7%89%88%E7%BC%96%E5%86%99/" itemprop="url">论文--中文版编写</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-04T11:49:46+08:00">2019-08-04 11:49:46</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="22Al的β衰变谱"><a href="#22Al的β衰变谱" class="headerlink" title="22Al的β衰变谱"></a>22Al的β衰变谱</h2><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>我们在兰州RIBLL1上开展了一个Al22衰变实验，主束为28Si. 半衰期91ms被测定。βp，β2p，βα，βγ的测定使得我们得以更新能级纲图。通过Geant4的模拟，我们进一步精确测定分支比，并对部分质子峰结构特征得以解释。</p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>在过去几十年里，原理稳定线的奇异核一直是核物理领域经久不衰的研究热点。原子核的诸多性质诸如同位旋、能级宽度等一系列物理量随着原子核向远离稳定线延申，产生了诸多奇异的效应。通过这些特性有助于我们深入研究原子核的结构信息和衰变机制。而在其中，通过β衰变谱来开展研究工作成为了滴线附近原子核结构信息和检验并完善壳模型理论的强有力的工具。<br>奇异核22Al是Al同位素中最缺中子的一个核素，有13个质子，9个中子，Tz为-2，结合能只有20keV. 1982年第一次被Cable观测到。在他的实验中，22Al通过24Mg(3He,p4n)的反应生成(110MeV)。Al原子通过He-jet技术被输运。在衰变谱中，仅仅高能区的两个峰(8212,8537keV)能够被观测到，低能区的部分由于其他核的污染，无法进行观测。 这两个峰被指认为从IAS态到Na21的基态和激发态。IAS态的激发能为13650keV。测定的半衰期为70ms。 由于实验条件的限制，没有确定绝对的分支比。随后，Cable在另一个实验中观测到了β2p衰变事件。在那个实验中，他观测到了两条beta2p衰变分支。基于能量的考虑，这两条分支归到Na20的基态和第一激发态。在最近的实验中，Blank测到了betaalpha衰变，通过将Al22注入到鬼探测器和气体探测器。测得的T1/2为59ms。精确的能级纲图以及实验分支比被测得。然而这个实验也受到了污染，在Ar36生成的次级束中，仅有30%的是Al22核素。那篇文章中还进行了壳模型计算。<br>尽管Al22这个核已经被研究了很久，但依旧有一些不确定和局限。 由于较强的污染，部分月前丢失或者被污染物中更强的分支掩盖。此外，先前的实验中也没有观测到γ射线。实验的目的是提高beta衰变的测量，通过不同的方式：更纯的22Al次级束，更高的统计，带电粒子测量更好的能量分辨，gamma探测器来辅助指认跃迁。</p>
+<h3 id="实验技术"><a href="#实验技术" class="headerlink" title="实验技术"></a>实验技术</h3><p>实验于2017年11月在兰州RIBLL1上开展。主束为74.27MeV/u，80enA的28Si14+，通过K69 Sector Focus Cyclotron和K450 Separate Sector Cyclotron 。次级束通过将28Si打到1581um厚的Be9靶上。RIBLL1的主要设置为筛选Al22做了优化。Al22的束流强度和纯度分别为（）和（）。次级束粒子通过ΔE和TOF来筛选想要的粒子。通过位于T1、T2的闪烁薄膜探测器给出的飞行时间（TOF）结合位于T2的QSDΔE1和QSDΔE2给出的能损信号（ΔE）可以建立ΔE–TOF图谱鉴别束流粒子，双重ΔE探测器的能量和时间信号都可以用于进一步提高对束流重离子的鉴别能力。本实验研究的核为Na20，Mg21，Al22，Si23.<br><img src="https://i.loli.net/2019/08/04/FOLX5uAalzvMxPw.png"><br>探测器阵列主要由三块双面硅条探测器（DSSD）、五块四分硅探测器（QSD）及外部五个Clover型的高纯锗探测器组成。经过上游铝降能片降能后的束流具有一定能散，目标核的射程分布在三块DSSD，即DSSD做停阻束流中目标核的注入探测器，并对注入核的衰变带电粒子进行测量，硅探测器对从内部发射的带电粒子具有极高的探测效率。每个DSSD x–y像素格都可视为独立探测器，这样在连续束、高束流注入率的条件下各单个像素格内仍能保持较低注入率，衰变事件和注入事件的时间关联仍然可以建立。三块DSSD的厚度分别为142um，40um，304um。Al22主要分布在后两块Si，QSD1用于探测DSSD中感兴趣核衰变产生的β粒子，QSD2和QSD3位于束流最下游，用于测量束流中的轻粒子（1H、2H、3H、4He等），反符合去掉穿透DSSD的轻粒子在DSSD中的能损信号。DSSD被五个clover环绕，下侧有三个LaBr3探测器，用来测量γ射线。</p>
+<h3 id="分析及结果"><a href="#分析及结果" class="headerlink" title="分析及结果"></a>分析及结果</h3><h4 id="能量刻度及注入深度分布"><a href="#能量刻度及注入深度分布" class="headerlink" title="能量刻度及注入深度分布"></a>能量刻度及注入深度分布</h4><p>重离子能量刻度通过将实验中任意两块DSSD组成的望远镜谱与LISE计算的望远镜谱做对照，调整刻度参数，使实验谱的中心与计算的de-E线基本重合；随后通过应用LISE计算得到的能量射程拟合函数计算注入重离子的注入深度。<br><img src="https://i.loli.net/2019/08/04/BeTNhFSp6qtcxYv.png"><br>质子能量刻度应用文献中给出的质子峰数据。采用了※，※，※，※，※几个峰参与能量刻度。（考虑了弹道亏损效应。）和（β叠加效应）。</p>
+<h4 id="质子探测效率模拟"><a href="#质子探测效率模拟" class="headerlink" title="质子探测效率模拟"></a>质子探测效率模拟</h4><p>我们采用了Geant4工具包来模拟计算质子探测效率。质子的注入深度以及x-y平面分布采用了实验数据，在Si内各向同性发射。我们每隔0.5MeV的能量发射100000个质子，绘制了E-Eff曲线。<br><img src="https://i.loli.net/2019/08/07/HloGSqhK7sBWP6a.png"><br>其中蓝线为40umSi的探测效率曲线，橙线为304umSi的探测效率曲线。</p>
+<h4 id="质子谱"><a href="#质子谱" class="headerlink" title="质子谱"></a>质子谱</h4><p><img src="https://raw.githubusercontent.com/mission-young/Pic/master//img/20190901152447.png"><br>这是最后一块Si的质子谱，其中蓝线未加入veto条件限制，而红线加入了veto条件限制。<br><img src="https://raw.githubusercontent.com/mission-young/Pic/master//img/20190901153304.png"><br>这是中间一块Si的质子谱。</p>
+<h4 id="Geant4模拟质子谱"><a href="#Geant4模拟质子谱" class="headerlink" title="Geant4模拟质子谱"></a>Geant4模拟质子谱</h4><p>随后，我们应用EPJA2006文章中给出的质子能量分支比数据作为Geant4模拟输入，来研究β叠加效应。<br><img src="https://i.loli.net/2019/08/05/WMw75niR9zBVlpH.png"><br>上图中实线为实验谱，虚线为经过归一之后的模拟谱。其中实验谱和模拟谱均未设置veto条件。</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2019/08/03/%E6%9A%91%E5%81%87%E5%AE%B6%E6%95%99%E8%AE%B0%E5%BD%95/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/08/03/%E6%9A%91%E5%81%87%E5%AE%B6%E6%95%99%E8%AE%B0%E5%BD%95/" itemprop="url">暑假家教记录</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-03T20:21:00+08:00">2019-08-03 20:21:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%B7%A5%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">工作</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <table>
+<thead>
+<tr>
+<th align="center">日期</th>
+<th align="center">起始时间</th>
+<th align="center">结束时间</th>
+<th align="center">时长</th>
+<th align="center">科目</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">2019-08-03</td>
+<td align="center">15:00</td>
+<td align="center">17:30</td>
+<td align="center">2.5</td>
+<td align="center">概率统计</td>
+</tr>
+<tr>
+<td align="center">2019-08-04</td>
+<td align="center">15:00</td>
+<td align="center">17:30</td>
+<td align="center">2.5</td>
+<td align="center">概率统计</td>
+</tr>
+<tr>
+<td align="center">2019-08-05</td>
+<td align="center">15:00</td>
+<td align="center">17:30</td>
+<td align="center">2.5</td>
+<td align="center">概率统计</td>
+</tr>
+<tr>
+<td align="center">2019-08-06</td>
+<td align="center">14:30</td>
+<td align="center">17:30</td>
+<td align="center">3</td>
+<td align="center">概率统计</td>
+</tr>
+<tr>
+<td align="center">2019-08-07</td>
+<td align="center">15:00</td>
+<td align="center">17:30</td>
+<td align="center">2.5</td>
+<td align="center">线性代数</td>
+</tr>
+<tr>
+<td align="center">2019-08-08</td>
+<td align="center">9:30</td>
+<td align="center">12:30</td>
+<td align="center">3</td>
+<td align="center">线性代数</td>
+</tr>
+<tr>
+<td align="center">2019-08-09</td>
+<td align="center">9:30</td>
+<td align="center">12:00</td>
+<td align="center">2.5</td>
+<td align="center">线性代数</td>
+</tr>
+</tbody></table>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2019/08/03/GitHub%E7%AE%A1%E7%90%86Hexo%E6%BA%90%E6%96%87%E4%BB%B6/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/08/03/GitHub%E7%AE%A1%E7%90%86Hexo%E6%BA%90%E6%96%87%E4%BB%B6/" itemprop="url">GitHub管理Hexo源文件</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-03T10:36:00+08:00">2019-08-03 10:36:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>hexo发布网站到Github之后，可以直接通过访问Git个人主页。但<code>hexo d</code>部署的方式并不包含博客的源码，对于博客的迁移、更新、维护、多终端编辑并不友好。<br>在网上看到诸多同时管理hexo博客源文件和发布版本的教程，看似很优雅，但分支的切换、管理比较繁琐，同时一个严重的问题是，源代码的权限想要设为私有，而发布版本为公有。因而决定重新建立一个repo来管理源代码项目。</p>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/Blog/" rel="tag"><i class="fas fa-tags"></i>Blog</a>
+        
+        <a class="post-tag button" href="/tags/Hexo/" rel="tag"><i class="fas fa-tags"></i>Hexo</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2019/08/02/hello-world/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/08/02/hello-world/" itemprop="url">应用Hexo搭建Github个人博客</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-02T22:38:00+08:00">2019-08-02 22:38:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="搭建Hexo环境"><a href="#搭建Hexo环境" class="headerlink" title="搭建Hexo环境"></a>搭建Hexo环境</h2><p>访问Hexo主页</p>
+<iframe src="https://hexo.io/zh-cn/" width="100%" Height="800">   </iframe>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/Blog/" rel="tag"><i class="fas fa-tags"></i>Blog</a>
+        
+        <a class="post-tag button" href="/tags/Hexo/" rel="tag"><i class="fas fa-tags"></i>Hexo</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%8D%9A%E5%BC%88%E9%97%AE%E9%A2%98/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%8D%9A%E5%BC%88%E9%97%AE%E9%A2%98/" itemprop="url">动态规划之博弈问题</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>title: 动态规划之博弈问题<br>author: 远方<br>tags:</p>
+<ul>
+<li>LeetCode</li>
+<li>算法<br>categories:</li>
+<li>LeetCode破局攻略<br>date: 2016-01-01 19:20:00</li>
+</ul>
+<hr>
+<h1 id="动态规划之博弈问题"><a href="#动态规划之博弈问题" class="headerlink" title="动态规划之博弈问题"></a>动态规划之博弈问题</h1><p>上一篇文章 <a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%A7%A3%E5%86%B3%E7%9A%84%E6%99%BA%E5%8A%9B%E9%A2%98">几道智力题</a> 中讨论到一个有趣的「石头游戏」，通过题目的限制条件，这个游戏是先手必胜的。但是智力题终究是智力题，真正的算法问题肯定不会是投机取巧能搞定的。所以，本文就借石头游戏来讲讲「假设两个人都足够聪明，最后谁会获胜」这一类问题该如何用动态规划算法解决。<br>博弈类问题的套路都差不多，下文举例讲解，其核心思路是在二维 dp 的基础上使用元组分别存储两个人的博弈结果。掌握了这个技巧以后，别人再问你什么俩海盗分宝石，俩人拿硬币的问题，你就告诉别人：我懒得想，直接给你写个算法算一下得了。<br>我们「石头游戏」改的更具有一般性：<br>你和你的朋友面前有一排石头堆，用一个数组 piles 表示，piles[i] 表示第 i 堆石子有多少个。你们轮流拿石头，一次拿一堆，但是只能拿走最左边或者最右边的石头堆。所有石头被拿完后，谁拥有的石头多，谁获胜。<br>石头的堆数可以是任意正整数，石头的总数也可以是任意正整数，这样就能打破先手必胜的局面了。比如有三堆石头 <code>piles = [1, 100, 3]</code>，先手不管拿 1 还是 3，能够决定胜负的 100 都会被后手拿走，后手会获胜。<br><strong>假设两人都很聪明</strong>，请你设计一个算法，返回先手和后手的最后得分（石头总数）之差。比如上面那个例子，先手能获得 4 分，后手会获得 100 分，你的算法应该返回 -96。<br>这样推广之后，这个问题算是一道 Hard 的动态规划问题了。<strong>博弈问题的难点在于，两个人要轮流进行选择，而且都贼精明，应该如何编程表示这个过程呢？</strong><br>还是强调多次的套路，首先明确 dp 数组的含义，然后和股票买卖系列问题类似，只要找到「状态」和「选择」，一切就水到渠成了。</p>
+<h3 id="一、定义-dp-数组的含义"><a href="#一、定义-dp-数组的含义" class="headerlink" title="一、定义 dp 数组的含义"></a>一、定义 dp 数组的含义</h3><p>定义 dp 数组的含义是很有技术含量的，同一问题可能有多种定义方法，不同的定义会引出不同的状态转移方程，不过只要逻辑没有问题，最终都能得到相同的答案。<br>我建议不要迷恋那些看起来很牛逼，代码很短小的奇技淫巧，最好是稳一点，采取可解释性最好，最容易推广的设计思路。本文就给出一种博弈问题的通用设计框架。<br>介绍 dp 数组的含义之前，我们先看一下 dp 数组最终的样子：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8D%9A%E5%BC%88%E9%97%AE%E9%A2%98/1.png" alt="1"><br>下文讲解时，认为元组是包含 first 和 second 属性的一个类，而且为了节省篇幅，将这两个属性简写为 fir 和 sec。比如按上图的数据，我们说 <code>dp[1][3].fir = 10</code>，<code>dp[0][1].sec = 3</code>。<br>先回答几个读者可能提出的问题：<br>这个二维 dp table 中存储的是元组，怎么编程表示呢？这个 dp table 有一半根本没用上，怎么优化？很简单，都不要管，先把解题的思路想明白了再谈也不迟。<br><strong>以下是对 dp 数组含义的解释：</strong></p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">dp[i][j].fir 表示，对于 piles[i...j] 这部分石头堆，先手能获得的最高分数。<br>dp[i][j].sec 表示，对于 piles[i...j] 这部分石头堆，后手能获得的最高分数。<br>举例理解一下，假设 piles = [<span class="hljs-number">3</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]，索引从 <span class="hljs-number">0</span> 开始<br>dp[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>].fir = <span class="hljs-number">9</span> 意味着：面对石头堆 [<span class="hljs-number">3</span>, <span class="hljs-number">9</span>]，先手最终能够获得 <span class="hljs-number">9</span> 分。<br>dp[<span class="hljs-number">1</span>][<span class="hljs-number">3</span>].sec = <span class="hljs-number">2</span> 意味着：面对石头堆 [<span class="hljs-number">9</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]，后手最终能够获得 <span class="hljs-number">2</span> 分。<br></code></pre></td></tr></table></figure>
+<p>我们想求的答案是先手和后手最终分数之差，按照这个定义也就是 $dp[0][n-1].fir - dp[0][n-1].sec$，即面对整个 piles，先手的最优得分和后手的最优得分之差。</p>
+<h3 id="二、状态转移方程"><a href="#二、状态转移方程" class="headerlink" title="二、状态转移方程"></a>二、状态转移方程</h3><p>写状态转移方程很简单，首先要找到所有「状态」和每个状态可以做的「选择」，然后择优。<br>根据前面对 dp 数组的定义，<strong>状态显然有三个：开始的索引 i，结束的索引 j，当前轮到的人。</strong></p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">dp[i][j][fir <span class="hljs-keyword">or</span> sec]<br>其中：<br><span class="hljs-number">0</span> &lt;= i &lt; piles.length<br>i &lt;= j &lt; piles.length<br></code></pre></td></tr></table></figure>
+<p>对于这个问题的每个状态，可以做的<strong>选择有两个：选择最左边的那堆石头，或者选择最右边的那堆石头。</strong> 我们可以这样穷举所有状态：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">n = piles.length<br><span class="hljs-keyword">for</span> <span class="hljs-number">0</span> &lt;= i &lt; n:<br>    <span class="hljs-keyword">for</span> j &lt;= i &lt; n:<br>        <span class="hljs-keyword">for</span> who <span class="hljs-keyword">in</span> &#123;fir, sec&#125;:<br>            dp[i][j][who] = max(left, right)<br></code></pre></td></tr></table></figure>
+<p>上面的伪码是动态规划的一个大致的框架，股票系列问题中也有类似的伪码。这道题的难点在于，两人是交替进行选择的，也就是说先手的选择会对后手有影响，这怎么表达出来呢？<br>根据我们对 dp 数组的定义，很容易解决这个难点，<strong>写出状态转移方程：</strong></p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python">dp[i][j].fir = max(piles[i] + dp[i+<span class="hljs-number">1</span>][j].sec, piles[j] + dp[i][j<span class="hljs-number">-1</span>].sec)<br>dp[i][j].fir = max(    选择最左边的石头堆     ,     选择最右边的石头堆     )<br><span class="hljs-comment"># 解释：我作为先手，面对 piles[i...j] 时，有两种选择：</span><br><span class="hljs-comment"># 要么我选择最左边的那一堆石头，然后面对 piles[i+1...j]</span><br><span class="hljs-comment"># 但是此时轮到对方，相当于我变成了后手；</span><br><span class="hljs-comment"># 要么我选择最右边的那一堆石头，然后面对 piles[i...j-1]</span><br><span class="hljs-comment"># 但是此时轮到对方，相当于我变成了后手。</span><br><span class="hljs-keyword">if</span> 先手选择左边:<br>    dp[i][j].sec = dp[i+<span class="hljs-number">1</span>][j].fir<br><span class="hljs-keyword">if</span> 先手选择右边:<br>    dp[i][j].sec = dp[i][j<span class="hljs-number">-1</span>].fir<br><span class="hljs-comment"># 解释：我作为后手，要等先手先选择，有两种情况：</span><br><span class="hljs-comment"># 如果先手选择了最左边那堆，给我剩下了 piles[i+1...j]</span><br><span class="hljs-comment"># 此时轮到我，我变成了先手；</span><br><span class="hljs-comment"># 如果先手选择了最右边那堆，给我剩下了 piles[i...j-1]</span><br><span class="hljs-comment"># 此时轮到我，我变成了先手。</span><br></code></pre></td></tr></table></figure>
+<p>根据 dp 数组的定义，我们也可以找出 <strong>base case</strong>，也就是最简单的情况：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">dp[i][j].fir = piles[i]<br>dp[i][j].sec = <span class="hljs-number">0</span><br>其中 <span class="hljs-number">0</span> &lt;= i == j &lt; n<br><span class="hljs-comment"># 解释：i 和 j 相等就是说面前只有一堆石头 piles[i]</span><br><span class="hljs-comment"># 那么显然先手的得分为 piles[i]</span><br><span class="hljs-comment"># 后手没有石头拿了，得分为 0</span><br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8D%9A%E5%BC%88%E9%97%AE%E9%A2%98/2.png" alt="2"><br>这里需要注意一点，我们发现 base case 是斜着的，而且我们推算 dp[i][j] 时需要用到 dp[i+1][j] 和 dp[i][j-1]：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8D%9A%E5%BC%88%E9%97%AE%E9%A2%98/3.png" alt="3"><br>所以说算法不能简单的一行一行遍历 dp 数组，<strong>而要斜着遍历数组：</strong><br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8D%9A%E5%BC%88%E9%97%AE%E9%A2%98/4.png" alt="4"><br>说实话，斜着遍历二维数组说起来容易，你还真不一定能想出来怎么实现，不信你思考一下？这么巧妙的状态转移方程都列出来了，要是不会写代码实现，那真的很尴尬了。</p>
+<h3 id="三、代码实现"><a href="#三、代码实现" class="headerlink" title="三、代码实现"></a>三、代码实现</h3><p>如何实现这个 fir 和 sec 元组呢，你可以用 python，自带元组类型；或者使用 C++ 的 pair 容器；或者用一个三维数组 <code>dp[n][n][2]</code>，最后一个维度就相当于元组；或者我们自己写一个 Pair 类：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pair</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> fir, sec;<br>    Pair(<span class="hljs-keyword">int</span> fir, <span class="hljs-keyword">int</span> sec) &#123;<br>        <span class="hljs-keyword">this</span>.fir = fir;<br>        <span class="hljs-keyword">this</span>.sec = sec;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>然后直接把我们的状态转移方程翻译成代码即可，可以注意一下斜着遍历数组的技巧：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/* 返回游戏最后先手和后手的得分之差 */</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">stoneGame</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] piles)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = piles.length;<br>    <span class="hljs-comment">// 初始化 dp 数组</span><br>    Pair[][] dp = <span class="hljs-keyword">new</span> Pair[n][n];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) <br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &lt; n; j++)<br>            dp[i][j] = <span class="hljs-keyword">new</span> Pair(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br>    <span class="hljs-comment">// 填入 base case</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        dp[i][i].fir = piles[i];<br>        dp[i][i].sec = <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-comment">// 斜着遍历数组</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> l = <span class="hljs-number">2</span>; l &lt;= n; l++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= n - l; i++) &#123;<br>            <span class="hljs-keyword">int</span> j = l + i - <span class="hljs-number">1</span>;<br>            <span class="hljs-comment">// 先手选择最左边或最右边的分数</span><br>            <span class="hljs-keyword">int</span> left = piles[i] + dp[i+<span class="hljs-number">1</span>][j].sec;<br>            <span class="hljs-keyword">int</span> right = piles[j] + dp[i][j-<span class="hljs-number">1</span>].sec;<br>            <span class="hljs-comment">// 套用状态转移方程</span><br>            <span class="hljs-keyword">if</span> (left &gt; right) &#123;<br>                dp[i][j].fir = left;<br>                dp[i][j].sec = dp[i+<span class="hljs-number">1</span>][j].fir;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                dp[i][j].fir = right;<br>                dp[i][j].sec = dp[i][j-<span class="hljs-number">1</span>].fir;<br>            &#125;<br>        &#125;<br>    &#125;<br>    Pair res = dp[<span class="hljs-number">0</span>][n-<span class="hljs-number">1</span>];<br>    <span class="hljs-keyword">return</span> res.fir - res.sec;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>动态规划解法，如果没有状态转移方程指导，绝对是一头雾水，但是根据前面的详细解释，读者应该可以清晰理解这一大段代码的含义。<br>而且，注意到计算 <code>dp[i][j]</code> 只依赖其左边和下边的元素，所以说肯定有优化空间，转换成一维 dp，想象一下把二维平面压扁，也就是投影到一维。但是，一维 dp 比较复杂，可解释性很差，大家就不必浪费这个时间去理解了。</p>
+<h3 id="四、最后总结"><a href="#四、最后总结" class="headerlink" title="四、最后总结"></a>四、最后总结</h3><p>本文给出了解决博弈问题的动态规划解法。博弈问题的前提一般都是在两个聪明人之间进行，编程描述这种游戏的一般方法是二维 dp 数组，数组中通过元组分别表示两人的最优决策。<br>之所以这样设计，是因为先手在做出选择之后，就成了后手，后手在对方做完选择后，就变成了先手。这种角色转换使得我们可以重用之前的结果，典型的动态规划标志。<br>读到这里的朋友应该能理解算法解决博弈问题的套路了。学习算法，一定要注重算法的模板框架，而不是一些看起来牛逼的思路，也不要奢求上来就写一个最优的解法。不要舍不得多用空间，不要过早尝试优化，不要惧怕多维数组。dp 数组就是存储信息避免重复计算的，随便用，直到咱满意为止。<br>希望本文对你有帮助。</p>
+<p><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98%E6%A8%A1%E6%9D%BF">上一篇：动态规划之子序列问题解题模板</a><br><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E4%B9%8B%E5%8C%BA%E9%97%B4%E8%B0%83%E5%BA%A6%E9%97%AE%E9%A2%98">下一篇：贪心算法之区间调度问题</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%9B%9B%E9%94%AE%E9%94%AE%E7%9B%98/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%9B%9B%E9%94%AE%E9%94%AE%E7%9B%98/" itemprop="url">动态规划之四键键盘</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>title: 动态规划之四键键盘<br>author: 远方<br>tags:</p>
+<ul>
+<li>LeetCode</li>
+<li>算法<br>categories:</li>
+<li>LeetCode破局攻略<br>date: 2016-01-01 19:20:00</li>
+</ul>
+<hr>
+<h1 id="动态规划之四键键盘"><a href="#动态规划之四键键盘" class="headerlink" title="动态规划之四键键盘"></a>动态规划之四键键盘</h1><p>四键键盘问题很有意思，而且可以明显感受到：对 dp 数组的不同定义需要完全不同的逻辑，从而产生完全不同的解法。<br>首先看一下题目：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/4keyboard/title.png"><br>如何在 N 次敲击按钮后得到最多的 A？我们穷举呗，每次有对于每次按键，我们可以穷举四种可能，很明显就是一个动态规划问题。</p>
+<h3 id="第一种思路"><a href="#第一种思路" class="headerlink" title="第一种思路"></a>第一种思路</h3><p>这种思路会很容易理解，但是效率并不高，我们直接走流程：<strong>对于动态规划问题，首先要明白有哪些「状态」，有哪些「选择」</strong>。<br>具体到这个问题，对于每次敲击按键，有哪些「选择」是很明显的：4 种，就是题目中提到的四个按键，分别是 <code>A</code>、<code>C-A</code>、<code>C-C</code>、<code>C-V</code>（<code>Ctrl</code> 简写为 <code>C</code>）。<br>接下来，思考一下对于这个问题有哪些「状态」？<strong>或者换句话说，我们需要知道什么信息，才能将原问题分解为规模更小的子问题</strong>？<br>你看我这样定义三个状态行不行：第一个状态是剩余的按键次数，用 <code>n</code> 表示；第二个状态是当前屏幕上字符 A 的数量，用 <code>a_num</code> 表示；第三个状态是剪切板中字符 A 的数量，用 <code>copy</code> 表示。<br>如此定义「状态」，就可以知道 base case：当剩余次数 <code>n</code> 为 0 时，<code>a_num</code> 就是我们想要的答案。<br>结合刚才说的 4 种「选择」，我们可以把这几种选择通过状态转移表示出来：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">dp(n - <span class="hljs-number">1</span>, a_num + <span class="hljs-number">1</span>, copy),    <span class="hljs-comment"># A</span><br>解释：按下 A 键，屏幕上加一个字符<br>同时消耗 <span class="hljs-number">1</span> 个操作数<br>dp(n - <span class="hljs-number">1</span>, a_num + copy, copy), <span class="hljs-comment"># C-V</span><br>解释：按下 C-V 粘贴，剪切板中的字符加入屏幕<br>同时消耗 <span class="hljs-number">1</span> 个操作数<br>dp(n - <span class="hljs-number">2</span>, a_num, a_num)        <span class="hljs-comment"># C-A C-C</span><br>解释：全选和复制必然是联合使用的，<br>剪切板中 A 的数量变为屏幕上 A 的数量<br>同时消耗 <span class="hljs-number">2</span> 个操作数<br></code></pre></td></tr></table></figure>
+<p>这样可以看到问题的规模 <code>n</code> 在不断减小，肯定可以到达 <code>n = 0</code> 的 base case，所以这个思路是正确的：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">maxA</span>(<span class="hljs-params">N: int</span>) -&gt; int:</span><br>    <span class="hljs-comment"># 对于 (n, a_num, copy) 这个状态，</span><br>    <span class="hljs-comment"># 屏幕上能最终最多能有 dp(n, a_num, copy) 个 A</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dp</span>(<span class="hljs-params">n, a_num, copy</span>):</span><br>        <span class="hljs-comment"># base case</span><br>        <span class="hljs-keyword">if</span> n &lt;= <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> a_num;<br>        <span class="hljs-comment"># 几种选择全试一遍，选择最大的结果</span><br>        <span class="hljs-keyword">return</span> max(<br>                dp(n - <span class="hljs-number">1</span>, a_num + <span class="hljs-number">1</span>, copy),    <span class="hljs-comment"># A</span><br>                dp(n - <span class="hljs-number">1</span>, a_num + copy, copy), <span class="hljs-comment"># C-V</span><br>                dp(n - <span class="hljs-number">2</span>, a_num, a_num)        <span class="hljs-comment"># C-A C-C</span><br>            )<br>    <span class="hljs-comment"># 可以按 N 次按键，屏幕和剪切板里都还没有 A</span><br>    <span class="hljs-keyword">return</span> dp(N, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)<br></code></pre></td></tr></table></figure>
+<p>这个解法应该很好理解，因为语义明确。下面就继续走流程，用备忘录消除一下重叠子问题：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">maxA</span>(<span class="hljs-params">N: int</span>) -&gt; int:</span><br>    <span class="hljs-comment"># 备忘录</span><br>    memo = dict()<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dp</span>(<span class="hljs-params">n, a_num, copy</span>):</span><br>        <span class="hljs-keyword">if</span> n &lt;= <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> a_num;<br>        <span class="hljs-comment"># 避免计算重叠子问题</span><br>        <span class="hljs-keyword">if</span> (n, a_num, copy) <span class="hljs-keyword">in</span> memo:<br>            <span class="hljs-keyword">return</span> memo[(n, a_num, copy)]<br>        memo[(n, a_num, copy)] = max(<br>                <span class="hljs-comment"># 几种选择还是一样的</span><br>            )<br>        <span class="hljs-keyword">return</span> memo[(n, a_num, copy)]<br>    <span class="hljs-keyword">return</span> dp(N, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)<br></code></pre></td></tr></table></figure>
+<p>这样优化代码之后，子问题虽然没有重复了，但数目仍然很多，在 LeetCode 提交会超时的。<br>我们尝试分析一下这个算法的时间复杂度，就会发现不容易分析。我们可以把这个 dp 函数写成 dp 数组：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">dp[n][a_num][copy]<br><span class="hljs-comment"># 状态的总数（时空复杂度）就是这个三维数组的体积</span><br></code></pre></td></tr></table></figure>
+<p>我们知道变量 <code>n</code> 最多为 <code>N</code>，但是 <code>a_num</code> 和 <code>copy</code> 最多为多少我们很难计算，复杂度起码也有 O(N^3) 把。所以这个算法并不好，复杂度太高，且已经无法优化了。<br>这也就说明，我们这样定义「状态」是不太优秀的，下面我们换一种定义 dp 的思路。</p>
+<h3 id="第二种思路"><a href="#第二种思路" class="headerlink" title="第二种思路"></a>第二种思路</h3><p>这种思路稍微有点复杂，但是效率高。继续走流程，「选择」还是那 4 个，但是这次我们只定义一个「状态」，也就是剩余的敲击次数 <code>n</code>。<br>这个算法基于这样一个事实，<strong>最优按键序列一定只有两种情况</strong>：<br>要么一直按 <code>A</code>：A,A,…A（当 N 比较小时）。<br>要么是这么一个形式：A,A,…C-A,C-C,C-V,C-V,…C-V（当 N 比较大时）。<br>因为字符数量少（N 比较小）时，<code>C-A C-C C-V</code> 这一套操作的代价相对比较高，可能不如一个个按 <code>A</code>；而当 N 比较大时，后期 <code>C-V</code> 的收获肯定很大。这种情况下整个操作序列大致是：<strong>开头连按几个 <code>A</code>，然后 <code>C-A C-C</code> 组合再接若干 <code>C-V</code>，然后再 <code>C-A C-C</code> 接着若干 <code>C-V</code>，循环下去</strong>。<br>换句话说，最后一次按键要么是 <code>A</code> 要么是 <code>C-V</code>。明确了这一点，可以通过这两种情况来设计算法：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[N + <span class="hljs-number">1</span>];<br><span class="hljs-comment">// 定义：dp[i] 表示 i 次操作后最多能显示多少个 A</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= N; i++) <br>    dp[i] = max(<br>            这次按 A 键，<br>            这次按 C-V<br>        )<br></code></pre></td></tr></table></figure>
+<p>对于「按 <code>A</code> 键」这种情况，就是状态 <code>i - 1</code> 的屏幕上新增了一个 A 而已，很容易得到结果：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 按 A 键，就比上次多一个 A 而已</span><br>dp[i] = dp[i - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<p>但是，如果要按 <code>C-V</code>，还要考虑之前是在哪里 <code>C-A C-C</code> 的。<br><strong>刚才说了，最优的操作序列一定是 <code>C-A C-C</code> 接着若干 <code>C-V</code>，所以我们用一个变量 <code>j</code> 作为若干 <code>C-V</code> 的起点</strong>。那么 <code>j</code> 之前的 2 个操作就应该是 <code>C-A C-C</code> 了：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxA</span><span class="hljs-params">(<span class="hljs-keyword">int</span> N)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[N + <span class="hljs-number">1</span>];<br>    dp[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= N; i++) &#123;<br>        <span class="hljs-comment">// 按 A 键</span><br>        dp[i] = dp[i - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">2</span>; j &lt; i; j++) &#123;<br>            <span class="hljs-comment">// 全选 &amp; 复制 dp[j-2]，连续粘贴 i - j 次</span><br>            <span class="hljs-comment">// 屏幕上共 dp[j - 2] * (i - j + 1) 个 A</span><br>            dp[i] = Math.max(dp[i], dp[j - <span class="hljs-number">2</span>] * (i - j + <span class="hljs-number">1</span>));<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// N 次按键之后最多有几个 A？</span><br>    <span class="hljs-keyword">return</span> dp[N];<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>其中 <code>j</code> 变量减 2 是给 <code>C-A C-C</code> 留下操作数，看个图就明白了：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/4keyboard/1.jpg"><br>这样，此算法就完成了，时间复杂度 O(N^2)，空间复杂度 O(N)，这种解法应该是比较高效的了。</p>
+<h3 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h3><p>动态规划难就难在寻找状态转移，不同的定义可以产生不同的状态转移逻辑，虽然最后都能得到正确的结果，但是效率可能有巨大的差异。<br>回顾第一种解法，重叠子问题已经消除了，但是效率还是低，到底低在哪里呢？抽象出递归框架：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dp</span>(<span class="hljs-params">n, a_num, copy</span>):</span><br>    dp(n - <span class="hljs-number">1</span>, a_num + <span class="hljs-number">1</span>, copy),    <span class="hljs-comment"># A</span><br>    dp(n - <span class="hljs-number">1</span>, a_num + copy, copy), <span class="hljs-comment"># C-V</span><br>    dp(n - <span class="hljs-number">2</span>, a_num, a_num)        <span class="hljs-comment"># C-A C-C</span><br></code></pre></td></tr></table></figure>
+<p>看这个穷举逻辑，是有可能出现这样的操作序列 <code>C-A C-C，C-A C-C...</code> 或者 <code>C-V,C-V,...</code>。然这种操作序列的结果不是最优的，但是我们并没有想办法规避这些情况的发生，从而增加了很多没必要的子问题计算。<br>回顾第二种解法，我们稍加思考就能想到，最优的序列应该是这种形式：<code>A,A..C-A,C-C,C-V,C-V..C-A,C-C,C-V..</code>。<br>根据这个事实，我们重新定义了状态，重新寻找了状态转移，从逻辑上减少了无效的子问题个数，从而提高了算法的效率。</p>
+<p><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%8A%A2%E6%88%BF%E5%AD%90">上一篇：团灭 LeetCode 打家劫舍问题</a><br><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE">下一篇：动态规划之正则表达</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE/" itemprop="url">动态规划之正则表达</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>title: 动态规划之正则表达<br>author: 远方<br>tags:</p>
+<ul>
+<li>LeetCode</li>
+<li>算法<br>categories:</li>
+<li>LeetCode破局攻略<br>date: 2016-01-01 19:20:00</li>
+</ul>
+<hr>
+<h1 id="动态规划之正则表达"><a href="#动态规划之正则表达" class="headerlink" title="动态规划之正则表达"></a>动态规划之正则表达</h1><p>之前的文章「动态规划详解」收到了普遍的好评，今天写一个动态规划的实际应用：正则表达式。如果有读者对「动态规划」还不了解，建议先看一下上面那篇文章。<br>正则表达式匹配是一个很精妙的算法，而且难度也不小。本文主要写两个正则符号的算法实现：点号「.」和星号「*」，如果你用过正则表达式，应该明白他们的用法，不明白也没关系，等会会介绍。文章的最后，介绍了一种快速看出重叠子问题的技巧。<br>本文还有一个重要目的，就是教会读者如何设计算法。我们平时看别人的解法，直接看到一个面面俱到的完整答案，总觉得无法理解，以至觉得问题太难，自己太菜。我力求向读者展示，算法的设计是一个螺旋上升、逐步求精的过程，绝不是一步到位就能写出正确算法。本文会带你解决这个较为复杂的问题，让你明白如何化繁为简，逐个击破，从最简单的框架搭建出最终的答案。<br>前文无数次强调的框架思维，就是在这种设计过程中逐步培养的。下面进入正题，首先看一下题目：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%AD%A3%E5%88%99/title.png" alt="title"></p>
+<h3 id="一、热身"><a href="#一、热身" class="headerlink" title="一、热身"></a>一、热身</h3><p>第一步，我们暂时不管正则符号，如果是两个普通的字符串进行比较，如何进行匹配？我想这个算法应该谁都会写：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isMatch</span><span class="hljs-params">(<span class="hljs-built_in">string</span> text, <span class="hljs-built_in">string</span> pattern)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (text.size() != pattern.size()) <br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; pattern.size(); j++) &#123;<br>        <span class="hljs-keyword">if</span> (pattern[j] != text[j])<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>然后，我稍微改造一下上面的代码，略微复杂了一点，但意思还是一样的，很容易理解吧：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isMatch</span><span class="hljs-params">(<span class="hljs-built_in">string</span> text, <span class="hljs-built_in">string</span> pattern)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; <span class="hljs-comment">// text 的索引位置</span><br>    <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; <span class="hljs-comment">// pattern 的索引位置</span><br>    <span class="hljs-keyword">while</span> (j &lt; pattern.size()) &#123;<br>        <span class="hljs-keyword">if</span> (i &gt;= text.size()) <br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">if</span> (pattern[j++] != text[i++])<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-comment">// 相等则说明完成匹配</span><br>    <span class="hljs-keyword">return</span> j == text.size();<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>如上改写，是为了将这个算法改造成递归算法（伪码）：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isMatch</span>(<span class="hljs-params">text, pattern</span>) -&gt; bool:</span><br>    if pattern is empty: return (text is empty?)<br>    first_match = (text <span class="hljs-keyword">not</span> empty) <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">0</span>] == text[<span class="hljs-number">0</span>]<br>    <span class="hljs-keyword">return</span> first_match <span class="hljs-keyword">and</span> isMatch(text[<span class="hljs-number">1</span>:], pattern[<span class="hljs-number">1</span>:])<br></code></pre></td></tr></table></figure>
+<p>如果你能够理解这段代码，恭喜你，你的递归思想已经到位，正则表达式算法虽然有点复杂，其实是基于这段递归代码逐步改造而成的。</p>
+<h3 id="二、处理点号「-」通配符"><a href="#二、处理点号「-」通配符" class="headerlink" title="二、处理点号「.」通配符"></a>二、处理点号「.」通配符</h3><p>点号可以匹配任意一个字符，万金油嘛，其实是最简单的，稍加改造即可：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isMatch</span>(<span class="hljs-params">text, pattern</span>) -&gt; bool:</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> pattern: <span class="hljs-keyword">return</span> <span class="hljs-keyword">not</span> text<br>    first_match = bool(text) <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">0</span>] <span class="hljs-keyword">in</span> &#123;text[<span class="hljs-number">0</span>], <span class="hljs-string">&#x27;.&#x27;</span>&#125;<br>    <span class="hljs-keyword">return</span> first_match <span class="hljs-keyword">and</span> isMatch(text[<span class="hljs-number">1</span>:], pattern[<span class="hljs-number">1</span>:])<br></code></pre></td></tr></table></figure>
+<h3 id="三、处理「-」通配符"><a href="#三、处理「-」通配符" class="headerlink" title="三、处理「*」通配符"></a>三、处理「*」通配符</h3><p>星号通配符可以让前一个字符重复任意次数，包括零次。那到底是重复几次呢？这似乎有点困难，不过不要着急，我们起码可以把框架的搭建再进一步：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isMatch</span>(<span class="hljs-params">text, pattern</span>) -&gt; bool:</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> pattern: <span class="hljs-keyword">return</span> <span class="hljs-keyword">not</span> text<br>    first_match = bool(text) <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">0</span>] <span class="hljs-keyword">in</span> &#123;text[<span class="hljs-number">0</span>], <span class="hljs-string">&#x27;.&#x27;</span>&#125;<br>    <span class="hljs-keyword">if</span> len(pattern) &gt;= <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;*&#x27;</span>:<br>        <span class="hljs-comment"># 发现 &#x27;*&#x27; 通配符</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> first_match <span class="hljs-keyword">and</span> isMatch(text[<span class="hljs-number">1</span>:], pattern[<span class="hljs-number">1</span>:])<br></code></pre></td></tr></table></figure>
+<p>星号前面的那个字符到底要重复几次呢？这需要计算机暴力穷举来算，假设重复 N 次吧。前文多次强调过，写递归的技巧是管好当下，之后的事抛给递归。具体到这里，不管 N 是多少，当前的选择只有两个：匹配 0 次、匹配 1 次。所以可以这样处理：</p>
+<figure class="hljs highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">if</span> len(pattern) &gt;= <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;*&#x27;</span>:<br>    <span class="hljs-keyword">return</span> isMatch(text, pattern[<span class="hljs-number">2</span>:]) <span class="hljs-keyword">or</span> \<br>            first_match <span class="hljs-keyword">and</span> isMatch(text[<span class="hljs-number">1</span>:], pattern)<br><span class="hljs-comment"># 解释：如果发现有字符和 &#x27;*&#x27; 结合，</span><br>    <span class="hljs-comment"># 或者匹配该字符 0 次，然后跳过该字符和 &#x27;*&#x27;</span><br>    <span class="hljs-comment"># 或者当 pattern[0] 和 text[0] 匹配后，移动 text</span><br></code></pre></td></tr></table></figure>
+<p>可以看到，我们是通过保留 pattern 中的「*」，同时向后推移 text，来实现「*」将字符重复匹配多次的功能。举个简单的例子就能理解这个逻辑了。假设 <code>pattern = a*</code>, <code>text = aaa</code>，画个图看看匹配过程：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%AD%A3%E5%88%99/example.png" alt="example"><br>至此，正则表达式算法就基本完成了，</p>
+<h3 id="四、动态规划"><a href="#四、动态规划" class="headerlink" title="四、动态规划"></a>四、动态规划</h3><p>我选择使用「备忘录」递归的方法来降低复杂度。有了暴力解法，优化的过程及其简单，就是使用两个变量 i, j 记录当前匹配到的位置，从而避免使用子字符串切片，并且将 i, j 存入备忘录，避免重复计算即可。<br>我将暴力解法和优化解法放在一起，方便你对比，你可以发现优化解法无非就是把暴力解法「翻译」了一遍，加了个 memo 作为备忘录，仅此而已。</p>
+<figure class="hljs highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-comment"># 带备忘录的递归</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isMatch</span>(<span class="hljs-params">text, pattern</span>) -&gt; bool:</span><br>    memo = dict() <span class="hljs-comment"># 备忘录</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dp</span>(<span class="hljs-params">i, j</span>):</span><br>        <span class="hljs-keyword">if</span> (i, j) <span class="hljs-keyword">in</span> memo: <span class="hljs-keyword">return</span> memo[(i, j)]<br>        <span class="hljs-keyword">if</span> j == len(pattern): <span class="hljs-keyword">return</span> i == len(text)<br>        first = i &lt; len(text) <span class="hljs-keyword">and</span> pattern[j] <span class="hljs-keyword">in</span> &#123;text[i], <span class="hljs-string">&#x27;.&#x27;</span>&#125;<br>        <br>        <span class="hljs-keyword">if</span> j &lt;= len(pattern) - <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> pattern[j + <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;*&#x27;</span>:<br>            ans = dp(i, j + <span class="hljs-number">2</span>) <span class="hljs-keyword">or</span> \<br>                    first <span class="hljs-keyword">and</span> dp(i + <span class="hljs-number">1</span>, j)<br>        <span class="hljs-keyword">else</span>:<br>            ans = first <span class="hljs-keyword">and</span> dp(i + <span class="hljs-number">1</span>, j + <span class="hljs-number">1</span>)<br>            <br>        memo[(i, j)] = ans<br>        <span class="hljs-keyword">return</span> ans<br>    <br>    <span class="hljs-keyword">return</span> dp(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)<br><span class="hljs-comment"># 暴力递归</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isMatch</span>(<span class="hljs-params">text, pattern</span>) -&gt; bool:</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> pattern: <span class="hljs-keyword">return</span> <span class="hljs-keyword">not</span> text<br>    first = bool(text) <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">0</span>] <span class="hljs-keyword">in</span> &#123;text[<span class="hljs-number">0</span>], <span class="hljs-string">&#x27;.&#x27;</span>&#125;<br>    <span class="hljs-keyword">if</span> len(pattern) &gt;= <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> pattern[<span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;*&#x27;</span>:<br>        <span class="hljs-keyword">return</span> isMatch(text, pattern[<span class="hljs-number">2</span>:]) <span class="hljs-keyword">or</span> \<br>                first <span class="hljs-keyword">and</span> isMatch(text[<span class="hljs-number">1</span>:], pattern)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> first <span class="hljs-keyword">and</span> isMatch(text[<span class="hljs-number">1</span>:], pattern[<span class="hljs-number">1</span>:])<br></code></pre></td></tr></table></figure>
+<p><strong>有的读者也许会问，你怎么知道这个问题是个动态规划问题呢，你怎么知道它就存在「重叠子问题」呢，这似乎不容易看出来呀？</strong><br>解答这个问题，最直观的应该是随便假设一个输入，然后画递归树，肯定是可以发现相同节点的。这属于定量分析，其实不用这么麻烦，下面我来教你定性分析，一眼就能看出「重叠子问题」性质。<br>先拿最简单的斐波那契数列举例，我们抽象出递归算法的框架：</p>
+<figure class="hljs highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib</span>(<span class="hljs-params">n</span>):</span><br>    fib(n - <span class="hljs-number">1</span>) <span class="hljs-comment">#1</span><br>    fib(n - <span class="hljs-number">2</span>) <span class="hljs-comment">#2</span><br></code></pre></td></tr></table></figure>
+<p>看着这个框架，请问原问题 f(n) 如何触达子问题 f(n - 2) ？有两种路径，一是 f(n) -&gt; #1 -&gt; #1, 二是 f(n) -&gt; #2。前者经过两次递归，后者进过一次递归而已。两条不同的计算路径都到达了同一个问题，这就是「重叠子问题」，而且可以肯定的是，<strong>只要你发现一条重复路径，这样的重复路径一定存在千万条，意味着巨量子问题重叠。</strong><br>同理，对于本问题，我们依然先抽象出算法框架：</p>
+<figure class="hljs highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dp</span>(<span class="hljs-params">i, j</span>):</span><br>    dp(i, j + <span class="hljs-number">2</span>)     <span class="hljs-comment">#1</span><br>    dp(i + <span class="hljs-number">1</span>, j)     <span class="hljs-comment">#2</span><br>    dp(i + <span class="hljs-number">1</span>, j + <span class="hljs-number">1</span>) <span class="hljs-comment">#3</span><br></code></pre></td></tr></table></figure>
+<p>提出类似的问题，请问如何从原问题 dp(i, j) 触达子问题 dp(i + 2, j + 2) ？至少有两种路径，一是 dp(i, j) -&gt; #3 -&gt; #3，二是 dp(i, j) -&gt; #1 -&gt; #2 -&gt; #2。因此，本问题一定存在重叠子问题，一定需要动态规划的优化技巧来处理。</p>
+<h3 id="五、最后总结"><a href="#五、最后总结" class="headerlink" title="五、最后总结"></a>五、最后总结</h3><p>通过本文，你深入理解了正则表达式的两种常用通配符的算法实现。其实点号「.」的实现及其简单，关键是星号「*」的实现需要用到动态规划技巧，稍微复杂些，但是也架不住我们对问题的层层拆解，逐个击破。另外，你掌握了一种快速分析「重叠子问题」性质的技巧，可以快速判断一个问题是否可以使用动态规划套路解决。<br>回顾整个解题过程，你应该能够体会到算法设计的流程：从简单的类似问题入手，给基本的框架逐渐组装新的逻辑，最终成为一个比较复杂、精巧的算法。所以说，读者不必畏惧一些比较复杂的算法问题，多思考多类比，再高大上的算法在你眼里也不过一个脆皮。</p>
+<p><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%9B%9B%E9%94%AE%E9%94%AE%E7%9B%98">上一篇：动态规划之四键键盘</a><br><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97">下一篇：最长公共子序列</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/" itemprop="url">动态规划系列</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>title: 动态规划系列<br>author: 远方<br>tags:</p>
+<ul>
+<li>LeetCode</li>
+<li>算法<br>categories:</li>
+<li>LeetCode破局攻略<br>date: 2016-01-01 19:20:00</li>
+</ul>
+<hr>
+<h1 id="动态规划系列"><a href="#动态规划系列" class="headerlink" title="动态规划系列"></a>动态规划系列</h1><ul>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6">动态规划详解</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%9C%80%E4%BC%98%E5%AD%90%E7%BB%93%E6%9E%84">动态规划答疑篇</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AE%BE%E8%AE%A1%EF%BC%9A%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97">动态规划设计：最长递增子序列</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB">编辑距离</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E9%AB%98%E6%A5%BC%E6%89%94%E9%B8%A1%E8%9B%8B%E9%97%AE%E9%A2%98">经典动态规划问题：高楼扔鸡蛋</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E9%AB%98%E6%A5%BC%E6%89%94%E9%B8%A1%E8%9B%8B%E8%BF%9B%E9%98%B6">经典动态规划问题：高楼扔鸡蛋（进阶）</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98%E6%A8%A1%E6%9D%BF">动态规划之子序列问题解题模板</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%8D%9A%E5%BC%88%E9%97%AE%E9%A2%98">动态规划之博弈问题</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E4%B9%8B%E5%8C%BA%E9%97%B4%E8%B0%83%E5%BA%A6%E9%97%AE%E9%A2%98">贪心算法之区间调度问题</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8BKMP%E5%AD%97%E7%AC%A6%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95">动态规划之KMP字符匹配算法</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%9B%A2%E7%81%AD%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98">团灭 LeetCode 股票买卖问题</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%8A%A2%E6%88%BF%E5%AD%90">团灭 LeetCode 打家劫舍问题</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%9B%9B%E9%94%AE%E9%94%AE%E7%9B%98">动态规划之四键键盘</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE">动态规划之正则表达</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97">最长公共子序列</a></li>
+</ul>
+<p>我们公众号最火的就是动态规划系列的文章，也许是动态规划问题有难度而且有意思，也许因为它是面试常考题型。不管你之前是否害怕动态规划系列的问题，相信这一章的内容足以帮助你消除对动态规划算法的恐惧。<br>具体来说，动态规划的一般流程就是三步：<strong>暴力的递归解法 -&gt; 带备忘录的递归解法 -&gt; 迭代的动态规划解法</strong>。<br>就思考流程来说，就分为一下几步：<strong>找到状态和选择 -&gt; 明确 dp 数组/函数的定义 -&gt; 寻找状态之间的关系</strong>。<br>这就是思维模式的框架，<strong>本章都会按照以上的模式来解决问题，辅助读者养成这种模式思维</strong>，有了方向遇到问题就不会抓瞎，足以解决一般的动态规划问题。</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AE%BE%E8%AE%A1%EF%BC%9A%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AE%BE%E8%AE%A1%EF%BC%9A%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" itemprop="url">动态规划设计：最长递增子序列</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>title: 动态规划设计：最长递增子序列<br>author: 远方<br>tags:</p>
+<ul>
+<li>LeetCode</li>
+<li>算法<br>categories:</li>
+<li>LeetCode破局攻略<br>date: 2016-01-01 19:20:00</li>
+</ul>
+<hr>
+<h1 id="动态规划设计：最长递增子序列"><a href="#动态规划设计：最长递增子序列" class="headerlink" title="动态规划设计：最长递增子序列"></a>动态规划设计：最长递增子序列</h1><p>很多读者反应，就算看了前文<a href="%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6">动态规划详解</a>，了解了动态规划的套路，也不会写状态转移方程，没有思路，怎么办？本文就借助「最长递增子序列」来讲一种设计动态规划的通用技巧：数学归纳思想。<br>最长递增子序列（Longest Increasing Subsequence，简写 LIS）是比较经典的一个问题，比较容易想到的是动态规划解法，时间复杂度 O(N^2)，我们借这个问题来由浅入深讲解如何写动态规划。比较难想到的是利用二分查找，时间复杂度是 O(NlogN)，我们通过一种简单的纸牌游戏来辅助理解这种巧妙的解法。<br>先看一下题目，很容易理解：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/title.png" alt="title"><br>注意「子序列」和「子串」这两个名词的区别，子串一定是连续的，而子序列不一定是连续的。下面先来一步一步设计动态规划算法解决这个问题。</p>
+<h3 id="一、动态规划解法"><a href="#一、动态规划解法" class="headerlink" title="一、动态规划解法"></a>一、动态规划解法</h3><p>动态规划的核心设计思想是数学归纳法。<br>相信大家对数学归纳法都不陌生，高中就学过，而且思路很简单。比如我们想证明一个数学结论，那么我们先假设这个结论在 $k&lt;n$ 时成立，然后想办法证明 $k=n$ 的时候此结论也成立。如果能够证明出来，那么就说明这个结论对于 k 等于任何数都成立。<br>类似的，我们设计动态规划算法，不是需要一个 dp 数组吗？我们可以假设 $dp[0…i-1]$ 都已经被算出来了，然后问自己：怎么通过这些结果算出 dp[i]？<br>直接拿最长递增子序列这个问题举例你就明白了。不过，首先要定义清楚 dp 数组的含义，即 dp[i] 的值到底代表着什么？<br><strong>我们的定义是这样的：dp[i] 表示以 nums[i] 这个数结尾的最长递增子序列的长度。</strong><br>举两个例子：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/1.jpeg" alt="1"></p>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/2.jpeg" alt="2"><br>算法演进的过程是这样的，：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/gif1.gif" alt="gif1"><br>根据这个定义，我们的最终结果（子序列的最大长度）应该是 dp 数组中的最大值。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; dp.size(); i++) &#123;<br>    res = Math.max(res, dp[i]);<br>&#125;<br><span class="hljs-keyword">return</span> res;<br></code></pre></td></tr></table></figure>
+<p>读者也许会问，刚才这个过程中每个 dp[i] 的结果是我们肉眼看出来的，我们应该怎么设计算法逻辑来正确计算每个 dp[i] 呢？<br>这就是动态规划的重头戏了，要思考如何进行状态转移，这里就可以使用数学归纳的思想：<br>我们已经知道了 $dp[0…4]$ 的所有结果，我们如何通过这些已知结果推出 $dp[5]$ 呢？<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/3.jpeg" alt="3"><br>根据刚才我们对 dp 数组的定义，现在想求 dp[5] 的值，也就是想求以 nums[5] 为结尾的最长递增子序列。<br>nums[5] = 3，既然是递增子序列，我们只要找到前面那些结尾比 3 小的子序列，然后把 3 接到最后，就可以形成一个新的递增子序列，而且这个新的子序列长度加一。<br>当然，可能形成很多种新的子序列，但是我们只要最长的，把最长子序列的长度作为 dp[5] 的值即可。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/gif2.gif" alt="gif2"></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; i; j++) &#123;<br>    <span class="hljs-keyword">if</span> (nums[i] &gt; nums[j]) <br>        dp[i] = Math.max(dp[i], dp[j] + <span class="hljs-number">1</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这段代码的逻辑就可以算出 dp[5]。到这里，这道算法题我们就基本做完了。读者也许会问，我们刚才只是算了 dp[5] 呀，dp[4], dp[3] 这些怎么算呢？<br>类似数学归纳法，你已经可以算出 dp[5] 了，其他的就都可以算出来：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; i; j++) &#123;<br>        <span class="hljs-keyword">if</span> (nums[i] &gt; nums[j]) <br>            dp[i] = Math.max(dp[i], dp[j] + <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>还有一个细节问题，dp 数组应该全部初始化为 1，因为子序列最少也要包含自己，所以长度最小为 1。下面我们看一下完整代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">lengthOfLIS</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[nums.length];<br>    <span class="hljs-comment">// dp 数组全都初始化为 1</span><br>    Arrays.fill(dp, <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; i; j++) &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] &gt; nums[j]) <br>                dp[i] = Math.max(dp[i], dp[j] + <span class="hljs-number">1</span>);<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; dp.length; i++) &#123;<br>        res = Math.max(res, dp[i]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>至此，这道题就解决了，时间复杂度 O(N^2)。总结一下动态规划的设计流程：<br>首先明确 dp 数组所存数据的含义。这步很重要，如果不得当或者不够清晰，会阻碍之后的步骤。<br>然后根据 dp 数组的定义，运用数学归纳法的思想，假设 $dp[0…i-1]$ 都已知，想办法求出 $dp[i]$，一旦这一步完成，整个题目基本就解决了。<br>但如果无法完成这一步，很可能就是 dp 数组的定义不够恰当，需要重新定义 dp 数组的含义；或者可能是 dp 数组存储的信息还不够，不足以推出下一步的答案，需要把 dp 数组扩大成二维数组甚至三维数组。<br>最后想一想问题的 base case 是什么，以此来初始化 dp 数组，以保证算法正确运行。</p>
+<h3 id="二、二分查找解法"><a href="#二、二分查找解法" class="headerlink" title="二、二分查找解法"></a>二、二分查找解法</h3><p>这个解法的时间复杂度会将为 O(NlogN)，但是说实话，正常人基本想不到这种解法（也许玩过某些纸牌游戏的人可以想出来）。所以如果大家了解一下就好，正常情况下能够给出动态规划解法就已经很不错了。<br>根据题目的意思，我都很难想象这个问题竟然能和二分查找扯上关系。其实最长递增子序列和一种叫做 patience game 的纸牌游戏有关，甚至有一种排序方法就叫做 patience sorting（耐心排序）。<br>为了简单期间，后文跳过所有数学证明，通过一个简化的例子来理解一下思路。<br>首先，给你一排扑克牌，我们像遍历数组那样从左到右一张一张处理这些扑克牌，最终要把这些牌分成若干堆。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/poker1.jpeg" alt="poker1"><br>处理这些扑克牌要遵循以下规则：<br>只能把点数小的牌压到点数比它大的牌上。如果当前牌点数较大没有可以放置的堆，则新建一个堆，把这张牌放进去。如果当前牌有多个堆可供选择，则选择最左边的堆放置。<br>比如说上述的扑克牌最终会被分成这样 5 堆（我们认为 A 的值是最大的，而不是 1）。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/poker2.jpeg" alt="poker2"><br>为什么遇到多个可选择堆的时候要放到最左边的堆上呢？因为这样可以保证牌堆顶的牌有序（2, 4, 7, 8, Q），证明略。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/poker3.jpeg" alt="poker3"><br>按照上述规则执行，可以算出最长递增子序列，牌的堆数就是最长递增子序列的长度，证明略。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/poker4.jpeg" alt="LIS"><br>我们只要把处理扑克牌的过程编程写出来即可。每次处理一张扑克牌不是要找一个合适的牌堆顶来放吗，牌堆顶的牌不是有序吗，这就能用到二分查找了：用二分查找来搜索当前牌应放置的位置。<br>PS：旧文<a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E8%AF%A6%E8%A7%A3">二分查找算法详解</a>详细介绍了二分查找的细节及变体，这里就完美应用上了。如果没读过强烈建议阅读。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">lengthOfLIS</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span>[] top = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[nums.length];<br>    <span class="hljs-comment">// 牌堆数初始化为 0</span><br>    <span class="hljs-keyword">int</span> piles = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>        <span class="hljs-comment">// 要处理的扑克牌</span><br>        <span class="hljs-keyword">int</span> poker = nums[i];<br>        <span class="hljs-comment">/***** 搜索左侧边界的二分查找 *****/</span><br>        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = piles;<br>        <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>            <span class="hljs-keyword">int</span> mid = (left + right) / <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (top[mid] &gt; poker) &#123;<br>                right = mid;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (top[mid] &lt; poker) &#123;<br>                left = mid + <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                right = mid;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">/*********************************/</span><br>        <br>        <span class="hljs-comment">// 没找到合适的牌堆，新建一堆</span><br>        <span class="hljs-keyword">if</span> (left == piles) piles++;<br>        <span class="hljs-comment">// 把这张牌放到牌堆顶</span><br>        top[left] = poker;<br>    &#125;<br>    <span class="hljs-comment">// 牌堆数就是 LIS 长度</span><br>    <span class="hljs-keyword">return</span> piles;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>至此，二分查找的解法也讲解完毕。<br>这个解法确实很难想到。首先涉及数学证明，谁能想到按照这些规则执行，就能得到最长递增子序列呢？其次还有二分查找的运用，要是对二分查找的细节不清楚，给了思路也很难写对。<br>所以，这个方法作为思维拓展好了。但动态规划的设计方法应该完全理解：假设之前的答案已知，利用数学归纳的思想正确进行状态的推演转移，最终得到答案。</p>
+<p><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%9C%80%E4%BC%98%E5%AD%90%E7%BB%93%E6%9E%84">上一篇：动态规划答疑篇</a><br><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB">下一篇：编辑距离</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98%E6%A8%A1%E6%9D%BF/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98%E6%A8%A1%E6%9D%BF/" itemprop="url">子序列问题模板</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>title: 子序列问题模板<br>author: 远方<br>tags:</p>
+<ul>
+<li>LeetCode</li>
+<li>算法<br>categories:</li>
+<li>LeetCode破局攻略<br>date: 2016-01-01 19:20:00</li>
+</ul>
+<hr>
+<h1 id="动态规划之子序列问题解题模板"><a href="#动态规划之子序列问题解题模板" class="headerlink" title="动态规划之子序列问题解题模板"></a>动态规划之子序列问题解题模板</h1><p>子序列问题是常见的算法问题，而且并不好解决。<br>首先，子序列问题本身就相对子串、子数组更困难一些，因为前者是不连续的序列，而后两者是连续的，就算穷举你都不一定会，更别说求解相关的算法问题了。<br>而且，子序列问题很可能涉及到两个字符串，比如前文「最长公共子序列」，如果没有一定的处理经验，真的不容易想出来。所以本文就来扒一扒子序列问题的套路，其实就有两种模板，相关问题只要往这两种思路上想，十拿九稳。<br>一般来说，这类问题都是让你求一个<strong>最长子序列</strong>，因为最短子序列就是一个字符嘛，没啥可问的。一旦涉及到子序列和最值，那几乎可以肯定，**考察的是动态规划技巧，时间复杂度一般都是 O(n^2)**。<br>原因很简单，你想想一个字符串，它的子序列有多少种可能？起码是指数级的吧，这种情况下，不用动态规划技巧，还想怎么着？<br>既然要用动态规划，那就要定义 dp 数组，找状态转移关系。我们说的两种思路模板，就是 dp 数组的定义思路。不同的问题可能需要不同的 dp 数组定义来解决。</p>
+<h3 id="一、两种思路"><a href="#一、两种思路" class="headerlink" title="一、两种思路"></a>一、两种思路</h3><p><strong>1、第一种思路模板是一个一维的 dp 数组</strong>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> n = array.length;<br><span class="hljs-keyword">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; i; j++) &#123;<br>        dp[i] = 最值(dp[i], dp[j] + ...)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>举个我们写过的例子「最长递增子序列」，在这个思路中 dp 数组的定义是：<br><strong>在子数组 <code>array[0..i]</code> 中，我们要求的子序列（最长递增子序列）的长度是 <code>dp[i]</code>**。<br>为啥最长递增子序列需要这种思路呢？前文说得很清楚了，因为这样符合归纳法，可以找到状态转移的关系，这里就不具体展开了。<br>**2、第二种思路模板是一个二维的 dp 数组</strong>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> n = arr.length;<br><span class="hljs-keyword">int</span>[][] dp = <span class="hljs-keyword">new</span> dp[n][n];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) &#123;<br>        <span class="hljs-keyword">if</span> (arr[i] == arr[j]) <br>            dp[i][j] = dp[i][j] + ...<br>        <span class="hljs-keyword">else</span><br>            dp[i][j] = 最值(...)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这种思路运用相对更多一些，尤其是涉及两个字符串/数组的子序列，比如前文讲的「最长公共子序列」。本思路中 dp 数组含义又分为「只涉及一个字符串」和「涉及两个字符串」两种情况。<br><strong>2.1 涉及两个字符串/数组时</strong>（比如最长公共子序列），dp 数组的含义如下：<br><strong>在子数组 <code>arr1[0..i]</code> 和子数组 <code>arr2[0..j]</code> 中，我们要求的子序列（最长公共子序列）长度为 <code>dp[i][j]</code>**。<br>**2.2 只涉及一个字符串/数组时</strong>（比如本文要讲的最长回文子序列），dp 数组的含义如下：<br>**在子数组 <code>array[i..j]</code> 中，我们要求的子序列（最长回文子序列）的长度为 <code>dp[i][j]</code>**。<br>第一种情况可以参考这两篇旧文：「编辑距离」「公共子序列」<br>下面就借最长回文子序列这个问题，详解一下第二种情况下如何使用动态规划。</p>
+<h3 id="二、最长回文子序列"><a href="#二、最长回文子序列" class="headerlink" title="二、最长回文子序列"></a>二、最长回文子序列</h3><p>之前解决了「最长回文子串」的问题，这次提升难度，求最长回文子序列的长度：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/1.jpg"><br>我们说这个问题对 dp 数组的定义是：<strong>在子串 <code>s[i..j]</code> 中，最长回文子序列的长度为 <code>dp[i][j]</code>**。一定要记住这个定义才能理解算法。<br>为啥这个问题要这样定义二维的 dp 数组呢？我们前文多次提到，</strong>找状态转移需要归纳思维，说白了就是如何从已知的结果推出未知的部分<strong>，这样定义容易归纳，容易发现状态转移关系。<br>具体来说，如果我们想求 <code>dp[i][j]</code>，假设你知道了子问题 <code>dp[i+1][j-1]</code> 的结果（<code>s[i+1..j-1]</code> 中最长回文子序列的长度），你是否能想办法算出 <code>dp[i][j]</code> 的值（<code>s[i..j]</code> 中，最长回文子序列的长度）呢？<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/1.jpg"><br>可以！这取决于 <code>s[i]</code> 和 <code>s[j]</code> 的字符：<br>**如果它俩相等</strong>，那么它俩加上 <code>s[i+1..j-1]</code> 中的最长回文子序列就是 <code>s[i..j]</code> 的最长回文子序列：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/2.jpg"><br><strong>如果它俩不相等</strong>，说明它俩<strong>不可能同时</strong>出现在 <code>s[i..j]</code> 的最长回文子序列中，那么把它俩<strong>分别</strong>加入 <code>s[i+1..j-1]</code> 中，看看哪个子串产生的回文子序列更长即可：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/3.jpg"><br>以上两种情况写成代码就是这样：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (s[i] == s[j])<br>    <span class="hljs-comment">// 它俩一定在最长回文子序列中</span><br>    dp[i][j] = dp[i + <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>] + <span class="hljs-number">2</span>;<br><span class="hljs-keyword">else</span><br>    <span class="hljs-comment">// s[i+1..j] 和 s[i..j-1] 谁的回文子序列更长？</span><br>    dp[i][j] = max(dp[i + <span class="hljs-number">1</span>][j], dp[i][j - <span class="hljs-number">1</span>]);<br></code></pre></td></tr></table></figure>
+<p>至此，状态转移方程就写出来了，根据 dp 数组的定义，我们要求的就是 <code>dp[0][n - 1]</code>，也就是整个 <code>s</code> 的最长回文子序列的长度。</p>
+<h3 id="三、代码实现"><a href="#三、代码实现" class="headerlink" title="三、代码实现"></a>三、代码实现</h3><p>首先明确一下 base case，如果只有一个字符，显然最长回文子序列长度是 1，也就是 <code>dp[i][j] = 1 (i == j)</code>。<br>因为 <code>i</code> 肯定小于等于 <code>j</code>，所以对于那些 <code>i &gt; j</code> 的位置，根本不存在什么子序列，应该初始化为 0。<br>另外，看看刚才写的状态转移方程，想求 <code>dp[i][j]</code> 需要知道 <code>dp[i+1][j-1]</code>，<code>dp[i+1][j]</code>，<code>dp[i][j-1]</code> 这三个位置；再看看我们确定的 base case，填入 dp 数组之后是这样：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/4.jpg"><br><strong>为了保证每次计算 <code>dp[i][j]</code>，左下右方向的位置已经被计算出来，只能斜着遍历或者反着遍历</strong>：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/5.jpg"><br>我选择反着遍历，代码如下：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">longestPalindromeSubseq</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = s.size();<br>    <span class="hljs-comment">// dp 数组全部初始化为 0</span><br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">dp</span><span class="hljs-params">(n, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;(n, <span class="hljs-number">0</span>))</span></span>;<br>    <span class="hljs-comment">// base case</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        dp[i][i] = <span class="hljs-number">1</span>;<br>    <span class="hljs-comment">// 反着遍历保证正确的状态转移</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; n; j++) &#123;<br>            <span class="hljs-comment">// 状态转移方程</span><br>            <span class="hljs-keyword">if</span> (s[i] == s[j])<br>                dp[i][j] = dp[i + <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>] + <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">else</span><br>                dp[i][j] = max(dp[i + <span class="hljs-number">1</span>][j], dp[i][j - <span class="hljs-number">1</span>]);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 整个 s 的最长回文子串长度</span><br>    <span class="hljs-keyword">return</span> dp[<span class="hljs-number">0</span>][n - <span class="hljs-number">1</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>至此，最长回文子序列的问题就解决了。</p>
+<p><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E9%AB%98%E6%A5%BC%E6%89%94%E9%B8%A1%E8%9B%8B%E8%BF%9B%E9%98%B6">上一篇：经典动态规划问题：高楼扔鸡蛋（进阶）</a><br><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%8D%9A%E5%BC%88%E9%97%AE%E9%A2%98">下一篇：动态规划之博弈问题</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/">&lt;i class&#x3D;&quot;fas fa-angle-left&quot; aria-label&#x3D;&quot;上一页&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/7/">&lt;i class&#x3D;&quot;fas fa-angle-right&quot; aria-label&#x3D;&quot;下一页&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

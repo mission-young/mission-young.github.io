@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+
+<div id="index" class="index page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" itemprop="url">算法学习之路</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="算法学习之路"><a href="#算法学习之路" class="headerlink" title="算法学习之路"></a>算法学习之路</h1><p>之前发的那篇关于框架性思维的文章，我也发到了不少其他圈子，受到了大家的普遍好评，这一点我真的没想到，首先感谢大家的认可，我会更加努力，写出通俗易懂的算法文章。<br>有很多朋友问我数据结构和算法到底该怎么学，尤其是很多朋友说自己是「小白」，感觉这些东西好难啊，就算看了之前的「框架思维」，也感觉自己刷题乏力，希望我能聊聊我从一个非科班小白一路是怎么学过来的。<br>首先要给怀有这样疑问的朋友鼓掌，因为你现在已经「知道自己不知道」，而且开始尝试学习、刷题、寻求帮助，能做到这一点本身就是及其困难的。<br>关于「框架性思维」，对于一个小白来说，可能暂时无法完全理解（如果你能理解，说明你水平已经不错啦，不是小白啦）。就像软件工程，对于我这种没带过项目的人来说，感觉其内容枯燥乏味，全是废话，但是对于一个带过团队的人，他就会觉得软件工程里的每一句话都是精华。暂时不太理解没关系，留个印象，功夫到了很快就明白了。<br>下面写一写我一路过来的一些经验。如果你已经看过很多「如何高效刷题」「如何学习算法」的文章，却还是没有开始行动并坚持下去，本文的第五点就是写给你的。<br>我觉得之所以有时候认为自己是「小白」，是由于知识某些方面的空白造成的。具体到数据结构的学习，无非就是两个问题搞得不太清楚：<strong>这是啥？有啥用？</strong><br>举个例子，比如说你看到了「栈」这个名词，老师可能会讲这些关键词：先进后出、函数堆栈等等。但是，对于初学者，这些描述属于文学词汇，没有实际价值，没有解决最基本的两个问题。如何回答这两个基本问题呢？回答「这是啥」需要看教科书，回答「有啥用」需要刷算法题。<br><strong>一、这是啥？</strong><br>这个问题最容易解决，就像一层窗户纸，你只要随便找本书看两天，自己动手实现一个「队列」「栈」之类的数据结构，就能捅破这层窗户纸。<br>这时候你就能理解「框架思维」文章中的前半部分了：数据结构无非就是数组、链表为骨架的一些特定操作而已；每个数据结构实现的功能无非增删查改罢了。<br>比如说「列队」这个数据结构，无非就是基于数组或者链表，实现 enqueue 和 dequeue 两个方法。这两个方法就是增和删呀，连查和改的方法都不需要。<br><strong>二、有啥用？</strong><br>解决这个问题，就涉及算法的设计了，是个持久战，需要经常进行抽象思考，刷算法题，培养「计算机思维」。<br>之前的文章讲了，算法就是对数据结构准确而巧妙的运用。常用算法问题也就那几大类，算法题无非就是不断变换场景，给那几个算法框架套上不同的皮。刷题，就是在锻炼你的眼力，看你能不能看穿问题表象揪出相应的解法框架。<br>比如说，让你求解一个迷宫，你要把这个问题层层抽象：迷宫 -&gt; 图的遍历 -&gt; N 叉树的遍历 -&gt; 二叉树的遍历。然后让框架指导你写具体的解法。<br>抽象问题，直击本质，是刷题中你需要刻意培养的能力。<br><strong>三、如何看书</strong><br>直接推荐一本公认的好书，《算法第 4 版》，我一般简写成《算法4》。不要蜻蜓点水，这本书你能选择性的看上 50%，基本上就达到平均水平了。别怕这本书厚，因为起码有三分之一不用看，下面讲讲怎么看这本书。<br>看书仍然遵循递归的思想：自顶向下，逐步求精。<br>这本书知识结构合理，讲解也清楚，所以可以按顺序学习。<strong>书中正文的算法代码一定要亲自敲一遍</strong>，因为这些真的是扎实的基础，要认真理解。不要以为自己看一遍就看懂了，不动手的话理解不了的。但是，开头部分的基础可以酌情跳过；书中的数学证明，如不影响对算法本身的理解，完全可以跳过；章节最后的练习题，也可以全部跳过。这样一来，这本书就薄了很多。<br>相信读者现在已经认可了「框架性思维」的重要性，这种看书方式也是一种框架性策略，抓大放小，着重理解整体的知识架构，而忽略证明、练习题这种细节问题，即<strong>保持自己对新知识的好奇心，避免陷入无限的细节被劝退。</strong><br>当然，《算法4》到后面的内容也比较难了，比如那几个著名的串算法，以及正则表达式算法。这些属于「经典算法」，看个人接受能力吧，单说刷 LeetCode 的话，基本用不上，量力而行即可。<br><strong>四、如何刷题</strong><br>首先声明一下，<strong>算法和数学水平没关系，和编程语言也没关系</strong>，你爱用什么语言用什么。算法，主要是培养一种新的思维方式。所谓「计算机思维」，就跟你考驾照一样，你以前骑自行车，有一套自行车的规则和技巧，现在你开汽车，就需要适应并练习开汽车的规则和技巧。<br>LeetCode 上的算法题和前面说的「经典算法」不一样，我们权且称为「解闷算法」吧，因为很多题目都比较有趣，有种在做奥数题或者脑筋急转弯的感觉。比如说，让你用队列实现一个栈，或者用栈实现一个队列，以及不用加号做加法，开脑洞吧？<br>当然，这些问题虽然看起来无厘头，实际生活中也用不到，但是想解决这些问题依然要靠数据结构以及对基础知识的理解，也许这就是很多公司面试都喜欢出这种「智力题」的原因。下面说几点技巧吧。<br><strong>尽量刷英文版的 LeetCode</strong>，中文版的“力扣”是阉割版，不仅很多题目没有答案，而且连个讨论区都没有。英文版的是真的很良心了，很多问题都有官方解答，详细易懂。而且讨论区（Discuss）也沉淀了大量优质内容，甚至好过官方解答。真正能打开你思路的，很可能是讨论区各路大神的思路荟萃。<br>PS：<strong>如果有的英文题目实在看不懂，有个小技巧</strong>，你在题目页面的 url 里加一个 -cn，即 <a target="_blank" rel="noopener" href="https://leetcode.com/xxx">https://leetcode.com/xxx</a> 改成 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/xxx%EF%BC%8C%E8%BF%99%E6%A0%B7%E5%B0%B1%E8%83%BD%E5%88%87%E6%8D%A2%E5%88%B0%E7%9B%B8%E5%BA%94%E7%9A%84%E4%B8%AD%E6%96%87%E7%89%88%E9%A1%B5%E9%9D%A2%E6%9F%A5%E7%9C%8B%E3%80%82">https://leetcode-cn.com/xxx，这样就能切换到相应的中文版页面查看。</a><br>对于初学者，<strong>强烈建议从 Explore 菜单里最下面的 Learn 开始刷</strong>，这个专题就是专门教你学习数据结构和基本算法的，教学篇和相应的练习题结合，不要太良心。<br>最近 Learn 专题里新增了一些内容，我们挑数据结构相关的内容刷就行了，像 Ruby，Machine Learning 就没必要刷了。刷完 Learn 专题的基础内容，基本就有能力去 Explore 菜单的 Interview 专题刷面试题，或者去 Problem 菜单，在真正的题海里遨游了。<br>无论刷 Explore 还是 Problems 菜单，<strong>最好一个分类一个分类的刷，不要蜻蜓点水</strong>。比如说这几天就刷链表，刷完链表再去连刷几天二叉树。这样做是为了帮助你提取「框架」。一旦总结出针对一类问题的框架，解决同类问题可谓是手到擒来。<br><strong>五、道理我都懂，还是不能坚持下去</strong><br>这其实无关算法了，还是老生常谈的执行力的问题。不说什么破鸡汤了，我觉得<strong>解决办法就是「激起欲望」</strong>，注意我说的是欲望，而不是常说的兴趣，拿我自己说说吧。<br>半年前我开始刷题，目的和大部分人都一样的，就是为毕业找工作做准备。只不过，大部分人是等到临近毕业了才开始刷，而我离毕业还有一阵子。这不是炫耀我多有觉悟，而是我承认自己的极度平凡。<br>首先，我真的想找到一份不错的工作（谁都想吧？），我想要高薪呀！否则我在朋友面前，女神面前放下的骚话，最终都会反过来啪啪地打我的脸。我也是要恰饭，要面子，要虚荣心的嘛。赚钱，虚荣心，足以激起我的欲望了。<br>但是，我不擅长 deadline 突击，我理解东西真的慢，所以干脆笨鸟先飞了。智商不够，拿时间来补，我没能力两个月突击，干脆拉长战线，打他个两年游击战，我还不信耗不死算法这个强敌。事实证明，你如果认真学习一个月，就能够取得肉眼可见的进步了。<br>现在，我依然在坚持刷题，而且为了另外一个原因，这个公众号。我没想到自己的文字竟然能够帮助到他人，甚至能得到认可。这也是虚荣心啊，我不能让读者失望啊，我想让更多的人认可（夸）我呀！<br>以上，不光是坚持刷算法题吧，很多场景都适用。执行力是要靠「欲望」支撑的，我也是一凡人，只有那些看得见摸得着的东西才能使我快乐呀。读者不妨也尝试把刷题学习和自己的切身利益联系起来，这恐怕是坚持下去最简单直白的理由了。</p>
+<p><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97">上一篇：队列实现栈|栈实现队列</a><br><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E4%BF%AE%E8%AE%A2%E7%89%88">下一篇：回溯算法详解</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/" itemprop="url">算法思维系列</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="算法思维系列"><a href="#算法思维系列" class="headerlink" title="算法思维系列"></a>算法思维系列</h1><ul>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF">算法学习之路</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E4%BF%AE%E8%AE%A2%E7%89%88">回溯算法详解</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%AD%90%E9%9B%86%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88">回溯算法团灭排列、组合、子集问题</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E8%AF%A6%E8%A7%A3">二分查找详解</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%8F%8C%E6%8C%87%E9%92%88%E6%8A%80%E5%B7%A7">双指针技巧总结</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%8A%80%E5%B7%A7">滑动窗口技巧</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/twoSum%E9%97%AE%E9%A2%98%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3">twoSum问题的核心思想</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BD%8D%E6%93%8D%E4%BD%9C">常用的位操作</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E8%AE%A1%E7%AE%97%E5%99%A8">拆解复杂问题：实现计算器</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E7%83%A7%E9%A5%BC%E6%8E%92%E5%BA%8F">烧饼排序</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%89%8D%E7%BC%80%E5%92%8C%E6%8A%80%E5%B7%A7">前缀和技巧</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%98%E6%B3%95">字符串乘法</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/FloodFill%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8">FloodFill算法详解及应用</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%8C%BA%E9%97%B4%E8%B0%83%E5%BA%A6%E9%97%AE%E9%A2%98%E4%B9%8B%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6">区间调度之区间合并问题</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%8C%BA%E9%97%B4%E4%BA%A4%E9%9B%86%E9%97%AE%E9%A2%98">区间调度之区间交集问题</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%BF%A1%E5%B0%81%E5%B5%8C%E5%A5%97%E9%97%AE%E9%A2%98">信封嵌套问题</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%87%A0%E4%B8%AA%E5%8F%8D%E7%9B%B4%E8%A7%89%E7%9A%84%E6%A6%82%E7%8E%87%E9%97%AE%E9%A2%98">几个反直觉的概率问题</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95">洗牌算法</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E9%80%92%E5%BD%92%E8%AF%A6%E8%A7%A3">递归详解</a><br>本章包含一些常用的算法技巧，比如前缀和、回溯思想、位操作、双指针、如何正确书写二分查找等等。</li>
+</ul>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/LRU%E7%AE%97%E6%B3%95/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/LRU%E7%AE%97%E6%B3%95/" itemprop="url">LRU算法</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="LRU算法详解"><a href="#LRU算法详解" class="headerlink" title="LRU算法详解"></a>LRU算法详解</h1><h3 id="一、什么是-LRU-算法"><a href="#一、什么是-LRU-算法" class="headerlink" title="一、什么是 LRU 算法"></a>一、什么是 LRU 算法</h3><p>就是一种缓存淘汰策略。<br>计算机的缓存容量有限，如果缓存满了就要删除一些内容，给新内容腾位置。但问题是，删除哪些内容呢？我们肯定希望删掉哪些没什么用的缓存，而把有用的数据继续留在缓存里，方便之后继续使用。那么，什么样的数据，我们判定为「有用的」的数据呢？<br>LRU 缓存淘汰算法就是一种常用策略。LRU 的全称是 Least Recently Used，也就是说我们认为最近使用过的数据应该是是「有用的」，很久都没用过的数据应该是无用的，内存满了就优先删那些很久没用过的数据。<br>举个简单的例子，安卓手机都可以把软件放到后台运行，比如我先后打开了「设置」「手机管家」「日历」，那么现在他们在后台排列的顺序是这样的：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/LRU%E7%AE%97%E6%B3%95/1.jpg" alt="jietu"><br>但是这时候如果我访问了一下「设置」界面，那么「设置」就会被提前到第一个，变成这样：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/LRU%E7%AE%97%E6%B3%95/2.jpg" alt="jietu"><br>假设我的手机只允许我同时开 3 个应用程序，现在已经满了。那么如果我新开了一个应用「时钟」，就必须关闭一个应用为「时钟」腾出一个位置，关那个呢？<br>按照 LRU 的策略，就关最底下的「手机管家」，因为那是最久未使用的，然后把新开的应用放到最上面：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/LRU%E7%AE%97%E6%B3%95/3.jpg" alt="jietu"><br>现在你应该理解 LRU（Least Recently Used）策略了。当然还有其他缓存淘汰策略，比如不要按访问的时序来淘汰，而是按访问频率（LFU 策略）来淘汰等等，各有应用场景。本文讲解 LRU 算法策略。</p>
+<h3 id="二、LRU-算法描述"><a href="#二、LRU-算法描述" class="headerlink" title="二、LRU 算法描述"></a>二、LRU 算法描述</h3><p>LRU 算法实际上是让你设计数据结构：首先要接收一个 capacity 参数作为缓存的最大容量，然后实现两个 API，一个是 put(key, val) 方法存入键值对，另一个是 get(key) 方法获取 key 对应的 val，如果 key 不存在则返回 -1。<br>注意哦，get 和 put 方法必须都是 $O(1)$ 的时间复杂度，我们举个具体例子来看看 LRU 算法怎么工作。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/* 缓存容量为 2 */</span><br>LRUCache cache = <span class="hljs-keyword">new</span> LRUCache(<span class="hljs-number">2</span>);<br><span class="hljs-comment">// 你可以把 cache 理解成一个队列</span><br><span class="hljs-comment">// 假设左边是队头，右边是队尾</span><br><span class="hljs-comment">// 最近使用的排在队头，久未使用的排在队尾</span><br><span class="hljs-comment">// 圆括号表示键值对 (key, val)</span><br>cache.put(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);<br><span class="hljs-comment">// cache = [(1, 1)]</span><br>cache.put(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>);<br><span class="hljs-comment">// cache = [(2, 2), (1, 1)]</span><br>cache.get(<span class="hljs-number">1</span>);       <span class="hljs-comment">// 返回 1</span><br><span class="hljs-comment">// cache = [(1, 1), (2, 2)]</span><br><span class="hljs-comment">// 解释：因为最近访问了键 1，所以提前至队头</span><br><span class="hljs-comment">// 返回键 1 对应的值 1</span><br>cache.put(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>);<br><span class="hljs-comment">// cache = [(3, 3), (1, 1)]</span><br><span class="hljs-comment">// 解释：缓存容量已满，需要删除内容空出位置</span><br><span class="hljs-comment">// 优先删除久未使用的数据，也就是队尾的数据</span><br><span class="hljs-comment">// 然后把新的数据插入队头</span><br>cache.get(<span class="hljs-number">2</span>);       <span class="hljs-comment">// 返回 -1 (未找到)</span><br><span class="hljs-comment">// cache = [(3, 3), (1, 1)]</span><br><span class="hljs-comment">// 解释：cache 中不存在键为 2 的数据</span><br>cache.put(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>);    <br><span class="hljs-comment">// cache = [(1, 4), (3, 3)]</span><br><span class="hljs-comment">// 解释：键 1 已存在，把原始值 1 覆盖为 4</span><br><span class="hljs-comment">// 不要忘了也要将键值对提前到队头</span><br></code></pre></td></tr></table></figure>
+<h3 id="三、LRU-算法设计"><a href="#三、LRU-算法设计" class="headerlink" title="三、LRU 算法设计"></a>三、LRU 算法设计</h3><p>分析上面的操作过程，要让 put 和 get 方法的时间复杂度为 O(1)，我们可以总结出 cache 这个数据结构必要的条件：查找快，插入快，删除快，有顺序之分。<br>因为显然 cache 必须有顺序之分，以区分最近使用的和久未使用的数据；而且我们要在 cache 中查找键是否已存在；如果容量满了要删除最后一个数据；每次访问还要把数据插入到队头。<br>那么，什么数据结构同时符合上述条件呢？哈希表查找快，但是数据无固定顺序；链表有顺序之分，插入删除快，但是查找慢。所以结合一下，形成一种新的数据结构：哈希链表。<br>LRU 缓存算法的核心数据结构就是哈希链表，双向链表和哈希表的结合体。这个数据结构长这样：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/LRU%E7%AE%97%E6%B3%95/4.jpg" alt="HashLinkedList"><br>思想很简单，就是借助哈希表赋予了链表快速查找的特性嘛：可以快速查找某个 key 是否存在缓存（链表）中，同时可以快速删除、添加节点。回想刚才的例子，这种数据结构是不是完美解决了 LRU 缓存的需求？<br>也许读者会问，为什么要是双向链表，单链表行不行？另外，既然哈希表中已经存了 key，为什么链表中还要存键值对呢，只存值不就行了？<br>想的时候都是问题，只有做的时候才有答案。这样设计的原因，必须等我们亲自实现 LRU 算法之后才能理解，所以我们开始看代码吧～</p>
+<h3 id="四、代码实现"><a href="#四、代码实现" class="headerlink" title="四、代码实现"></a>四、代码实现</h3><p>很多编程语言都有内置的哈希链表或者类似 LRU 功能的库函数，但是为了帮大家理解算法的细节，我们用 Java 自己造轮子实现一遍 LRU 算法。<br>首先，我们把双链表的节点类写出来，为了简化，key 和 val 都认为是 int 类型：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> key, val;<br>    <span class="hljs-keyword">public</span> Node next, prev;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Node</span><span class="hljs-params">(<span class="hljs-keyword">int</span> k, <span class="hljs-keyword">int</span> v)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.key = k;<br>        <span class="hljs-keyword">this</span>.val = v;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>然后依靠我们的 Node 类型构建一个双链表，实现几个需要的 API（这些操作的时间复杂度均为 $O(1)$)：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DoubleList</span> </span>&#123;  <br>    <span class="hljs-comment">// 在链表头部添加节点 x，时间 O(1)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addFirst</span><span class="hljs-params">(Node x)</span></span>;<br>    <span class="hljs-comment">// 删除链表中的 x 节点（x 一定存在）</span><br>    <span class="hljs-comment">// 由于是双链表且给的是目标 Node 节点，时间 O(1)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">remove</span><span class="hljs-params">(Node x)</span></span>;<br>    <br>    <span class="hljs-comment">// 删除链表中最后一个节点，并返回该节点，时间 O(1)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Node <span class="hljs-title">removeLast</span><span class="hljs-params">()</span></span>;<br>    <br>    <span class="hljs-comment">// 返回链表长度，时间 O(1)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>PS：这就是普通双向链表的实现，为了让读者集中精力理解 LRU 算法的逻辑，就省略链表的具体代码。<br>到这里就能回答刚才“为什么必须要用双向链表”的问题了，因为我们需要删除操作。删除一个节点不光要得到该节点本身的指针，也需要操作其前驱节点的指针，而双向链表才能支持直接查找前驱，保证操作的时间复杂度 $O(1)$。<br>有了双向链表的实现，我们只需要在 LRU 算法中把它和哈希表结合起来即可。我们先把逻辑理清楚：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// key 映射到 Node(key, val)</span><br>HashMap&lt;Integer, Node&gt; map;<br><span class="hljs-comment">// Node(k1, v1) &lt;-&gt; Node(k2, v2)...</span><br>DoubleList cache;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (key 不存在) &#123;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123;        <br>        将数据 (key, val) 提到开头；<br>        <span class="hljs-keyword">return</span> val;<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">put</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key, <span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>    Node x = <span class="hljs-keyword">new</span> Node(key, val);<br>    <span class="hljs-keyword">if</span> (key 已存在) &#123;<br>        把旧的数据删除；<br>        将新节点 x 插入到开头；<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">if</span> (cache 已满) &#123;<br>            删除链表的最后一个数据腾位置；<br>            删除 map 中映射到该数据的键；<br>        &#125; <br>        将新节点 x 插入到开头；<br>        map 中新建 key 对新节点 x 的映射；<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>如果能够看懂上述逻辑，翻译成代码就很容易理解了：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LRUCache</span> </span>&#123;<br>    <span class="hljs-comment">// key -&gt; Node(key, val)</span><br>    <span class="hljs-keyword">private</span> HashMap&lt;Integer, Node&gt; map;<br>    <span class="hljs-comment">// Node(k1, v1) &lt;-&gt; Node(k2, v2)...</span><br>    <span class="hljs-keyword">private</span> DoubleList cache;<br>    <span class="hljs-comment">// 最大容量</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> cap;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">LRUCache</span><span class="hljs-params">(<span class="hljs-keyword">int</span> capacity)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.cap = capacity;<br>        map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>        cache = <span class="hljs-keyword">new</span> DoubleList();<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (!map.containsKey(key))<br>            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">int</span> val = map.get(key).val;<br>        <span class="hljs-comment">// 利用 put 方法把该数据提前</span><br>        put(key, val);<br>        <span class="hljs-keyword">return</span> val;<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">put</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key, <span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>        <span class="hljs-comment">// 先把新节点 x 做出来</span><br>        Node x = <span class="hljs-keyword">new</span> Node(key, val);<br>        <br>        <span class="hljs-keyword">if</span> (map.containsKey(key)) &#123;<br>            <span class="hljs-comment">// 删除旧的节点，新的插到头部</span><br>            cache.remove(map.get(key));<br>            cache.addFirst(x);<br>            <span class="hljs-comment">// 更新 map 中对应的数据</span><br>            map.put(key, x);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">if</span> (cap == cache.size()) &#123;<br>                <span class="hljs-comment">// 删除链表最后一个数据</span><br>                Node last = cache.removeLast();<br>                map.remove(last.key);<br>            &#125;<br>            <span class="hljs-comment">// 直接添加到头部</span><br>            cache.addFirst(x);<br>            map.put(key, x);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这里就能回答之前的问答题“为什么要在链表中同时存储 key 和 val，而不是只存储 val”，注意这段代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (cap == cache.size()) &#123;<br>    <span class="hljs-comment">// 删除链表最后一个数据</span><br>    Node last = cache.removeLast();<br>    map.remove(last.key);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>当缓存容量已满，我们不仅仅要删除最后一个 Node 节点，还要把 map 中映射到该节点的 key 同时删除，而这个 key 只能由 Node 得到。如果 Node 结构中只存储 val，那么我们就无法得知 key 是什么，就无法删除 map 中的键，造成错误。<br>至此，你应该已经掌握 LRU 算法的思想和实现了，很容易犯错的一点是：处理链表节点的同时不要忘了更新哈希表中对节点的映射。</p>
+<p><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E5%A0%86%E8%AF%A6%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97">上一篇：二叉堆详解实现优先级队列</a><br><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E6%93%8D%E4%BD%9C%E9%9B%86%E9%94%A6">下一篇：二叉搜索树操作集锦</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E9%80%92%E5%BD%92%E8%AF%A6%E8%A7%A3/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E9%80%92%E5%BD%92%E8%AF%A6%E8%A7%A3/" itemprop="url">递归详解</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="递归详解"><a href="#递归详解" class="headerlink" title="递归详解"></a>递归详解</h1><p>首先说明一个问题，简单阐述一下递归，分治算法，动态规划，贪心算法这几个东西的区别和联系，心里有个印象就好。<br>递归是一种编程技巧，一种解决问题的思维方式；分治算法和动态规划很大程度上是递归思想基础上的（虽然动态规划的最终版本大都不是递归了，但解题思想还是离不开递归），解决更具体问题的两类算法思想；贪心算法是动态规划算法的一个子集，可以更高效解决一部分更特殊的问题。<br>分治算法将在这节讲解，以最经典的归并排序为例，它把待排序数组不断二分为规模更小的子问题处理，这就是 “分而治之” 这个词的由来。显然，排序问题分解出的子问题是不重复的，如果有的问题分解后的子问题有重复的（重叠子问题性质），那么就交给动态规划算法去解决！</p>
+<h2 id="递归详解-1"><a href="#递归详解-1" class="headerlink" title="递归详解"></a>递归详解</h2><p>介绍分治之前，首先要弄清楚递归这个概念。<br>递归的基本思想是某个函数直接或者间接地调用自身，这样就把原问题的求解转换为许多性质相同但是规模更小的子问题。我们只需要关注如何把原问题划分成符合条件的子问题，而不需要去研究这个子问题是如何被解决的。递归和枚举的区别在于：枚举是横向地把问题划分，然后依次求解子问题，而递归是把问题逐级分解，是纵向的拆分。<br>以下会举例说明我对递归的一点理解，<strong>如果你不想看下去了，请记住这几个问题怎么回答：</strong></p>
+<ol>
+<li>如何给一堆数字排序？ 答：分成两半，先排左半边再排右半边，最后合并就行了，至于怎么排左边和右边，请重新阅读这句话。</li>
+<li>孙悟空身上有多少根毛？ 答：一根毛加剩下的毛。</li>
+<li>你今年几岁？ 答：去年的岁数加一岁,1999 年我出生。<br>递归代码最重要的两个特征：结束条件和自我调用。自我调用是在解决子问题，而结束条件定义了最简子问题的答案。<figure class="hljs highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">func</span><span class="hljs-params">(你今年几岁)</span> </span>&#123;<br>    <span class="hljs-comment">// 最简子问题，结束条件</span><br>    <span class="hljs-keyword">if</span> (你<span class="hljs-number">1999</span>年几岁) <span class="hljs-keyword">return</span> 我<span class="hljs-number">0</span>岁;<br>    <span class="hljs-comment">// 自我调用，缩小规模</span><br>    <span class="hljs-keyword">return</span> func(你去年几岁) + <span class="hljs-number">1</span>;   <br>&#125;<br></code></pre></td></tr></table></figure>
+其实仔细想想，<strong>递归运用最成功的是什么？我认为是数学归纳法。</strong>我们高中都学过数学归纳法，使用场景大概是：我们推不出来某个求和公式，但是我们试了几个比较小的数，似乎发现了一点规律，然后编了一个公式，看起来应该是正确答案。但是数学是很严谨的，你哪怕穷举了一万个数都是正确的，但是第一万零一个数正确吗？这就要数学归纳法发挥神威了，可以假设我们编的这个公式在第 k 个数时成立，如果证明在第 k + 1 时也成立，那么我们编的这个公式就是正确的。<br>那么数学归纳法和递归有什么联系？我们刚才说了，递归代码必须要有结束条件，如果没有的话就会进入无穷无尽的自我调用，直到内存耗尽。而数学证明的难度在于，你可以尝试有穷种情况，但是难以将你的结论延伸到无穷大。这里就可以看出联系了 —— 无穷。<br>递归代码的精髓在于调用自己去解决规模更小的子问题，直到到达结束条件；而数学归纳法之所以有用，就在于不断把我们的猜测向上加一，扩大结论的规模，没有结束条件，从而把结论延伸到无穷无尽，也就完成了猜测正确性的证明。<h3 id="为什么要写递归"><a href="#为什么要写递归" class="headerlink" title="为什么要写递归"></a>为什么要写递归</h3>首先为了训练逆向思考的能力。递推的思维是正常人的思维，总是看着眼前的问题思考对策，解决问题是将来时；递归的思维，逼迫我们倒着思考，看到问题的尽头，把解决问题的过程看做过去时。<br>第二，练习分析问题的结构，当问题可以被分解成相同结构的小问题时，你能敏锐发现这个特点，进而高效解决问题。<br>第三，跳出细节，从整体上看问题。再说说归并排序，其实可以不用递归来划分左右区域的，但是代价就是代码极其难以理解，大概看一下代码（归并排序在后面讲，这里大致看懂意思就行，体会递归的妙处）：<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(Comparable[] a)</span></span>&#123;    <br>    <span class="hljs-keyword">int</span> N = a.length;<br>    <span class="hljs-comment">// 这么复杂，是对排序的不尊重。我拒绝研究这样的代码。</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> sz = <span class="hljs-number">1</span>; sz &lt; N; sz = sz + sz)<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> lo = <span class="hljs-number">0</span>; lo &lt; N - sz; lo += sz + sz)<br>            merge(a, lo, lo + sz - <span class="hljs-number">1</span>, Math.min(lo + sz + sz - <span class="hljs-number">1</span>, N - <span class="hljs-number">1</span>));<br>&#125;<br><span class="hljs-comment">/* 我还是选择递归，简单，漂亮 */</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(Comparable[] a, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> hi)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (lo &gt;= hi) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">int</span> mid = lo + (hi - lo) / <span class="hljs-number">2</span>;<br>    sort(a, lo, mid); <span class="hljs-comment">// 排序左半边</span><br>    sort(a, mid + <span class="hljs-number">1</span>, hi); <span class="hljs-comment">// 排序右半边</span><br>    merge(a, lo, mid, hi); <span class="hljs-comment">// 合并两边</span><br>&#125;<br></code></pre></td></tr></table></figure>
+看起来简洁漂亮是一方面，关键是<strong>可解释性很强</strong>：把左半边排序，把右半边排序，最后合并两边。而非递归版本看起来不知所云，充斥着各种难以理解的边界计算细节，特别容易出 bug 且难以调试，人生苦短，我更倾向于递归版本。<br>显然有时候递归处理是高效的，比如归并排序，<strong>有时候是低效的</strong>，比如数孙悟空身上的毛，因为堆栈会消耗额外空间，而简单的递推不会消耗空间。比如这个例子，给一个链表头，计算它的长度：<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/* 典型的递推遍历框架，需要额外空间 O(1) */</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">(Node head)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> size = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (Node p = head; p != <span class="hljs-keyword">null</span>; p = p.next) size++;<br>    <span class="hljs-keyword">return</span> size;<br>&#125;<br><span class="hljs-comment">/* 我偏要递归，万物皆递归，需要额外空间 O(N) */</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">(Node head)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">return</span> size(head.next) + <span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="写递归的技巧"><a href="#写递归的技巧" class="headerlink" title="写递归的技巧"></a>写递归的技巧</h3>我的一点心得是：<strong>明白一个函数的作用并相信它能完成这个任务，千万不要试图跳进细节。</strong>千万不要跳进这个函数里面企图探究更多细节，否则就会陷入无穷的细节无法自拔，人脑能压几个栈啊。<br>先举个最简单的例子：遍历二叉树。<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">traverse</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">nullptr</span>) <span class="hljs-keyword">return</span>;<br>    traverse(root-&gt;left);<br>    traverse(root-&gt;right);<br>&#125;<br></code></pre></td></tr></table></figure>
+这几行代码就足以扫荡任何一棵二叉树了。我想说的是，对于递归函数<code>traverse(root)</code>，我们只要相信：给它一个根节点<code>root</code>，它就能遍历这棵树，因为写这个函数不就是为了这个目的吗？所以我们只需要把这个节点的左右节点再甩给这个函数就行了，因为我相信它能完成任务的。那么遍历一棵N叉数呢？太简单了好吧，和二叉树一模一样啊。<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">traverse</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">nullptr</span>) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">for</span> (child : root-&gt;children)<br>        traverse(child);<br>&#125;<br></code></pre></td></tr></table></figure>
+至于遍历的什么前、中、后序，那都是显而易见的，对于N叉树，显然没有中序遍历。</li>
+</ol>
+<p>以下<strong>详解 LeetCode 的一道题来说明</strong>：给一课二叉树，和一个目标值，节点上的值有正有负，返回树中和等于目标值的路径条数，让你编写 pathSum 函数：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs plain">&#x2F;* 来源于 LeetCode PathSum III： https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;path-sum-iii&#x2F; *&#x2F;<br>root &#x3D; [10,5,-3,3,2,null,11,3,-2,null,1],<br>sum &#x3D; 8<br>      10<br>     &#x2F;  \<br>    5   -3<br>   &#x2F; \    \<br>  3   2   11<br> &#x2F; \   \<br>3  -2   1<br>Return 3. The paths that sum to 8 are:<br>1.  5 -&gt; 3<br>2.  5 -&gt; 2 -&gt; 1<br>3. -3 -&gt; 11<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/* 看不懂没关系，底下有更详细的分析版本，这里突出体现递归的简洁优美 */</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pathSum</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> sum)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == null) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">return</span> count(root, sum) + <br>        pathSum(root.left, sum) + pathSum(root.right, sum);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">count</span><span class="hljs-params">(TreeNode node, <span class="hljs-keyword">int</span> sum)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (node == null) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">return</span> (node.val == sum) + <br>        count(node.left, sum - node.val) + count(node.right, sum - node.val);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>题目看起来很复杂吧，不过代码却极其简洁，这就是递归的魅力。我来简单总结这个问题的<strong>解决过程</strong>：<br>首先明确，递归求解树的问题必然是要遍历整棵树的，所以<strong>二叉树的遍历框架</strong>（分别对左右孩子递归调用函数本身）必然要出现在主函数 pathSum 中。那么对于每个节点，他们应该干什么呢？他们应该看看，自己和脚底下的小弟们包含多少条符合条件的路径。好了，这道题就结束了。<br>按照前面说的技巧，根据刚才的分析来定义清楚每个递归函数应该做的事：<br>PathSum 函数：给他一个节点和一个目标值，他返回以这个节点为根的树中，和为目标值的路径总数。<br>count 函数：给他一个节点和一个目标值，他返回以这个节点为根的树中，能凑出几个以该节点为路径开头，和为目标值的路径总数。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/* 有了以上铺垫，详细注释一下代码 */</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pathSum</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> sum)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == null) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> pathImLeading = count(root, sum); <span class="hljs-comment">// 自己为开头的路径数</span><br>    <span class="hljs-keyword">int</span> leftPathSum = pathSum(root.left, sum); <span class="hljs-comment">// 左边路径总数（相信他能算出来）</span><br>    <span class="hljs-keyword">int</span> rightPathSum = pathSum(root.right, sum); <span class="hljs-comment">// 右边路径总数（相信他能算出来）</span><br>    <span class="hljs-keyword">return</span> leftPathSum + rightPathSum + pathImLeading;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">count</span><span class="hljs-params">(TreeNode node, <span class="hljs-keyword">int</span> sum)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (node == null) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 我自己能不能独当一面，作为一条单独的路径呢？</span><br>    <span class="hljs-keyword">int</span> isMe = (node.val == sum) ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 左边的小老弟，你那边能凑几个 sum - node.val 呀？</span><br>    <span class="hljs-keyword">int</span> leftBrother = count(node.left, sum - node.val); <br>    <span class="hljs-comment">// 右边的小老弟，你那边能凑几个 sum - node.val 呀？</span><br>    <span class="hljs-keyword">int</span> rightBrother = count(node.right, sum - node.val);<br>    <span class="hljs-keyword">return</span>  isMe + leftBrother + rightBrother; <span class="hljs-comment">// 我这能凑这么多个</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>还是那句话，明白每个函数能做的事，并相信他们能够完成。<br>总结下，PathSum 函数提供的二叉树遍历框架，在遍历中对每个节点调用 count 函数，看出先序遍历了吗（这道题什么序都是一样的）；count 函数也是一个二叉树遍历，用于寻找以该节点开头的目标值路径。好好体会吧！</p>
+<h2 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h2><p><strong>归并排序</strong>，典型的分治算法；分治，典型的递归结构。<br>分治算法可以分三步走：分解 -&gt; 解决 -&gt; 合并</p>
+<ol>
+<li>分解原问题为结构相同的子问题。</li>
+<li>分解到某个容易求解的边界之后，进行第归求解。</li>
+<li>将子问题的解合并成原问题的解。<br>归并排序，我们就叫这个函数<code>merge_sort</code>吧，按照我们上面说的，要明确该函数的职责，即<strong>对传入的一个数组排序</strong>。OK，那么这个问题能不能分解呢？当然可以！给一个数组排序，不就等于给该数组的两半分别排序，然后合并就完事了。<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">merge_sort</span><span class="hljs-params">(一个数组)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (可以很容易处理) <span class="hljs-keyword">return</span>;<br>    merge_sort(左半个数组);<br>    merge_sort(右半个数组);<br>    merge(左半个数组, 右半个数组);<br>&#125;<br></code></pre></td></tr></table></figure>
+好了，这个算法也就这样了，完全没有任何难度。记住之前说的，相信函数的能力，传给他半个数组，那么这半个数组就已经被排好了。而且你会发现这不就是个二叉树遍历模板吗？为什么是后序遍历？因为我们分治算法的套路是 <strong>分解 -&gt; 解决（触底） -&gt; 合并（回溯）</strong> 啊，先左右分解，再处理合并，回溯就是在退栈，就相当于后序遍历了。至于<code>merge</code>函数，参考两个有序链表的合并，简直一模一样，下面直接贴代码吧。<br>下面参考《算法4》的 Java 代码，很漂亮。由此可见，不仅算法思想思想重要，编码技巧也是挺重要的吧！多思考，多模仿。<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Merge</span> </span>&#123;<br>    <span class="hljs-comment">// 不要在 merge 函数里构造新数组了，因为 merge 函数会被多次调用，影响性能</span><br>    <span class="hljs-comment">// 直接一次性构造一个足够大的数组，简洁，高效</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Comparable[] aux;<br>     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(Comparable[] a)</span> </span>&#123;<br>        aux = <span class="hljs-keyword">new</span> Comparable[a.length];<br>        sort(a, <span class="hljs-number">0</span>, a.length - <span class="hljs-number">1</span>);<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(Comparable[] a, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> hi)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (lo &gt;= hi) <span class="hljs-keyword">return</span>;<br>        <span class="hljs-keyword">int</span> mid = lo + (hi - lo) / <span class="hljs-number">2</span>;<br>        sort(a, lo, mid);<br>        sort(a, mid + <span class="hljs-number">1</span>, hi);<br>        merge(a, lo, mid, hi);<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(Comparable[] a, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> mid, <span class="hljs-keyword">int</span> hi)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> i = lo, j = mid + <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = lo; k &lt;= hi; k++)<br>            aux[k] = a[k];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = lo; k &lt;= hi; k++) &#123;<br>            <span class="hljs-keyword">if</span>      (i &gt; mid)              &#123; a[k] = aux[j++]; &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j &gt; hi)               &#123; a[k] = aux[i++]; &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (less(aux[j], aux[i])) &#123; a[k] = aux[j++]; &#125;<br>            <span class="hljs-keyword">else</span>                           &#123; a[k] = aux[i++]; &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">less</span><span class="hljs-params">(Comparable v, Comparable w)</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> v.compareTo(w) &lt; <span class="hljs-number">0</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+LeetCode 上有分治算法的专项练习，可复制到浏览器去做题：<br><a target="_blank" rel="noopener" href="https://leetcode.com/tag/divide-and-conquer/">https://leetcode.com/tag/divide-and-conquer/</a></li>
+</ol>
+<p><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95">上一篇：洗牌算法</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/LRU%E7%AE%97%E6%B3%95">下一篇：如何实现LRU算法</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/koko%E5%81%B7%E9%A6%99%E8%95%89/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/koko%E5%81%B7%E9%A6%99%E8%95%89/" itemprop="url">koko偷香蕉</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="如何运用二分查找算法"><a href="#如何运用二分查找算法" class="headerlink" title="如何运用二分查找算法"></a>如何运用二分查找算法</h1><p>二分查找到底有能运用在哪里？<br>最常见的就是教科书上的例子，在<strong>有序数组</strong>中搜索给定的某个目标值的索引。再推广一点，如果目标值存在重复，修改版的二分查找可以返回目标值的左侧边界索引或者右侧边界索引。<br>PS：以上提到的三种二分查找算法形式在前文「二分查找详解」有代码详解，如果没看过强烈建议看看。<br>抛开有序数组这个枯燥的数据结构，二分查找如何运用到实际的算法问题中呢？当搜索空间有序的时候，就可以通过二分搜索「剪枝」，大幅提升效率。<br>说起来玄乎得很，本文先用一个具体的「Koko 吃香蕉」的问题来举个例子。</p>
+<h3 id="一、问题分析"><a href="#一、问题分析" class="headerlink" title="一、问题分析"></a>一、问题分析</h3><p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E4%BA%8C%E5%88%86%E5%BA%94%E7%94%A8/title1.png"><br>也就是说，Koko 每小时最多吃一堆香蕉，如果吃不下的话留到下一小时再吃；如果吃完了这一堆还有胃口，也只会等到下一小时才会吃下一堆。在这个条件下，让我们确定 Koko 吃香蕉的<strong>最小速度</strong>（根/小时）。<br>如果直接给你这个情景，你能想到哪里能用到二分查找算法吗？如果没有见过类似的问题，恐怕是很难把这个问题和二分查找联系起来的。<br>那么我们先抛开二分查找技巧，想想如何暴力解决这个问题呢？<br>首先，算法要求的是「<code>H</code> 小时内吃完香蕉的最小速度」，我们不妨称为 <code>speed</code>，请问 <code>speed</code> 最大可能为多少，最少可能为多少呢？<br>显然最少为 1，最大为 <code>max(piles)</code>，因为一小时最多只能吃一堆香蕉。那么暴力解法就很简单了，只要从 1 开始穷举到 <code>max(piles)</code>，一旦发现发现某个值可以在 <code>H</code> 小时内吃完所有香蕉，这个值就是最小速度：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">minEatingSpeed</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] piles, <span class="hljs-keyword">int</span> H)</span> </span>&#123;<br>	<span class="hljs-comment">// piles 数组的最大值</span><br>    <span class="hljs-keyword">int</span> max = getMax(piles);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> speed = <span class="hljs-number">1</span>; speed &lt; max; speed++) &#123;<br>    	<span class="hljs-comment">// 以 speed 是否能在 H 小时内吃完香蕉</span><br>        <span class="hljs-keyword">if</span> (canFinish(piles, speed, H))<br>            <span class="hljs-keyword">return</span> speed;<br>    &#125;<br>    <span class="hljs-keyword">return</span> max;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>注意这个 for 循环，就是在<strong>连续的空间线性搜索，这就是二分查找可以发挥作用的标志</strong>。由于我们要求的是最小速度，所以可以用一个<strong>搜索左侧边界的二分查找</strong>来代替线性搜索，提升效率：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">minEatingSpeed</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] piles, <span class="hljs-keyword">int</span> H)</span> </span>&#123;<br>    <span class="hljs-comment">// 套用搜索左侧边界的算法框架</span><br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">1</span>, right = getMax(piles) + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>        <span class="hljs-comment">// 防止溢出</span><br>        <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (canFinish(piles, mid, H)) &#123;<br>            right = mid;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            left = mid + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> left;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>PS：如果对于这个二分查找算法的细节问题有疑问，建议看下前文「二分查找详解」搜索左侧边界的算法模板，这里不展开了。<br>剩下的辅助函数也很简单，可以一步步拆解实现：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 时间复杂度 O(N)</span><br><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">canFinish</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] piles, <span class="hljs-keyword">int</span> speed, <span class="hljs-keyword">int</span> H)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> time = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> n : piles) &#123;<br>        time += timeOf(n, speed);<br>    &#125;<br>    <span class="hljs-keyword">return</span> time &lt;= H;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">timeOf</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> speed)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> (n / speed) + ((n % speed &gt; <span class="hljs-number">0</span>) ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getMax</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] piles)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> max = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> n : piles)<br>        max = Math.max(n, max);<br>    <span class="hljs-keyword">return</span> max;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>至此，借助二分查找技巧，算法的时间复杂度为 O(NlogN)。</p>
+<h3 id="二、扩展延伸"><a href="#二、扩展延伸" class="headerlink" title="二、扩展延伸"></a>二、扩展延伸</h3><p>类似的，再看一道运输问题：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E4%BA%8C%E5%88%86%E5%BA%94%E7%94%A8/title2.png"><br>要在 <code>D</code> 天内运输完所有货物，货物不可分割，如何确定运输的最小载重呢（下文称为 <code>cap</code>）？<br>其实本质上和 Koko 吃香蕉的问题一样的，首先确定 <code>cap</code> 的最小值和最大值分别为 <code>max(weights)</code> 和 <code>sum(weights)</code>。<br>我们要求<strong>最小载重</strong>，所以可以用搜索左侧边界的二分查找算法优化线性搜索：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 寻找左侧边界的二分查找</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">shipWithinDays</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] weights, <span class="hljs-keyword">int</span> D)</span> </span>&#123;<br>	<span class="hljs-comment">// 载重可能的最小值</span><br>    <span class="hljs-keyword">int</span> left = getMax(weights);<br>	<span class="hljs-comment">// 载重可能的最大值 + 1</span><br>    <span class="hljs-keyword">int</span> right = getSum(weights) + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>        <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (canFinish(weights, D, mid)) &#123;<br>            right = mid;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            left = mid + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> left;<br>&#125;<br><span class="hljs-comment">// 如果载重为 cap，是否能在 D 天内运完货物？</span><br><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">canFinish</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] w, <span class="hljs-keyword">int</span> D, <span class="hljs-keyword">int</span> cap)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> day = <span class="hljs-number">0</span>; day &lt; D; day++) &#123;<br>        <span class="hljs-keyword">int</span> maxCap = cap;<br>        <span class="hljs-keyword">while</span> ((maxCap -= w[i]) &gt;= <span class="hljs-number">0</span>) &#123;<br>            i++;<br>            <span class="hljs-keyword">if</span> (i == w.length)<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>通过这两个例子，你是否明白了二分查找在实际问题中的应用？</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>    <span class="hljs-keyword">if</span> (isOK(i))<br>        <span class="hljs-keyword">return</span> ans;<br></code></pre></td></tr></table></figure>
+
+
+
+<p><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB">上一篇：如何计算编辑距离</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%8E%A5%E9%9B%A8%E6%B0%B4">下一篇：如何高效解决接雨水问题</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/k%E4%B8%AA%E4%B8%80%E7%BB%84%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/k%E4%B8%AA%E4%B8%80%E7%BB%84%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" itemprop="url">k个一组反转链表</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="如何k个一组反转链表"><a href="#如何k个一组反转链表" class="headerlink" title="如何k个一组反转链表"></a>如何k个一组反转链表</h1><p>之前的文章「递归反转链表的一部分」讲了如何递归地反转一部分链表，有读者就问如何迭代地反转链表，这篇文章解决的问题也需要反转链表的函数，我们不妨就用迭代方式来解决。<br>本文要解决「K 个一组反转链表」，不难理解：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/title.png"><br>这个问题经常在面经中看到，而且 LeetCode 上难度是 Hard，它真的有那么难吗？<br>对于基本数据结构的算法问题其实都不难，只要结合特点一点点拆解分析，一般都没啥难点。下面我们就来拆解一下这个问题。</p>
+<h3 id="一、分析问题"><a href="#一、分析问题" class="headerlink" title="一、分析问题"></a>一、分析问题</h3><p>首先，前文<a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%9A%84%E6%A1%86%E6%9E%B6%E6%80%9D%E7%BB%B4">学习数据结构的框架思维</a>提到过，链表是一种兼具递归和迭代性质的数据结构，认真思考一下可以发现<strong>这个问题具有递归性质</strong>。<br>什么叫递归性质？直接上图理解，比如说我们对这个链表调用 <code>reverseKGroup(head, 2)</code>，即以 2 个节点为一组反转链表：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/1.jpg"><br>如果我设法把前 2 个节点反转，那么后面的那些节点怎么处理？后面的这些节点也是一条链表，而且规模（长度）比原来这条链表小，这就叫<strong>子问题</strong>。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/2.jpg"><br>我们可以直接递归调用 <code>reverseKGroup(cur, 2)</code>，因为子问题和原问题的结构完全相同，这就是所谓的递归性质。<br>发现了递归性质，就可以得到大致的算法流程：<br><strong>1、先反转以 <code>head</code> 开头的 <code>k</code> 个元素</strong>。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/3.jpg"><br><strong>2、将第 <code>k + 1</code> 个元素作为 <code>head</code> 递归调用 <code>reverseKGroup</code> 函数</strong>。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/4.jpg"><br><strong>3、将上述两个过程的结果连接起来</strong>。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/5.jpg"><br>整体思路就是这样了，最后一点值得注意的是，递归函数都有个 base case，对于这个问题是什么呢？<br>题目说了，如果最后的元素不足 <code>k</code> 个，就保持不变。这就是 base case，待会会在代码里体现。</p>
+<h3 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h3><p>首先，我们要实现一个 <code>reverse</code> 函数反转一个区间之内的元素。在此之前我们再简化一下，给定链表头结点，如何反转整个链表？</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 反转以 a 为头结点的链表</span><br><span class="hljs-function">ListNode <span class="hljs-title">reverse</span><span class="hljs-params">(ListNode a)</span> </span>&#123;<br>    ListNode pre, cur, nxt;<br>    pre = <span class="hljs-keyword">null</span>; cur = a; nxt = a;<br>    <span class="hljs-keyword">while</span> (cur != <span class="hljs-keyword">null</span>) &#123;<br>        nxt = cur.next;<br>        <span class="hljs-comment">// 逐个结点反转</span><br>        cur.next = pre;<br>        <span class="hljs-comment">// 更新指针位置</span><br>        pre = cur;<br>        cur = nxt;<br>    &#125;<br>    <span class="hljs-comment">// 返回反转后的头结点</span><br>    <span class="hljs-keyword">return</span> pre;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/8.gif"><br>这次使用迭代思路来实现的，借助动画理解应该很容易。<br>「反转以 <code>a</code> 为头结点的链表」其实就是「反转 <code>a</code> 到 null 之间的结点」，那么如果让你「反转 <code>a</code> 到 <code>b</code> 之间的结点」，你会不会？<br>只要更改函数签名，并把上面的代码中 <code>null</code> 改成 <code>b</code> 即可：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/** 反转区间 [a, b) 的元素，注意是左闭右开 */</span><br><span class="hljs-function">ListNode <span class="hljs-title">reverse</span><span class="hljs-params">(ListNode a, ListNode b)</span> </span>&#123;<br>    ListNode pre, cur, nxt;<br>    pre = <span class="hljs-keyword">null</span>; cur = a; nxt = a;<br>    <span class="hljs-comment">// while 终止的条件改一下就行了</span><br>    <span class="hljs-keyword">while</span> (cur != b) &#123;<br>        nxt = cur.next;<br>        cur.next = pre;<br>        pre = cur;<br>        cur = nxt;<br>    &#125;<br>    <span class="hljs-comment">// 返回反转后的头结点</span><br>    <span class="hljs-keyword">return</span> pre;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>现在我们迭代实现了反转部分链表的功能，接下来就按照之前的逻辑编写 <code>reverseKGroup</code> 函数即可：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">ListNode <span class="hljs-title">reverseKGroup</span><span class="hljs-params">(ListNode head, <span class="hljs-keyword">int</span> k)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    <span class="hljs-comment">// 区间 [a, b) 包含 k 个待反转元素</span><br>    ListNode a, b;<br>    a = b = head;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; k; i++) &#123;<br>        <span class="hljs-comment">// 不足 k 个，不需要反转，base case</span><br>        <span class="hljs-keyword">if</span> (b == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> head;<br>        b = b.next;<br>    &#125;<br>    <span class="hljs-comment">// 反转前 k 个元素</span><br>    ListNode newHead = reverse(a, b);<br>    <span class="hljs-comment">// 递归反转后续链表并连接起来</span><br>    a.next = reverseKGroup(b, k);<br>    <span class="hljs-keyword">return</span> newHead;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>解释一下 <code>for</code> 循环之后的几句代码，注意 <code>reverse</code> 函数是反转区间 <code>[a, b)</code>，所以情形是这样的：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/6.jpg"><br>递归部分就不展开了，整个函数递归完成之后就是这个结果，完全符合题意：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/7.jpg"></p>
+<h3 id="三、最后说两句"><a href="#三、最后说两句" class="headerlink" title="三、最后说两句"></a>三、最后说两句</h3><p>从阅读量上看，基本数据结构相关的算法文章看的人都不多，我想说这是要吃亏的。<br>大家喜欢看动态规划相关的问题，可能因为面试很常见，但就我个人理解，很多算法思想都是源于数据结构的。我们公众号的成名之作之一，「学习数据结构的框架思维」就提过，什么动规、回溯、分治算法，其实都是树的遍历，树这种结构它不就是个多叉链表吗？你能处理基本数据结构的问题，解决一般的算法问题应该也不会太费事。<br>那么如何分解问题、发现递归性质呢？这个只能多练习，也许后续可以专门写一篇文章来探讨一下，本文就到此为止吧，希望对大家有帮助！</p>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2">上一篇：如何寻找最长回文子串</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%90%88%E6%B3%95%E6%8B%AC%E5%8F%B7%E5%88%A4%E5%AE%9A">下一篇：如何判定括号合法性</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%88%A4%E5%AE%9A%E5%AD%90%E5%BA%8F%E5%88%97/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%88%A4%E5%AE%9A%E5%AD%90%E5%BA%8F%E5%88%97/" itemprop="url">二分查找判定子序列</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="二分查找高效判定子序列"><a href="#二分查找高效判定子序列" class="headerlink" title="二分查找高效判定子序列"></a>二分查找高效判定子序列</h1><p>二分查找本身不难理解，难在巧妙地运用二分查找技巧。对于一个问题，你可能都很难想到它跟二分查找有关，比如前文 <a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AE%BE%E8%AE%A1%EF%BC%9A%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97">最长递增子序列</a> 就借助一个纸牌游戏衍生出二分查找解法。<br>今天再讲一道巧用二分查找的算法问题：如何判定字符串 <code>s</code> 是否是字符串 <code>t</code> 的子序列（可以假定 <code>s</code> 长度比较小，且 <code>t</code> 的长度非常大）。举两个例子：</p>
+<p>s = “abc”, t = “<strong>a</strong>h<strong>b</strong>gd<strong>c</strong>“, return true.</p>
+<p>s = “axc”, t = “ahbgdc”, return false.<br>题目很容易理解，而且看起来很简单，但很难想到这个问题跟二分查找有关吧？</p>
+<h3 id="一、问题分析"><a href="#一、问题分析" class="headerlink" title="一、问题分析"></a>一、问题分析</h3><p>首先，一个很简单的解法是这样的：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isSubsequence</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s, <span class="hljs-built_in">string</span> t)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (i &lt; s.size() &amp;&amp; j &lt; t.size()) &#123;<br>        <span class="hljs-keyword">if</span> (s[i] == t[j]) i++;<br>        j++;<br>    &#125;<br>    <span class="hljs-keyword">return</span> i == s.size();<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>其思路也非常简单，利用双指针 <code>i, j</code> 分别指向 <code>s, t</code>，一边前进一边匹配子序列：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AD%90%E5%BA%8F%E5%88%97/1.gif" alt="gif"><br>读者也许会问，这不就是最优解法了吗，时间复杂度只需 O(N)，N 为 <code>t</code> 的长度。<br>是的，如果仅仅是这个问题，这个解法就够好了，<strong>不过这个问题还有 follow up</strong>：<br>如果给你一系列字符串 <code>s1,s2,...</code> 和字符串 <code>t</code>，你需要判定每个串 <code>s</code> 是否是 <code>t</code> 的子序列（可以假定 <code>s</code> 较短，<code>t</code> 很长）。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">boolean</span>[] isSubsequence(String[] sn, String t);<br></code></pre></td></tr></table></figure>
+<p>你也许会问，这不是很简单吗，还是刚才的逻辑，加个 for 循环不就行了？<br>可以，但是此解法处理每个 <code>s</code> 时间复杂度仍然是 O(N)，而如果巧妙运用二分查找，可以将时间复杂度降低，大约是 O(MlogN)。由于 N 相对 M 大很多，所以后者效率会更高。</p>
+<h3 id="二、二分思路"><a href="#二、二分思路" class="headerlink" title="二、二分思路"></a>二、二分思路</h3><p>二分思路主要是对 <code>t</code> 进行预处理，用一个字典 <code>index</code> 将每个字符出现的索引位置按顺序存储下来：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> m = s.length(), n = t.length();<br>ArrayList&lt;Integer&gt;[] index = <span class="hljs-keyword">new</span> ArrayList[<span class="hljs-number">256</span>];<br><span class="hljs-comment">// 先记下 t 中每个字符出现的位置</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>    <span class="hljs-keyword">char</span> c = t.charAt(i);<br>    <span class="hljs-keyword">if</span> (index[c] == <span class="hljs-keyword">null</span>) <br>        index[c] = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>    index[c].add(i);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AD%90%E5%BA%8F%E5%88%97/2.jpg"><br>比如对于这个情况，匹配了 “ab”，应该匹配 “c” 了：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AD%90%E5%BA%8F%E5%88%97/1.jpg"><br>按照之前的解法，我们需要 <code>j</code> 线性前进扫描字符 “c”，但借助 <code>index</code> 中记录的信息，<strong>可以二分搜索 <code>index[c]</code> 中比 j 大的那个索引</strong>，在上图的例子中，就是在 <code>[0,2,6]</code> 中搜索比 4 大的那个索引：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AD%90%E5%BA%8F%E5%88%97/3.jpg"><br>这样就可以直接得到下一个 “c” 的索引。现在的问题就是，如何用二分查找计算那个恰好比 4 大的索引呢？答案是，寻找左侧边界的二分搜索就可以做到。</p>
+<h3 id="三、再谈二分查找"><a href="#三、再谈二分查找" class="headerlink" title="三、再谈二分查找"></a>三、再谈二分查找</h3><p>在前文 <a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E8%AF%A6%E8%A7%A3">二分查找详解</a> 中，详解了如何正确写出三种二分查找算法的细节。二分查找返回目标值 <code>val</code> 的索引，对于搜索<strong>左侧边界</strong>的二分查找，有一个特殊性质：<br><strong>当 <code>val</code> 不存在时，得到的索引恰好是比 <code>val</code> 大的最小元素索引</strong>。<br>什么意思呢，就是说如果在数组 <code>[0,1,3,4]</code> 中搜索元素 2，算法会返回索引 2，也就是元素 3 的位置，元素 3 是数组中大于 2 的最小元素。所以我们可以利用二分搜索避免线性扫描。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 查找左侧边界的二分查找</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">left_bound</span><span class="hljs-params">(ArrayList&lt;Integer&gt; arr, <span class="hljs-keyword">int</span> tar)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> lo = <span class="hljs-number">0</span>, hi = arr.size();<br>    <span class="hljs-keyword">while</span> (lo &lt; hi) &#123;<br>        <span class="hljs-keyword">int</span> mid = lo + (hi - lo) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (tar &gt; arr.get(mid)) &#123;<br>            lo = mid + <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            hi = mid;<br>        &#125; <br>    &#125;<br>    <span class="hljs-keyword">return</span> lo;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>以上就是搜索左侧边界的二分查找，等会儿会用到，其中的细节可以参见前文《二分查找详解》，这里不再赘述。</p>
+<h3 id="四、代码实现"><a href="#四、代码实现" class="headerlink" title="四、代码实现"></a>四、代码实现</h3><p>这里以单个字符串 <code>s</code> 为例，对于多个字符串 <code>s</code>，可以把预处理部分抽出来。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isSubsequence</span><span class="hljs-params">(String s, String t)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> m = s.length(), n = t.length();<br>    <span class="hljs-comment">// 对 t 进行预处理</span><br>    ArrayList&lt;Integer&gt;[] index = <span class="hljs-keyword">new</span> ArrayList[<span class="hljs-number">256</span>];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        <span class="hljs-keyword">char</span> c = t.charAt(i);<br>        <span class="hljs-keyword">if</span> (index[c] == <span class="hljs-keyword">null</span>) <br>            index[c] = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>        index[c].add(i);<br>    &#125;<br>    <br>    <span class="hljs-comment">// 串 t 上的指针</span><br>    <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 借助 index 查找 s[i]</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; m; i++) &#123;<br>        <span class="hljs-keyword">char</span> c = s.charAt(i);<br>        <span class="hljs-comment">// 整个 t 压根儿没有字符 c</span><br>        <span class="hljs-keyword">if</span> (index[c] == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        <span class="hljs-keyword">int</span> pos = left_bound(index[c], j);<br>        <span class="hljs-comment">// 二分搜索区间中没有找到字符 c</span><br>        <span class="hljs-keyword">if</span> (pos == index[c].size()) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        <span class="hljs-comment">// 向前移动指针 j</span><br>        j = index[c].get(pos) + <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>算法执行的过程是这样的：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AD%90%E5%BA%8F%E5%88%97/2.gif"><br>可见借助二分查找，算法的效率是可以大幅提升的。 </p>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%A7%A3%E5%86%B3%E7%9A%84%E6%99%BA%E5%8A%9B%E9%A2%98">上一篇：一行代码就能解决的算法题</a><br><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/linux%E8%BF%9B%E7%A8%8B">下一篇：Linux的进程、线程、文件描述符是什么</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%A7%A3%E5%86%B3%E7%9A%84%E6%99%BA%E5%8A%9B%E9%A2%98/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%A7%A3%E5%86%B3%E7%9A%84%E6%99%BA%E5%8A%9B%E9%A2%98/" itemprop="url">一行代码解决的智力题</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="一行代码就能解决的算法题"><a href="#一行代码就能解决的算法题" class="headerlink" title="一行代码就能解决的算法题"></a>一行代码就能解决的算法题</h1><p>下文是我在 LeetCode 刷题过程中总结的三道有趣的「脑筋急转弯」题目，可以使用算法编程解决，但只要稍加思考，就能找到规律，直接想出答案。</p>
+<h3 id="一、Nim-游戏"><a href="#一、Nim-游戏" class="headerlink" title="一、Nim 游戏"></a>一、Nim 游戏</h3><p>游戏规则是这样的：你和你的朋友面前有一堆石子，你们轮流拿，一次至少拿一颗，最多拿三颗，谁拿走最后一颗石子谁获胜。<br>假设你们都很聪明，由你第一个开始拿，请你写一个算法，输入一个正整数 n，返回你是否能赢（true 或 false）。<br>比如现在有 4 颗石子，算法应该返回 false。因为无论你拿 1 颗 2 颗还是 3 颗，对方都能一次性拿完，拿走最后一颗石子，所以你一定会输。<br>首先，这道题肯定可以使用动态规划，因为显然原问题存在子问题，且子问题存在重复。但是因为你们都很聪明，涉及到你和对手的博弈，动态规划会比较复杂。<br><strong>我们解决这种问题的思路一般都是反着思考</strong>：<br>如果我能赢，那么最后轮到我取石子的时候必须要剩下 1<del>3 颗石子，这样我才能一把拿完。<br>如何营造这样的一个局面呢？显然，如果对手拿的时候只剩 4 颗石子，那么无论他怎么拿，总会剩下 1</del>3 颗石子，我就能赢。<br>如何逼迫对手面对 4 颗石子呢？要想办法，让我选择的时候还有 5<del>7 颗石子，这样的话我就有把握让对方不得不面对 4 颗石子。<br>如何营造 5</del>7 颗石子的局面呢？让对手面对 8 颗石子，无论他怎么拿，都会给我剩下 5~7 颗，我就能赢。<br>这样一直循环下去，我们发现只要踩到 4 的倍数，就落入了圈套，永远逃不出 4 的倍数，而且一定会输。所以这道题的解法非常简单：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">canWinNim</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    <span class="hljs-comment">// 如果上来就踩到 4 的倍数，那就认输吧</span><br>    <span class="hljs-comment">// 否则，可以把对方控制在 4 的倍数，必胜</span><br>    <span class="hljs-keyword">return</span> n % <span class="hljs-number">4</span> != <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="二、石头游戏"><a href="#二、石头游戏" class="headerlink" title="二、石头游戏"></a>二、石头游戏</h3><p>游戏规则是这样的：你和你的朋友面前有一排石头堆，用一个数组 piles 表示，piles[i] 表示第 i 堆石子有多少个。你们轮流拿石头，一次拿一堆，但是只能拿走最左边或者最右边的石头堆。所有石头被拿完后，谁拥有的石头多，谁获胜。<br><strong>假设你们都很聪明</strong>，由你第一个开始拿，请你写一个算法，输入一个数组 piles，返回你是否能赢（true 或 false）。<br>注意，石头的堆的数量为偶数，所以你们两人拿走的堆数一定是相同的。石头的总数为奇数，也就是你们最后不可能拥有相同多的石头，一定有胜负之分。<br>举个例子，<code>piles=[2, 1, 9, 5]</code>，你先拿，可以拿 2 或者 5，你选择 2。<br><code>piles=[1, 9, 5]</code>，轮到对手，可以拿 1 或 5，他选择 5。<br><code>piles=[1, 9]</code> 轮到你拿，你拿 9。<br>最后，你的对手只能拿 1 了。<br>这样下来，你总共拥有 <code>2 + 9 = 11</code> 颗石头，对手有 <code>5 + 1 = 6</code> 颗石头，你是可以赢的，所以算法应该返回 true。<br>你看到了，并不是简单的挑数字大的选，为什么第一次选择 2 而不是 5 呢？因为 5 后面是 9，你要是贪图一时的利益，就把 9 这堆石头暴露给对手了，那你就要输了。<br>这也是强调双方都很聪明的原因，算法也是求最优决策过程下你是否能赢。<br>这道题又涉及到两人的博弈，也可以用动态规划算法暴力试，比较麻烦。但我们只要对规则深入思考，就会大惊失色：只要你足够聪明，你是必胜无疑的，因为你是先手。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">stoneGame</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] piles)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这是为什么呢，因为题目有两个条件很重要：一是石头总共有偶数堆，石头的总数是奇数。这两个看似增加游戏公平性的条件，反而使该游戏成为了一个割韭菜游戏。我们以 <code>piles=[2, 1, 9, 5]</code> 讲解，假设这四堆石头从左到右的索引分别是 1，2，3，4。<br>如果我们把这四堆石头按索引的奇偶分为两组，即第 1、3 堆和第 2、4 堆，那么这两组石头的数量一定不同，也就是说一堆多一堆少。因为石头的总数是奇数，不能被平分。<br>而作为第一个拿石头的人，你可以控制自己拿到所有偶数堆，或者所有的奇数堆。<br>你最开始可以选择第 1 堆或第 4 堆。如果你想要偶数堆，你就拿第 4 堆，这样留给对手的选择只有第 1、3 堆，他不管怎么拿，第 2 堆又会暴露出来，你就可以拿。同理，如果你想拿奇数堆，你就拿第 1 堆，留给对手的只有第 2、4 堆，他不管怎么拿，第 3 堆又给你暴露出来了。<br>也就是说，你可以在第一步就观察好，奇数堆的石头总数多，还是偶数堆的石头总数多，然后步步为营，就一切尽在掌控之中了。知道了这个漏洞，可以整一整不知情的同学了。</p>
+<h3 id="三、电灯开关问题"><a href="#三、电灯开关问题" class="headerlink" title="三、电灯开关问题"></a>三、电灯开关问题</h3><p>这个问题是这样描述的：有 n 盏电灯，最开始时都是关着的。现在要进行 n 轮操作：<br>第 1 轮操作是把每一盏电灯的开关按一下（全部打开）。<br>第 2 轮操作是把每两盏灯的开关按一下（就是按第 2，4，6… 盏灯的开关，它们被关闭）。<br>第 3 轮操作是把每三盏灯的开关按一下（就是按第 3，6，9… 盏灯的开关，有的被关闭，比如 3，有的被打开，比如 6）…<br>如此往复，直到第 n 轮，即只按一下第 n 盏灯的开关。<br>现在给你输入一个正整数 n 代表电灯的个数，问你经过 n 轮操作后，这些电灯有多少盏是亮的？<br>我们当然可以用一个布尔数组表示这些灯的开关情况，然后模拟这些操作过程，最后去数一下就能出结果。但是这样显得没有灵性，最好的解法是这样的：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">bulbSwitch</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>)Math.sqrt(n);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>什么？这个问题跟平方根有什么关系？其实这个解法挺精妙，如果没人告诉你解法，还真不好想明白。<br>首先，因为电灯一开始都是关闭的，所以某一盏灯最后如果是点亮的，必然要被按奇数次开关。<br>我们假设只有 6 盏灯，而且我们只看第 6 盏灯。需要进行 6 轮操作对吧，请问对于第 6 盏灯，会被按下几次开关呢？这不难得出，第 1 轮会被按，第 2 轮，第 3 轮，第 6 轮都会被按。<br>为什么第 1、2、3、6 轮会被按呢？因为 <code>6=1x6=2x3</code>。一般情况下，因子都是成对出现的，也就是说开关被按的次数一般是偶数次。但是有特殊情况，比如说总共有 16 盏灯，那么第 16 盏灯会被按几次?<br><code>16=1x16=2x8=4x4</code><br>其中因子 4 重复出现，所以第 16 盏灯会被按 5 次，奇数次。现在你应该理解这个问题为什么和平方根有关了吧？<br>不过，我们不是要算最后有几盏灯亮着吗，这样直接平方根一下是啥意思呢？稍微思考一下就能理解了。<br>就假设现在总共有 16 盏灯，我们求 16 的平方根，等于 4，这就说明最后会有 4 盏灯亮着，它们分别是第 <code>1x1=1</code> 盏、第 <code>2x2=4</code> 盏、第 <code>3x3=9</code> 盏和第 <code>4x4=16</code> 盏。<br>就算有的 n 平方根结果是小数，强转成 int 型，也相当于一个最大整数上界，比这个上界小的所有整数，平方后的索引都是最后亮着的灯的索引。所以说我们直接把平方根转成整数，就是这个问题的答案。</p>
+<p><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/UnionFind%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8">上一篇：Union-Find算法应用</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%88%A4%E5%AE%9A%E5%AD%90%E5%BA%8F%E5%88%97">下一篇：二分查找高效判定子序列</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%88%A4%E6%96%AD%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%88%A4%E6%96%AD%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/" itemprop="url">判断回文链表</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>我们之前有两篇文章写了回文串和回文序列相关的问题。<br><strong>寻找</strong>回文串的核心思想是从中心向两端扩展：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">palindrome</span><span class="hljs-params">(<span class="hljs-built_in">string</span>&amp; s, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;<br>    <span class="hljs-comment">// 防止索引越界</span><br>    <span class="hljs-keyword">while</span> (l &gt;= <span class="hljs-number">0</span> &amp;&amp; r &lt; s.size()<br>            &amp;&amp; s[l] == s[r]) &#123;<br>        <span class="hljs-comment">// 向两边展开</span><br>        l--; r++;<br>    &#125;<br>    <span class="hljs-comment">// 返回以 s[l] 和 s[r] 为中心的最长回文串</span><br>    <span class="hljs-keyword">return</span> s.substr(l + <span class="hljs-number">1</span>, r - l - <span class="hljs-number">1</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>因为回文串长度可能为奇数也可能是偶数，长度为奇数时只存在一个中心点，而长度为偶数时存在两个中心点，所以上面这个函数需要传入<code>l</code>和<code>r</code>。<br>而<strong>判断</strong>一个字符串是不是回文串就简单很多，不需要考虑奇偶情况，只需要「双指针技巧」，从两端向中间逼近即可：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isPalindrome</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = s.length - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>        <span class="hljs-keyword">if</span> (s[left] != s[right])<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        left++; right--;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>以上代码很好理解吧，<strong>因为回文串是对称的，所以正着读和倒着读应该是一样的，这一特点是解决回文串问题的关键</strong>。<br>下面扩展这一最简单的情况，来解决：如何判断一个「单链表」是不是回文。</p>
+<h3 id="一、判断回文单链表"><a href="#一、判断回文单链表" class="headerlink" title="一、判断回文单链表"></a>一、判断回文单链表</h3><p>输入一个单链表的头结点，判断这个链表中的数字是不是回文：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 单链表节点的定义：</span><br><span class="hljs-comment"> * public class ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode next;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isPalindrome</span><span class="hljs-params">(ListNode head)</span></span>;<br>输入: <span class="hljs-number">1</span>-&gt;<span class="hljs-number">2</span>-&gt;<span class="hljs-keyword">null</span><br>输出: <span class="hljs-keyword">false</span><br>输入: <span class="hljs-number">1</span>-&gt;<span class="hljs-number">2</span>-&gt;<span class="hljs-number">2</span>-&gt;<span class="hljs-number">1</span>-&gt;<span class="hljs-keyword">null</span><br>输出: <span class="hljs-keyword">true</span><br></code></pre></td></tr></table></figure>
+<p>这道题的关键在于，单链表无法倒着遍历，无法使用双指针技巧。那么最简单的办法就是，把原始链表反转存入一条新的链表，然后比较这两条链表是否相同。关于如何反转链表，可以参见前文「递归操作链表」。<br>其实，<strong>借助二叉树后序遍历的思路，不需要显式反转原始链表也可以倒序遍历链表</strong>，下面来具体聊聊。<br>对于二叉树的几种遍历方式，我们再熟悉不过了：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">traverse</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>    <span class="hljs-comment">// 前序遍历代码</span><br>    traverse(root.left);<br>    <span class="hljs-comment">// 中序遍历代码</span><br>    traverse(root.right);<br>    <span class="hljs-comment">// 后序遍历代码</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>在「学习数据结构的框架思维」中说过，链表兼具递归结构，树结构不过是链表的衍生。那么，<strong>链表其实也可以有前序遍历和后序遍历</strong>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">traverse</span><span class="hljs-params">(ListNode head)</span> </span>&#123;<br>    <span class="hljs-comment">// 前序遍历代码</span><br>    traverse(head.next);<br>    <span class="hljs-comment">// 后序遍历代码</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这个框架有什么指导意义呢？如果我想正序打印链表中的<code>val</code>值，可以在前序遍历位置写代码；反之，如果想倒序遍历链表，就可以在后序遍历位置操作：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/* 倒序打印单链表中的元素值 */</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">traverse</span><span class="hljs-params">(ListNode head)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;<br>    traverse(head.next);<br>    <span class="hljs-comment">// 后序遍历代码</span><br>    print(head.val);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>说到这了，其实可以稍作修改，模仿双指针实现回文判断的功能：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 左侧指针</span><br>ListNode left;<br><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isPalindrome</span><span class="hljs-params">(ListNode head)</span> </span>&#123;<br>    left = head;<br>    <span class="hljs-keyword">return</span> traverse(head);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">traverse</span><span class="hljs-params">(ListNode right)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (right == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    <span class="hljs-keyword">boolean</span> res = traverse(right.next);<br>    <span class="hljs-comment">// 后序遍历代码</span><br>    res = res &amp;&amp; (right.val == left.val);<br>    left = left.next;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这么做的核心逻辑是什么呢？<strong>实际上就是把链表节点放入一个栈，然后再拿出来，这时候元素顺序就是反的</strong>，只不过我们利用的是递归函数的堆栈而已。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/1.gif"><br>当然，无论造一条反转链表还是利用后续遍历，算法的时间和空间复杂度都是 O(N)。下面我们想想，能不能不用额外的空间，解决这个问题呢？</p>
+<h3 id="二、优化空间复杂度"><a href="#二、优化空间复杂度" class="headerlink" title="二、优化空间复杂度"></a>二、优化空间复杂度</h3><p>更好的思路是这样的：<br><strong>1、先通过「双指针技巧」中的快慢指针来找到链表的中点</strong>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java">ListNode slow, fast;<br>slow = fast = head;<br><span class="hljs-keyword">while</span> (fast != <span class="hljs-keyword">null</span> &amp;&amp; fast.next != <span class="hljs-keyword">null</span>) &#123;<br>    slow = slow.next;<br>    fast = fast.next.next;<br>&#125;<br><span class="hljs-comment">// slow 指针现在指向链表中点</span><br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/1.jpg"><br><strong>2、如果<code>fast</code>指针没有指向<code>null</code>，说明链表长度为奇数，<code>slow</code>还要再前进一步</strong>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (fast != <span class="hljs-keyword">null</span>)<br>    slow = slow.next;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/2.jpg"><br><strong>3、从<code>slow</code>开始反转后面的链表，现在就可以开始比较回文串了</strong>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java">ListNode left = head;<br>ListNode right = reverse(slow);<br><span class="hljs-keyword">while</span> (right != <span class="hljs-keyword">null</span>) &#123;<br>    <span class="hljs-keyword">if</span> (left.val != right.val)<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    left = left.next;<br>    right = right.next;<br>&#125;<br><span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/3.jpg"><br>至此，把上面 3 段代码合在一起就高效地解决这个问题了，其中<code>reverse</code>函数很容易实现：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">ListNode <span class="hljs-title">reverse</span><span class="hljs-params">(ListNode head)</span> </span>&#123;<br>    ListNode pre = <span class="hljs-keyword">null</span>, cur = head;<br>    <span class="hljs-keyword">while</span> (cur != <span class="hljs-keyword">null</span>) &#123;<br>        ListNode next = cur.next;<br>        cur.next = pre;<br>        pre = cur;<br>        cur = next;<br>    &#125;<br>    <span class="hljs-keyword">return</span> pre;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kgroup/8.gif"><br>算法总体的时间复杂度 O(N)，空间复杂度 O(1)，已经是最优的了。<br>我知道肯定有读者会问：这种解法虽然高效，但破坏了输入链表的原始结构，能不能避免这个瑕疵呢？<br>其实这个问题很好解决，关键在于得到<code>p, q</code>这两个指针位置：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/4.jpg"><br>这样，只要在函数 return 之前加一段代码即可恢复原先链表顺序：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">p.next = reverse(q);<br></code></pre></td></tr></table></figure>
+<p>篇幅所限，我就不写了，读者可以自己尝试一下。</p>
+<h3 id="三、最后总结"><a href="#三、最后总结" class="headerlink" title="三、最后总结"></a>三、最后总结</h3><p>首先，寻找回文串是从中间向两端扩展，判断回文串是从两端向中间收缩。对于单链表，无法直接倒序遍历，可以造一条新的反转链表，可以利用链表的后序遍历，也可以用栈结构倒序处理单链表。<br>具体到回文链表的判断问题，由于回文的特殊性，可以不完全反转链表，而是仅仅反转部分链表，将空间复杂度降到 O(1)。</p>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E7%BC%BA%E5%A4%B1%E5%92%8C%E9%87%8D%E5%A4%8D%E7%9A%84%E5%85%83%E7%B4%A0">上一篇：如何寻找缺失和重复的元素</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%B0%B4%E5%A1%98%E6%8A%BD%E6%A0%B7">下一篇：如何在无限序列中随机抽取元素</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%90%88%E6%B3%95%E6%8B%AC%E5%8F%B7%E5%88%A4%E5%AE%9A/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%90%88%E6%B3%95%E6%8B%AC%E5%8F%B7%E5%88%A4%E5%AE%9A/" itemprop="url">合法括号判定</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="如何判定括号合法性"><a href="#如何判定括号合法性" class="headerlink" title="如何判定括号合法性"></a>如何判定括号合法性</h1><p>对括号的合法性判断是一个很常见且实用的问题，比如说我们写的代码，编辑器和编译器都会检查括号是否正确闭合。而且我们的代码可能会包含三种括号 <code>[]()&#123;&#125;</code>，判断起来有一点难度。<br>本文就来聊一道关于括号合法性判断的算法题，相信能加深你对<strong>栈</strong>这种数据结构的理解。<br>题目很简单，输入一个字符串，其中包含 <code>[]()&#123;&#125;</code> 六种括号，请你判断这个字符串组成的括号是否合法。</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plain">Input: &quot;()[]&#123;&#125;&quot;<br>Output: true<br>Input: &quot;([)]&quot;<br>Output: false<br>Input: &quot;&#123;[]&#125;&quot;<br>Output: true<br></code></pre></td></tr></table></figure>
+<p>解决这个问题之前，我们先降低难度，思考一下，**如果只有一种括号 <code>()</code>**，应该如何判断字符串组成的括号是否合法呢？</p>
+<h3 id="一、处理一种括号"><a href="#一、处理一种括号" class="headerlink" title="一、处理一种括号"></a>一、处理一种括号</h3><p>字符串中只有圆括号，如果想让括号字符串合法，那么必须做到：<br><strong>每个右括号 <code>)</code> 的左边必须有一个左括号 <code>(</code> 和它匹配</strong>。<br>比如说字符串 <code>()))((</code> 中，中间的两个右括号<strong>左边</strong>就没有左括号匹配，所以这个括号组合是不合法的。<br>那么根据这个思路，我们可以写出算法：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isValid</span><span class="hljs-params">(<span class="hljs-built_in">string</span> str)</span> </span>&#123;<br>    <span class="hljs-comment">// 待匹配的左括号数量</span><br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> c : str) &#123;<br>        <span class="hljs-keyword">if</span> (c == <span class="hljs-string">&#x27;(&#x27;</span>)<br>            left++;<br>        <span class="hljs-keyword">else</span> <span class="hljs-comment">// 遇到右括号</span><br>            left--;<br>        <span class="hljs-keyword">if</span> (left &lt; <span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> left == <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>如果只有圆括号，这样就能正确判断合法性。对于三种括号的情况，我一开始想模仿这个思路，定义三个变量 <code>left1</code>，<code>left2</code>，<code>left3</code> 分别处理每种括号，虽然要多写不少 if else 分支，但是似乎可以解决问题。<br>但实际上直接照搬这种思路是不行的，比如说只有一个括号的情况下 <code>(())</code> 是合法的，但是多种括号的情况下， <code>[(])</code> 显然是不合法的。<br>仅仅记录每种左括号出现的次数已经不能做出正确判断了，我们要加大存储的信息量，可以利用栈来模仿类似的思路。</p>
+<h3 id="二、处理多种括号"><a href="#二、处理多种括号" class="headerlink" title="二、处理多种括号"></a>二、处理多种括号</h3><p>栈是一种先进后出的数据结构，处理括号问题的时候尤其有用。<br>我们这道题就用一个名为 <code>left</code> 的栈代替之前思路中的 <code>left</code> 变量，<strong>遇到左括号就入栈，遇到右括号就去栈中寻找最近的左括号，看是否匹配</strong>。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isValid</span><span class="hljs-params">(<span class="hljs-built_in">string</span> str)</span> </span>&#123;<br>    <span class="hljs-built_in">stack</span>&lt;<span class="hljs-keyword">char</span>&gt; left;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> c : str) &#123;<br>        <span class="hljs-keyword">if</span> (c == <span class="hljs-string">&#x27;(&#x27;</span> || c == <span class="hljs-string">&#x27;&#123;&#x27;</span> || c == <span class="hljs-string">&#x27;[&#x27;</span>)<br>            left.push(c);<br>        <span class="hljs-keyword">else</span> <span class="hljs-comment">// 字符 c 是右括号</span><br>            <span class="hljs-keyword">if</span> (!left.empty() &amp;&amp; leftOf(c) == left.top())<br>                left.pop();<br>            <span class="hljs-keyword">else</span><br>                <span class="hljs-comment">// 和最近的左括号不匹配</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-comment">// 是否所有的左括号都被匹配了</span><br>    <span class="hljs-keyword">return</span> left.empty();<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">char</span> <span class="hljs-title">leftOf</span><span class="hljs-params">(<span class="hljs-keyword">char</span> c)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (c == <span class="hljs-string">&#x27;&#125;&#x27;</span>) <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&#123;&#x27;</span>;<br>    <span class="hljs-keyword">if</span> (c == <span class="hljs-string">&#x27;)&#x27;</span>) <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;(&#x27;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;[&#x27;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/k%E4%B8%AA%E4%B8%80%E7%BB%84%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8">上一篇：如何k个一组反转链表</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%B6%88%E5%A4%B1%E7%9A%84%E5%85%83%E7%B4%A0">下一篇：如何寻找消失的元素</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/10/">&lt;i class&#x3D;&quot;fas fa-angle-left&quot; aria-label&#x3D;&quot;上一页&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/12/">&lt;i class&#x3D;&quot;fas fa-angle-right&quot; aria-label&#x3D;&quot;下一页&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

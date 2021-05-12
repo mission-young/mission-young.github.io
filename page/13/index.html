@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+
+<div id="index" class="index page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8BKMP%E5%AD%97%E7%AC%A6%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8BKMP%E5%AD%97%E7%AC%A6%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/" itemprop="url">动态规划之KMP字符匹配算法</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>title: 动态规划之KMP字符匹配算法<br>author: 远方<br>tags:</p>
+<ul>
+<li>LeetCode</li>
+<li>算法<br>categories:</li>
+<li>LeetCode破局攻略<br>date: 2016-01-01 19:20:00</li>
+</ul>
+<hr>
+<h1 id="动态规划之KMP字符匹配算法"><a href="#动态规划之KMP字符匹配算法" class="headerlink" title="动态规划之KMP字符匹配算法"></a>动态规划之KMP字符匹配算法</h1><p>KMP 算法（Knuth-Morris-Pratt 算法）是一个著名的字符串匹配算法，效率很高，但是确实有点复杂。<br>很多读者抱怨 KMP 算法无法理解，这很正常，想到大学教材上关于 KMP 算法的讲解，也不知道有多少未来的 Knuth、Morris、Pratt 被提前劝退了。有一些优秀的同学通过手推 KMP 算法的过程来辅助理解该算法，这是一种办法，不过本文要从逻辑层面帮助读者理解算法的原理。十行代码之间，KMP 灰飞烟灭。<br><strong>先在开头约定，本文用 <code>pat</code> 表示模式串，长度为 <code>M</code>，<code>txt</code> 表示文本串，长度为 <code>N</code>。KMP 算法是在 <code>txt</code> 中查找子串 <code>pat</code>，如果存在，返回这个子串的起始索引，否则返回 -1</strong>。<br>为什么我认为 KMP 算法就是个动态规划问题呢，等会再解释。对于动态规划，之前多次强调了要明确 <code>dp</code> 数组的含义，而且同一个问题可能有不止一种定义 <code>dp</code> 数组含义的方法，不同的定义会有不同的解法。<br>读者见过的 KMP 算法应该是，一波诡异的操作处理 <code>pat</code> 后形成一个一维的数组 <code>next</code>，然后根据这个数组经过又一波复杂操作去匹配 <code>txt</code>。时间复杂度 O(N)，空间复杂度 O(M)。其实它这个 <code>next</code> 数组就相当于 <code>dp</code> 数组，其中元素的含义跟 <code>pat</code> 的前缀和后缀有关，判定规则比较复杂，不好理解。<strong>本文则用一个二维的 <code>dp</code> 数组（但空间复杂度还是 O(M)），重新定义其中元素的含义，使得代码长度大大减少，可解释性大大提高</strong>。<br>PS：本文的代码参考《算法4》，原代码使用的数组名称是 <code>dfa</code>（确定有限状态机），因为我们的公众号之前有一系列动态规划的文章，就不说这么高大上的名词了，我对书中代码进行了一点修改，并沿用 <code>dp</code> 数组的名称。</p>
+<h3 id="一、KMP-算法概述"><a href="#一、KMP-算法概述" class="headerlink" title="一、KMP 算法概述"></a>一、KMP 算法概述</h3><p>首先还是简单介绍一下 KMP 算法和暴力匹配算法的不同在哪里，难点在哪里，和动态规划有啥关系。<br>暴力的字符串匹配算法很容易写，看一下它的运行逻辑：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 暴力匹配（伪码）</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(String pat, String txt)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> M = pat.length;<br>    <span class="hljs-keyword">int</span> N = txt.length;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= N - M; i++) &#123;<br>        <span class="hljs-keyword">int</span> j;<br>        <span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; M; j++) &#123;<br>            <span class="hljs-keyword">if</span> (pat[j] != txt[i+j])<br>                <span class="hljs-keyword">break</span>;<br>        &#125;<br>        <span class="hljs-comment">// pat 全都匹配了</span><br>        <span class="hljs-keyword">if</span> (j == M) <span class="hljs-keyword">return</span> i;<br>    &#125;<br>    <span class="hljs-comment">// txt 中不存在 pat 子串</span><br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>对于暴力算法，如果出现不匹配字符，同时回退 <code>txt</code> 和 <code>pat</code> 的指针，嵌套 for 循环，时间复杂度 $O(MN)$，空间复杂度$O(1)$。最主要的问题是，如果字符串中重复的字符比较多，该算法就显得很蠢。<br>比如 txt = “aaacaaab” pat = “aaab”：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/1.gif" alt="brutal"><br>很明显，<code>pat</code> 中根本没有字符 c，根本没必要回退指针 <code>i</code>，暴力解法明显多做了很多不必要的操作。<br>KMP 算法的不同之处在于，它会花费空间来记录一些信息，在上述情况中就会显得很聪明：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/2.gif" alt="kmp1"><br>再比如类似的 txt = “aaaaaaab” pat = “aaab”，暴力解法还会和上面那个例子一样蠢蠢地回退指针 <code>i</code>，而 KMP 算法又会耍聪明：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/3.gif" alt="kmp2"><br>因为 KMP 算法知道字符 b 之前的字符 a 都是匹配的，所以每次只需要比较字符 b 是否被匹配就行了。<br><strong>KMP 算法永不回退 <code>txt</code> 的指针 <code>i</code>，不走回头路（不会重复扫描 <code>txt</code>），而是借助 <code>dp</code> 数组中储存的信息把 <code>pat</code> 移到正确的位置继续匹配</strong>，时间复杂度只需 O(N)，用空间换时间，所以我认为它是一种动态规划算法。<br>KMP 算法的难点在于，如何计算 <code>dp</code> 数组中的信息？如何根据这些信息正确地移动 <code>pat</code> 的指针？这个就需要<strong>确定有限状态自动机</strong>来辅助了，别怕这种高大上的文学词汇，其实和动态规划的 <code>dp</code> 数组如出一辙，等你学会了也可以拿这个词去吓唬别人。<br>还有一点需要明确的是：<strong>计算这个 <code>dp</code> 数组，只和 <code>pat</code> 串有关</strong>。意思是说，只要给我个 <code>pat</code>，我就能通过这个模式串计算出 <code>dp</code> 数组，然后你可以给我不同的 <code>txt</code>，我都不怕，利用这个 <code>dp</code> 数组我都能在 O(N) 时间完成字符串匹配。<br>具体来说，比如上文举的两个例子：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">txt1 = <span class="hljs-string">&quot;aaacaaab&quot;</span> <br>pat = <span class="hljs-string">&quot;aaab&quot;</span><br>txt2 = <span class="hljs-string">&quot;aaaaaaab&quot;</span> <br>pat = <span class="hljs-string">&quot;aaab&quot;</span><br></code></pre></td></tr></table></figure>
+<p>我们的 <code>txt</code> 不同，但是 <code>pat</code> 是一样的，所以 KMP 算法使用的 <code>dp</code> 数组是同一个。<br>只不过对于 <code>txt1</code> 的下面这个即将出现的未匹配情况：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/txt1.jpg"><br><code>dp</code> 数组指示 <code>pat</code> 这样移动：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/txt2.jpg"><br>PS：这个<code>j</code> 不要理解为索引，它的含义更准确地说应该是<strong>状态</strong>（state），所以它会出现这个奇怪的位置，后文会详述。<br>而对于 <code>txt2</code> 的下面这个即将出现的未匹配情况：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/txt3.jpg"><br><code>dp</code> 数组指示 <code>pat</code> 这样移动：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/txt4.jpg"><br>明白了 <code>dp</code> 数组只和 <code>pat</code> 有关，那么我们这样设计 KMP 算法就会比较漂亮：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KMP</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[][] dp;<br>    <span class="hljs-keyword">private</span> String pat;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">KMP</span><span class="hljs-params">(String pat)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.pat = pat;<br>        <span class="hljs-comment">// 通过 pat 构建 dp 数组</span><br>        <span class="hljs-comment">// 需要 O(M) 时间</span><br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(String txt)</span> </span>&#123;<br>        <span class="hljs-comment">// 借助 dp 数组去匹配 txt</span><br>        <span class="hljs-comment">// 需要 O(N) 时间</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样，当我们需要用同一 <code>pat</code> 去匹配不同 <code>txt</code> 时，就不需要浪费时间构造 <code>dp</code> 数组了：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">KMP kmp = <span class="hljs-keyword">new</span> KMP(<span class="hljs-string">&quot;aaab&quot;</span>);<br><span class="hljs-keyword">int</span> pos1 = kmp.search(<span class="hljs-string">&quot;aaacaaab&quot;</span>); <span class="hljs-comment">//4</span><br><span class="hljs-keyword">int</span> pos2 = kmp.search(<span class="hljs-string">&quot;aaaaaaab&quot;</span>); <span class="hljs-comment">//4</span><br></code></pre></td></tr></table></figure>
+<h3 id="二、状态机概述"><a href="#二、状态机概述" class="headerlink" title="二、状态机概述"></a>二、状态机概述</h3><p>为什么说 KMP 算法和状态机有关呢？是这样的，我们可以认为 <code>pat</code> 的匹配就是状态的转移。比如当 pat = “ABABC”：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/state.jpg"><br>如上图，圆圈内的数字就是状态，状态 0 是起始状态，状态 5（<code>pat.length</code>）是终止状态。开始匹配时 <code>pat</code> 处于起始状态，一旦转移到终止状态，就说明在 <code>txt</code> 中找到了 <code>pat</code>。比如说当前处于状态 2，就说明字符 “AB” 被匹配：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/state2.jpg"><br>另外，处于不同状态时，<code>pat</code> 状态转移的行为也不同。比如说假设现在匹配到了状态 4，如果遇到字符 A 就应该转移到状态 3，遇到字符 C 就应该转移到状态 5，如果遇到字符 B 就应该转移到状态 0：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/state4.jpg"><br>具体什么意思呢，我们来一个个举例看看。用变量 <code>j</code> 表示指向当前状态的指针，当前 <code>pat</code> 匹配到了状态 4：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/exp1.jpg"><br>如果遇到了字符 “A”，根据箭头指示，转移到状态 3 是最聪明的：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/exp3.jpg"><br>如果遇到了字符 “B”，根据箭头指示，只能转移到状态 0（一夜回到解放前）：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/exp5.jpg"><br>如果遇到了字符 “C”，根据箭头指示，应该转移到终止状态 5，这也就意味着匹配完成：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/exp7.jpg"></p>
+<p>当然了，还可能遇到其他字符，比如 Z，但是显然应该转移到起始状态 0，因为 <code>pat</code> 中根本都没有字符 Z：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/z.jpg"><br>这里为了清晰起见，我们画状态图时就把其他字符转移到状态 0 的箭头省略，只画 <code>pat</code> 中出现的字符的状态转移：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/allstate.jpg"><br>KMP 算法最关键的步骤就是构造这个状态转移图。<strong>要确定状态转移的行为，得明确两个变量，一个是当前的匹配状态，另一个是遇到的字符</strong>；确定了这两个变量后，就可以知道这个情况下应该转移到哪个状态。<br>下面看一下 KMP 算法根据这幅状态转移图匹配字符串 <code>txt</code> 的过程：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/kmp.gif"><br><strong>请记住这个 GIF 的匹配过程，这就是 KMP 算法的核心逻辑</strong>！<br>为了描述状态转移图，我们定义一个二维 dp 数组，它的含义如下：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">dp[j][c] = next<br><span class="hljs-number">0</span> &lt;= j &lt; M，代表当前的状态<br><span class="hljs-number">0</span> &lt;= c &lt; <span class="hljs-number">256</span>，代表遇到的字符（ASCII 码）<br><span class="hljs-number">0</span> &lt;= next &lt;= M，代表下一个状态<br>dp[<span class="hljs-number">4</span>][<span class="hljs-string">&#x27;A&#x27;</span>] = <span class="hljs-number">3</span> 表示：<br>当前是状态 <span class="hljs-number">4</span>，如果遇到字符 A，<br>pat 应该转移到状态 <span class="hljs-number">3</span><br>dp[<span class="hljs-number">1</span>][<span class="hljs-string">&#x27;B&#x27;</span>] = <span class="hljs-number">2</span> 表示：<br>当前是状态 <span class="hljs-number">1</span>，如果遇到字符 B，<br>pat 应该转移到状态 <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+<p>根据我们这个 dp 数组的定义和刚才状态转移的过程，我们可以先写出 KMP 算法的 search 函数代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(String txt)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> M = pat.length();<br>    <span class="hljs-keyword">int</span> N = txt.length();<br>    <span class="hljs-comment">// pat 的初始态为 0</span><br>    <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>        <span class="hljs-comment">// 当前是状态 j，遇到字符 txt[i]，</span><br>        <span class="hljs-comment">// pat 应该转移到哪个状态？</span><br>        j = dp[j][txt.charAt(i)];<br>        <span class="hljs-comment">// 如果达到终止态，返回匹配开头的索引</span><br>        <span class="hljs-keyword">if</span> (j == M) <span class="hljs-keyword">return</span> i - M + <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-comment">// 没到达终止态，匹配失败</span><br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>到这里，应该还是很好理解的吧，<code>dp</code> 数组就是我们刚才画的那幅状态转移图，如果不清楚的话回去看下 GIF 的算法演进过程。下面讲解：如何通过 <code>pat</code> 构建这个 <code>dp</code> 数组？</p>
+<h3 id="三、构建状态转移图"><a href="#三、构建状态转移图" class="headerlink" title="三、构建状态转移图"></a>三、构建状态转移图</h3><p>回想刚才说的：<strong>要确定状态转移的行为，必须明确两个变量，一个是当前的匹配状态，另一个是遇到的字符</strong>，而且我们已经根据这个逻辑确定了 <code>dp</code> 数组的含义，那么构造 <code>dp</code> 数组的框架就是这样：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> <span class="hljs-number">0</span> &lt;= j &lt; M: <span class="hljs-comment"># 状态</span><br>    <span class="hljs-keyword">for</span> <span class="hljs-number">0</span> &lt;= c &lt; <span class="hljs-number">256</span>: <span class="hljs-comment"># 字符</span><br>        dp[j][c] = next<br></code></pre></td></tr></table></figure>
+<p>这个 next 状态应该怎么求呢？显然，<strong>如果遇到的字符 <code>c</code> 和 <code>pat[j]</code> 匹配的话</strong>，状态就应该向前推进一个，也就是说 <code>next = j + 1</code>，我们不妨称这种情况为<strong>状态推进</strong>：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/forward.jpg"><br><strong>如果字符 <code>c</code> 和 <code>pat[j]</code> 不匹配的话</strong>，状态就要回退（或者原地不动），我们不妨称这种情况为<strong>状态重启</strong>：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/back.jpg"><br>那么，如何得知在哪个状态重启呢？解答这个问题之前，我们再定义一个名字：<strong>影子状态</strong>（我编的名字），用变量 <code>X</code> 表示。<strong>所谓影子状态，就是和当前状态具有相同的前缀</strong>。比如下面这种情况：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/shadow.jpg"><br>当前状态 <code>j = 4</code>，其影子状态为 <code>X = 2</code>，它们都有相同的前缀 “AB”。因为状态 <code>X</code> 和状态 <code>j</code> 存在相同的前缀，所以当状态 <code>j</code> 准备进行状态重启的时候（遇到的字符 <code>c</code> 和 <code>pat[j]</code> 不匹配），可以通过 <code>X</code> 的状态转移图来获得<strong>最近的重启位置</strong>。<br>比如说刚才的情况，如果状态 <code>j</code> 遇到一个字符 “A”，应该转移到哪里呢？首先只有遇到 “C” 才能推进状态，遇到 “A” 显然只能进行状态重启。<strong>状态 <code>j</code> 会把这个字符委托给状态 <code>X</code> 处理，也就是 <code>dp[j][&#39;A&#39;] = dp[X][&#39;A&#39;]</code>**：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/shadow1.jpg"><br>为什么这样可以呢？因为：既然 <code>j</code> 这边已经确定字符 “A” 无法推进状态，</strong>只能回退<strong>，而且 KMP 就是要</strong>尽可能少的回退**，以免多余的计算。那么 <code>j</code> 就可以去问问和自己具有相同前缀的 <code>X</code>，如果 <code>X</code> 遇见 “A” 可以进行「状态推进」，那就转移过去，因为这样回退最少。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/A.gif"><br>当然，如果遇到的字符是 “B”，状态 <code>X</code> 也不能进行「状态推进」，只能回退，<code>j</code> 只要跟着 <code>X</code> 指引的方向回退就行了：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/shadow2.jpg"><br>你也许会问，这个 <code>X</code> 怎么知道遇到字符 “B” 要回退到状态 0 呢？因为 <code>X</code> 永远跟在 <code>j</code> 的身后，状态 <code>X</code> 如何转移，在之前就已经算出来了。动态规划算法不就是利用过去的结果解决现在的问题吗？<br>这样，我们就细化一下刚才的框架代码：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">int X <span class="hljs-comment"># 影子状态</span><br><span class="hljs-keyword">for</span> <span class="hljs-number">0</span> &lt;= j &lt; M:<br>    <span class="hljs-keyword">for</span> <span class="hljs-number">0</span> &lt;= c &lt; <span class="hljs-number">256</span>:<br>        <span class="hljs-keyword">if</span> c == pat[j]:<br>            <span class="hljs-comment"># 状态推进</span><br>            dp[j][c] = j + <span class="hljs-number">1</span><br>        <span class="hljs-keyword">else</span>: <br>            <span class="hljs-comment"># 状态重启</span><br>            <span class="hljs-comment"># 委托 X 计算重启位置</span><br>            dp[j][c] = dp[X][c] <br></code></pre></td></tr></table></figure>
+<h3 id="四、代码实现"><a href="#四、代码实现" class="headerlink" title="四、代码实现"></a>四、代码实现</h3><p>如果之前的内容你都能理解，恭喜你，现在就剩下一个问题：影子状态 <code>X</code> 是如何得到的呢？下面先直接看完整代码吧。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KMP</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[][] dp;<br>    <span class="hljs-keyword">private</span> String pat;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">KMP</span><span class="hljs-params">(String pat)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.pat = pat;<br>        <span class="hljs-keyword">int</span> M = pat.length();<br>        <span class="hljs-comment">// dp[状态][字符] = 下个状态</span><br>        dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[M][<span class="hljs-number">256</span>];<br>        <span class="hljs-comment">// base case</span><br>        dp[<span class="hljs-number">0</span>][pat.charAt(<span class="hljs-number">0</span>)] = <span class="hljs-number">1</span>;<br>        <span class="hljs-comment">// 影子状态 X 初始为 0</span><br>        <span class="hljs-keyword">int</span> X = <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 当前状态 j 从 1 开始</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt; M; j++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> c = <span class="hljs-number">0</span>; c &lt; <span class="hljs-number">256</span>; c++) &#123;<br>                <span class="hljs-keyword">if</span> (pat.charAt(j) == c) <br>                    dp[j][c] = j + <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">else</span> <br>                    dp[j][c] = dp[X][c];<br>            &#125;<br>            <span class="hljs-comment">// 更新影子状态</span><br>            X = dp[X][pat.charAt(j)];<br>        &#125;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(String txt)</span> </span>&#123;...&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>先解释一下这一行代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// base case</span><br>dp[<span class="hljs-number">0</span>][pat.charAt(<span class="hljs-number">0</span>)] = <span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<p>这行代码是 base case，只有遇到 pat[0] 这个字符才能使状态从 0 转移到 1，遇到其它字符的话还是停留在状态 0（Java 默认初始化数组全为 0）。<br>影子状态 <code>X</code> 是先初始化为 0，然后随着 <code>j</code> 的前进而不断更新的。下面看看到底应该**如何更新影子状态 <code>X</code>**：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> X = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt; M; j++) &#123;<br>    ...<br>    <span class="hljs-comment">// 更新影子状态</span><br>    <span class="hljs-comment">// 当前是状态 X，遇到字符 pat[j]，</span><br>    <span class="hljs-comment">// pat 应该转移到哪个状态？</span><br>    X = dp[X][pat.charAt(j)];<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>更新 <code>X</code> 其实和 <code>search</code> 函数中更新状态 <code>j</code> 的过程是非常相似的：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>    <span class="hljs-comment">// 当前是状态 j，遇到字符 txt[i]，</span><br>    <span class="hljs-comment">// pat 应该转移到哪个状态？</span><br>    j = dp[j][txt.charAt(i)];<br>    ...<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>其中的原理非常微妙</strong>，注意代码中 for 循环的变量初始值，可以这样理解：后者是在 <code>txt</code> 中匹配 <code>pat</code>，前者是在 <code>pat</code> 中匹配 <code>pat[1..end]</code>，状态 <code>X</code> 总是落后状态 <code>j</code> 一个状态，与 <code>j</code> 具有最长的相同前缀。所以我把 <code>X</code> 比喻为影子状态，似乎也有一点贴切。<br>另外，构建 dp 数组是根据 base case <code>dp[0][..]</code> 向后推演。这就是我认为 KMP 算法就是一种动态规划算法的原因。<br>下面来看一下状态转移图的完整构造过程，你就能理解状态 <code>X</code> 作用之精妙了：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/kmp/dfa.gif"><br>至此，KMP 算法的核心终于写完啦啦啦啦！看下 KMP 算法的完整代码吧：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KMP</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[][] dp;<br>    <span class="hljs-keyword">private</span> String pat;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">KMP</span><span class="hljs-params">(String pat)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.pat = pat;<br>        <span class="hljs-keyword">int</span> M = pat.length();<br>        <span class="hljs-comment">// dp[状态][字符] = 下个状态</span><br>        dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[M][<span class="hljs-number">256</span>];<br>        <span class="hljs-comment">// base case</span><br>        dp[<span class="hljs-number">0</span>][pat.charAt(<span class="hljs-number">0</span>)] = <span class="hljs-number">1</span>;<br>        <span class="hljs-comment">// 影子状态 X 初始为 0</span><br>        <span class="hljs-keyword">int</span> X = <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 构建状态转移图（稍改的更紧凑了）</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt; M; j++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> c = <span class="hljs-number">0</span>; c &lt; <span class="hljs-number">256</span>; c++)<br>                dp[j][c] = dp[X][c];<br>            dp[j][pat.charAt(j)] = j + <span class="hljs-number">1</span>;<br>            <span class="hljs-comment">// 更新影子状态</span><br>            X = dp[X][pat.charAt(j)];<br>        &#125;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(String txt)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> M = pat.length();<br>        <span class="hljs-keyword">int</span> N = txt.length();<br>        <span class="hljs-comment">// pat 的初始态为 0</span><br>        <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>            <span class="hljs-comment">// 计算 pat 的下一个状态</span><br>            j = dp[j][txt.charAt(i)];<br>            <span class="hljs-comment">// 到达终止态，返回结果</span><br>            <span class="hljs-keyword">if</span> (j == M) <span class="hljs-keyword">return</span> i - M + <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-comment">// 没到达终止态，匹配失败</span><br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>经过之前的详细举例讲解，你应该可以理解这段代码的含义了，当然你也可以把 KMP 算法写成一个函数。核心代码也就是两个函数中 for 循环的部分，数一下有超过十行吗？</p>
+<h3 id="五、最后总结"><a href="#五、最后总结" class="headerlink" title="五、最后总结"></a>五、最后总结</h3><p>传统的 KMP 算法是使用一个一维数组 <code>next</code> 记录前缀信息，而本文是使用一个二维数组 <code>dp</code> 以状态转移的角度解决字符匹配问题，但是空间复杂度仍然是 O(256M) = O(M)。<br>在 <code>pat</code> 匹配 <code>txt</code> 的过程中，只要明确了「当前处在哪个状态」和「遇到的字符是什么」这两个问题，就可以确定应该转移到哪个状态（推进或回退）。<br>对于一个模式串 <code>pat</code>，其总共就有 M 个状态，对于 ASCII 字符，总共不会超过 256 种。所以我们就构造一个数组 <code>dp[M][256]</code> 来包含所有情况，并且明确 <code>dp</code> 数组的含义：<br><code>dp[j][c] = next</code> 表示，当前是状态 <code>j</code>，遇到了字符 <code>c</code>，应该转移到状态 <code>next</code>。<br>明确了其含义，就可以很容易写出 search 函数的代码。<br>对于如何构建这个 <code>dp</code> 数组，需要一个辅助状态 <code>X</code>，它永远比当前状态 <code>j</code> 落后一个状态，拥有和 <code>j</code> 最长的相同前缀，我们给它起了个名字叫「影子状态」。<br>在构建当前状态 <code>j</code> 的转移方向时，只有字符 <code>pat[j]</code> 才能使状态推进（<code>dp[j][pat[j]] = j+1</code>）；而对于其他字符只能进行状态回退，应该去请教影子状态 <code>X</code> 应该回退到哪里（<code>dp[j][other] = dp[X][other]</code>，其中 <code>other</code> 是除了 <code>pat[j]</code> 之外所有字符）。<br>对于影子状态 <code>X</code>，我们把它初始化为 0，并且随着 <code>j</code> 的前进进行更新，更新的方式和 search 过程更新 <code>j</code> 的过程非常相似（<code>X = dp[X][pat[j]]</code>）。<br>KMP 算法也就是动态规划那点事，我们的公众号文章目录有一系列专门讲动态规划的，而且都是按照一套框架来的，无非就是描述问题逻辑，明确 <code>dp</code> 数组含义，定义 base case 这点破事。希望这篇文章能让大家对动态规划有更深的理解。</p>
+<p><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E4%B9%8B%E5%8C%BA%E9%97%B4%E8%B0%83%E5%BA%A6%E9%97%AE%E9%A2%98">上一篇：贪心算法之区间调度问题</a><br><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%9B%A2%E7%81%AD%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98">下一篇：团灭 LeetCode 股票买卖问题</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/" itemprop="url">动态规划详解进阶</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="动态规划详解"><a href="#动态规划详解" class="headerlink" title="动态规划详解"></a>动态规划详解</h1><p>这篇文章是我们号半年前一篇 200 多赞赏的成名之作「动态规划详解」的进阶版。由于账号迁移的原因，旧文无法被搜索到，所以我润色了本文，并添加了更多干货内容，希望本文成为解决动态规划的一部「指导方针」。</p>
+<p>再说句题外话，我们的公众号开号至今写了起码十几篇文章拆解动态规划问题，我都整理到了公众号菜单的「文章目录」中，<strong>它们都提到了动态规划的解题框架思维，本文就系统总结一下</strong>。这段时间本人也从非科班小白成长到刷通半个 LeetCode，所以我总结的套路可能不适合各路大神，但是应该适合大众，毕竟我自己也是一路摸爬滚打过来的。</p>
+<p>算法技巧就那几个套路，如果你心里有数，就会轻松很多，本文就来扒一扒动态规划的裤子，形成一套解决这类问题的思维框架。废话不多说了，上干货。</p>
+<p><strong>动态规划问题的一般形式就是求最值</strong>。动态规划其实是运筹学的一种最优化方法，只不过在计算机问题上应用比较多，比如说让你求<strong>最长</strong>递增子序列呀，<strong>最小</strong>编辑距离呀等等。</p>
+<p>既然是要求最值，核心问题是什么呢？<strong>求解动态规划的核心问题是穷举</strong>。因为要求最值，肯定要把所有可行的答案穷举出来，然后在其中找最值呗。</p>
+<p>动态规划就这么简单，就是穷举就完事了？我看到的动态规划问题都很难啊！</p>
+<p>首先，动态规划的穷举有点特别，因为这类问题<strong>存在「重叠子问题」</strong>，如果暴力穷举的话效率会极其低下，所以需要「备忘录」或者「DP table」来优化穷举过程，避免不必要的计算。</p>
+<p>而且，动态规划问题一定会<strong>具备「最优子结构」</strong>，才能通过子问题的最值得到原问题的最值。</p>
+<p>另外，虽然动态规划的核心思想就是穷举求最值，但是问题可以千变万化，穷举所有可行解其实并不是一件容易的事，只有列出<strong>正确的「状态转移方程</strong>」才能正确地穷举。</p>
+<p>以上提到的重叠子问题、最优子结构、状态转移方程就是动态规划三要素。具体什么意思等会会举例详解，但是在实际的算法问题中，<strong>写出状态转移方程是最困难的</strong>，这也就是为什么很多朋友觉得动态规划问题困难的原因，我来提供我研究出来的一个思维框架，辅助你思考状态转移方程：</p>
+<p>明确「状态」 -&gt; 定义 dp 数组/函数的含义 -&gt; 明确「选择」-&gt; 明确 base case。</p>
+<p>下面通过斐波那契数列问题和凑零钱问题来详解动态规划的基本原理。前者主要是让你明白什么是重叠子问题（斐波那契数列严格来说不是动态规划问题），后者主要举集中于如何列出状态转移方程。</p>
+<p>请读者不要嫌弃这个例子简单，<strong>只有简单的例子才能让你把精力充分集中在算法背后的通用思想和技巧上，而不会被那些隐晦的细节问题搞的莫名其妙</strong>。想要困难的例子，历史文章里有的是。</p>
+<h3 id="一、斐波那契数列"><a href="#一、斐波那契数列" class="headerlink" title="一、斐波那契数列"></a>一、斐波那契数列</h3><p><strong>1、暴力递归</strong></p>
+<p>斐波那契数列的数学形式就是递归的，写成代码就是这样：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> N)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (N == <span class="hljs-number">1</span> || N == <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">return</span> fib(N - <span class="hljs-number">1</span>) + fib(N - <span class="hljs-number">2</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这个不用多说了，学校老师讲递归的时候似乎都是拿这个举例。我们也知道这样写代码虽然简洁易懂，但是十分低效，低效在哪里？假设 n = 20，请画出递归树。</p>
+<p>PS：但凡遇到需要递归的问题，最好都画出递归树，这对你分析算法的复杂度，寻找算法低效的原因都有巨大帮助。</p>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/1.jpg"></p>
+<p>这个递归树怎么理解？就是说想要计算原问题 <code>f(20)</code>，我就得先计算出子问题 <code>f(19)</code> 和 <code>f(18)</code>，然后要计算 <code>f(19)</code>，我就要先算出子问题 <code>f(18)</code> 和 <code>f(17)</code>，以此类推。最后遇到 <code>f(1)</code> 或者 <code>f(2)</code> 的时候，结果已知，就能直接返回结果，递归树不再向下生长了。</p>
+<p><strong>递归算法的时间复杂度怎么计算？子问题个数乘以解决一个子问题需要的时间。</strong></p>
+<p>子问题个数，即递归树中节点的总数。显然二叉树节点总数为指数级别，所以子问题个数为 O(2^n)。</p>
+<p>解决一个子问题的时间，在本算法中，没有循环，只有 f(n - 1) + f(n - 2) 一个加法操作，时间为 O(1)。</p>
+<p>所以，这个算法的时间复杂度为 O(2^n)，指数级别，爆炸。</p>
+<p>观察递归树，很明显发现了算法低效的原因：存在大量重复计算，比如 <code>f(18)</code> 被计算了两次，而且你可以看到，以 <code>f(18)</code> 为根的这个递归树体量巨大，多算一遍，会耗费巨大的时间。更何况，还不止 <code>f(18)</code> 这一个节点被重复计算，所以这个算法及其低效。</p>
+<p>这就是动态规划问题的第一个性质：<strong>重叠子问题</strong>。下面，我们想办法解决这个问题。</p>
+<p><strong>2、带备忘录的递归解法</strong></p>
+<p>明确了问题，其实就已经把问题解决了一半。即然耗时的原因是重复计算，那么我们可以造一个「备忘录」，每次算出某个子问题的答案后别急着返回，先记到「备忘录」里再返回；每次遇到一个子问题先去「备忘录」里查一查，如果发现之前已经解决过这个问题了，直接把答案拿出来用，不要再耗时去计算了。</p>
+<p>一般使用一个数组充当这个「备忘录」，当然你也可以使用哈希表（字典），思想都是一样的。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> N)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (N &lt; <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 备忘录全初始化为 0</span><br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">memo</span><span class="hljs-params">(N + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span>;<br>    <span class="hljs-comment">// 初始化最简情况</span><br>    <span class="hljs-keyword">return</span> helper(memo, N);<br>&#125;<br> <br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">helper</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; memo, <span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    <span class="hljs-comment">// base case </span><br>    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span> || n == <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-comment">// 已经计算过</span><br>    <span class="hljs-keyword">if</span> (memo[n] != <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> memo[n];<br>    memo[n] = helper(memo, n - <span class="hljs-number">1</span>) + <br>                helper(memo, n - <span class="hljs-number">2</span>);<br>    <span class="hljs-keyword">return</span> memo[n];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>现在，画出递归树，你就知道「备忘录」到底做了什么。</p>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/2.jpg"></p>
+<p>实际上，带「备忘录」的递归算法，把一棵存在巨量冗余的递归树通过「剪枝」，改造成了一幅不存在冗余的递归图，极大减少了子问题（即递归图中节点）的个数。</p>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/3.jpg"></p>
+<p>递归算法的时间复杂度怎么算？子问题个数乘以解决一个子问题需要的时间。</p>
+<p>子问题个数，即图中节点的总数，由于本算法不存在冗余计算，子问题就是 <code>f(1)</code>, <code>f(2)</code>, <code>f(3)</code> … <code>f(20)</code>，数量和输入规模 n = 20 成正比，所以子问题个数为 O(n)。</p>
+<p>解决一个子问题的时间，同上，没有什么循环，时间为 O(1)。</p>
+<p>所以，本算法的时间复杂度是 O(n)。比起暴力算法，是降维打击。</p>
+<p>至此，带备忘录的递归解法的效率已经和迭代的动态规划解法一样了。实际上，这种解法和迭代的动态规划已经差不多了，只不过这种方法叫做「自顶向下」，动态规划叫做「自底向上」。</p>
+<p>啥叫「自顶向下」？注意我们刚才画的递归树（或者说图），是从上向下延伸，都是从一个规模较大的原问题比如说 <code>f(20)</code>，向下逐渐分解规模，直到 <code>f(1)</code> 和 <code>f(2)</code> 触底，然后逐层返回答案，这就叫「自顶向下」。</p>
+<p>啥叫「自底向上」？反过来，我们直接从最底下，最简单，问题规模最小的 <code>f(1)</code> 和 <code>f(2)</code> 开始往上推，直到推到我们想要的答案 <code>f(20)</code>，这就是动态规划的思路，这也是为什么动态规划一般都脱离了递归，而是由循环迭代完成计算。</p>
+<p><strong>3、dp 数组的迭代解法</strong></p>
+<p>有了上一步「备忘录」的启发，我们可以把这个「备忘录」独立出来成为一张表，就叫做 DP table 吧，在这张表上完成「自底向上」的推算岂不美哉！</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> N)</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(N + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span>;<br>    <span class="hljs-comment">// base case</span><br>    dp[<span class="hljs-number">1</span>] = dp[<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">3</span>; i &lt;= N; i++)<br>        dp[i] = dp[i - <span class="hljs-number">1</span>] + dp[i - <span class="hljs-number">2</span>];<br>    <span class="hljs-keyword">return</span> dp[N];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/4.jpg"></p>
+<p>画个图就很好理解了，而且你发现这个 DP table 特别像之前那个「剪枝」后的结果，只是反过来算而已。实际上，带备忘录的递归解法中的「备忘录」，最终完成后就是这个 DP table，所以说这两种解法其实是差不多的，大部分情况下，效率也基本相同。</p>
+<p>这里，引出「状态转移方程」这个名词，实际上就是描述问题结构的数学形式：</p>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/fib.png"></p>
+<p>为啥叫「状态转移方程」？为了听起来高端。你把 f(n) 想做一个状态 n，这个状态 n 是由状态 n - 1 和状态 n - 2 相加转移而来，这就叫状态转移，仅此而已。</p>
+<p>你会发现，上面的几种解法中的所有操作，例如 return f(n - 1) + f(n - 2)，dp[i] = dp[i - 1] + dp[i - 2]，以及对备忘录或 DP table 的初始化操作，都是围绕这个方程式的不同表现形式。可见列出「状态转移方程」的重要性，它是解决问题的核心。很容易发现，其实状态转移方程直接代表着暴力解法。</p>
+<p><strong>千万不要看不起暴力解，动态规划问题最困难的就是写出状态转移方程</strong>，即这个暴力解。优化方法无非是用备忘录或者 DP table，再无奥妙可言。</p>
+<p>这个例子的最后，讲一个细节优化。细心的读者会发现，根据斐波那契数列的状态转移方程，当前状态只和之前的两个状态有关，其实并不需要那么长的一个 DP table 来存储所有的状态，只要想办法存储之前的两个状态就行了。所以，可以进一步优化，把空间复杂度降为 O(1)：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">2</span> || n == <span class="hljs-number">1</span>) <br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">int</span> prev = <span class="hljs-number">1</span>, curr = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">3</span>; i &lt;= n; i++) &#123;<br>        <span class="hljs-keyword">int</span> sum = prev + curr;<br>        prev = curr;<br>        curr = sum;<br>    &#125;<br>    <span class="hljs-keyword">return</span> curr;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>有人会问，动态规划的另一个重要特性「最优子结构」，怎么没有涉及？下面会涉及。斐波那契数列的例子严格来说不算动态规划，因为没有涉及求最值，以上旨在演示算法设计螺旋上升的过程。下面，看第二个例子，凑零钱问题。</p>
+<h3 id="二、凑零钱问题"><a href="#二、凑零钱问题" class="headerlink" title="二、凑零钱问题"></a>二、凑零钱问题</h3><p>先看下题目：给你 <code>k</code> 种面值的硬币，面值分别为 <code>c1, c2 ... ck</code>，每种硬币的数量无限，再给一个总金额 <code>amount</code>，问你<strong>最少</strong>需要几枚硬币凑出这个金额，如果不可能凑出，算法返回 -1 。算法的函数签名如下：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// coins 中是可选硬币面值，amount 是目标金额</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">coinChange</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] coins, <span class="hljs-keyword">int</span> amount)</span></span>;<br></code></pre></td></tr></table></figure>
+
+<p>比如说 <code>k = 3</code>，面值分别为 1，2，5，总金额 <code>amount = 11</code>。那么最少需要 3 枚硬币凑出，即 11 = 5 + 5 + 1。</p>
+<p>你认为计算机应该如何解决这个问题？显然，就是把所有肯能的凑硬币方法都穷举出来，然后找找看最少需要多少枚硬币。</p>
+<p><strong>1、暴力递归</strong></p>
+<p>首先，这个问题是动态规划问题，因为它具有「最优子结构」的。<strong>要符合「最优子结构」，子问题间必须互相独立</strong>。啥叫相互独立？你肯定不想看数学证明，我用一个直观的例子来讲解。</p>
+<p>比如说，你的原问题是考出最高的总成绩，那么你的子问题就是要把语文考到最高，数学考到最高…… 为了每门课考到最高，你要把每门课相应的选择题分数拿到最高，填空题分数拿到最高…… 当然，最终就是你每门课都是满分，这就是最高的总成绩。</p>
+<p>得到了正确的结果：最高的总成绩就是总分。因为这个过程符合最优子结构，“每门科目考到最高”这些子问题是互相独立，互不干扰的。</p>
+<p>但是，如果加一个条件：你的语文成绩和数学成绩会互相制约，此消彼长。这样的话，显然你能考到的最高总成绩就达不到总分了，按刚才那个思路就会得到错误的结果。因为子问题并不独立，语文数学成绩无法同时最优，所以最优子结构被破坏。</p>
+<p>回到凑零钱问题，为什么说它符合最优子结构呢？比如你想求 <code>amount = 11</code> 时的最少硬币数（原问题），如果你知道凑出 <code>amount = 10</code> 的最少硬币数（子问题），你只需要把子问题的答案加一（再选一枚面值为 1 的硬币）就是原问题的答案，因为硬币的数量是没有限制的，子问题之间没有相互制，是互相独立的。</p>
+<p>那么，既然知道了这是个动态规划问题，就要思考<strong>如何列出正确的状态转移方程</strong>？</p>
+<p><strong>先确定「状态」</strong>，也就是原问题和子问题中变化的变量。由于硬币数量无限，所以唯一的状态就是目标金额 <code>amount</code>。</p>
+<p><strong>然后确定 <code>dp</code> 函数的定义</strong>：当前的目标金额是 <code>n</code>，至少需要 <code>dp(n)</code> 个硬币凑出该金额。</p>
+<p><strong>然后确定「选择」并择优</strong>，也就是对于每个状态，可以做出什么选择改变当前状态。具体到这个问题，无论当的目标金额是多少，选择就是从面额列表 <code>coins</code> 中选择一个硬币，然后目标金额就会减少：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 伪码框架</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">coinChange</span>(<span class="hljs-params">coins: List[int], amount: int</span>):</span><br>    <span class="hljs-comment"># 定义：要凑出金额 n，至少要 dp(n) 个硬币</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dp</span>(<span class="hljs-params">n</span>):</span><br>        <span class="hljs-comment"># 做选择，选择需要硬币最少的那个结果</span><br>        <span class="hljs-keyword">for</span> coin <span class="hljs-keyword">in</span> coins:<br>            res = min(res, <span class="hljs-number">1</span> + dp(n - coin))<br>        <span class="hljs-keyword">return</span> res<br>    <span class="hljs-comment"># 我们要求的问题是 dp(amount)</span><br>    <span class="hljs-keyword">return</span> dp(amount)<br></code></pre></td></tr></table></figure>
+
+<p><strong>最后明确 base case</strong>，显然目标金额为 0 时，所需硬币数量为 0；当目标金额小于 0 时，无解，返回 -1：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">coinChange</span>(<span class="hljs-params">coins: List[int], amount: int</span>):</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dp</span>(<span class="hljs-params">n</span>):</span><br>        <span class="hljs-comment"># base case</span><br>        <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span><br>        <span class="hljs-comment"># 求最小值，所以初始化为正无穷</span><br>        res = float(<span class="hljs-string">&#x27;INF&#x27;</span>)<br>        <span class="hljs-keyword">for</span> coin <span class="hljs-keyword">in</span> coins:<br>            subproblem = dp(n - coin)<br>            <span class="hljs-comment"># 子问题无解，跳过</span><br>            <span class="hljs-keyword">if</span> subproblem == <span class="hljs-number">-1</span>: <span class="hljs-keyword">continue</span><br>            res = min(res, <span class="hljs-number">1</span> + subproblem)<br><br>        <span class="hljs-keyword">return</span> res <span class="hljs-keyword">if</span> res != float(<span class="hljs-string">&#x27;INF&#x27;</span>) <span class="hljs-keyword">else</span> <span class="hljs-number">-1</span><br>    <br>    <span class="hljs-keyword">return</span> dp(amount)<br></code></pre></td></tr></table></figure>
+
+<p>至此，状态转移方程其实已经完成了，以上算法已经是暴力解法了，以上代码的数学形式就是状态转移方程：</p>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/coin.png"></p>
+<p>至此，这个问题其实就解决了，只不过需要消除一下重叠子问题，比如 <code>amount = 11, coins = &#123;1,2,5&#125;</code> 时画出递归树看看：</p>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/5.jpg"></p>
+<p><strong>时间复杂度分析：子问题总数 x 每个子问题的时间</strong>。</p>
+<p>子问题总数为递归树节点个数，这个比较难看出来，是 O(n^k)，总之是指数级别的。每个子问题中含有一个 for 循环，复杂度为 O(k)。所以总时间复杂度为 O(k * n^k)，指数级别。</p>
+<p><strong>2、带备忘录的递归</strong></p>
+<p>只需要稍加修改，就可以通过备忘录消除子问题：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">coinChange</span>(<span class="hljs-params">coins: List[int], amount: int</span>):</span><br>    <span class="hljs-comment"># 备忘录</span><br>    memo = dict()<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dp</span>(<span class="hljs-params">n</span>):</span><br>        <span class="hljs-comment"># 查备忘录，避免重复计算</span><br>        <span class="hljs-keyword">if</span> n <span class="hljs-keyword">in</span> memo: <span class="hljs-keyword">return</span> memo[n]<br><br>        <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span><br>        res = float(<span class="hljs-string">&#x27;INF&#x27;</span>)<br>        <span class="hljs-keyword">for</span> coin <span class="hljs-keyword">in</span> coins:<br>            subproblem = dp(n - coin)<br>            <span class="hljs-keyword">if</span> subproblem == <span class="hljs-number">-1</span>: <span class="hljs-keyword">continue</span><br>            res = min(res, <span class="hljs-number">1</span> + subproblem)<br>        <br>        <span class="hljs-comment"># 记入备忘录</span><br>        memo[n] = res <span class="hljs-keyword">if</span> res != float(<span class="hljs-string">&#x27;INF&#x27;</span>) <span class="hljs-keyword">else</span> <span class="hljs-number">-1</span><br>        <span class="hljs-keyword">return</span> memo[n]<br>    <br>    <span class="hljs-keyword">return</span> dp(amount)<br></code></pre></td></tr></table></figure>
+
+<p>不画图了，很显然「备忘录」大大减小了子问题数目，完全消除了子问题的冗余，所以子问题总数不会超过金额数 n，即子问题数目为 O(n)。处理一个子问题的时间不变，仍是 O(k)，所以总的时间复杂度是 O(kn)。</p>
+<p><strong>3、dp 数组的迭代解法</strong></p>
+<p>当然，我们也可以自底向上使用 dp table 来消除重叠子问题，<code>dp</code> 数组的定义和刚才 <code>dp</code> 函数类似，定义也是一样的：</p>
+<p><strong><code>dp[i] = x</code> 表示，当目标金额为 <code>i</code> 时，至少需要 <code>x</code> 枚硬币</strong>。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">coinChange</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; coins, <span class="hljs-keyword">int</span> amount)</span> </span>&#123;<br>    <span class="hljs-comment">// 数组大小为 amount + 1，初始值也为 amount + 1</span><br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(amount + <span class="hljs-number">1</span>, amount + <span class="hljs-number">1</span>)</span></span>;<br>    <span class="hljs-comment">// base case</span><br>    dp[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; dp.size(); i++) &#123;<br>        <span class="hljs-comment">// 内层 for 在求所有子问题 + 1 的最小值</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> coin : coins) &#123;<br>            <span class="hljs-comment">// 子问题无解，跳过</span><br>            <span class="hljs-keyword">if</span> (i - coin &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span>;<br>            dp[i] = min(dp[i], <span class="hljs-number">1</span> + dp[i - coin]);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> (dp[amount] == amount + <span class="hljs-number">1</span>) ? <span class="hljs-number">-1</span> : dp[amount];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/6.jpg"></p>
+<p>PS：为啥 <code>dp</code> 数组初始化为 <code>amount + 1</code> 呢，因为凑成 <code>amount</code> 金额的硬币数最多只可能等于 <code>amount</code>（全用 1 元面值的硬币），所以初始化为 <code>amount + 1</code> 就相当于初始化为正无穷，便于后续取最小值。</p>
+<h3 id="三、最后总结"><a href="#三、最后总结" class="headerlink" title="三、最后总结"></a>三、最后总结</h3><p>第一个斐波那契数列的问题，解释了如何通过「备忘录」或者「dp table」的方法来优化递归树，并且明确了这两种方法本质上是一样的，只是自顶向下和自底向上的不同而已。</p>
+<p>第二个凑零钱的问题，展示了如何流程化确定「状态转移方程」，只要通过状态转移方程写出暴力递归解，剩下的也就是优化递归树，消除重叠子问题而已。</p>
+<p>如果你不太了解动态规划，还能看到这里，真得给你鼓掌，相信你已经掌握了这个算法的设计技巧。</p>
+<p><strong>计算机解决问题其实没有任何奇技淫巧，它唯一的解决办法就是穷举</strong>，穷举所有可能性。算法设计无非就是先思考“如何穷举”，然后再追求“如何聪明地穷举”。</p>
+<p>列出动态转移方程，就是在解决“如何穷举”的问题。之所以说它难，一是因为很多穷举需要递归实现，二是因为有的问题本身的解空间复杂，不那么容易穷举完整。</p>
+<p>备忘录、DP table 就是在追求“如何聪明地穷举”。用空间换时间的思路，是降低时间复杂度的不二法门，除此之外，试问，还能玩出啥花活？</p>
+<p><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%954">上一篇：学习数据结构和算法读什么书</a></p>
+<p><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%9C%80%E4%BC%98%E5%AD%90%E7%BB%93%E6%9E%84">下一篇：动态规划答疑篇</a></p>
+<p><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%9B%A2%E7%81%AD%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%9B%A2%E7%81%AD%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/" itemprop="url">团灭股票问题</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>title: 团灭股票问题<br>author: 远方<br>tags:</p>
+<ul>
+<li>LeetCode</li>
+<li>算法<br>categories:</li>
+<li>LeetCode破局攻略<br>date: 2016-01-01 19:20:00</li>
+</ul>
+<hr>
+<h1 id="团灭-LeetCode-股票买卖问题"><a href="#团灭-LeetCode-股票买卖问题" class="headerlink" title="团灭 LeetCode 股票买卖问题"></a>团灭 LeetCode 股票买卖问题</h1><p>很多读者抱怨 LeetCode 的股票系列问题奇技淫巧太多，如果面试真的遇到这类问题，基本不会想到那些巧妙的办法，怎么办？<strong>所以本文拒绝奇技淫巧，而是稳扎稳打，只用一种通用方法解决所用问题，以不变应万变</strong>。<br>这篇文章用状态机的技巧来解决，可以全部提交通过。不要觉得这个名词高大上，文学词汇而已，实际上就是 DP table，看一眼就明白了。<br>PS：本文参考自<a target="_blank" rel="noopener" href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/39038">英文版 LeetCode 的一篇题解</a>。<br>先随便抽出一道题，看看别人的解法：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">maxProfit</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; prices)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span>(prices.empty()) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> s1=-prices[<span class="hljs-number">0</span>],s2=INT_MIN,s3=INT_MIN,s4=INT_MIN;<br>        <br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;prices.size();++i) &#123;            <br>        s1 = max(s1, -prices[i]);<br>        s2 = max(s2, s1+prices[i]);<br>        s3 = max(s3, s2-prices[i]);<br>        s4 = max(s4, s3+prices[i]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> max(<span class="hljs-number">0</span>,s4);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>能看懂吧？会做了吗？不可能的，你看不懂，这才正常。就算你勉强看懂了，下一个问题你还是做不出来。为什么别人能写出这么诡异却又高效的解法呢？因为这类问题是有框架的，但是人家不会告诉你的，因为一旦告诉你，你五分钟就学会了，该算法题就不再神秘，变得不堪一击了。<br>本文就来告诉你这个框架，然后带着你一道一道秒杀。这篇文章用状态机的技巧来解决，可以全部提交通过。不要觉得这个名词高大上，文学词汇而已，实际上就是 DP table，看一眼就明白了。<br>这 6 道题目是有共性的，我就抽出来第 4 道题目，因为这道题是一个最泛化的形式，其他的问题都是这个形式的简化，看下题目：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/title.png"><br>第一题是只进行一次交易，相当于 k = 1；第二题是不限交易次数，相当于 k = +infinity（正无穷）；第三题是只进行 2 次交易，相当于 k = 2；剩下两道也是不限次数，但是加了交易「冷冻期」和「手续费」的额外条件，其实就是第二题的变种，都很容易处理。<br>如果你还不熟悉题目，可以去 LeetCode 查看这些题目的内容，本文为了节省篇幅，就不列举这些题目的具体内容了。下面言归正传，开始解题。<br><strong>一、穷举框架</strong><br>首先，还是一样的思路：如何穷举？这里的穷举思路和上篇文章递归的思想不太一样。<br>递归其实是符合我们思考的逻辑的，一步步推进，遇到无法解决的就丢给递归，一不小心就做出来了，可读性还很好。缺点就是一旦出错，你也不容易找到错误出现的原因。比如上篇文章的递归解法，肯定还有计算冗余，但确实不容易找到。<br>而这里，我们不用递归思想进行穷举，而是利用「状态」进行穷举。我们具体到每一天，看看总共有几种可能的「状态」，再找出每个「状态」对应的「选择」。我们要穷举所有「状态」，穷举的目的是根据对应的「选择」更新状态。听起来抽象，你只要记住「状态」和「选择」两个词就行，下面实操一下就很容易明白了。</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> 状态<span class="hljs-number">1</span> <span class="hljs-keyword">in</span> 状态<span class="hljs-number">1</span>的所有取值：<br>    <span class="hljs-keyword">for</span> 状态<span class="hljs-number">2</span> <span class="hljs-keyword">in</span> 状态<span class="hljs-number">2</span>的所有取值：<br>        <span class="hljs-keyword">for</span> ...<br>            dp[状态<span class="hljs-number">1</span>][状态<span class="hljs-number">2</span>][...] = 择优(选择<span class="hljs-number">1</span>，选择<span class="hljs-number">2.</span>..)<br></code></pre></td></tr></table></figure>
+<p>比如说这个问题，<strong>每天都有三种「选择」</strong>：买入、卖出、无操作，我们用 buy, sell, rest 表示这三种选择。但问题是，并不是每天都可以任意选择这三种选择的，因为 sell 必须在 buy 之后，buy 必须在 sell 之后。那么 rest 操作还应该分两种状态，一种是 buy 之后的 rest（持有了股票），一种是 sell 之后的 rest（没有持有股票）。而且别忘了，我们还有交易次数 k 的限制，就是说你 buy 还只能在 k &gt; 0 的前提下操作。<br>很复杂对吧，不要怕，我们现在的目的只是穷举，你有再多的状态，老夫要做的就是一把梭全部列举出来。<strong>这个问题的「状态」有三个</strong>，第一个是天数，第二个是允许交易的最大次数，第三个是当前的持有状态（即之前说的 rest 的状态，我们不妨用 1 表示持有，0 表示没有持有）。然后我们用一个三维数组就可以装下这几种状态的全部组合：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">dp[i][k][<span class="hljs-number">0</span> <span class="hljs-keyword">or</span> <span class="hljs-number">1</span>]<br><span class="hljs-number">0</span> &lt;= i &lt;= n<span class="hljs-number">-1</span>, <span class="hljs-number">1</span> &lt;= k &lt;= K<br>n 为天数，大 K 为最多交易数<br>此问题共 n × K × <span class="hljs-number">2</span> 种状态，全部穷举就能搞定。<br><span class="hljs-keyword">for</span> <span class="hljs-number">0</span> &lt;= i &lt; n:<br>    <span class="hljs-keyword">for</span> <span class="hljs-number">1</span> &lt;= k &lt;= K:<br>        <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> &#123;<span class="hljs-number">0</span>, <span class="hljs-number">1</span>&#125;:<br>            dp[i][k][s] = max(buy, sell, rest)<br></code></pre></td></tr></table></figure>
+<p>而且我们可以用自然语言描述出每一个状态的含义，比如说 <code>dp[3][2][1]</code> 的含义就是：今天是第三天，我现在手上持有着股票，至今最多进行 2 次交易。再比如 <code>dp[2][3][0]</code> 的含义：今天是第二天，我现在手上没有持有股票，至今最多进行 3 次交易。很容易理解，对吧？<br>我们想求的最终答案是 dp[n - 1][K][0]，即最后一天，最多允许 K 次交易，最多获得多少利润。读者可能问为什么不是 dp[n - 1][K][1]？因为 [1] 代表手上还持有股票，[0] 表示手上的股票已经卖出去了，很显然后者得到的利润一定大于前者。<br>记住如何解释「状态」，一旦你觉得哪里不好理解，把它翻译成自然语言就容易理解了。<br><strong>二、状态转移框架</strong><br>现在，我们完成了「状态」的穷举，我们开始思考每种「状态」有哪些「选择」，应该如何更新「状态」。只看「持有状态」，可以画个状态转移图。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/1.png"><br>通过这个图可以很清楚地看到，每种状态（0 和 1）是如何转移而来的。根据这个图，我们来写一下状态转移方程：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plain">dp[i][k][0] &#x3D; max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])<br>              max(   选择 rest  ,             选择 sell      )<br>解释：今天我没有持有股票，有两种可能：<br>要么是我昨天就没有持有，然后今天选择 rest，所以我今天还是没有持有；<br>要么是我昨天持有股票，但是今天我 sell 了，所以我今天没有持有股票了。<br>dp[i][k][1] &#x3D; max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])<br>              max(   选择 rest  ,           选择 buy         )<br>解释：今天我持有着股票，有两种可能：<br>要么我昨天就持有着股票，然后今天选择 rest，所以我今天还持有着股票；<br>要么我昨天本没有持有，但今天我选择 buy，所以今天我就持有股票了。<br></code></pre></td></tr></table></figure>
+<p>这个解释应该很清楚了，如果 buy，就要从利润中减去 prices[i]，如果 sell，就要给利润增加 prices[i]。今天的最大利润就是这两种可能选择中较大的那个。而且注意 k 的限制，我们在选择 buy 的时候，把 k 减小了 1，很好理解吧，当然你也可以在 sell 的时候减 1，一样的。<br>现在，我们已经完成了动态规划中最困难的一步：状态转移方程。<strong>如果之前的内容你都可以理解，那么你已经可以秒杀所有问题了，只要套这个框架就行了。</strong>不过还差最后一点点，就是定义 base case，即最简单的情况。 </p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plain">dp[-1][k][0] &#x3D; 0<br>解释：因为 i 是从 0 开始的，所以 i &#x3D; -1 意味着还没有开始，这时候的利润当然是 0 。<br>dp[-1][k][1] &#x3D; -infinity<br>解释：还没开始的时候，是不可能持有股票的，用负无穷表示这种不可能。<br>dp[i][0][0] &#x3D; 0<br>解释：因为 k 是从 1 开始的，所以 k &#x3D; 0 意味着根本不允许交易，这时候利润当然是 0 。<br>dp[i][0][1] &#x3D; -infinity<br>解释：不允许交易的情况下，是不可能持有股票的，用负无穷表示这种不可能。<br></code></pre></td></tr></table></figure>
+<p>把上面的状态转移方程总结一下：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plain">base case：<br>dp[-1][k][0] &#x3D; dp[i][0][0] &#x3D; 0<br>dp[-1][k][1] &#x3D; dp[i][0][1] &#x3D; -infinity<br>状态转移方程：<br>dp[i][k][0] &#x3D; max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])<br>dp[i][k][1] &#x3D; max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])<br></code></pre></td></tr></table></figure>
+<p>读者可能会问，这个数组索引是 -1 怎么编程表示出来呢，负无穷怎么表示呢？这都是细节问题，有很多方法实现。现在完整的框架已经完成，下面开始具体化。<br><strong>三、秒杀题目</strong><br><strong>第一题，k = 1</strong><br>直接套状态转移方程，根据 base case，可以做一些化简：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plain">dp[i][1][0] &#x3D; max(dp[i-1][1][0], dp[i-1][1][1] + prices[i])<br>dp[i][1][1] &#x3D; max(dp[i-1][1][1], dp[i-1][0][0] - prices[i]) <br>            &#x3D; max(dp[i-1][1][1], -prices[i])<br>解释：k &#x3D; 0 的 base case，所以 dp[i-1][0][0] &#x3D; 0。<br>现在发现 k 都是 1，不会改变，即 k 对状态转移已经没有影响了。<br>可以进行进一步化简去掉所有 k：<br>dp[i][0] &#x3D; max(dp[i-1][0], dp[i-1][1] + prices[i])<br>dp[i][1] &#x3D; max(dp[i-1][1], -prices[i])<br></code></pre></td></tr></table></figure>
+<p>直接写出代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> n = prices.length;<br><span class="hljs-keyword">int</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n][<span class="hljs-number">2</span>];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>    dp[i][<span class="hljs-number">0</span>] = Math.max(dp[i-<span class="hljs-number">1</span>][<span class="hljs-number">0</span>], dp[i-<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] + prices[i]);<br>    dp[i][<span class="hljs-number">1</span>] = Math.max(dp[i-<span class="hljs-number">1</span>][<span class="hljs-number">1</span>], -prices[i]);<br>&#125;<br><span class="hljs-keyword">return</span> dp[n - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>];<br></code></pre></td></tr></table></figure>
+<p>显然 i = 0 时 dp[i-1] 是不合法的。这是因为我们没有对 i 的 base case 进行处理。可以这样处理：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>    <span class="hljs-keyword">if</span> (i - <span class="hljs-number">1</span> == -<span class="hljs-number">1</span>) &#123;<br>        dp[i][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 解释：</span><br>        <span class="hljs-comment">//   dp[i][0] </span><br>        <span class="hljs-comment">// = max(dp[-1][0], dp[-1][1] + prices[i])</span><br>        <span class="hljs-comment">// = max(0, -infinity + prices[i]) = 0</span><br>        dp[i][<span class="hljs-number">1</span>] = -prices[i];<br>        <span class="hljs-comment">//解释：</span><br>        <span class="hljs-comment">//   dp[i][1] </span><br>        <span class="hljs-comment">// = max(dp[-1][1], dp[-1][0] - prices[i])</span><br>        <span class="hljs-comment">// = max(-infinity, 0 - prices[i]) </span><br>        <span class="hljs-comment">// = -prices[i]</span><br>        <span class="hljs-keyword">continue</span>;<br>    &#125;<br>    dp[i][<span class="hljs-number">0</span>] = Math.max(dp[i-<span class="hljs-number">1</span>][<span class="hljs-number">0</span>], dp[i-<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] + prices[i]);<br>    dp[i][<span class="hljs-number">1</span>] = Math.max(dp[i-<span class="hljs-number">1</span>][<span class="hljs-number">1</span>], -prices[i]);<br>&#125;<br><span class="hljs-keyword">return</span> dp[n - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>];<br></code></pre></td></tr></table></figure>
+<p>第一题就解决了，但是这样处理 base case 很麻烦，而且注意一下状态转移方程，新状态只和相邻的一个状态有关，其实不用整个 dp 数组，只需要一个变量储存相邻的那个状态就足够了，这样可以把空间复杂度降到 O(1):</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// k == 1</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">maxProfit_k_1</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] prices)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = prices.length;<br>    <span class="hljs-comment">// base case: dp[-1][0] = 0, dp[-1][1] = -infinity</span><br>    <span class="hljs-keyword">int</span> dp_i_0 = <span class="hljs-number">0</span>, dp_i_1 = Integer.MIN_VALUE;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        <span class="hljs-comment">// dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])</span><br>        dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]);<br>        <span class="hljs-comment">// dp[i][1] = max(dp[i-1][1], -prices[i])</span><br>        dp_i_1 = Math.max(dp_i_1, -prices[i]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> dp_i_0;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>两种方式都是一样的，不过这种编程方法简洁很多。但是如果没有前面状态转移方程的引导，是肯定看不懂的。后续的题目，我主要写这种空间复杂度 O(1) 的解法。<br><strong>第二题，k = +infinity</strong><br>如果 k 为正无穷，那么就可以认为 k 和 k - 1 是一样的。可以这样改写框架：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">dp[i][k][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>] + prices[i])<br>dp[i][k][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][k<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>] - prices[i])<br>            = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">0</span>] - prices[i])<br>我们发现数组中的 k 已经不会改变了，也就是说不需要记录 k 这个状态了：<br>dp[i][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>] + prices[i])<br>dp[i][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>] - prices[i])<br></code></pre></td></tr></table></figure>
+<p>直接翻译成代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">maxProfit_k_inf</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] prices)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = prices.length;<br>    <span class="hljs-keyword">int</span> dp_i_0 = <span class="hljs-number">0</span>, dp_i_1 = Integer.MIN_VALUE;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        <span class="hljs-keyword">int</span> temp = dp_i_0;<br>        dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]);<br>        dp_i_1 = Math.max(dp_i_1, temp - prices[i]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> dp_i_0;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>第三题，k = +infinity with cooldown</strong><br>每次 sell 之后要等一天才能继续交易。只要把这个特点融入上一题的状态转移方程即可：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">dp[i][0] &#x3D; max(dp[i-1][0], dp[i-1][1] + prices[i])<br>dp[i][1] &#x3D; max(dp[i-1][1], dp[i-2][0] - prices[i])<br>解释：第 i 天选择 buy 的时候，要从 i-2 的状态转移，而不是 i-1 。<br></code></pre></td></tr></table></figure>
+<p>翻译成代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">maxProfit_with_cool</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] prices)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = prices.length;<br>    <span class="hljs-keyword">int</span> dp_i_0 = <span class="hljs-number">0</span>, dp_i_1 = Integer.MIN_VALUE;<br>    <span class="hljs-keyword">int</span> dp_pre_0 = <span class="hljs-number">0</span>; <span class="hljs-comment">// 代表 dp[i-2][0]</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        <span class="hljs-keyword">int</span> temp = dp_i_0;<br>        dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]);<br>        dp_i_1 = Math.max(dp_i_1, dp_pre_0 - prices[i]);<br>        dp_pre_0 = temp;<br>    &#125;<br>    <span class="hljs-keyword">return</span> dp_i_0;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>第四题，k = +infinity with fee</strong><br>每次交易要支付手续费，只要把手续费从利润中减去即可。改写方程：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">dp[i][0] &#x3D; max(dp[i-1][0], dp[i-1][1] + prices[i])<br>dp[i][1] &#x3D; max(dp[i-1][1], dp[i-1][0] - prices[i] - fee)<br>解释：相当于买入股票的价格升高了。<br>在第一个式子里减也是一样的，相当于卖出股票的价格减小了。<br></code></pre></td></tr></table></figure>
+<p>直接翻译成代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">maxProfit_with_fee</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] prices, <span class="hljs-keyword">int</span> fee)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = prices.length;<br>    <span class="hljs-keyword">int</span> dp_i_0 = <span class="hljs-number">0</span>, dp_i_1 = Integer.MIN_VALUE;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        <span class="hljs-keyword">int</span> temp = dp_i_0;<br>        dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]);<br>        dp_i_1 = Math.max(dp_i_1, temp - prices[i] - fee);<br>    &#125;<br>    <span class="hljs-keyword">return</span> dp_i_0;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>第五题，k = 2</strong><br>k = 2 和前面题目的情况稍微不同，因为上面的情况都和 k 的关系不太大。要么 k 是正无穷，状态转移和 k 没关系了；要么 k = 1，跟 k = 0 这个 base case 挨得近，最后也没有存在感。<br>这道题 k = 2 和后面要讲的 k 是任意正整数的情况中，对 k 的处理就凸显出来了。我们直接写代码，边写边分析原因。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">原始的动态转移方程，没有可化简的地方<br>dp[i][k][<span class="hljs-number">0</span>] = max(dp[i-<span class="hljs-number">1</span>][k][<span class="hljs-number">0</span>], dp[i-<span class="hljs-number">1</span>][k][<span class="hljs-number">1</span>] + prices[i])<br>dp[i][k][<span class="hljs-number">1</span>] = max(dp[i-<span class="hljs-number">1</span>][k][<span class="hljs-number">1</span>], dp[i-<span class="hljs-number">1</span>][k-<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] - prices[i])<br></code></pre></td></tr></table></figure>
+<p>按照之前的代码，我们可能想当然这样写代码（错误的）：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> k = <span class="hljs-number">2</span>;<br><span class="hljs-keyword">int</span>[][][] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n][k + <span class="hljs-number">1</span>][<span class="hljs-number">2</span>];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>    <span class="hljs-keyword">if</span> (i - <span class="hljs-number">1</span> == -<span class="hljs-number">1</span>) &#123; <span class="hljs-comment">/* 处理一下 base case*/</span> &#125;<br>    dp[i][k][<span class="hljs-number">0</span>] = Math.max(dp[i-<span class="hljs-number">1</span>][k][<span class="hljs-number">0</span>], dp[i-<span class="hljs-number">1</span>][k][<span class="hljs-number">1</span>] + prices[i]);<br>    dp[i][k][<span class="hljs-number">1</span>] = Math.max(dp[i-<span class="hljs-number">1</span>][k][<span class="hljs-number">1</span>], dp[i-<span class="hljs-number">1</span>][k-<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] - prices[i]);<br>&#125;<br><span class="hljs-keyword">return</span> dp[n - <span class="hljs-number">1</span>][k][<span class="hljs-number">0</span>];<br></code></pre></td></tr></table></figure>
+<p>为什么错误？我这不是照着状态转移方程写的吗？<br>还记得前面总结的「穷举框架」吗？就是说我们必须穷举所有状态。其实我们之前的解法，都在穷举所有状态，只是之前的题目中 k 都被化简掉了。比如说第一题，k = 1：<br>「代码截图」<br>这道题由于没有消掉 k 的影响，所以必须要对 k 进行穷举：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> max_k = <span class="hljs-number">2</span>;<br><span class="hljs-keyword">int</span>[][][] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n][max_k + <span class="hljs-number">1</span>][<span class="hljs-number">2</span>];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = max_k; k &gt;= <span class="hljs-number">1</span>; k--) &#123;<br>        <span class="hljs-keyword">if</span> (i - <span class="hljs-number">1</span> == -<span class="hljs-number">1</span>) &#123; <span class="hljs-comment">/*处理 base case */</span> &#125;<br>        dp[i][k][<span class="hljs-number">0</span>] = max(dp[i-<span class="hljs-number">1</span>][k][<span class="hljs-number">0</span>], dp[i-<span class="hljs-number">1</span>][k][<span class="hljs-number">1</span>] + prices[i]);<br>        dp[i][k][<span class="hljs-number">1</span>] = max(dp[i-<span class="hljs-number">1</span>][k][<span class="hljs-number">1</span>], dp[i-<span class="hljs-number">1</span>][k-<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] - prices[i]);<br>    &#125;<br>&#125;<br><span class="hljs-comment">// 穷举了 n × max_k × 2 个状态，正确。</span><br><span class="hljs-keyword">return</span> dp[n - <span class="hljs-number">1</span>][max_k][<span class="hljs-number">0</span>];<br></code></pre></td></tr></table></figure>
+<p>如果你不理解，可以返回第一点「穷举框架」重新阅读体会一下。<br>这里 k 取值范围比较小，所以可以不用 for 循环，直接把 k = 1 和 2 的情况全部列举出来也可以：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java">dp[i][<span class="hljs-number">2</span>][<span class="hljs-number">0</span>] = max(dp[i-<span class="hljs-number">1</span>][<span class="hljs-number">2</span>][<span class="hljs-number">0</span>], dp[i-<span class="hljs-number">1</span>][<span class="hljs-number">2</span>][<span class="hljs-number">1</span>] + prices[i])<br>dp[i][<span class="hljs-number">2</span>][<span class="hljs-number">1</span>] = max(dp[i-<span class="hljs-number">1</span>][<span class="hljs-number">2</span>][<span class="hljs-number">1</span>], dp[i-<span class="hljs-number">1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] - prices[i])<br>dp[i][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] = max(dp[i-<span class="hljs-number">1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>], dp[i-<span class="hljs-number">1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] + prices[i])<br>dp[i][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = max(dp[i-<span class="hljs-number">1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>], -prices[i])<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">maxProfit_k_2</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] prices)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> dp_i10 = <span class="hljs-number">0</span>, dp_i11 = Integer.MIN_VALUE;<br>    <span class="hljs-keyword">int</span> dp_i20 = <span class="hljs-number">0</span>, dp_i21 = Integer.MIN_VALUE;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> price : prices) &#123;<br>        dp_i20 = Math.max(dp_i20, dp_i21 + price);<br>        dp_i21 = Math.max(dp_i21, dp_i10 - price);<br>        dp_i10 = Math.max(dp_i10, dp_i11 + price);<br>        dp_i11 = Math.max(dp_i11, -price);<br>    &#125;<br>    <span class="hljs-keyword">return</span> dp_i20;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>有状态转移方程和含义明确的变量名指导，相信你很容易看懂。其实我们可以故弄玄虚，把上述四个变量换成 a, b, c, d。这样当别人看到你的代码时就会大惊失色，对你肃然起敬。<br><strong>第六题，k = any integer</strong><br>有了上一题 k = 2 的铺垫，这题应该和上一题的第一个解法没啥区别。但是出现了一个超内存的错误，原来是传入的 k 值会非常大，dp 数组太大了。现在想想，交易次数 k 最多有多大呢？<br>一次交易由买入和卖出构成，至少需要两天。所以说有效的限制 k 应该不超过 n/2，如果超过，就没有约束作用了，相当于 k = +infinity。这种情况是之前解决过的。<br>直接把之前的代码重用：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">maxProfit_k_any</span><span class="hljs-params">(<span class="hljs-keyword">int</span> max_k, <span class="hljs-keyword">int</span>[] prices)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = prices.length;<br>    <span class="hljs-keyword">if</span> (max_k &gt; n / <span class="hljs-number">2</span>) <br>        <span class="hljs-keyword">return</span> maxProfit_k_inf(prices);<br>    <span class="hljs-keyword">int</span>[][][] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n][max_k + <span class="hljs-number">1</span>][<span class="hljs-number">2</span>];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) <br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = max_k; k &gt;= <span class="hljs-number">1</span>; k--) &#123;<br>            <span class="hljs-keyword">if</span> (i - <span class="hljs-number">1</span> == -<span class="hljs-number">1</span>) &#123; <span class="hljs-comment">/* 处理 base case */</span> &#125;<br>            dp[i][k][<span class="hljs-number">0</span>] = max(dp[i-<span class="hljs-number">1</span>][k][<span class="hljs-number">0</span>], dp[i-<span class="hljs-number">1</span>][k][<span class="hljs-number">1</span>] + prices[i]);<br>            dp[i][k][<span class="hljs-number">1</span>] = max(dp[i-<span class="hljs-number">1</span>][k][<span class="hljs-number">1</span>], dp[i-<span class="hljs-number">1</span>][k-<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] - prices[i]);     <br>        &#125;<br>    <span class="hljs-keyword">return</span> dp[n - <span class="hljs-number">1</span>][max_k][<span class="hljs-number">0</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>至此，6 道题目通过一个状态转移方程全部解决。</p>
+<p><strong>四、最后总结</strong><br>本文给大家讲了如何通过状态转移的方法解决复杂的问题，用一个状态转移方程秒杀了 6 道股票买卖问题，现在想想，其实也不算难对吧？这已经属于动态规划问题中较困难的了。<br>关键就在于列举出所有可能的「状态」，然后想想怎么穷举更新这些「状态」。一般用一个多维 dp 数组储存这些状态，从 base case 开始向后推进，推进到最后的状态，就是我们想要的答案。想想这个过程，你是不是有点理解「动态规划」这个名词的意义了呢？<br>具体到股票买卖问题，我们发现了三个状态，使用了一个三维数组，无非还是穷举 + 更新，不过我们可以说的高大上一点，这叫「三维 DP」，怕不怕？这个大实话一说，立刻显得你高人一等，名利双收有没有，所以给个在看/分享吧，鼓励一下我。</p>
+<p><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8BKMP%E5%AD%97%E7%AC%A6%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95">上一篇：动态规划之KMP字符匹配算法</a><br><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%8A%A2%E6%88%BF%E5%AD%90">下一篇：团灭 LeetCode 打家劫舍问题</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E8%AF%A6%E8%A7%A3/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E8%AF%A6%E8%A7%A3/" itemprop="url">二分查找详解</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="二分查找详解"><a href="#二分查找详解" class="headerlink" title="二分查找详解"></a>二分查找详解</h1><p>先给大家讲个笑话乐呵一下：<br>有一天阿东到图书馆借了 N 本书，出图书馆的时候，警报响了，于是保安把阿东拦下，要检查一下哪本书没有登记出借。阿东正准备把每一本书在报警器下过一下，以找出引发警报的书，但是保安露出不屑的眼神：你连二分查找都不会吗？于是保安把书分成两堆，让第一堆过一下报警器，报警器响；于是再把这堆书分成两堆…… 最终，检测了 logN 次之后，保安成功的找到了那本引起警报的书，露出了得意和嘲讽的笑容。于是阿东背着剩下的书走了。<br>从此，图书馆丢了 N - 1 本书。<br>二分查找并不简单，Knuth 大佬（发明 KMP 算法的那位）都说二分查找：<strong>思路很简单，细节是魔鬼</strong>。很多人喜欢拿整型溢出的 bug 说事儿，但是二分查找真正的坑根本就不是那个细节问题，而是在于到底要给 <code>mid</code> 加一还是减一，while 里到底用 <code>&lt;=</code> 还是 <code>&lt;</code>。<br>你要是没有正确理解这些细节，写二分肯定就是玄学编程，有没有 bug 只能靠菩萨保佑。<strong>我特意写了一首诗来歌颂该算法，概括本文的主要内容，建议保存</strong>：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/poem.png"><br>本文就来探究几个最常用的二分查找场景：寻找一个数、寻找左侧边界、寻找右侧边界。而且，我们就是要深入细节，比如不等号是否应该带等号，mid 是否应该加一等等。分析这些细节的差异以及出现这些差异的原因，保证你能灵活准确地写出正确的二分查找算法。</p>
+<h3 id="零、二分查找框架"><a href="#零、二分查找框架" class="headerlink" title="零、二分查找框架"></a>零、二分查找框架</h3><figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = ...;<br>    <span class="hljs-keyword">while</span>(...) &#123;<br>        <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (nums[mid] == target) &#123;<br>            ...<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &lt; target) &#123;<br>            left = ...<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target) &#123;<br>            right = ...<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ...;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>分析二分查找的一个技巧是：不要出现 else，而是把所有情况用 else if 写清楚，这样可以清楚地展现所有细节</strong>。本文都会使用 else if，旨在讲清楚，读者理解后可自行简化。<br>其中 <code>...</code> 标记的部分，就是可能出现细节问题的地方，当你见到一个二分查找的代码时，首先注意这几个地方。后文用实例分析这些地方能有什么样的变化。<br>另外声明一下，计算 mid 时需要防止溢出，代码中 <code>left + (right - left) / 2</code> 就和 <code>(left + right) / 2</code> 的结果相同，但是有效防止了 <code>left</code> 和 <code>right</code> 太大直接相加导致溢出。</p>
+<h3 id="一、寻找一个数（基本的二分搜索）"><a href="#一、寻找一个数（基本的二分搜索）" class="headerlink" title="一、寻找一个数（基本的二分搜索）"></a>一、寻找一个数（基本的二分搜索）</h3><p>这个场景是最简单的，肯能也是大家最熟悉的，即搜索一个数，如果存在，返回其索引，否则返回 -1。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>; <br>    <span class="hljs-keyword">int</span> right = nums.length - <span class="hljs-number">1</span>; <span class="hljs-comment">// 注意</span><br>    <span class="hljs-keyword">while</span>(left &lt;= right) &#123;<br>        <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span>(nums[mid] == target)<br>            <span class="hljs-keyword">return</span> mid; <br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &lt; target)<br>            left = mid + <span class="hljs-number">1</span>; <span class="hljs-comment">// 注意</span><br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target)<br>            right = mid - <span class="hljs-number">1</span>; <span class="hljs-comment">// 注意</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>1、为什么 while 循环的条件中是 &lt;=，而不是 &lt;**？<br>答：因为初始化 <code>right</code> 的赋值是 <code>nums.length - 1</code>，即最后一个元素的索引，而不是 <code>nums.length</code>。<br>这二者可能出现在不同功能的二分查找中，区别是：前者相当于两端都闭区间 <code>[left, right]</code>，后者相当于左闭右开区间 <code>[left, right)</code>，因为索引大小为 <code>nums.length</code> 是越界的。<br>我们这个算法中使用的是前者 <code>[left, right]</code> 两端都闭的区间。</strong>这个区间其实就是每次进行搜索的区间**。<br>什么时候应该停止搜索呢？当然，找到了目标值的时候可以终止：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(nums[mid] == target)<br>    <span class="hljs-keyword">return</span> mid; <br></code></pre></td></tr></table></figure>
+<p>但如果没找到，就需要 while 循环终止，然后返回 -1。那 while 循环什么时候应该终止？<strong>搜索区间为空的时候应该终止</strong>，意味着你没得找了，就等于没找到嘛。<br><code>while(left &lt;= right)</code> 的终止条件是 <code>left == right + 1</code>，写成区间的形式就是 <code>[right + 1, right]</code>，或者带个具体的数字进去 <code>[3, 2]</code>，可见<strong>这时候区间为空</strong>，因为没有数字既大于等于 3 又小于等于 2 的吧。所以这时候 while 循环终止是正确的，直接返回 -1 即可。<br><code>while(left &lt; right)</code> 的终止条件是 <code>left == right</code>，写成区间的形式就是 <code>[left, right]</code>，或者带个具体的数字进去 <code>[2, 2]</code>，<strong>这时候区间非空</strong>，还有一个数 2，但此时 while 循环终止了。也就是说这区间 <code>[2, 2]</code> 被漏掉了，索引 2 没有被搜索，如果这时候直接返回 -1 就是错误的。<br>当然，如果你非要用 <code>while(left &lt; right)</code> 也可以，我们已经知道了出错的原因，就打个补丁好了：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//...</span><br><span class="hljs-keyword">while</span>(left &lt; right) &#123;<br>    <span class="hljs-comment">// ...</span><br>&#125;<br><span class="hljs-keyword">return</span> nums[left] == target ? left : -<span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+
+<p><strong>2、为什么 <code>left = mid + 1</code>，<code>right = mid - 1</code>？我看有的代码是 <code>right = mid</code> 或者 <code>left = mid</code>，没有这些加加减减，到底怎么回事，怎么判断</strong>？<br>答：这也是二分查找的一个难点，不过只要你能理解前面的内容，就能够很容易判断。<br>刚才明确了「搜索区间」这个概念，而且本算法的搜索区间是两端都闭的，即 <code>[left, right]</code>。那么当我们发现索引 <code>mid</code> 不是要找的 <code>target</code> 时，下一步应该去搜索哪里呢？<br>当然是去搜索 <code>[left, mid-1]</code> 或者 <code>[mid+1, right]</code> 对不对？<strong>因为 <code>mid</code> 已经搜索过，应该从搜索区间中去除</strong>。<br><strong>3、此算法有什么缺陷</strong>？<br>答：至此，你应该已经掌握了该算法的所有细节，以及这样处理的原因。但是，这个算法存在局限性。<br>比如说给你有序数组 <code>nums = [1,2,2,2,3]</code>，<code>target</code> 为 2，此算法返回的索引是 2，没错。但是如果我想得到 <code>target</code> 的左侧边界，即索引 1，或者我想得到 <code>target</code> 的右侧边界，即索引 3，这样的话此算法是无法处理的。<br>这样的需求很常见，<strong>你也许会说，找到一个 target，然后向左或向右线性搜索不行吗？可以，但是不好，因为这样难以保证二分查找对数级的复杂度了</strong>。<br>我们后续的算法就来讨论这两种二分查找的算法。</p>
+<h3 id="二、寻找左侧边界的二分搜索"><a href="#二、寻找左侧边界的二分搜索" class="headerlink" title="二、寻找左侧边界的二分搜索"></a>二、寻找左侧边界的二分搜索</h3><p>以下是最常见的代码形式，其中的标记是需要注意的细节：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">left_bound</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (nums.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> right = nums.length; <span class="hljs-comment">// 注意</span><br>    <br>    <span class="hljs-keyword">while</span> (left &lt; right) &#123; <span class="hljs-comment">// 注意</span><br>        <span class="hljs-keyword">int</span> mid = (left + right) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (nums[mid] == target) &#123;<br>            right = mid;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &lt; target) &#123;<br>            left = mid + <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target) &#123;<br>            right = mid; <span class="hljs-comment">// 注意</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> left;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>1、为什么 while 中是 <code>&lt;</code> 而不是 <code>&lt;=</code></strong>?<br>答：用相同的方法分析，因为 <code>right = nums.length</code> 而不是 <code>nums.length - 1</code>。因此每次循环的「搜索区间」是 <code>[left, right)</code> 左闭右开。<br><code>while(left &lt; right)</code> 终止的条件是 <code>left == right</code>，此时搜索区间 <code>[left, left)</code> 为空，所以可以正确终止。<br>PS：这里先要说一个搜索左右边界和上面这个算法的一个区别，也是很多读者问的：<strong>刚才的 <code>right</code> 不是 <code>nums.length - 1</code> 吗，为啥这里非要写成 <code>nums.length</code> 使得「搜索区间」变成左闭右开呢</strong>？<br>因为对于搜索左右侧边界的二分查找，这种写法比较普遍，我就拿这种写法举例了，保证你以后遇到这类代码可以理解。你非要用两端都闭的写法反而更简单，我会在后面写相关的代码，把三种二分搜索都用一种两端都闭的写法统一起来，你耐心往后看就行了。<br><strong>2、为什么没有返回 -1 的操作？如果 <code>nums</code> 中不存在 <code>target</code> 这个值，怎么办</strong>？<br>答：因为要一步一步来，先理解一下这个「左侧边界」有什么特殊含义：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/1.jpg"><br>对于这个数组，算法会返回 1。这个 1 的含义可以这样解读：<code>nums</code> 中小于 2 的元素有 1 个。<br>比如对于有序数组 <code>nums = [2,3,5,7]</code>, <code>target = 1</code>，算法会返回 0，含义是：<code>nums</code> 中小于 1 的元素有 0 个。<br>再比如说 <code>nums = [2,3,5,7], target = 8</code>，算法会返回 4，含义是：<code>nums</code> 中小于 8 的元素有 4 个。<br>综上可以看出，函数的返回值（即 <code>left</code> 变量的值）取值区间是闭区间 <code>[0, nums.length]</code>，所以我们简单添加两行代码就能在正确的时候 return -1：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>    <span class="hljs-comment">//...</span><br>&#125;<br><span class="hljs-comment">// target 比所有数都大</span><br><span class="hljs-keyword">if</span> (left == nums.length) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br><span class="hljs-comment">// 类似之前算法的处理方式</span><br><span class="hljs-keyword">return</span> nums[left] == target ? left : -<span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<p><strong>3、为什么 <code>left = mid + 1</code>，<code>right = mid</code> ？和之前的算法不一样</strong>？<br>答：这个很好解释，因为我们的「搜索区间」是 <code>[left, right)</code> 左闭右开，所以当 <code>nums[mid]</code> 被检测之后，下一步的搜索区间应该去掉 <code>mid</code> 分割成两个区间，即 <code>[left, mid)</code> 或 <code>[mid + 1, right)</code>。<br><strong>4、为什么该算法能够搜索左侧边界</strong>？<br>答：关键在于对于 <code>nums[mid] == target</code> 这种情况的处理：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (nums[mid] == target)<br>    right = mid;<br></code></pre></td></tr></table></figure>
+<p>可见，找到 target 时不要立即返回，而是缩小「搜索区间」的上界 <code>right</code>，在区间 <code>[left, mid)</code> 中继续搜索，即不断向左收缩，达到锁定左侧边界的目的。<br><strong>5、为什么返回 <code>left</code> 而不是 <code>right</code>**？<br>答：都是一样的，因为 while 终止的条件是 <code>left == right</code>。<br>**6、能不能想办法把 <code>right</code> 变成 <code>nums.length - 1</code>，也就是继续使用两边都闭的「搜索区间」？这样就可以和第一种二分搜索在某种程度上统一起来了</strong>。<br>答：当然可以，只要你明白了「搜索区间」这个概念，就能有效避免漏掉元素，随便你怎么改都行。下面我们严格根据逻辑来修改：<br>因为你非要让搜索区间两端都闭，所以 <code>right</code> 应该初始化为 <code>nums.length - 1</code>，while 的终止条件应该是 <code>left == right + 1</code>，也就是其中应该用 <code>&lt;=</code>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">left_bound</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-comment">// 搜索区间为 [left, right]</span><br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = nums.length - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (left &lt;= right) &#123;<br>        <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>        <span class="hljs-comment">// if else ...</span><br>    &#125;<br></code></pre></td></tr></table></figure>
+<p>因为搜索区间是两端都闭的，且现在是搜索左侧边界，所以 <code>left</code> 和 <code>right</code> 的更新逻辑如下：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (nums[mid] &lt; target) &#123;<br>    <span class="hljs-comment">// 搜索区间变为 [mid+1, right]</span><br>    left = mid + <span class="hljs-number">1</span>;<br>&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target) &#123;<br>    <span class="hljs-comment">// 搜索区间变为 [left, mid-1]</span><br>    right = mid - <span class="hljs-number">1</span>;<br>&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] == target) &#123;<br>    <span class="hljs-comment">// 收缩右侧边界</span><br>    right = mid - <span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>由于 while 的退出条件是 <code>left == right + 1</code>，所以当 <code>target</code> 比 <code>nums</code> 中所有元素都大时，会存在以下情况使得索引越界：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/2.jpg"><br>因此，最后返回结果的代码应该检查越界情况：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (left &gt;= nums.length || nums[left] != target)<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br><span class="hljs-keyword">return</span> left;<br></code></pre></td></tr></table></figure>
+<p>至此，整个算法就写完了，完整代码如下：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">left_bound</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = nums.length - <span class="hljs-number">1</span>;<br>    <span class="hljs-comment">// 搜索区间为 [left, right]</span><br>    <span class="hljs-keyword">while</span> (left &lt;= right) &#123;<br>        <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (nums[mid] &lt; target) &#123;<br>            <span class="hljs-comment">// 搜索区间变为 [mid+1, right]</span><br>            left = mid + <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target) &#123;<br>            <span class="hljs-comment">// 搜索区间变为 [left, mid-1]</span><br>            right = mid - <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] == target) &#123;<br>            <span class="hljs-comment">// 收缩右侧边界</span><br>            right = mid - <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 检查出界情况</span><br>    <span class="hljs-keyword">if</span> (left &gt;= nums.length || nums[left] != target)<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">return</span> left;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样就和第一种二分搜索算法统一了，都是两端都闭的「搜索区间」，而且最后返回的也是 <code>left</code> 变量的值。只要把住二分搜索的逻辑，两种形式大家看自己喜欢哪种记哪种吧。</p>
+<h3 id="三、寻找右侧边界的二分查找"><a href="#三、寻找右侧边界的二分查找" class="headerlink" title="三、寻找右侧边界的二分查找"></a>三、寻找右侧边界的二分查找</h3><p>类似寻找左侧边界的算法，这里也会提供两种写法，还是先写常见的左闭右开的写法，只有两处和搜索左侧边界不同，已标注：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">right_bound</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (nums.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = nums.length;<br>    <br>    <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>        <span class="hljs-keyword">int</span> mid = (left + right) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (nums[mid] == target) &#123;<br>            left = mid + <span class="hljs-number">1</span>; <span class="hljs-comment">// 注意</span><br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &lt; target) &#123;<br>            left = mid + <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target) &#123;<br>            right = mid;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> left - <span class="hljs-number">1</span>; <span class="hljs-comment">// 注意</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>1、为什么这个算法能够找到右侧边界</strong>？<br>答：类似地，关键点还是这里：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (nums[mid] == target) &#123;<br>    left = mid + <span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<p>当 <code>nums[mid] == target</code> 时，不要立即返回，而是增大「搜索区间」的下界 <code>left</code>，使得区间不断向右收缩，达到锁定右侧边界的目的。<br><strong>2、为什么最后返回 <code>left - 1</code> 而不像左侧边界的函数，返回 <code>left</code>？而且我觉得这里既然是搜索右侧边界，应该返回 <code>right</code> 才对</strong>。<br>答：首先，while 循环的终止条件是 <code>left == right</code>，所以 <code>left</code> 和 <code>right</code> 是一样的，你非要体现右侧的特点，返回 <code>right - 1</code> 好了。<br>至于为什么要减一，这是搜索右侧边界的一个特殊点，关键在这个条件判断：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (nums[mid] == target) &#123;<br>    left = mid + <span class="hljs-number">1</span>;<br>    <span class="hljs-comment">// 这样想: mid = left - 1</span><br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/3.jpg"><br>因为我们对 <code>left</code> 的更新必须是 <code>left = mid + 1</code>，就是说 while 循环结束时，<code>nums[left]</code> 一定不等于 <code>target</code> 了，而 <code>nums[left-1]</code> 可能是 <code>target</code>。<br>至于为什么 <code>left</code> 的更新必须是 <code>left = mid + 1</code>，同左侧边界搜索，就不再赘述。<br><strong>3、为什么没有返回 -1 的操作？如果 <code>nums</code> 中不存在 <code>target</code> 这个值，怎么办</strong>？<br>答：类似之前的左侧边界搜索，因为 while 的终止条件是 <code>left == right</code>，就是说 <code>left</code> 的取值范围是 <code>[0, nums.length]</code>，所以可以添加两行代码，正确地返回 -1：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>    <span class="hljs-comment">// ...</span><br>&#125;<br><span class="hljs-keyword">if</span> (left == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br><span class="hljs-keyword">return</span> nums[left-<span class="hljs-number">1</span>] == target ? (left-<span class="hljs-number">1</span>) : -<span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<p><strong>4、是否也可以把这个算法的「搜索区间」也统一成两端都闭的形式呢？这样这三个写法就完全统一了，以后就可以闭着眼睛写出来了</strong>。<br>答：当然可以，类似搜索左侧边界的统一写法，其实只要改两个地方就行了：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">right_bound</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = nums.length - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (left &lt;= right) &#123;<br>        <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (nums[mid] &lt; target) &#123;<br>            left = mid + <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target) &#123;<br>            right = mid - <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] == target) &#123;<br>            <span class="hljs-comment">// 这里改成收缩左侧边界即可</span><br>            left = mid + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 这里改为检查 right 越界的情况，见下图</span><br>    <span class="hljs-keyword">if</span> (right &lt; <span class="hljs-number">0</span> || nums[right] != target)<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">return</span> right;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>当 <code>target</code> 比所有元素都小时，<code>right</code> 会被减到 -1，所以需要在最后防止越界：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/4.jpg"><br>至此，搜索右侧边界的二分查找的两种写法也完成了，其实将「搜索区间」统一成两端都闭反而更容易记忆，你说是吧？</p>
+<h3 id="四、逻辑统一"><a href="#四、逻辑统一" class="headerlink" title="四、逻辑统一"></a>四、逻辑统一</h3><p>来梳理一下这些细节差异的因果逻辑：<br><strong>第一个，最基本的二分查找算法</strong>：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">因为我们初始化 right = nums.length - <span class="hljs-number">1</span><br>所以决定了我们的「搜索区间」是 [left, right]<br>所以决定了 <span class="hljs-keyword">while</span> (left &lt;= right)<br>同时也决定了 left = mid+<span class="hljs-number">1</span> 和 right = mid<span class="hljs-number">-1</span><br>因为我们只需找到一个 target 的索引即可<br>所以当 nums[mid] == target 时可以立即返回<br></code></pre></td></tr></table></figure>
+<p><strong>第二个，寻找左侧边界的二分查找</strong>：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">因为我们初始化 right = nums.length<br>所以决定了我们的「搜索区间」是 [left, right)<br>所以决定了 <span class="hljs-keyword">while</span> (left &lt; right)<br>同时也决定了 left = mid + <span class="hljs-number">1</span> 和 right = mid<br>因为我们需找到 target 的最左侧索引<br>所以当 nums[mid] == target 时不要立即返回<br>而要收紧右侧边界以锁定左侧边界<br></code></pre></td></tr></table></figure>
+<p><strong>第三个，寻找右侧边界的二分查找</strong>：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python">因为我们初始化 right = nums.length<br>所以决定了我们的「搜索区间」是 [left, right)<br>所以决定了 <span class="hljs-keyword">while</span> (left &lt; right)<br>同时也决定了 left = mid + <span class="hljs-number">1</span> 和 right = mid<br>因为我们需找到 target 的最右侧索引<br>所以当 nums[mid] == target 时不要立即返回<br>而要收紧左侧边界以锁定右侧边界<br>又因为收紧左侧边界时必须 left = mid + <span class="hljs-number">1</span><br>所以最后无论返回 left 还是 right，必须减一<br></code></pre></td></tr></table></figure>
+<p>对于寻找左右边界的二分搜索，常见的手法是使用左闭右开的「搜索区间」，<strong>我们还根据逻辑将「搜索区间」全都统一成了两端都闭，便于记忆，只要修改两处即可变化出三种写法</strong>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">binary_search</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = nums.length - <span class="hljs-number">1</span>; <br>    <span class="hljs-keyword">while</span>(left &lt;= right) &#123;<br>        <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (nums[mid] &lt; target) &#123;<br>            left = mid + <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target) &#123;<br>            right = mid - <span class="hljs-number">1</span>; <br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] == target) &#123;<br>            <span class="hljs-comment">// 直接返回</span><br>            <span class="hljs-keyword">return</span> mid;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 直接返回</span><br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">left_bound</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = nums.length - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (left &lt;= right) &#123;<br>        <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (nums[mid] &lt; target) &#123;<br>            left = mid + <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target) &#123;<br>            right = mid - <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] == target) &#123;<br>            <span class="hljs-comment">// 别返回，锁定左侧边界</span><br>            right = mid - <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 最后要检查 left 越界的情况</span><br>    <span class="hljs-keyword">if</span> (left &gt;= nums.length || nums[left] != target)<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">return</span> left;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">right_bound</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = nums.length - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (left &lt;= right) &#123;<br>        <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (nums[mid] &lt; target) &#123;<br>            left = mid + <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target) &#123;<br>            right = mid - <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] == target) &#123;<br>            <span class="hljs-comment">// 别返回，锁定右侧边界</span><br>            left = mid + <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 最后要检查 right 越界的情况</span><br>    <span class="hljs-keyword">if</span> (right &lt; <span class="hljs-number">0</span> || nums[right] != target)<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">return</span> right;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>如果以上内容你都能理解，那么恭喜你，二分查找算法的细节不过如此。<br>通过本文，你学会了：<br>1、分析二分查找代码时，不要出现 else，全部展开成 else if 方便理解。<br>2、注意「搜索区间」和 while 的终止条件，如果存在漏掉的元素，记得在最后检查。<br>3、如需定义左闭右开的「搜索区间」搜索左右边界，只要在 <code>nums[mid] == target</code> 时做修改即可，搜索右侧时需要减一。<br>4、如果将「搜索区间」全都统一成两端都闭，好记，只要稍改 <code>nums[mid] == target</code> 条件处的代码和返回的逻辑即可，<strong>推荐拿小本本记下，作为二分搜索模板</strong>。<br>呵呵，此文对二分查找的问题无敌好吧！</p>
+<p><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E4%BF%AE%E8%AE%A2%E7%89%88">上一篇：回溯算法解题框架</a><br><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%8A%80%E5%B7%A7">下一篇：滑动窗口解题框架</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/12/">&lt;i class&#x3D;&quot;fas fa-angle-left&quot; aria-label&#x3D;&quot;上一页&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

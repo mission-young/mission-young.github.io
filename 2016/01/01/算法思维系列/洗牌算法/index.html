@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>洗牌算法 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">洗牌算法</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="洗牌算法"><a href="#洗牌算法" class="headerlink" title="洗牌算法"></a>洗牌算法</h1><p>我知道大家会各种花式排序算法，但是如果叫你打乱一个数组，你是否能做到胸有成竹？即便你拍脑袋想出一个算法，怎么证明你的算法就是正确的呢？乱序算法不像排序算法，结果唯一可以很容易检验，因为「乱」可以有很多种，你怎么能证明你的算法是「真的乱」呢？<br>所以我们面临两个问题：</p>
+<ol>
+<li>什么叫做「真的乱」？</li>
+<li>设计怎样的算法来打乱数组才能做到「真的乱」？<br>这种算法称为「随机乱置算法」或者「洗牌算法」。<br>本文分两部分，第一部分详解最常用的洗牌算法。因为该算法的细节容易出错，且存在好几种变体，虽有细微差异但都是正确的，所以本文要介绍一种简单的通用思想保证你写出正确的洗牌算法。第二部分讲解使用「蒙特卡罗方法」来检验我们的打乱结果是不是真的乱。蒙特卡罗方法的思想不难，但是实现方式也各有特点的。<h3 id="一、洗牌算法"><a href="#一、洗牌算法" class="headerlink" title="一、洗牌算法"></a>一、洗牌算法</h3>此类算法都是靠随机选取元素交换来获取随机性，直接看代码（伪码），该算法有 4 种形式，都是正确的：<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 得到一个在闭区间 [min, max] 内的随机整数</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">randInt</span><span class="hljs-params">(<span class="hljs-keyword">int</span> min, <span class="hljs-keyword">int</span> max)</span></span>;<br><span class="hljs-comment">// 第一种写法</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">shuffle</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = arr.length();<br>    <span class="hljs-comment">/******** 区别只有这两行 ********/</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span> ; i &lt; n; i++) &#123;<br>        <span class="hljs-comment">// 从 i 到最后随机选一个元素</span><br>        <span class="hljs-keyword">int</span> rand = randInt(i, n - <span class="hljs-number">1</span>);<br>        <span class="hljs-comment">/*************************/</span><br>        swap(arr[i], arr[rand]);<br>    &#125;<br>&#125;<br><span class="hljs-comment">// 第二种写法</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span> ; i &lt; n - <span class="hljs-number">1</span>; i++)<br>        <span class="hljs-keyword">int</span> rand = randInt(i, n - <span class="hljs-number">1</span>);<br><span class="hljs-comment">// 第三种写法</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = n - <span class="hljs-number">1</span> ; i &gt;= <span class="hljs-number">0</span>; i--)<br>        <span class="hljs-keyword">int</span> rand = randInt(<span class="hljs-number">0</span>, i);<br><span class="hljs-comment">// 第四种写法</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = n - <span class="hljs-number">1</span> ; i &gt; <span class="hljs-number">0</span>; i--)<br>        <span class="hljs-keyword">int</span> rand = randInt(<span class="hljs-number">0</span>, i);<br></code></pre></td></tr></table></figure></li>
+</ol>
+<p><strong>分析洗牌算法正确性的准则：产生的结果必须有 n! 种可能，否则就是错误的。</strong>这个很好解释，因为一个长度为 n 的数组的全排列就有 n! 种，也就是说打乱结果总共有 n! 种。算法必须能够反映这个事实，才是正确的。<br>我们先用这个准则分析一下<strong>第一种写法</strong>的正确性：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 假设传入这样一个 arr</span><br><span class="hljs-keyword">int</span>[] arr = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span class="hljs-number">9</span>&#125;;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">shuffle</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = arr.length(); <span class="hljs-comment">// 5</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span> ; i &lt; n; i++) &#123;<br>        <span class="hljs-keyword">int</span> rand = randInt(i, n - <span class="hljs-number">1</span>);<br>        swap(arr[i], arr[rand]);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>for 循环第一轮迭代时，<code>i = 0</code>，<code>rand</code> 的取值范围是 <code>[0, 4]</code>，有 5 个可能的取值。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/1.png" alt="第一次"><br>for 循环第二轮迭代时，<code>i = 1</code>，<code>rand</code> 的取值范围是 <code>[1, 4]</code>，有 4 个可能的取值。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/2.png" alt="第二次"><br>后面以此类推，直到最后一次迭代，<code>i = 4</code>，<code>rand</code> 的取值范围是 <code>[4, 4]</code>，只有 1 个可能的取值。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/3.png" alt="最后一次"><br>可以看到，整个过程产生的所有可能结果有 <code>n! = 5! = 5*4*3*2*1</code> 种，所以这个算法是正确的。<br>分析<strong>第二种写法</strong>，前面的迭代都是一样的，少了一次迭代而已。所以最后一次迭代时 <code>i = 3</code>，<code>rand</code> 的取值范围是 <code>[3, 4]</code>，有 2 个可能的取值。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 第二种写法</span><br><span class="hljs-comment">// arr = &#123;1,3,5,7,9&#125;, n = 5</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span> ; i &lt; n - <span class="hljs-number">1</span>; i++)<br>        <span class="hljs-keyword">int</span> rand = randInt(i, n - <span class="hljs-number">1</span>);<br></code></pre></td></tr></table></figure>
+<p>所以整个过程产生的所有可能结果仍然有 <code>5*4*3*2 = 5! = n!</code> 种，因为乘以 1 可有可无嘛。所以这种写法也是正确的。<br>如果以上内容你都能理解，那么你就能发现<strong>第三种写法</strong>就是第一种写法，只是将数组从后往前迭代而已；<strong>第四种写法</strong>是第二种写法从后往前来。所以它们都是正确的。<br>如果读者思考过洗牌算法，可能会想出如下的算法，但是<strong>这种写法是错误的</strong>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">shuffle</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = arr.length();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span> ; i &lt; n; i++) &#123;<br>        <span class="hljs-comment">// 每次都从闭区间 [0, n-1]</span><br>        <span class="hljs-comment">// 中随机选取元素进行交换</span><br>        <span class="hljs-keyword">int</span> rand = randInt(<span class="hljs-number">0</span>, n - <span class="hljs-number">1</span>);<br>        swap(arr[i], arr[rand]);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>现在你应该明白这种写法为什么会错误了。因为这种写法得到的所有可能结果有 $n^n$ 种，而不是 $n!$ 种，而且 $n^n$ 不可能是 $n!$ 的整数倍。<br>比如说 <code>arr = &#123;1,2,3&#125;</code>，正确的结果应该有 $3!= 6$ 种可能，而这种写法总共有 $3^3 = 27$ 种可能结果。因为 27 不能被 6 整除，所以一定有某些情况被「偏袒」了，也就是说某些情况出现的概率会大一些，所以这种打乱结果不算「真的乱」。<br>上面我们从直觉上简单解释了洗牌算法正确的准则，没有数学证明，我想大家也懒得证明。对于概率问题我们可以使用「蒙特卡罗方法」进行简单验证。</p>
+<h3 id="二、蒙特卡罗方法验证正确性"><a href="#二、蒙特卡罗方法验证正确性" class="headerlink" title="二、蒙特卡罗方法验证正确性"></a>二、蒙特卡罗方法验证正确性</h3><p>洗牌算法，或者说随机乱置算法的<strong>正确性衡量标准是：对于每种可能的结果出现的概率必须相等，也就是说要足够随机。</strong><br>如果不用数学严格证明概率相等，可以用蒙特卡罗方法近似地估计出概率是否相等，结果是否足够随机。<br>记得高中有道数学题：往一个正方形里面随机打点，这个正方形里紧贴着一个圆，告诉你打点的总数和落在圆里的点的数量，让你计算圆周率。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/4.png" alt="正方形"><br>这其实就是利用了蒙特卡罗方法：当打的点足够多的时候，点的数量就可以近似代表图形的面积。通过面积公式，由正方形和圆的面积比值是可以很容易推出圆周率的。当然打的点越多，算出的圆周率越准确，充分体现了大力出奇迹的真理。<br>类似的，我们可以对同一个数组进行一百万次洗牌，统计各种结果出现的次数，把频率作为概率，可以很容易看出洗牌算法是否正确。整体思想很简单，不过实现起来也有些技巧的，下面简单分析几种实现思路。<br><strong>第一种思路</strong>，我们把数组 arr 的所有排列组合都列举出来，做成一个直方图（假设 arr = {1,2,3}）：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/5.jpg" alt="直方图"><br>每次进行洗牌算法后，就把得到的打乱结果对应的频数加一，重复进行 100 万次，如果每种结果出现的总次数差不多，那就说明每种结果出现的概率应该是相等的。写一下这个思路的伪代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">shuffle</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span></span>;<br><span class="hljs-comment">// 蒙特卡罗</span><br><span class="hljs-keyword">int</span> N = <span class="hljs-number">1000000</span>;<br>HashMap count; <span class="hljs-comment">// 作为直方图</span><br><span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>    <span class="hljs-keyword">int</span>[] arr = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>&#125;;<br>    shuffle(arr);<br>    <span class="hljs-comment">// 此时 arr 已被打乱</span><br>    count[arr] += <span class="hljs-number">1</span>；<br>&#125;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> feq : count.values()) <br>    print(feq / N + <span class="hljs-string">&quot; &quot;</span>); <span class="hljs-comment">// 频率</span><br></code></pre></td></tr></table></figure>
+<p>这种检验方案是可行的，不过可能有读者会问，arr 的全部排列有 n! 种（n 为 arr 的长度），如果 n 比较大，那岂不是空间复杂度爆炸了？<br>是的，不过作为一种验证方法，我们不需要 n 太大，一般用长度为 5 或 6 的 arr 试下就差不多了吧，因为我们只想比较概率验证一下正确性而已。<br><strong>第二种思路</strong>，可以这样想，arr 数组中全都是 0，只有一个 1。我们对 arr 进行 100 万次打乱，记录每个索引位置出现 1 的次数，如果每个索引出现的次数差不多，也可以说明每种打乱结果的概率是相等的。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">shuffle</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span></span>;<br><span class="hljs-comment">// 蒙特卡罗方法</span><br><span class="hljs-keyword">int</span> N = <span class="hljs-number">1000000</span>;    <br><span class="hljs-keyword">int</span>[] arr = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>&#125;;<br><span class="hljs-keyword">int</span>[] count = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[arr.length];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>    shuffle(arr); <span class="hljs-comment">// 打乱 arr</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; arr.length; j++) <br>        <span class="hljs-keyword">if</span> (arr[j] == <span class="hljs-number">1</span>) &#123;<br>            count[j]++;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>&#125;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> feq : count) <br>    print(feq / N + <span class="hljs-string">&quot; &quot;</span>); <span class="hljs-comment">// 频率</span><br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/6.png" alt="直方图"><br>这种思路也是可行的，而且避免了阶乘级的空间复杂度，但是多了嵌套 for 循环，时间复杂度高一点。不过由于我们的测试数据量不会有多大，这些问题都可以忽略。<br>另外，细心的读者可能发现一个问题，上述两种思路声明 arr 的位置不同，一个在 for 循环里，一个在 for 循环之外。其实效果都是一样的，因为我们的算法总要打乱 arr，所以 arr 的顺序并不重要，只要元素不变就行。</p>
+<h3 id="三、最后总结"><a href="#三、最后总结" class="headerlink" title="三、最后总结"></a>三、最后总结</h3><p>本文第一部分介绍了洗牌算法（随机乱置算法），通过一个简单的分析技巧证明了该算法的四种正确形式，并且分析了一种常见的错误写法，相信你一定能够写出正确的洗牌算法了。<br>第二部分写了洗牌算法正确性的衡量标准，即每种随机结果出现的概率必须相等。如果我们不用严格的数学证明，可以通过蒙特卡罗方法大力出奇迹，粗略验证算法的正确性。蒙特卡罗方法也有不同的思路，不过要求不必太严格，因为我们只是寻求一个简单的验证。</p>
+<p><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%87%A0%E4%B8%AA%E5%8F%8D%E7%9B%B4%E8%A7%89%E7%9A%84%E6%A6%82%E7%8E%87%E9%97%AE%E9%A2%98">上一篇：几个反直觉的概率问题</a><br><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E9%80%92%E5%BD%92%E8%AF%A6%E8%A7%A3">下一篇：递归详解</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%8A%80%E5%B7%A7/" rel="next" title="滑动窗口技巧"><i class="fas fa-angle-left"></i><span class="nav-title">滑动窗口技巧</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BD%8D%E6%93%8D%E4%BD%9C/" rel="prev" title="常用的位操作"><span class="nav-title">常用的位操作</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95"><span class="toc-text">洗牌算法</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%80%E3%80%81%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95"><span class="toc-text">一、洗牌算法</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%8C%E3%80%81%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95%E9%AA%8C%E8%AF%81%E6%AD%A3%E7%A1%AE%E6%80%A7"><span class="toc-text">二、蒙特卡罗方法验证正确性</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%89%E3%80%81%E6%9C%80%E5%90%8E%E6%80%BB%E7%BB%93"><span class="toc-text">三、最后总结</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

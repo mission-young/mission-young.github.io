@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>redis入侵 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E6%8A%80%E6%9C%AF/redis%E5%85%A5%E4%BE%B5/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">redis入侵</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>好吧，我也做了回标题党，像我这么细心的同学，怎么可能让服务器被入侵呢？<br>其实是这样的，昨天我和一个朋友聊天，他说他自己有一台云服务器运行了 Redis 数据库，有一天突然发现数据库里的<strong>数据全没了</strong>，只剩下一个奇奇怪怪的键值对，其中值看起来像一个 RSA 公钥的字符串，他以为是误操作删库了，幸好自己的服务器里没啥重要的数据，也就没在意。<br>经过一番攀谈交心了解到，他跑了一个比较古老已经停止维护的开源项目，安装的旧版本的 Redis，而且他对 Linux 的使用不是很熟练。我就知道，他的服务器已经被攻陷了，想到也许还会有不少像我这位朋友的人，不重视操作系统的权限、防火墙的设置和数据库的保护，我就写一篇文章简单看看这种情况出现的原因，以及如何防范。<br>PS：这种手法现在已经行不通了，因为新版本 Redis 都增加了 protect mode，增加了安全性，我们只能在本地简单模拟一下，就别乱试了。</p>
+<h3 id="事件经过"><a href="#事件经过" class="headerlink" title="事件经过"></a>事件经过</h3><p>其实这种攻击手法都是 2015 年的事了，那时候 Redis 的安全保护机制比较差，只能靠运维人员来合理配置以保证数据库的安全。有段时间，全球几万个 Redis 节点遭到了攻击，出现了上述奇怪的现象，所有数据被清空，只剩一个键叫 <code>crackit</code>，它的值形似 RSA 公钥的字符串。<br>后来查证，攻击者利用 Redis 动态设置配置和数据持久化的功能，把自己的 RSA 公钥写入到了被攻击服务器的 <code>/root/.ssh/authored_keys</code> 这个文件，从而可以用私钥直接登录对方的 root 用户，侵入对方系统。<br>沦陷的服务器安全防护做的很不好，具体如下：<br>1、Redis 的端口是默认端口，而且可以从公网访问。<br>2、Redis 还没设密码。<br>3、Redis 进程是由 root 用户启动的。<br>以上每个点都是比较危险的，合在一起，那真是很致命了。且不说别人把公钥写到你的系统里，就说连上你的数据库然后删库，那损失都够大了。那么具体的流程是什么呢，下面我在本地回环地址上简单演示一下。</p>
+<h3 id="本地演示"><a href="#本地演示" class="headerlink" title="本地演示"></a>本地演示</h3><p>Redis 监听的默认端口是 6379，我们设置它接收网卡 127.0.0.1 的连接，这样我从本地肯定可以连接 Redis，以此模拟「从公网可以访问 Redis」这一条件。<br>现在我是名叫 fdl 的普通用户，我想用 ssh 登录我系统上的 root 用户，要输入 root 的密码，我不知道，所以没办法登录。<br>除了密码登录之外，还可以使用 RSA 密钥对登录，但是必须要把我的公钥存到 root 的家目录中 <code>/root/.ssh/authored_keys</code>。我们知道 <code>/root</code> 目录的权限设置是不允许任何其他用户闯入读写的：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/redis%E5%85%A5%E4%BE%B5/1.png"><br>但是，我发现自己竟然可以直接访问 Redis：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/redis%E5%85%A5%E4%BE%B5/2.png"><br>如果 Redis 是以 root 的身份运行的，那么我就可以通过操作 Redis，让它把我的公钥写到 root 的家目录中。Redis 有一种持久化方式是生成 RDB 文件，其中会包含原始数据。<br>我露出了邪恶的微笑，先把 Redis 中的数据全部清空，然后把我的 RSA 公钥写到数据库里，这里在开头和结尾加换行符目的是避免 RDB 文件生成过程中损坏到公钥字符串：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/redis%E5%85%A5%E4%BE%B5/3.png"><br>命令 Redis 把生成的数据文件保存到 <code>/root/.ssh/</code> 中的 <code>authored_keys</code> 文件中：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/redis%E5%85%A5%E4%BE%B5/4.png"><br>现在，root 的家目录中已经包含了我们的 RSA 公钥，我们现在可以通过密钥对登录进 root 了：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/redis%E5%85%A5%E4%BE%B5/5.png"><br>看一下刚才写入 root 家的公钥：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/redis%E5%85%A5%E4%BE%B5/6.png"><br>乱码是 GDB 文件的某种编码吧，但是中间的公钥被完整保存了，而且 ssh 登录程序竟然也识别了这段被乱码包围的公钥！<br>至此，拥有了 root 权限，就可以为所欲为了。。。</p>
+<h3 id="吸取教训"><a href="#吸取教训" class="headerlink" title="吸取教训"></a>吸取教训</h3><p>虽然现在基本不会受到这种攻击（新版本的 Redis 没有密码时默认不对外网开放），但是对于系统的安全性是每个人都应该重视的。<br>我们自己折腾东西，用个低配云服务器，为了省事儿一般也不认真配置防火墙，数据库不设密码或者设成 admin、root 这样简单的密码，反正也没啥数据。这样肯定不是个好习惯。<br>现在我们的计算机系统越来越完善，每个成熟的项目都由最优秀的一帮人维护，从技术上说应该算是无懈可击了，那么唯一可能出问题的地方就在于使用它们的人。<br>就像经常看到有人的 QQ 被盗，我相信盗号的人肯定不是跑到腾讯的数据库里盗号，肯定是 QQ 号主安全防范意识差，在哪个钓鱼网站输入了自己的账号密码，导致被盗。我基本没见过微信被盗的，可能是微信弱化密码登录，改用二维码扫描登录的原因。这应该也算是一种安全方面的考量吧，毕竟微信是有支付功能的。<br>上面这种骗局对于技术人来说，看看 url，浏览器分析一下网络包就很容易识别出来，但是你还别不信，一般人真的搞不明白怎么识别钓鱼网站和官方网站。就像我真没想到都 2020 年了，还有人在找 Redis 的这个漏洞，而且还有人中招。。。<br>那么说回 Redis 数据库的使用，在官网上明确写出了安全防护的建议，我简单总结一下吧：<br>1、不要用 root 用户启动 Redis Server，而且一定要设置密码，而且密码不要太短，否则容易被暴力破解。<br>2、配置服务器防火墙和 Redis 的 config 文件，尽量不要让 Redis 与外界接触。<br>3、利用 rename 功能伪装 flushall 这种危险命令，以防被删库，丢失数据。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2016/01/01/%E6%8A%80%E6%9C%AF/%E5%9C%A8%E7%BA%BF%E7%BB%83%E4%B9%A0%E5%B9%B3%E5%8F%B0/" rel="next" title="在线练习平台"><i class="fas fa-angle-left"></i><span class="nav-title">在线练习平台</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2016/01/01/%E6%8A%80%E6%9C%AF/linux%E8%BF%9B%E7%A8%8B/" rel="prev" title="linux进程"><span class="nav-title">linux进程</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%BB%8F%E8%BF%87"><span class="toc-text">事件经过</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%BC%94%E7%A4%BA"><span class="toc-text">本地演示</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E5%90%B8%E5%8F%96%E6%95%99%E8%AE%AD"><span class="toc-text">吸取教训</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

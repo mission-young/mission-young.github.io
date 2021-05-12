@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>动态规划详解进阶 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">动态规划详解进阶</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="动态规划详解"><a href="#动态规划详解" class="headerlink" title="动态规划详解"></a>动态规划详解</h1><p>这篇文章是我们号半年前一篇 200 多赞赏的成名之作「动态规划详解」的进阶版。由于账号迁移的原因，旧文无法被搜索到，所以我润色了本文，并添加了更多干货内容，希望本文成为解决动态规划的一部「指导方针」。</p>
+<p>再说句题外话，我们的公众号开号至今写了起码十几篇文章拆解动态规划问题，我都整理到了公众号菜单的「文章目录」中，<strong>它们都提到了动态规划的解题框架思维，本文就系统总结一下</strong>。这段时间本人也从非科班小白成长到刷通半个 LeetCode，所以我总结的套路可能不适合各路大神，但是应该适合大众，毕竟我自己也是一路摸爬滚打过来的。</p>
+<p>算法技巧就那几个套路，如果你心里有数，就会轻松很多，本文就来扒一扒动态规划的裤子，形成一套解决这类问题的思维框架。废话不多说了，上干货。</p>
+<p><strong>动态规划问题的一般形式就是求最值</strong>。动态规划其实是运筹学的一种最优化方法，只不过在计算机问题上应用比较多，比如说让你求<strong>最长</strong>递增子序列呀，<strong>最小</strong>编辑距离呀等等。</p>
+<p>既然是要求最值，核心问题是什么呢？<strong>求解动态规划的核心问题是穷举</strong>。因为要求最值，肯定要把所有可行的答案穷举出来，然后在其中找最值呗。</p>
+<p>动态规划就这么简单，就是穷举就完事了？我看到的动态规划问题都很难啊！</p>
+<p>首先，动态规划的穷举有点特别，因为这类问题<strong>存在「重叠子问题」</strong>，如果暴力穷举的话效率会极其低下，所以需要「备忘录」或者「DP table」来优化穷举过程，避免不必要的计算。</p>
+<p>而且，动态规划问题一定会<strong>具备「最优子结构」</strong>，才能通过子问题的最值得到原问题的最值。</p>
+<p>另外，虽然动态规划的核心思想就是穷举求最值，但是问题可以千变万化，穷举所有可行解其实并不是一件容易的事，只有列出<strong>正确的「状态转移方程</strong>」才能正确地穷举。</p>
+<p>以上提到的重叠子问题、最优子结构、状态转移方程就是动态规划三要素。具体什么意思等会会举例详解，但是在实际的算法问题中，<strong>写出状态转移方程是最困难的</strong>，这也就是为什么很多朋友觉得动态规划问题困难的原因，我来提供我研究出来的一个思维框架，辅助你思考状态转移方程：</p>
+<p>明确「状态」 -&gt; 定义 dp 数组/函数的含义 -&gt; 明确「选择」-&gt; 明确 base case。</p>
+<p>下面通过斐波那契数列问题和凑零钱问题来详解动态规划的基本原理。前者主要是让你明白什么是重叠子问题（斐波那契数列严格来说不是动态规划问题），后者主要举集中于如何列出状态转移方程。</p>
+<p>请读者不要嫌弃这个例子简单，<strong>只有简单的例子才能让你把精力充分集中在算法背后的通用思想和技巧上，而不会被那些隐晦的细节问题搞的莫名其妙</strong>。想要困难的例子，历史文章里有的是。</p>
+<h3 id="一、斐波那契数列"><a href="#一、斐波那契数列" class="headerlink" title="一、斐波那契数列"></a>一、斐波那契数列</h3><p><strong>1、暴力递归</strong></p>
+<p>斐波那契数列的数学形式就是递归的，写成代码就是这样：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> N)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (N == <span class="hljs-number">1</span> || N == <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">return</span> fib(N - <span class="hljs-number">1</span>) + fib(N - <span class="hljs-number">2</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这个不用多说了，学校老师讲递归的时候似乎都是拿这个举例。我们也知道这样写代码虽然简洁易懂，但是十分低效，低效在哪里？假设 n = 20，请画出递归树。</p>
+<p>PS：但凡遇到需要递归的问题，最好都画出递归树，这对你分析算法的复杂度，寻找算法低效的原因都有巨大帮助。</p>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/1.jpg"></p>
+<p>这个递归树怎么理解？就是说想要计算原问题 <code>f(20)</code>，我就得先计算出子问题 <code>f(19)</code> 和 <code>f(18)</code>，然后要计算 <code>f(19)</code>，我就要先算出子问题 <code>f(18)</code> 和 <code>f(17)</code>，以此类推。最后遇到 <code>f(1)</code> 或者 <code>f(2)</code> 的时候，结果已知，就能直接返回结果，递归树不再向下生长了。</p>
+<p><strong>递归算法的时间复杂度怎么计算？子问题个数乘以解决一个子问题需要的时间。</strong></p>
+<p>子问题个数，即递归树中节点的总数。显然二叉树节点总数为指数级别，所以子问题个数为 O(2^n)。</p>
+<p>解决一个子问题的时间，在本算法中，没有循环，只有 f(n - 1) + f(n - 2) 一个加法操作，时间为 O(1)。</p>
+<p>所以，这个算法的时间复杂度为 O(2^n)，指数级别，爆炸。</p>
+<p>观察递归树，很明显发现了算法低效的原因：存在大量重复计算，比如 <code>f(18)</code> 被计算了两次，而且你可以看到，以 <code>f(18)</code> 为根的这个递归树体量巨大，多算一遍，会耗费巨大的时间。更何况，还不止 <code>f(18)</code> 这一个节点被重复计算，所以这个算法及其低效。</p>
+<p>这就是动态规划问题的第一个性质：<strong>重叠子问题</strong>。下面，我们想办法解决这个问题。</p>
+<p><strong>2、带备忘录的递归解法</strong></p>
+<p>明确了问题，其实就已经把问题解决了一半。即然耗时的原因是重复计算，那么我们可以造一个「备忘录」，每次算出某个子问题的答案后别急着返回，先记到「备忘录」里再返回；每次遇到一个子问题先去「备忘录」里查一查，如果发现之前已经解决过这个问题了，直接把答案拿出来用，不要再耗时去计算了。</p>
+<p>一般使用一个数组充当这个「备忘录」，当然你也可以使用哈希表（字典），思想都是一样的。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> N)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (N &lt; <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 备忘录全初始化为 0</span><br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">memo</span><span class="hljs-params">(N + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span>;<br>    <span class="hljs-comment">// 初始化最简情况</span><br>    <span class="hljs-keyword">return</span> helper(memo, N);<br>&#125;<br> <br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">helper</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; memo, <span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    <span class="hljs-comment">// base case </span><br>    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span> || n == <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-comment">// 已经计算过</span><br>    <span class="hljs-keyword">if</span> (memo[n] != <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> memo[n];<br>    memo[n] = helper(memo, n - <span class="hljs-number">1</span>) + <br>                helper(memo, n - <span class="hljs-number">2</span>);<br>    <span class="hljs-keyword">return</span> memo[n];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>现在，画出递归树，你就知道「备忘录」到底做了什么。</p>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/2.jpg"></p>
+<p>实际上，带「备忘录」的递归算法，把一棵存在巨量冗余的递归树通过「剪枝」，改造成了一幅不存在冗余的递归图，极大减少了子问题（即递归图中节点）的个数。</p>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/3.jpg"></p>
+<p>递归算法的时间复杂度怎么算？子问题个数乘以解决一个子问题需要的时间。</p>
+<p>子问题个数，即图中节点的总数，由于本算法不存在冗余计算，子问题就是 <code>f(1)</code>, <code>f(2)</code>, <code>f(3)</code> … <code>f(20)</code>，数量和输入规模 n = 20 成正比，所以子问题个数为 O(n)。</p>
+<p>解决一个子问题的时间，同上，没有什么循环，时间为 O(1)。</p>
+<p>所以，本算法的时间复杂度是 O(n)。比起暴力算法，是降维打击。</p>
+<p>至此，带备忘录的递归解法的效率已经和迭代的动态规划解法一样了。实际上，这种解法和迭代的动态规划已经差不多了，只不过这种方法叫做「自顶向下」，动态规划叫做「自底向上」。</p>
+<p>啥叫「自顶向下」？注意我们刚才画的递归树（或者说图），是从上向下延伸，都是从一个规模较大的原问题比如说 <code>f(20)</code>，向下逐渐分解规模，直到 <code>f(1)</code> 和 <code>f(2)</code> 触底，然后逐层返回答案，这就叫「自顶向下」。</p>
+<p>啥叫「自底向上」？反过来，我们直接从最底下，最简单，问题规模最小的 <code>f(1)</code> 和 <code>f(2)</code> 开始往上推，直到推到我们想要的答案 <code>f(20)</code>，这就是动态规划的思路，这也是为什么动态规划一般都脱离了递归，而是由循环迭代完成计算。</p>
+<p><strong>3、dp 数组的迭代解法</strong></p>
+<p>有了上一步「备忘录」的启发，我们可以把这个「备忘录」独立出来成为一张表，就叫做 DP table 吧，在这张表上完成「自底向上」的推算岂不美哉！</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> N)</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(N + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span>;<br>    <span class="hljs-comment">// base case</span><br>    dp[<span class="hljs-number">1</span>] = dp[<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">3</span>; i &lt;= N; i++)<br>        dp[i] = dp[i - <span class="hljs-number">1</span>] + dp[i - <span class="hljs-number">2</span>];<br>    <span class="hljs-keyword">return</span> dp[N];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/4.jpg"></p>
+<p>画个图就很好理解了，而且你发现这个 DP table 特别像之前那个「剪枝」后的结果，只是反过来算而已。实际上，带备忘录的递归解法中的「备忘录」，最终完成后就是这个 DP table，所以说这两种解法其实是差不多的，大部分情况下，效率也基本相同。</p>
+<p>这里，引出「状态转移方程」这个名词，实际上就是描述问题结构的数学形式：</p>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/fib.png"></p>
+<p>为啥叫「状态转移方程」？为了听起来高端。你把 f(n) 想做一个状态 n，这个状态 n 是由状态 n - 1 和状态 n - 2 相加转移而来，这就叫状态转移，仅此而已。</p>
+<p>你会发现，上面的几种解法中的所有操作，例如 return f(n - 1) + f(n - 2)，dp[i] = dp[i - 1] + dp[i - 2]，以及对备忘录或 DP table 的初始化操作，都是围绕这个方程式的不同表现形式。可见列出「状态转移方程」的重要性，它是解决问题的核心。很容易发现，其实状态转移方程直接代表着暴力解法。</p>
+<p><strong>千万不要看不起暴力解，动态规划问题最困难的就是写出状态转移方程</strong>，即这个暴力解。优化方法无非是用备忘录或者 DP table，再无奥妙可言。</p>
+<p>这个例子的最后，讲一个细节优化。细心的读者会发现，根据斐波那契数列的状态转移方程，当前状态只和之前的两个状态有关，其实并不需要那么长的一个 DP table 来存储所有的状态，只要想办法存储之前的两个状态就行了。所以，可以进一步优化，把空间复杂度降为 O(1)：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">2</span> || n == <span class="hljs-number">1</span>) <br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">int</span> prev = <span class="hljs-number">1</span>, curr = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">3</span>; i &lt;= n; i++) &#123;<br>        <span class="hljs-keyword">int</span> sum = prev + curr;<br>        prev = curr;<br>        curr = sum;<br>    &#125;<br>    <span class="hljs-keyword">return</span> curr;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>有人会问，动态规划的另一个重要特性「最优子结构」，怎么没有涉及？下面会涉及。斐波那契数列的例子严格来说不算动态规划，因为没有涉及求最值，以上旨在演示算法设计螺旋上升的过程。下面，看第二个例子，凑零钱问题。</p>
+<h3 id="二、凑零钱问题"><a href="#二、凑零钱问题" class="headerlink" title="二、凑零钱问题"></a>二、凑零钱问题</h3><p>先看下题目：给你 <code>k</code> 种面值的硬币，面值分别为 <code>c1, c2 ... ck</code>，每种硬币的数量无限，再给一个总金额 <code>amount</code>，问你<strong>最少</strong>需要几枚硬币凑出这个金额，如果不可能凑出，算法返回 -1 。算法的函数签名如下：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// coins 中是可选硬币面值，amount 是目标金额</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">coinChange</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] coins, <span class="hljs-keyword">int</span> amount)</span></span>;<br></code></pre></td></tr></table></figure>
+
+<p>比如说 <code>k = 3</code>，面值分别为 1，2，5，总金额 <code>amount = 11</code>。那么最少需要 3 枚硬币凑出，即 11 = 5 + 5 + 1。</p>
+<p>你认为计算机应该如何解决这个问题？显然，就是把所有肯能的凑硬币方法都穷举出来，然后找找看最少需要多少枚硬币。</p>
+<p><strong>1、暴力递归</strong></p>
+<p>首先，这个问题是动态规划问题，因为它具有「最优子结构」的。<strong>要符合「最优子结构」，子问题间必须互相独立</strong>。啥叫相互独立？你肯定不想看数学证明，我用一个直观的例子来讲解。</p>
+<p>比如说，你的原问题是考出最高的总成绩，那么你的子问题就是要把语文考到最高，数学考到最高…… 为了每门课考到最高，你要把每门课相应的选择题分数拿到最高，填空题分数拿到最高…… 当然，最终就是你每门课都是满分，这就是最高的总成绩。</p>
+<p>得到了正确的结果：最高的总成绩就是总分。因为这个过程符合最优子结构，“每门科目考到最高”这些子问题是互相独立，互不干扰的。</p>
+<p>但是，如果加一个条件：你的语文成绩和数学成绩会互相制约，此消彼长。这样的话，显然你能考到的最高总成绩就达不到总分了，按刚才那个思路就会得到错误的结果。因为子问题并不独立，语文数学成绩无法同时最优，所以最优子结构被破坏。</p>
+<p>回到凑零钱问题，为什么说它符合最优子结构呢？比如你想求 <code>amount = 11</code> 时的最少硬币数（原问题），如果你知道凑出 <code>amount = 10</code> 的最少硬币数（子问题），你只需要把子问题的答案加一（再选一枚面值为 1 的硬币）就是原问题的答案，因为硬币的数量是没有限制的，子问题之间没有相互制，是互相独立的。</p>
+<p>那么，既然知道了这是个动态规划问题，就要思考<strong>如何列出正确的状态转移方程</strong>？</p>
+<p><strong>先确定「状态」</strong>，也就是原问题和子问题中变化的变量。由于硬币数量无限，所以唯一的状态就是目标金额 <code>amount</code>。</p>
+<p><strong>然后确定 <code>dp</code> 函数的定义</strong>：当前的目标金额是 <code>n</code>，至少需要 <code>dp(n)</code> 个硬币凑出该金额。</p>
+<p><strong>然后确定「选择」并择优</strong>，也就是对于每个状态，可以做出什么选择改变当前状态。具体到这个问题，无论当的目标金额是多少，选择就是从面额列表 <code>coins</code> 中选择一个硬币，然后目标金额就会减少：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 伪码框架</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">coinChange</span>(<span class="hljs-params">coins: List[int], amount: int</span>):</span><br>    <span class="hljs-comment"># 定义：要凑出金额 n，至少要 dp(n) 个硬币</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dp</span>(<span class="hljs-params">n</span>):</span><br>        <span class="hljs-comment"># 做选择，选择需要硬币最少的那个结果</span><br>        <span class="hljs-keyword">for</span> coin <span class="hljs-keyword">in</span> coins:<br>            res = min(res, <span class="hljs-number">1</span> + dp(n - coin))<br>        <span class="hljs-keyword">return</span> res<br>    <span class="hljs-comment"># 我们要求的问题是 dp(amount)</span><br>    <span class="hljs-keyword">return</span> dp(amount)<br></code></pre></td></tr></table></figure>
+
+<p><strong>最后明确 base case</strong>，显然目标金额为 0 时，所需硬币数量为 0；当目标金额小于 0 时，无解，返回 -1：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">coinChange</span>(<span class="hljs-params">coins: List[int], amount: int</span>):</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dp</span>(<span class="hljs-params">n</span>):</span><br>        <span class="hljs-comment"># base case</span><br>        <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span><br>        <span class="hljs-comment"># 求最小值，所以初始化为正无穷</span><br>        res = float(<span class="hljs-string">&#x27;INF&#x27;</span>)<br>        <span class="hljs-keyword">for</span> coin <span class="hljs-keyword">in</span> coins:<br>            subproblem = dp(n - coin)<br>            <span class="hljs-comment"># 子问题无解，跳过</span><br>            <span class="hljs-keyword">if</span> subproblem == <span class="hljs-number">-1</span>: <span class="hljs-keyword">continue</span><br>            res = min(res, <span class="hljs-number">1</span> + subproblem)<br><br>        <span class="hljs-keyword">return</span> res <span class="hljs-keyword">if</span> res != float(<span class="hljs-string">&#x27;INF&#x27;</span>) <span class="hljs-keyword">else</span> <span class="hljs-number">-1</span><br>    <br>    <span class="hljs-keyword">return</span> dp(amount)<br></code></pre></td></tr></table></figure>
+
+<p>至此，状态转移方程其实已经完成了，以上算法已经是暴力解法了，以上代码的数学形式就是状态转移方程：</p>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/coin.png"></p>
+<p>至此，这个问题其实就解决了，只不过需要消除一下重叠子问题，比如 <code>amount = 11, coins = &#123;1,2,5&#125;</code> 时画出递归树看看：</p>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/5.jpg"></p>
+<p><strong>时间复杂度分析：子问题总数 x 每个子问题的时间</strong>。</p>
+<p>子问题总数为递归树节点个数，这个比较难看出来，是 O(n^k)，总之是指数级别的。每个子问题中含有一个 for 循环，复杂度为 O(k)。所以总时间复杂度为 O(k * n^k)，指数级别。</p>
+<p><strong>2、带备忘录的递归</strong></p>
+<p>只需要稍加修改，就可以通过备忘录消除子问题：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">coinChange</span>(<span class="hljs-params">coins: List[int], amount: int</span>):</span><br>    <span class="hljs-comment"># 备忘录</span><br>    memo = dict()<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dp</span>(<span class="hljs-params">n</span>):</span><br>        <span class="hljs-comment"># 查备忘录，避免重复计算</span><br>        <span class="hljs-keyword">if</span> n <span class="hljs-keyword">in</span> memo: <span class="hljs-keyword">return</span> memo[n]<br><br>        <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span><br>        res = float(<span class="hljs-string">&#x27;INF&#x27;</span>)<br>        <span class="hljs-keyword">for</span> coin <span class="hljs-keyword">in</span> coins:<br>            subproblem = dp(n - coin)<br>            <span class="hljs-keyword">if</span> subproblem == <span class="hljs-number">-1</span>: <span class="hljs-keyword">continue</span><br>            res = min(res, <span class="hljs-number">1</span> + subproblem)<br>        <br>        <span class="hljs-comment"># 记入备忘录</span><br>        memo[n] = res <span class="hljs-keyword">if</span> res != float(<span class="hljs-string">&#x27;INF&#x27;</span>) <span class="hljs-keyword">else</span> <span class="hljs-number">-1</span><br>        <span class="hljs-keyword">return</span> memo[n]<br>    <br>    <span class="hljs-keyword">return</span> dp(amount)<br></code></pre></td></tr></table></figure>
+
+<p>不画图了，很显然「备忘录」大大减小了子问题数目，完全消除了子问题的冗余，所以子问题总数不会超过金额数 n，即子问题数目为 O(n)。处理一个子问题的时间不变，仍是 O(k)，所以总的时间复杂度是 O(kn)。</p>
+<p><strong>3、dp 数组的迭代解法</strong></p>
+<p>当然，我们也可以自底向上使用 dp table 来消除重叠子问题，<code>dp</code> 数组的定义和刚才 <code>dp</code> 函数类似，定义也是一样的：</p>
+<p><strong><code>dp[i] = x</code> 表示，当目标金额为 <code>i</code> 时，至少需要 <code>x</code> 枚硬币</strong>。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">coinChange</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; coins, <span class="hljs-keyword">int</span> amount)</span> </span>&#123;<br>    <span class="hljs-comment">// 数组大小为 amount + 1，初始值也为 amount + 1</span><br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(amount + <span class="hljs-number">1</span>, amount + <span class="hljs-number">1</span>)</span></span>;<br>    <span class="hljs-comment">// base case</span><br>    dp[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; dp.size(); i++) &#123;<br>        <span class="hljs-comment">// 内层 for 在求所有子问题 + 1 的最小值</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> coin : coins) &#123;<br>            <span class="hljs-comment">// 子问题无解，跳过</span><br>            <span class="hljs-keyword">if</span> (i - coin &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span>;<br>            dp[i] = min(dp[i], <span class="hljs-number">1</span> + dp[i - coin]);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> (dp[amount] == amount + <span class="hljs-number">1</span>) ? <span class="hljs-number">-1</span> : dp[amount];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6/6.jpg"></p>
+<p>PS：为啥 <code>dp</code> 数组初始化为 <code>amount + 1</code> 呢，因为凑成 <code>amount</code> 金额的硬币数最多只可能等于 <code>amount</code>（全用 1 元面值的硬币），所以初始化为 <code>amount + 1</code> 就相当于初始化为正无穷，便于后续取最小值。</p>
+<h3 id="三、最后总结"><a href="#三、最后总结" class="headerlink" title="三、最后总结"></a>三、最后总结</h3><p>第一个斐波那契数列的问题，解释了如何通过「备忘录」或者「dp table」的方法来优化递归树，并且明确了这两种方法本质上是一样的，只是自顶向下和自底向上的不同而已。</p>
+<p>第二个凑零钱的问题，展示了如何流程化确定「状态转移方程」，只要通过状态转移方程写出暴力递归解，剩下的也就是优化递归树，消除重叠子问题而已。</p>
+<p>如果你不太了解动态规划，还能看到这里，真得给你鼓掌，相信你已经掌握了这个算法的设计技巧。</p>
+<p><strong>计算机解决问题其实没有任何奇技淫巧，它唯一的解决办法就是穷举</strong>，穷举所有可能性。算法设计无非就是先思考“如何穷举”，然后再追求“如何聪明地穷举”。</p>
+<p>列出动态转移方程，就是在解决“如何穷举”的问题。之所以说它难，一是因为很多穷举需要递归实现，二是因为有的问题本身的解空间复杂，不那么容易穷举完整。</p>
+<p>备忘录、DP table 就是在追求“如何聪明地穷举”。用空间换时间的思路，是降低时间复杂度的不二法门，除此之外，试问，还能玩出啥花活？</p>
+<p><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%954">上一篇：学习数据结构和算法读什么书</a></p>
+<p><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%9C%80%E4%BC%98%E5%AD%90%E7%BB%93%E6%9E%84">下一篇：动态规划答疑篇</a></p>
+<p><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%9B%A2%E7%81%AD%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/" rel="next" title="团灭股票问题"><i class="fas fa-angle-left"></i><span class="nav-title">团灭股票问题</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8BKMP%E5%AD%97%E7%AC%A6%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/" rel="prev" title="动态规划之KMP字符匹配算法"><span class="nav-title">动态规划之KMP字符匹配算法</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3"><span class="toc-text">动态规划详解</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%80%E3%80%81%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97"><span class="toc-text">一、斐波那契数列</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%8C%E3%80%81%E5%87%91%E9%9B%B6%E9%92%B1%E9%97%AE%E9%A2%98"><span class="toc-text">二、凑零钱问题</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%89%E3%80%81%E6%9C%80%E5%90%8E%E6%80%BB%E7%BB%93"><span class="toc-text">三、最后总结</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

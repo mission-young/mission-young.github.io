@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>星光荡开宇宙</title>
+  
+  <subtitle>科学闪耀其中</subtitle>
+  <link href="http://mission-young.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://mission-young.github.io/"/>
+  <updated>2021-05-12T07:16:56.406Z</updated>
+  <id>http://mission-young.github.io/</id>
+  
+  <author>
+    <name>远方</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode破局攻略</title>
+    <link href="http://mission-young.github.io/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/"/>
+    <id>http://mission-young.github.io/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/</id>
+    <published>2050-08-05T11:20:00.000Z</published>
+    <updated>2021-05-12T07:16:56.406Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;本专栏转载于&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="LeetCode破局攻略" scheme="http://mission-young.github.io/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/"/>
+    
+    
+    <category term="LeetCode" scheme="http://mission-young.github.io/tags/LeetCode/"/>
+    
+    <category term="算法" scheme="http://mission-young.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jupyterlab汉化</title>
+    <link href="http://mission-young.github.io/2021/03/08/jupyterlab%E6%B1%89%E5%8C%96/"/>
+    <id>http://mission-young.github.io/2021/03/08/jupyterlab%E6%B1%89%E5%8C%96/</id>
+    <published>2021-03-08T10:06:33.000Z</published>
+    <updated>2021-05-12T07:16:56.408Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;mac安装jupyterlab，使用&lt;code&gt;pip3 install jupyterlab&lt;/code&gt;实际上安装的还是jupyter，并不起作用，仍然需要一系列操作来完成。可以使用&lt;code&gt;brew install</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>完全卸载jupyter</title>
+    <link href="http://mission-young.github.io/2021/03/08/%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BDjupyter/"/>
+    <id>http://mission-young.github.io/2021/03/08/%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BDjupyter/</id>
+    <published>2021-03-08T10:04:00.000Z</published>
+    <updated>2021-05-12T07:16:56.413Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;使用&lt;code&gt;pip(3) uninstall jupyter&lt;/code&gt;的方式无法卸载完全，使用&lt;code&gt;pip-autoremove&lt;/code&gt;包也如此，因而只能采用以下方式：&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python3" scheme="http://mission-young.github.io/tags/python3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>内网穿透-可视化frp</title>
+    <link href="http://mission-young.github.io/2020/09/14/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-%E5%8F%AF%E8%A7%86%E5%8C%96frp/"/>
+    <id>http://mission-young.github.io/2020/09/14/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-%E5%8F%AF%E8%A7%86%E5%8C%96frp/</id>
+    <published>2020-09-14T06:57:57.000Z</published>
+    <updated>2021-05-12T07:16:56.409Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;软件工具&quot;&gt;&lt;a href=&quot;#软件工具&quot; class=&quot;headerlink&quot; title=&quot;软件工具&quot;&gt;&lt;/a&gt;软件工具&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.natfrp.com/&quot;&gt;Sakura</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Pandas Series方法 性能测试</title>
+    <link href="http://mission-young.github.io/2020/08/14/Pandas-Series%E6%96%B9%E6%B3%95-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/"/>
+    <id>http://mission-young.github.io/2020/08/14/Pandas-Series%E6%96%B9%E6%B3%95-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</id>
+    <published>2020-08-14T06:08:56.000Z</published>
+    <updated>2021-05-12T07:16:56.407Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;对于pandas的Series数据，进行整体的数据变换是常见的事，包括类型转换，字符串切割，数据计算等等，如何高性能地完成这些数据变换，对于大规模的数据处理至关重要。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python 学习笔记</title>
+    <link href="http://mission-young.github.io/2020/08/14/Python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://mission-young.github.io/2020/08/14/Python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-08-14T05:08:48.000Z</published>
+    <updated>2021-05-12T07:16:56.407Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;str&lt;/code&gt;是&lt;code&gt;python&lt;/code&gt;的内建数据类型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Pandas-Series-字符串操作&quot;&gt;&lt;a href=&quot;#Pandas-Series-字符串操作&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>windows rdp服务开启</title>
+    <link href="http://mission-young.github.io/2020/08/12/windows-rdp%E6%9C%8D%E5%8A%A1%E5%BC%80%E5%90%AF/"/>
+    <id>http://mission-young.github.io/2020/08/12/windows-rdp%E6%9C%8D%E5%8A%A1%E5%BC%80%E5%90%AF/</id>
+    <published>2020-08-12T14:56:15.000Z</published>
+    <updated>2021-05-12T07:16:56.409Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;经过对办公室电脑一系列猛如虎的操作(安装rdpwrapper、升级企业版、升级专业版)但依旧无法远程连接rdp之后，我几乎放弃了rdp这条路，无奈地向向日葵投降。虽然能够通过网云穿和utools</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>windows 批处理解压缩文件</title>
+    <link href="http://mission-young.github.io/2020/08/06/windows-%E6%89%B9%E5%A4%84%E7%90%86%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6/"/>
+    <id>http://mission-young.github.io/2020/08/06/windows-%E6%89%B9%E5%A4%84%E7%90%86%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6/</id>
+    <published>2020-08-06T13:47:17.000Z</published>
+    <updated>2021-05-12T07:16:56.409Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今天在黑翼实习的过程中，廖师兄提到接下来数据处理要放到linux下的原因是数据解压的考虑。观察数据压缩的格式为7z后缀，而windows其实是有7z压缩软件的，相比能够通过命令行的形式来实现解压缩，从而结合脚本完成批量解压。&lt;/p&gt;
+&lt;p&gt;数据处理用的语言为python，最</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>工作方向</title>
+    <link href="http://mission-young.github.io/2020/07/05/%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%90%91/"/>
+    <id>http://mission-young.github.io/2020/07/05/%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%90%91/</id>
+    <published>2020-07-05T02:08:07.000Z</published>
+    <updated>2021-05-12T07:16:56.414Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;晚饭&quot;&gt;&lt;a href=&quot;#晚饭&quot; class=&quot;headerlink&quot; title=&quot;晚饭&quot;&gt;&lt;/a&gt;晚饭&lt;/h2&gt;&lt;p&gt;董必杰、郭爽什么身份，开会内容主要是什么？我参与的意义在哪里？&lt;/p&gt;
+&lt;h2 id=&quot;基金&quot;&gt;&lt;a href=&quot;#基金&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>windows 开机自启</title>
+    <link href="http://mission-young.github.io/2020/05/14/windows-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/"/>
+    <id>http://mission-young.github.io/2020/05/14/windows-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/</id>
+    <published>2020-05-14T14:15:23.000Z</published>
+    <updated>2021-05-12T07:16:56.409Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;windows开机自启软件的方式有很多，有些可以通过软件自身设置完成，有些可以通过win10</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vcxsrv 载入配置文件</title>
+    <link href="http://mission-young.github.io/2020/05/14/vcxsrv-%E8%BD%BD%E5%85%A5%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    <id>http://mission-young.github.io/2020/05/14/vcxsrv-%E8%BD%BD%E5%85%A5%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</id>
+    <published>2020-05-14T14:10:54.000Z</published>
+    <updated>2021-05-12T07:16:56.408Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;vcxsrv每次通过xlauch打开时，都要用鼠标进行一系列点点点。如何能够一步到位？&lt;/p&gt;
+&lt;p&gt;只需要将快捷方式中加上参数 &lt;code&gt;-run&lt;/code&gt; 即可。 &lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>金融杠杆支撑天价片酬</title>
+    <link href="http://mission-young.github.io/2020/05/10/%E9%87%91%E8%9E%8D%E6%9D%A0%E6%9D%86%E6%94%AF%E6%92%91%E5%A4%A9%E4%BB%B7%E7%89%87%E9%85%AC/"/>
+    <id>http://mission-young.github.io/2020/05/10/%E9%87%91%E8%9E%8D%E6%9D%A0%E6%9D%86%E6%94%AF%E6%92%91%E5%A4%A9%E4%BB%B7%E7%89%87%E9%85%AC/</id>
+    <published>2020-05-10T11:19:12.000Z</published>
+    <updated>2021-05-12T07:16:56.422Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;天价片酬谁来买单？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;video</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>V2ray 共享热点</title>
+    <link href="http://mission-young.github.io/2020/05/02/V2ray-%E5%85%B1%E4%BA%AB%E7%83%AD%E7%82%B9/"/>
+    <id>http://mission-young.github.io/2020/05/02/V2ray-%E5%85%B1%E4%BA%AB%E7%83%AD%E7%82%B9/</id>
+    <published>2020-05-02T13:19:16.000Z</published>
+    <updated>2021-05-12T07:16:56.407Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近肺炎爆发, 虽然上班了但是因为公司要节省口罩, 所以大部分时间都在家里待岗, 正好电脑上已经不再用ss, ssr也准备不用了 (越来越不稳定了) 于是尝试了一下共享V2Ray的局域网连接, 很快就成功了,</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Jupyter修改外观配置</title>
+    <link href="http://mission-young.github.io/2020/04/22/Jupyter%E4%BF%AE%E6%94%B9%E5%A4%96%E8%A7%82%E9%85%8D%E7%BD%AE/"/>
+    <id>http://mission-young.github.io/2020/04/22/Jupyter%E4%BF%AE%E6%94%B9%E5%A4%96%E8%A7%82%E9%85%8D%E7%BD%AE/</id>
+    <published>2020-04-22T03:19:41.000Z</published>
+    <updated>2021-05-12T07:16:56.406Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;jupyter默认的宽度比较小，当将浏览器全屏的时候，仅有一半的页面宽度能够得以利用，画图的时候展示的范围比较小。为了解决这个问题，只需要在设置主题时修改配置即可。&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>批量导入markdown文件为Hexo博客md文件</title>
+    <link href="http://mission-young.github.io/2020/04/11/%E6%89%B9%E9%87%8F%E5%AF%BC%E5%85%A5markdown%E6%96%87%E4%BB%B6%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2md%E6%96%87%E4%BB%B6/"/>
+    <id>http://mission-young.github.io/2020/04/11/%E6%89%B9%E9%87%8F%E5%AF%BC%E5%85%A5markdown%E6%96%87%E4%BB%B6%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2md%E6%96%87%E4%BB%B6/</id>
+    <published>2020-04-11T15:26:56.000Z</published>
+    <updated>2021-05-12T07:16:56.414Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;相比于普通的markdown文件，hexo的markdown文件有文件头数据，用来设定标题，创建日期，类别等信息，有时候需要批量将普通markdown文件添加头部文件数据，可以通过以下脚本实现。&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo忽略渲染某些文件</title>
+    <link href="http://mission-young.github.io/2020/04/10/Hexo%E5%BF%BD%E7%95%A5%E6%B8%B2%E6%9F%93%E6%9F%90%E4%BA%9B%E6%96%87%E4%BB%B6/"/>
+    <id>http://mission-young.github.io/2020/04/10/Hexo%E5%BF%BD%E7%95%A5%E6%B8%B2%E6%9F%93%E6%9F%90%E4%BA%9B%E6%96%87%E4%BB%B6/</id>
+    <published>2020-04-10T02:07:10.000Z</published>
+    <updated>2021-05-12T07:16:56.405Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;hexo运行时会渲染source目录下所有文件，如果需要跳过某些文件，需要在hexo根目录下的&lt;code&gt;_config.yml&lt;/code&gt;文件中修改配置：&lt;/p&gt;
+&lt;figure class=&quot;highlight yml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo挂载本地文件</title>
+    <link href="http://mission-young.github.io/2020/04/10/Hexo%E6%8C%82%E8%BD%BD%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6/"/>
+    <id>http://mission-young.github.io/2020/04/10/Hexo%E6%8C%82%E8%BD%BD%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6/</id>
+    <published>2020-04-10T01:47:46.000Z</published>
+    <updated>2021-05-12T07:16:56.405Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在Hexo&lt;code&gt;source&lt;/code&gt;目录下建立&lt;code&gt;attachments&lt;/code&gt;目录，将本地文件拷贝到该目录下，然后通过链接的形式加载，如&lt;code&gt;[file](attachments/file)&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>markdown链接跳转</title>
+    <link href="http://mission-young.github.io/2020/04/10/markdown%E9%93%BE%E6%8E%A5%E8%B7%B3%E8%BD%AC/"/>
+    <id>http://mission-young.github.io/2020/04/10/markdown%E9%93%BE%E6%8E%A5%E8%B7%B3%E8%BD%AC/</id>
+    <published>2020-04-10T00:51:32.000Z</published>
+    <updated>2021-05-12T07:16:56.408Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;此部分内容主要应用于在线markdown链接跳转，包括Hexo和jupyter，而离线本底的链接跳转比较简单，这部分跳过。&lt;/p&gt;
+&lt;h2 id=&quot;jupyter链接跳转&quot;&gt;&lt;a href=&quot;#jupyter链接跳转&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>sed跨行替换</title>
+    <link href="http://mission-young.github.io/2020/04/08/sed%E8%B7%A8%E8%A1%8C%E6%9B%BF%E6%8D%A2/"/>
+    <id>http://mission-young.github.io/2020/04/08/sed%E8%B7%A8%E8%A1%8C%E6%9B%BF%E6%8D%A2/</id>
+    <published>2020-04-08T15:07:40.000Z</published>
+    <updated>2021-05-12T07:16:56.408Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;code&gt;sed&lt;/code&gt;、&lt;code&gt;awk&lt;/code&gt;、&lt;code&gt;grep&lt;/code&gt;一般认为是对行操作，而实际上&lt;code&gt;sed&lt;/code&gt;可以跨行操作。&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Jupyter导出html无法显示图像</title>
+    <link href="http://mission-young.github.io/2020/04/08/Jupyter%E5%AF%BC%E5%87%BAhtml%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E5%9B%BE%E5%83%8F/"/>
+    <id>http://mission-young.github.io/2020/04/08/Jupyter%E5%AF%BC%E5%87%BAhtml%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E5%9B%BE%E5%83%8F/</id>
+    <published>2020-04-08T05:41:20.000Z</published>
+    <updated>2021-05-12T07:16:56.406Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;此问题是由于root版本变更引起的。&lt;br&gt;在&lt;code&gt;root v620&lt;/code&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>

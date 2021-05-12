@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>实现计算器 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E8%AE%A1%E7%AE%97%E5%99%A8/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">实现计算器</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="拆解复杂问题：实现计算器"><a href="#拆解复杂问题：实现计算器" class="headerlink" title="拆解复杂问题：实现计算器"></a>拆解复杂问题：实现计算器</h1><p>我们最终要实现的计算器功能如下：</p>
+<p>1、输入一个字符串，可以包含<code>+ - * /</code>、数字、括号以及空格，你的算法返回运算结构。<br>2、要符合运算法则，括号的优先级最高，先乘除后加减。<br>3、除号是整数除法，无论正负都向 0 取整（5/2=2，-5/2=-2）。<br>4、可以假定输入的算式一定合法，且计算过程不会出现整型溢出，不会出现除数为 0 的意外情况。<br>比如输入如下字符串，算法会返回 9：<br><code>3 * (2-6 /(3 -7))</code><br>可以看到，这就已经非常接近我们实际生活中使用的计算器了，虽然我们以前肯定都用过计算器，但是如果简单思考一下其算法实现，就会大惊失色：<br>1、按照常理处理括号，要先计算最内层的括号，然后向外慢慢化简。这个过程我们手算都容易出错，何况写成算法呢！<br>2、要做到先乘除，后加减，这一点教会小朋友还不算难，但教给计算机恐怕有点困难。<br>3、要处理空格。我们为了美观，习惯性在数字和运算符之间打个空格，但是计算之中得想办法忽略这些空格。<br>我记得很多大学数据结构的教材上，在讲栈这种数据结构的时候，应该都会用计算器举例，但是有一说一，讲的真的垃圾，不知道多少未来的计算机科学家就被这种简单的数据结构劝退了。<br>那么本文就来聊聊怎么实现上述一个功能完备的计算器功能，<strong>关键在于层层拆解问题，化整为零，逐个击破</strong>，相信这种思维方式能帮大家解决各种复杂问题。<br>下面就来拆解，从最简单的一个问题开始。</p>
+<h3 id="一、字符串转整数"><a href="#一、字符串转整数" class="headerlink" title="一、字符串转整数"></a>一、字符串转整数</h3><p>是的，就是这么一个简单的问题，首先告诉我，怎么把一个字符串形式的<strong>正</strong>整数，转化成 int 型？</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">string</span> s = <span class="hljs-string">&quot;458&quot;</span>;<br><span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.size(); i++) &#123;<br>    <span class="hljs-keyword">char</span> c = s[i];<br>    n = <span class="hljs-number">10</span> * n + (c - <span class="hljs-string">&#x27;0&#x27;</span>);<br>&#125;<br><span class="hljs-comment">// n 现在就等于 458</span><br></code></pre></td></tr></table></figure>
+<p>这个还是很简单的吧，老套路了。但是即便这么简单，依然有坑：**<code>(c - &#39;0&#39;)</code>的这个括号不能省略，否则可能造成整型溢出**。<br>因为变量<code>c</code>是一个 ASCII 码，如果不加括号就会先加后减，想象一下<code>s</code>如果接近 INT_MAX，就会溢出。所以用括号保证先减后加才行。</p>
+<h3 id="二、处理加减法"><a href="#二、处理加减法" class="headerlink" title="二、处理加减法"></a>二、处理加减法</h3><p>现在进一步，<strong>如果输入的这个算式只包含加减法，而且不存在空格</strong>，你怎么计算结果？我们拿字符串算式<code>1-12+3</code>为例，来说一个很简单的思路：<br>1、先给第一个数字加一个默认符号<code>+</code>，变成<code>+1-12+3</code>。<br>2、把一个运算符和数字组合成一对儿，也就是三对儿<code>+1</code>，<code>-12</code>，<code>+3</code>，把它们转化成数字，然后放到一个栈中。<br>3、将栈中所有的数字求和，就是原算式的结果。<br>我们直接看代码，结合一张图就看明白了：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">calculate</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s)</span> </span>&#123;<br>    <span class="hljs-built_in">stack</span>&lt;<span class="hljs-keyword">int</span>&gt; stk;<br>    <span class="hljs-comment">// 记录算式中的数字</span><br>    <span class="hljs-keyword">int</span> num = <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 记录 num 前的符号，初始化为 +</span><br>    <span class="hljs-keyword">char</span> sign = <span class="hljs-string">&#x27;+&#x27;</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.size(); i++) &#123;<br>        <span class="hljs-keyword">char</span> c = s[i];<br>        <span class="hljs-comment">// 如果是数字，连续读取到 num</span><br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isdigit</span>(c)) <br>            num = <span class="hljs-number">10</span> * num + (c - <span class="hljs-string">&#x27;0&#x27;</span>);<br>        <span class="hljs-comment">// 如果不是数字，就是遇到了下一个符号，</span><br>        <span class="hljs-comment">// 之前的数字和符号就要存进栈中</span><br>        <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">isdigit</span>(c) || i == s.size() - <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">switch</span> (sign) &#123;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;+&#x27;</span>:<br>                    stk.push(num); <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;-&#x27;</span>:<br>                    stk.push(-num); <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-comment">// 更新符号为当前符号，数字清零</span><br>            sign = c;<br>            num = <span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 将栈中所有结果求和就是答案</span><br>    <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (!stk.empty()) &#123;<br>        res += stk.top();<br>        stk.pop();<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>我估计就是中间带<code>switch</code>语句的部分有点不好理解吧，<code>i</code>就是从左到右扫描，<code>sign</code>和<code>num</code>跟在它身后。当<code>s[i]</code>遇到一个运算符时，情况是这样的：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/calculator/1.jpg"><br>所以说，此时要根据<code>sign</code>的 case 不同选择<code>nums</code>的正负号，存入栈中，然后更新<code>sign</code>并清零<code>nums</code>记录下一对儿符合和数字的组合。<br>另外注意，不只是遇到新的符号会触发入栈，当<code>i</code>走到了算式的尽头（<code>i == s.size() - 1</code>），也应该将前面的数字入栈，方便后续计算最终结果。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/calculator/2.jpg"><br>至此，仅处理紧凑加减法字符串的算法就完成了，请确保理解以上内容，后续的内容就基于这个框架修修改改就完事儿了。</p>
+<h3 id="三、处理乘除法"><a href="#三、处理乘除法" class="headerlink" title="三、处理乘除法"></a>三、处理乘除法</h3><p>其实思路跟仅处理加减法没啥区别，拿字符串<code>2-3*4+5</code>举例，核心思路依然是把字符串分解成符号和数字的组合。<br>比如上述例子就可以分解为<code>+2</code>，<code>-3</code>，<code>*4</code>，<code>+5</code>几对儿，我们刚才不是没有处理乘除号吗，很简单，<strong>其他部分都不用变</strong>，在<code>switch</code>部分加上对应的 case 就行了：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.size(); i++) &#123;<br>    <span class="hljs-keyword">char</span> c = s[i];<br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isdigit</span>(c)) <br>        num = <span class="hljs-number">10</span> * num + (c - <span class="hljs-string">&#x27;0&#x27;</span>);<br>    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">isdigit</span>(c) || i == s.size() - <span class="hljs-number">1</span>) &#123;<br>        <span class="hljs-keyword">switch</span> (sign) &#123;<br>            <span class="hljs-keyword">int</span> pre;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;+&#x27;</span>:<br>                stk.push(num); <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;-&#x27;</span>:<br>                stk.push(-num); <span class="hljs-keyword">break</span>;<br>            <span class="hljs-comment">// 只要拿出前一个数字做对应运算即可</span><br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;*&#x27;</span>:<br>                pre = stk.top();<br>                stk.pop();<br>                stk.push(pre * num);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;/&#x27;</span>:<br>                pre = stk.top();<br>                stk.pop();<br>                stk.push(pre / num);<br>                <span class="hljs-keyword">break</span>;<br>        &#125;<br>        <span class="hljs-comment">// 更新符号为当前符号，数字清零</span><br>        sign = c;<br>        num = <span class="hljs-number">0</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/calculator/3.jpg"><br><strong>乘除法优先于加减法体现在，乘除法可以和栈顶的数结合，而加减法只能把自己放入栈</strong>。<br>现在我们思考一下<strong>如何处理字符串中可能出现的空格字符</strong>。其实也非常简单，想想空格字符的出现，会影响我们现有代码的哪一部分？</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 如果 c 非数字</span><br><span class="hljs-keyword">if</span> (!<span class="hljs-built_in">isdigit</span>(c) || i == s.size() - <span class="hljs-number">1</span>) &#123;<br>    <span class="hljs-keyword">switch</span> (c) &#123;...&#125;<br>    sign = c;<br>    num = <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>显然空格会进入这个 if 语句，但是我们并不想让空格的情况进入这个 if，因为这里会更新<code>sign</code>并清零<code>nums</code>，空格根本就不是运算符，应该被忽略。<br>那么只要多加一个条件即可：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">if</span> ((!<span class="hljs-built_in">isdigit</span>(c) &amp;&amp; c != <span class="hljs-string">&#x27; &#x27;</span>) || i == s.size() - <span class="hljs-number">1</span>) &#123;<br>    ...<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>好了，现在我们的算法已经可以按照正确的法则计算加减乘除，并且自动忽略空格符，剩下的就是如何让算法正确识别括号了。</p>
+<h3 id="四、处理括号"><a href="#四、处理括号" class="headerlink" title="四、处理括号"></a>四、处理括号</h3><p>处理算式中的括号看起来应该是最难的，但真没有看起来那么难。<br>为了规避编程语言的繁琐细节，我把前面解法的代码翻译成 Python 版本：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calculate</span>(<span class="hljs-params">s: str</span>) -&gt; int:</span><br>        <br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">helper</span>(<span class="hljs-params">s: List</span>) -&gt; int:</span><br>        stack = []<br>        sign = <span class="hljs-string">&#x27;+&#x27;</span><br>        num = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> len(s) &gt; <span class="hljs-number">0</span>:<br>            c = s.pop(<span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">if</span> c.isdigit():<br>                num = <span class="hljs-number">10</span> * num + int(c)<br>            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">not</span> c.isdigit() <span class="hljs-keyword">and</span> c != <span class="hljs-string">&#x27; &#x27;</span>) <span class="hljs-keyword">or</span> len(s) == <span class="hljs-number">0</span>:<br>                <span class="hljs-keyword">if</span> sign == <span class="hljs-string">&#x27;+&#x27;</span>:<br>                    stack.append(num)<br>                <span class="hljs-keyword">elif</span> sign == <span class="hljs-string">&#x27;-&#x27;</span>:<br>                    stack.append(-num)<br>                <span class="hljs-keyword">elif</span> sign == <span class="hljs-string">&#x27;*&#x27;</span>:<br>                    stack[<span class="hljs-number">-1</span>] = stack[<span class="hljs-number">-1</span>] * num<br>                <span class="hljs-keyword">elif</span> sign == <span class="hljs-string">&#x27;/&#x27;</span>:<br>                    <span class="hljs-comment"># python 除法向 0 取整的写法</span><br>                    stack[<span class="hljs-number">-1</span>] = int(stack[<span class="hljs-number">-1</span>] / float(num))                    <br>                num = <span class="hljs-number">0</span><br>                sign = c<br>        <span class="hljs-keyword">return</span> sum(stack)<br>    <span class="hljs-comment"># 需要把字符串转成列表方便操作</span><br>    <span class="hljs-keyword">return</span> helper(list(s))<br></code></pre></td></tr></table></figure>
+<p>这段代码跟刚才 C++ 代码完全相同，唯一的区别是，不是从左到右遍历字符串，而是不断从左边<code>pop</code>出字符，本质还是一样的。<br>那么，为什么说处理括号没有看起来那么难呢，<strong>因为括号具有递归性质</strong>。我们拿字符串<code>3*(4-5/2)-6</code>举例：<br>calculate(<code>3*(4-5/2)-6</code>)<br>= 3 * calculate(<code>4-5/2</code>) - 6<br>= 3 * 2 - 6<br>= 0<br>可以脑补一下，无论多少层括号嵌套，通过 calculate 函数递归调用自己，都可以将括号中的算式化简成一个数字。<strong>换句话说，括号包含的算式，我们直接视为一个数字就行了</strong>。<br>现在的问题是，递归的开始条件和结束条件是什么？<strong>遇到<code>(</code>开始递归，遇到<code>)</code>结束递归</strong>：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calculate</span>(<span class="hljs-params">s: str</span>) -&gt; int:</span><br>        <br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">helper</span>(<span class="hljs-params">s: List</span>) -&gt; int:</span><br>        stack = []<br>        sign = <span class="hljs-string">&#x27;+&#x27;</span><br>        num = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> len(s) &gt; <span class="hljs-number">0</span>:<br>            c = s.pop(<span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">if</span> c.isdigit():<br>                num = <span class="hljs-number">10</span> * num + int(c)<br>            <span class="hljs-comment"># 遇到左括号开始递归计算 num</span><br>            <span class="hljs-keyword">if</span> c == <span class="hljs-string">&#x27;(&#x27;</span>:<br>                num = helper(s)<br>            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">not</span> c.isdigit() <span class="hljs-keyword">and</span> c != <span class="hljs-string">&#x27; &#x27;</span>) <span class="hljs-keyword">or</span> len(s) == <span class="hljs-number">0</span>:<br>                <span class="hljs-keyword">if</span> sign == <span class="hljs-string">&#x27;+&#x27;</span>: ...<br>                <span class="hljs-keyword">elif</span> sign == <span class="hljs-string">&#x27;-&#x27;</span>: ... <br>                <span class="hljs-keyword">elif</span> sign == <span class="hljs-string">&#x27;*&#x27;</span>: ...<br>                <span class="hljs-keyword">elif</span> sign == <span class="hljs-string">&#x27;/&#x27;</span>: ...<br>                num = <span class="hljs-number">0</span><br>                sign = c<br>            <span class="hljs-comment"># 遇到右括号返回递归结果</span><br>            <span class="hljs-keyword">if</span> c == <span class="hljs-string">&#x27;)&#x27;</span>: <span class="hljs-keyword">break</span><br>        <span class="hljs-keyword">return</span> sum(stack)<br>    <span class="hljs-keyword">return</span> helper(list(s))<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/calculator/4.jpg"><br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/calculator/5.jpg"><br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/calculator/6.jpg"><br>你看，加了两三行代码，就可以处理括号了，这就是递归的魅力。至此，计算器的全部功能就实现了，通过对问题的层层拆解化整为零，再回头看，这个问题似乎也没那么复杂嘛。</p>
+<h3 id="五、最后总结"><a href="#五、最后总结" class="headerlink" title="五、最后总结"></a>五、最后总结</h3><p>本文借实现计算器的问题，主要想表达的是一种处理复杂问题的思路。<br>我们首先从字符串转数字这个简单问题开始，进而处理只包含加减法的算式，进而处理包含加减乘除四则运算的算式，进而处理空格字符，进而处理包含括号的算式。<br><strong>可见，对于一些比较困难的问题，其解法并不是一蹴而就的，而是步步推进，螺旋上升的</strong>。如果一开始给你原题，你不会做，甚至看不懂答案，都很正常，关键在于我们自己如何简化问题，如何以退为进。<br><strong>退而求其次是一种很聪明策略</strong>。你想想啊，假设这是一道考试题，你不会实现这个计算器，但是你写了字符串转整数的算法并指出了容易溢出的陷阱，那起码可以得 20 分吧；如果你能够处理加减法，那可以得 40 分吧；如果你能处理加减乘除四则运算，那起码够 70 分了；再加上处理空格字符，80 有了吧。我就是不会处理括号，那就算了，80 已经很 OK 了好不好。</p>
+<p><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BD%8D%E6%93%8D%E4%BD%9C">上一篇：常用的位操作</a><br><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E7%83%A7%E9%A5%BC%E6%8E%92%E5%BA%8F">下一篇：烧饼排序</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/" rel="next" title="数据结构系列"><i class="fas fa-angle-left"></i><span class="nav-title">数据结构系列</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" rel="prev" title="单调队列"><span class="nav-title">单调队列</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E6%8B%86%E8%A7%A3%E5%A4%8D%E6%9D%82%E9%97%AE%E9%A2%98%EF%BC%9A%E5%AE%9E%E7%8E%B0%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="toc-text">拆解复杂问题：实现计算器</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%80%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%95%B4%E6%95%B0"><span class="toc-text">一、字符串转整数</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%8C%E3%80%81%E5%A4%84%E7%90%86%E5%8A%A0%E5%87%8F%E6%B3%95"><span class="toc-text">二、处理加减法</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%89%E3%80%81%E5%A4%84%E7%90%86%E4%B9%98%E9%99%A4%E6%B3%95"><span class="toc-text">三、处理乘除法</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E5%9B%9B%E3%80%81%E5%A4%84%E7%90%86%E6%8B%AC%E5%8F%B7"><span class="toc-text">四、处理括号</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%94%E3%80%81%E6%9C%80%E5%90%8E%E6%80%BB%E7%BB%93"><span class="toc-text">五、最后总结</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

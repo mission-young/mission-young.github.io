@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>UnionFind算法应用 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/UnionFind%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">UnionFind算法应用</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="Union-Find算法应用"><a href="#Union-Find算法应用" class="headerlink" title="Union-Find算法应用"></a>Union-Find算法应用</h1><p>上篇文章很多读者对于 Union-Find 算法的应用表示很感兴趣，这篇文章就拿几道 LeetCode 题目来讲讲这个算法的巧妙用法。<br>首先，复习一下，Union-Find 算法解决的是图的动态连通性问题，这个算法本身不难，能不能应用出来主要是看你抽象问题的能力，是否能够把原始问题抽象成一个有关图论的问题。<br>先复习一下上篇文章写的算法代码，回答读者提出的几个问题：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UF</span> </span>&#123;<br>    <span class="hljs-comment">// 记录连通分量个数</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> count;<br>    <span class="hljs-comment">// 存储若干棵树</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] parent;<br>    <span class="hljs-comment">// 记录树的“重量”</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] size;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">UF</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.count = n;<br>        parent = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>        size = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            parent[i] = i;<br>            size[i] = <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-comment">/* 将 p 和 q 连通 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> rootP = find(p);<br>        <span class="hljs-keyword">int</span> rootQ = find(q);<br>        <span class="hljs-keyword">if</span> (rootP == rootQ)<br>            <span class="hljs-keyword">return</span>;<br>        <br>        <span class="hljs-comment">// 小树接到大树下面，较平衡</span><br>        <span class="hljs-keyword">if</span> (size[rootP] &gt; size[rootQ]) &#123;<br>            parent[rootQ] = rootP;<br>            size[rootP] += size[rootQ];<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            parent[rootP] = rootQ;<br>            size[rootQ] += size[rootP];<br>        &#125;<br>        count--;<br>    &#125;<br>    <span class="hljs-comment">/* 判断 p 和 q 是否互相连通 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">connected</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> rootP = find(p);<br>        <span class="hljs-keyword">int</span> rootQ = find(q);<br>        <span class="hljs-comment">// 处于同一棵树上的节点，相互连通</span><br>        <span class="hljs-keyword">return</span> rootP == rootQ;<br>    &#125;<br>    <span class="hljs-comment">/* 返回节点 x 的根节点 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>        <span class="hljs-keyword">while</span> (parent[x] != x) &#123;<br>            <span class="hljs-comment">// 进行路径压缩</span><br>            parent[x] = parent[parent[x]];<br>            x = parent[x];<br>        &#125;<br>        <span class="hljs-keyword">return</span> x;<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">count</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>算法的关键点有 3 个：<br>1、用 <code>parent</code> 数组记录每个节点的父节点，相当于指向父节点的指针，所以 <code>parent</code> 数组内实际存储着一个森林（若干棵多叉树）。<br>2、用 <code>size</code> 数组记录着每棵树的重量，目的是让 <code>union</code> 后树依然拥有平衡性，而不会退化成链表，影响操作效率。<br>3、在 <code>find</code> 函数中进行路径压缩，保证任意树的高度保持在常数，使得 <code>union</code> 和 <code>connected</code> API 时间复杂度为 O(1)。<br>有的读者问，<strong>既然有了路径压缩，<code>size</code> 数组的重量平衡还需要吗</strong>？这个问题很有意思，因为路径压缩保证了树高为常数（不超过 3），那么树就算不平衡，高度也是常数，基本没什么影响。<br>我认为，论时间复杂度的话，确实，不需要重量平衡也是 O(1)。但是如果加上 <code>size</code> 数组辅助，效率还是略微高一些，比如下面这种情况：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/unionfind%E5%BA%94%E7%94%A8/1.jpg"><br>如果带有重量平衡优化，一定会得到情况一，而不带重量优化，可能出现情况二。高度为 3 时才会触发路径压缩那个 <code>while</code> 循环，所以情况一根本不会触发路径压缩，而情况二会多执行很多次路径压缩，将第三层节点压缩到第二层。<br>也就是说，去掉重量平衡，虽然对于单个的 <code>find</code> 函数调用，时间复杂度依然是 O(1)，但是对于 API 调用的整个过程，效率会有一定的下降。当然，好处就是减少了一些空间，不过对于 Big O 表示法来说，时空复杂度都没变。<br>下面言归正传，来看看这个算法有什么实际应用。</p>
+<h3 id="一、DFS-的替代方案"><a href="#一、DFS-的替代方案" class="headerlink" title="一、DFS 的替代方案"></a>一、DFS 的替代方案</h3><p>很多使用 DFS 深度优先算法解决的问题，也可以用 Union-Find 算法解决。<br>比如第 130 题，被围绕的区域：给你一个 M×N 的二维矩阵，其中包含字符 <code>X</code> 和 <code>O</code>，让你找到矩阵中<strong>四面</strong>被 <code>X</code> 围住的 <code>O</code>，并且把它们替换成 <code>X</code>。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[][] board)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>注意哦，必须是四面被围的 <code>O</code> 才能被换成 <code>X</code>，也就是说边角上的 <code>O</code> 一定不会被围，进一步，与边角上的 <code>O</code> 相连的 <code>O</code> 也不会被 <code>X</code> 围四面，也不会被替换。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/unionfind%E5%BA%94%E7%94%A8/2.jpg"><br>PS：这让我想起小时候玩的棋类游戏「黑白棋」，只要你用两个棋子把对方的棋子夹在中间，对方的子就被替换成你的子。可见，占据四角的棋子是无敌的，与其相连的边棋子也是无敌的（无法被夹掉）。<br>解决这个问题的传统方法也不困难，先用 for 循环遍历棋盘的<strong>四边</strong>，用 DFS 算法把那些与边界相连的 <code>O</code> 换成一个特殊字符，比如 <code>#</code>；然后再遍历整个棋盘，把剩下的 <code>O</code> 换成 <code>X</code>，把 <code>#</code> 恢复成 <code>O</code>。这样就能完成题目的要求，时间复杂度 O(MN)。<br>这个问题也可以用 Union-Find 算法解决，虽然实现复杂一些，甚至效率也略低，但这是使用 Union-Find 算法的通用思想，值得一学。<br><strong>你可以把那些不需要被替换的 <code>O</code> 看成一个拥有独门绝技的门派，它们有一个共同祖师爷叫 <code>dummy</code>，这些 <code>O</code> 和 <code>dummy</code> 互相连通，而那些需要被替换的 <code>O</code> 与 <code>dummy</code> 不连通</strong>。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/unionfind%E5%BA%94%E7%94%A8/3.jpg"><br>这就是 Union-Find 的核心思路，明白这个图，就很容易看懂代码了。<br>首先要解决的是，根据我们的实现，Union-Find 底层用的是一维数组，构造函数需要传入这个数组的大小，而题目给的是一个二维棋盘。<br>这个很简单，二维坐标 <code>(x,y)</code> 可以转换成 <code>x * n + y</code> 这个数（<code>m</code> 是棋盘的行数，<code>n</code> 是棋盘的列数）。敲黑板，<strong>这是将二维坐标映射到一维的常用技巧</strong>。<br>其次，我们之前描述的「祖师爷」是虚构的，需要给他老人家留个位置。索引 <code>[0.. m*n-1]</code> 都是棋盘内坐标的一维映射，那就让这个虚拟的 <code>dummy</code> 节点占据索引 <code>m * n</code> 好了。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[][] board)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (board.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">int</span> m = board.length;<br>    <span class="hljs-keyword">int</span> n = board[<span class="hljs-number">0</span>].length;<br>    <span class="hljs-comment">// 给 dummy 留一个额外位置</span><br>    UF uf = <span class="hljs-keyword">new</span> UF(m * n + <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">int</span> dummy = m * n;<br>    <span class="hljs-comment">// 将首列和末列的 O 与 dummy 连通</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; m; i++) &#123;<br>        <span class="hljs-keyword">if</span> (board[i][<span class="hljs-number">0</span>] == <span class="hljs-string">&#x27;O&#x27;</span>)<br>            uf.union(i * n, dummy);<br>        <span class="hljs-keyword">if</span> (board[i][n - <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;O&#x27;</span>)<br>            uf.union(i * n + n - <span class="hljs-number">1</span>, dummy);<br>    &#125;<br>    <span class="hljs-comment">// 将首行和末行的 O 与 dummy 连通</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) &#123;<br>        <span class="hljs-keyword">if</span> (board[<span class="hljs-number">0</span>][j] == <span class="hljs-string">&#x27;O&#x27;</span>)<br>            uf.union(j, dummy);<br>        <span class="hljs-keyword">if</span> (board[m - <span class="hljs-number">1</span>][j] == <span class="hljs-string">&#x27;O&#x27;</span>)<br>            uf.union(n * (m - <span class="hljs-number">1</span>) + j, dummy);<br>    &#125;<br>    <span class="hljs-comment">// 方向数组 d 是上下左右搜索的常用手法</span><br>    <span class="hljs-keyword">int</span>[][] d = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[][]&#123;&#123;<span class="hljs-number">1</span>,<span class="hljs-number">0</span>&#125;, &#123;<span class="hljs-number">0</span>,<span class="hljs-number">1</span>&#125;, &#123;<span class="hljs-number">0</span>,-<span class="hljs-number">1</span>&#125;, &#123;-<span class="hljs-number">1</span>,<span class="hljs-number">0</span>&#125;&#125;;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; m - <span class="hljs-number">1</span>; i++) <br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt; n - <span class="hljs-number">1</span>; j++) <br>            <span class="hljs-keyword">if</span> (board[i][j] == <span class="hljs-string">&#x27;O&#x27;</span>)<br>                <span class="hljs-comment">// 将此 O 与上下左右的 O 连通</span><br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>; k &lt; <span class="hljs-number">4</span>; k++) &#123;<br>                    <span class="hljs-keyword">int</span> x = i + d[k][<span class="hljs-number">0</span>];<br>                    <span class="hljs-keyword">int</span> y = j + d[k][<span class="hljs-number">1</span>];<br>                    <span class="hljs-keyword">if</span> (board[x][y] == <span class="hljs-string">&#x27;O&#x27;</span>)<br>                        uf.union(x * n + y, i * n + j);<br>                &#125;<br>    <span class="hljs-comment">// 所有不和 dummy 连通的 O，都要被替换</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; m - <span class="hljs-number">1</span>; i++) <br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt; n - <span class="hljs-number">1</span>; j++) <br>            <span class="hljs-keyword">if</span> (!uf.connected(dummy, i * n + j))<br>                board[i][j] = <span class="hljs-string">&#x27;X&#x27;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这段代码很长，其实就是刚才的思路实现，只有和边界 <code>O</code> 相连的 <code>O</code> 才具有和 <code>dummy</code> 的连通性，他们不会被替换。<br>说实话，Union-Find 算法解决这个简单的问题有点杀鸡用牛刀，它可以解决更复杂，更具有技巧性的问题，<strong>主要思路是适时增加虚拟节点，想办法让元素「分门别类」，建立动态连通关系</strong>。</p>
+<h3 id="二、判定合法等式"><a href="#二、判定合法等式" class="headerlink" title="二、判定合法等式"></a>二、判定合法等式</h3><p>这个问题用 Union-Find 算法就显得十分优美了。题目是这样：<br>给你一个数组 <code>equations</code>，装着若干字符串表示的算式。每个算式 <code>equations[i]</code> 长度都是 4，而且只有这两种情况：<code>a==b</code> 或者 <code>a!=b</code>，其中 <code>a,b</code> 可以是任意小写字母。你写一个算法，如果 <code>equations</code> 中所有算式都不会互相冲突，返回 true，否则返回 false。<br>比如说，输入 <code>[&quot;a==b&quot;,&quot;b!=c&quot;,&quot;c==a&quot;]</code>，算法返回 false，因为这三个算式不可能同时正确。<br>再比如，输入 <code>[&quot;c==c&quot;,&quot;b==d&quot;,&quot;x!=z&quot;]</code>，算法返回 true，因为这三个算式并不会造成逻辑冲突。<br>我们前文说过，动态连通性其实就是一种等价关系，具有「自反性」「传递性」和「对称性」，其实 <code>==</code> 关系也是一种等价关系，具有这些性质。所以这个问题用 Union-Find 算法就很自然。<br>核心思想是，<strong>将 <code>equations</code> 中的算式根据 <code>==</code> 和 <code>!=</code> 分成两部分，先处理 <code>==</code> 算式，使得他们通过相等关系各自勾结成门派；然后处理 <code>!=</code> 算式，检查不等关系是否破坏了相等关系的连通性</strong>。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">equationsPossible</span><span class="hljs-params">(String[] equations)</span> </span>&#123;<br>    <span class="hljs-comment">// 26 个英文字母</span><br>    UF uf = <span class="hljs-keyword">new</span> UF(<span class="hljs-number">26</span>);<br>    <span class="hljs-comment">// 先让相等的字母形成连通分量</span><br>    <span class="hljs-keyword">for</span> (String eq : equations) &#123;<br>        <span class="hljs-keyword">if</span> (eq.charAt(<span class="hljs-number">1</span>) == <span class="hljs-string">&#x27;=&#x27;</span>) &#123;<br>            <span class="hljs-keyword">char</span> x = eq.charAt(<span class="hljs-number">0</span>);<br>            <span class="hljs-keyword">char</span> y = eq.charAt(<span class="hljs-number">3</span>);<br>            uf.union(x - <span class="hljs-string">&#x27;a&#x27;</span>, y - <span class="hljs-string">&#x27;a&#x27;</span>);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 检查不等关系是否打破相等关系的连通性</span><br>    <span class="hljs-keyword">for</span> (String eq : equations) &#123;<br>        <span class="hljs-keyword">if</span> (eq.charAt(<span class="hljs-number">1</span>) == <span class="hljs-string">&#x27;!&#x27;</span>) &#123;<br>            <span class="hljs-keyword">char</span> x = eq.charAt(<span class="hljs-number">0</span>);<br>            <span class="hljs-keyword">char</span> y = eq.charAt(<span class="hljs-number">3</span>);<br>            <span class="hljs-comment">// 如果相等关系成立，就是逻辑冲突</span><br>            <span class="hljs-keyword">if</span> (uf.connected(x - <span class="hljs-string">&#x27;a&#x27;</span>, y - <span class="hljs-string">&#x27;a&#x27;</span>))<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>至此，这道判断算式合法性的问题就解决了，借助 Union-Find 算法，是不是很简单呢？</p>
+<h3 id="三、简单总结"><a href="#三、简单总结" class="headerlink" title="三、简单总结"></a>三、简单总结</h3><p>使用 Union-Find 算法，主要是如何把原问题转化成图的动态连通性问题。对于算式合法性问题，可以直接利用等价关系，对于棋盘包围问题，则是利用一个虚拟节点，营造出动态连通特性。<br>另外，将二维数组映射到一维数组，利用方向数组 <code>d</code> 来简化代码量，都是在写算法时常用的一些小技巧，如果没见过可以注意一下。<br>很多更复杂的 DFS 算法问题，都可以利用 Union-Find 算法更漂亮的解决。LeetCode 上 Union-Find 相关的问题也就二十多道，有兴趣的读者可以去做一做。</p>
+<p><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/UnionFind%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3">上一篇：Union-Find算法详解</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%A7%A3%E5%86%B3%E7%9A%84%E6%99%BA%E5%8A%9B%E9%A2%98">下一篇：一行代码就能解决的算法题</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/UnionFind%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/" rel="next" title="UnionFind算法详解"><i class="fas fa-angle-left"></i><span class="nav-title">UnionFind算法详解</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/FloodFill%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/" rel="prev" title="FloodFill算法详解及应用"><span class="nav-title">FloodFill算法详解及应用</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#Union-Find%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8"><span class="toc-text">Union-Find算法应用</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%80%E3%80%81DFS-%E7%9A%84%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88"><span class="toc-text">一、DFS 的替代方案</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%A4%E5%AE%9A%E5%90%88%E6%B3%95%E7%AD%89%E5%BC%8F"><span class="toc-text">二、判定合法等式</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%B8%89%E3%80%81%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93"><span class="toc-text">三、简单总结</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

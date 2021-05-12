@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+
+<div id="index" class="index page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%A6%82%E4%BD%95%E5%8E%BB%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%A6%82%E4%BD%95%E5%8E%BB%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/" itemprop="url">如何去除有序数组的重复元素</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="如何去除有序数组的重复元素"><a href="#如何去除有序数组的重复元素" class="headerlink" title="如何去除有序数组的重复元素"></a>如何去除有序数组的重复元素</h1><p>我们知道对于数组来说，在尾部插入、删除元素是比较高效的，时间复杂度是 O(1)，但是如果在中间或者开头插入、删除元素，就会涉及数据的搬移，时间复杂度为 O(N)，效率较低。<br>所以对于一般处理数组的算法问题，我们要尽可能只对数组尾部的元素进行操作，以避免额外的时间复杂度。<br>这篇文章讲讲如何对一个有序数组去重，先看下题目：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/title.png"><br>显然，由于数组已经排序，所以重复的元素一定连在一起，找出它们并不难，但如果毎找到一个重复元素就立即删除它，就是在数组中间进行删除操作，整个时间复杂度是会达到 O(N^2)。而且题目要求我们原地修改，也就是说不能用辅助数组，空间复杂度得是 O(1)。<br>其实，<strong>对于数组相关的算法问题，有一个通用的技巧：要尽量避免在中间删除元素，那我就想先办法把这个元素换到最后去</strong>。这样的话，最终待删除的元素都拖在数组尾部，一个一个 pop 掉就行了，每次操作的时间复杂度也就降低到 O(1) 了。<br>按照这个思路呢，又可以衍生出解决类似需求的通用方式：双指针技巧。具体一点说，应该是快慢指针。<br>我们让慢指针 <code>slow</code> 走左后面，快指针 <code>fast</code> 走在前面探路，找到一个不重复的元素就告诉 <code>slow</code> 并让 <code>slow</code> 前进一步。这样当 <code>fast</code> 指针遍历完整个数组 <code>nums</code> 后，**<code>nums[0..slow]</code> 就是不重复元素，之后的所有元素都是重复元素**。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">removeDuplicates</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = nums.length;<br>    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> slow = <span class="hljs-number">0</span>, fast = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (fast &lt; n) &#123;<br>        <span class="hljs-keyword">if</span> (nums[fast] != nums[slow]) &#123;<br>            slow++;<br>            <span class="hljs-comment">// 维护 nums[0..slow] 无重复</span><br>            nums[slow] = nums[fast];<br>        &#125;<br>        fast++;<br>    &#125;<br>    <span class="hljs-comment">// 长度为索引 + 1</span><br>    <span class="hljs-keyword">return</span> slow + <span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>看下算法执行的过程：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/1.gif"><br>再简单扩展一下，如果给你一个有序链表，如何去重呢？其实和数组是一模一样的，唯一的区别是把数组赋值操作变成操作指针而已：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">ListNode <span class="hljs-title">deleteDuplicates</span><span class="hljs-params">(ListNode head)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    ListNode slow = head, fast = head.next;<br>    <span class="hljs-keyword">while</span> (fast != <span class="hljs-keyword">null</span>) &#123;<br>        <span class="hljs-keyword">if</span> (fast.val != slow.val) &#123;<br>            <span class="hljs-comment">// nums[slow] = nums[fast];</span><br>            slow.next = fast;<br>            <span class="hljs-comment">// slow++;</span><br>            slow = slow.next;<br>        &#125;<br>        <span class="hljs-comment">// fast++</span><br>        fast = fast.next;<br>    &#125;<br>    <span class="hljs-comment">// 断开与后面重复元素的连接</span><br>    slow.next = <span class="hljs-keyword">null</span>;<br>    <span class="hljs-keyword">return</span> head;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/2.gif"></p>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%8E%A5%E9%9B%A8%E6%B0%B4">上一篇：如何高效解决接雨水问题</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2">下一篇：如何寻找最长回文子串</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%AD%90%E9%9B%86%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%AD%90%E9%9B%86%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/" itemprop="url">子集排列组合</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>今天就来聊三道考察频率高，而且容易让人搞混的算法问题，分别是求子集（subset），求排列（permutation），求组合（combination）。<br>这几个问题都可以用回溯算法模板解决，同时子集问题还可以用数学归纳思想解决。读者可以记住这几个问题的回溯套路，就不怕搞不清了。</p>
+<h3 id="一、子集"><a href="#一、子集" class="headerlink" title="一、子集"></a>一、子集</h3><p>问题很简单，输入一个<strong>不包含重复数字</strong>的数组，要求算法输出这些数字的所有子集。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">subsets</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>比如输入 <code>nums = [1,2,3]</code>，你的算法应输出 8 个子集，包含空集和本身，顺序可以不同：<br>[ [],[1],[2],[3],[1,3],[2,3],[1,2],[1,2,3] ]<br><strong>第一个解法是利用数学归纳的思想</strong>：假设我现在知道了规模更小的子问题的结果，如何推导出当前问题的结果呢？<br>具体来说就是，现在让你求 <code>[1,2,3]</code> 的子集，如果你知道了 <code>[1,2]</code> 的子集，是否可以推导出 <code>[1,2,3]</code> 的子集呢？先把  <code>[1,2]</code> 的子集写出来瞅瞅：<br>[ [],[1],[2],[1,2] ]<br>你会发现这样一个规律：<br>subset(<code>[1,2,3]</code>) - subset(<code>[1,2]</code>)<br>= [3],[1,3],[2,3],[1,2,3]<br>而这个结果，就是把 sebset(<code>[1,2]</code>) 的结果中每个集合再添加上 3。<br>换句话说，如果 <code>A = subset([1,2])</code> ，那么：<br>subset(<code>[1,2,3]</code>)<br>= A + [A[i].add(3) for i = 1..len(A)]<br>这就是一个典型的递归结构嘛，<code>[1,2,3]</code> 的子集可以由 <code>[1,2]</code> 追加得出，<code>[1,2]</code> 的子集可以由 <code>[1]</code> 追加得出，base case 显然就是当输入集合为空集时，输出子集也就是一个空集。<br>翻译成代码就很容易理解了：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">subsets</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span> </span>&#123;<br>    <span class="hljs-comment">// base case，返回一个空集</span><br>    <span class="hljs-keyword">if</span> (nums.empty()) <span class="hljs-keyword">return</span> &#123;&#123;&#125;&#125;;<br>    <span class="hljs-comment">// 把最后一个元素拿出来</span><br>    <span class="hljs-keyword">int</span> n = nums.back();<br>    nums.pop_back();<br>    <span class="hljs-comment">// 先递归算出前面元素的所有子集</span><br>    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; res = subsets(nums);<br>    <span class="hljs-keyword">int</span> size = res.size();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) &#123;<br>        <span class="hljs-comment">// 然后在之前的结果之上追加</span><br>        res.push_back(res[i]);<br>        res.back().push_back(n);<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>这个问题的时间复杂度计算比较容易坑人</strong>。我们之前说的计算递归算法时间复杂度的方法，是找到递归深度，然后乘以每次递归中迭代的次数。对于这个问题，递归深度显然是 N，但我们发现每次递归 for 循环的迭代次数取决于 <code>res</code> 的长度，并不是固定的。<br>根据刚才的思路，<code>res</code> 的长度应该是每次递归都翻倍，所以说总的迭代次数应该是 2^N。或者不用这么麻烦，你想想一个大小为 N 的集合的子集总共有几个？2^N 个对吧，所以说至少要对 <code>res</code> 添加 2^N 次元素。<br>那么算法的时间复杂度就是 O(2^N) 吗？还是不对，2^N 个子集是 <code>push_back</code> 添加进 <code>res</code> 的，所以要考虑 <code>push_back</code> 这个操作的效率：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) &#123;<br>    res.push_back(res[i]); <span class="hljs-comment">// O(N)</span><br>    res.back().push_back(n); <span class="hljs-comment">// O(1)</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>因为 <code>res[i]</code> 也是一个数组呀，<code>push_back</code> 是把 <code>res[i]</code> copy 一份然后添加到数组的最后，所以一次操作的时间是 O(N)。<br>综上，总的时间复杂度就是 O(N<em>2^N)，还是比较耗时的。<br>空间复杂度的话，如果不计算储存返回结果所用的空间的，只需要 O(N) 的递归堆栈空间。如果计算 <code>res</code> 所需的空间，应该是 O(N</em>2^N)。<br><strong>第二种通用方法就是回溯算法</strong>。旧文「回溯算法详解」写过回溯算法的模板：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python">result = []<br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">backtrack</span>(<span class="hljs-params">路径, 选择列表</span>):</span><br>    <span class="hljs-keyword">if</span> 满足结束条件:<br>        result.add(路径)<br>        <span class="hljs-keyword">return</span><br>    <span class="hljs-keyword">for</span> 选择 <span class="hljs-keyword">in</span> 选择列表:<br>        做选择<br>        backtrack(路径, 选择列表)<br>        撤销选择<br></code></pre></td></tr></table></figure>
+<p>只要改造回溯算法的模板就行了：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; res;<br><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">subsets</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span> </span>&#123;<br>    <span class="hljs-comment">// 记录走过的路径</span><br>    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; track;<br>    backtrack(nums, <span class="hljs-number">0</span>, track);<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">backtrack</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums, <span class="hljs-keyword">int</span> start, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; track)</span> </span>&#123;<br>    res.push_back(track);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = start; i &lt; nums.size(); i++) &#123;<br>        <span class="hljs-comment">// 做选择</span><br>        track.push_back(nums[i]);<br>        <span class="hljs-comment">// 回溯</span><br>        backtrack(nums, i + <span class="hljs-number">1</span>, track);<br>        <span class="hljs-comment">// 撤销选择</span><br>        track.pop_back();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>可以看见，对 <code>res</code> 更新的位置处在前序遍历，也就是说，**<code>res</code> 就是树上的所有节点**：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AD%90%E9%9B%86/1.jpg"></p>
+<h3 id="二、组合"><a href="#二、组合" class="headerlink" title="二、组合"></a>二、组合</h3><p>输入两个数字 <code>n, k</code>，算法输出 <code>[1..n]</code> 中 k 个数字的所有组合。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">combine</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> k)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>比如输入 <code>n = 4, k = 2</code>，输出如下结果，顺序无所谓，但是不能包含重复（按照组合的定义，<code>[1,2]</code> 和 <code>[2,1]</code> 也算重复）：<br>[<br>  [1,2],<br>  [1,3],<br>  [1,4],<br>  [2,3],<br>  [2,4],<br>  [3,4]<br>]<br>这也是典型的回溯算法，<code>k</code> 限制了树的高度，<code>n</code> 限制了树的宽度，继续套我们以前讲过的回溯算法模板框架就行了：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AD%90%E9%9B%86/2.jpg"></p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;res;<br><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">combine</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> k)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (k &lt;= <span class="hljs-number">0</span> || n &lt;= <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> res;<br>    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; track;<br>    backtrack(n, k, <span class="hljs-number">1</span>, track);<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">backtrack</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> k, <span class="hljs-keyword">int</span> start, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; track)</span> </span>&#123;<br>    <span class="hljs-comment">// 到达树的底部</span><br>    <span class="hljs-keyword">if</span> (k == track.size()) &#123;<br>        res.push_back(track);<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-comment">// 注意 i 从 start 开始递增</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = start; i &lt;= n; i++) &#123;<br>        <span class="hljs-comment">// 做选择</span><br>        track.push_back(i);<br>        backtrack(n, k, i + <span class="hljs-number">1</span>, track);<br>        <span class="hljs-comment">// 撤销选择</span><br>        track.pop_back();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><code>backtrack</code> 函数和计算子集的差不多，区别在于，更新 <code>res</code> 的时机是树到达底端时。</p>
+<h3 id="三、排列"><a href="#三、排列" class="headerlink" title="三、排列"></a>三、排列</h3><p>输入一个<strong>不包含重复数字</strong>的数组 <code>nums</code>，返回这些数字的全部排列。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">permute</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>比如说输入数组 <code>[1,2,3]</code>，输出结果应该如下，顺序无所谓，不能有重复：<br>[<br>  [1,2,3],<br>  [1,3,2],<br>  [2,1,3],<br>  [2,3,1],<br>  [3,1,2],<br>  [3,2,1]<br>]<br>「回溯算法详解」中就是拿这个问题来解释回溯模板的。这里又列出这个问题，是将「排列」和「组合」这两个回溯算法的代码拿出来对比。<br>首先画出回溯树来看一看：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AD%90%E9%9B%86/3.jpg"><br>我们当时使用 Java 代码写的解法：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java">List&lt;List&lt;Integer&gt;&gt; res = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br><span class="hljs-comment">/* 主函数，输入一组不重复的数字，返回它们的全排列 */</span><br>List&lt;List&lt;Integer&gt;&gt; permute(<span class="hljs-keyword">int</span>[] nums) &#123;<br>    <span class="hljs-comment">// 记录「路径」</span><br>    LinkedList&lt;Integer&gt; track = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>    backtrack(nums, track);<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">backtrack</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, LinkedList&lt;Integer&gt; track)</span> </span>&#123;<br>    <span class="hljs-comment">// 触发结束条件</span><br>    <span class="hljs-keyword">if</span> (track.size() == nums.length) &#123;<br>        res.add(<span class="hljs-keyword">new</span> LinkedList(track));<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>        <span class="hljs-comment">// 排除不合法的选择</span><br>        <span class="hljs-keyword">if</span> (track.contains(nums[i]))<br>            <span class="hljs-keyword">continue</span>;<br>        <span class="hljs-comment">// 做选择</span><br>        track.add(nums[i]);<br>        <span class="hljs-comment">// 进入下一层决策树</span><br>        backtrack(nums, track);<br>        <span class="hljs-comment">// 取消选择</span><br>        track.removeLast();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>回溯模板依然没有变，但是根据排列问题和组合问题画出的树来看，排列问题的树比较对称，而组合问题的树越靠右节点越少。<br>在代码中的体现就是，排列问题每次通过 <code>contains</code> 方法来排除在 <code>track</code> 中已经选择过的数字；而组合问题通过传入一个 <code>start</code> 参数，来排除 <code>start</code> 索引之前的数字。<br><strong>以上，就是排列组合和子集三个问题的解法，总结一下</strong>：<br>子集问题可以利用数学归纳思想，假设已知一个规模较小的问题的结果，思考如何推导出原问题的结果。也可以用回溯算法，要用 <code>start</code> 参数排除已选择的数字。<br>组合问题利用的是回溯思想，结果可以表示成树结构，我们只要套用回溯算法模板即可，关键点在于要用一个 <code>start</code> 排除已经选择过的数字。<br>排列问题是回溯思想，也可以表示成树结构套用算法模板，关键点在于使用 <code>contains</code> 方法排除已经选择的数字，前文有详细分析，这里主要是和组合问题作对比。<br>记住这几种树的形状，就足以应对大部分回溯算法问题了，无非就是 <code>start</code> 或者 <code>contains</code> 剪枝，也没啥别的技巧了。</p>
+<p><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E4%BF%AE%E8%AE%A2%E7%89%88">上一篇：回溯算法详解</a><br><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E8%AF%A6%E8%A7%A3">下一篇：二分查找详解</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%BA%A7%E4%BD%8D%E8%B0%83%E5%BA%A6/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%BA%A7%E4%BD%8D%E8%B0%83%E5%BA%A6/" itemprop="url">座位调度</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="如何调度考生的座位"><a href="#如何调度考生的座位" class="headerlink" title="如何调度考生的座位"></a>如何调度考生的座位</h1><p>这是 LeetCode 第 885 题，有趣且具有一定技巧性。这种题目并不像动态规划这类算法拼智商，而是看你对常用数据结构的理解和写代码的水平，个人认为值得重视和学习。<br>另外说句题外话，很多读者都问，算法框架是如何总结出来的，其实框架反而是慢慢从细节里抠出来的。希望大家看了我们的文章之后，最好能抽时间把相关的问题亲自做一做，纸上得来终觉浅，绝知此事要躬行嘛。<br>先来描述一下题目：假设有一个考场，考场有一排共 <code>N</code> 个座位，索引分别是 <code>[0..N-1]</code>，考生会<strong>陆续</strong>进入考场考试，并且可能在<strong>任何时候</strong>离开考场。<br>你作为考官，要安排考生们的座位，满足：<strong>每当一个学生进入时，你需要最大化他和最近其他人的距离；如果有多个这样的座位，安排到他到索引最小的那个座位</strong>。这很符合实际情况对吧，<br>也就是请你实现下面这样一个类：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExamRoom</span> </span>&#123;<br>    <span class="hljs-comment">// 构造函数，传入座位总数 N</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ExamRoom</span><span class="hljs-params">(<span class="hljs-keyword">int</span> N)</span></span>;<br>    <span class="hljs-comment">// 来了一名考生，返回你给他分配的座位</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">seat</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-comment">// 坐在 p 位置的考生离开了</span><br>    <span class="hljs-comment">// 可以认为 p 位置一定坐有考生</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">leave</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p)</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>比方说考场有 5 个座位，分别是 <code>[0..4]</code>：<br>第一名考生进入时（调用 <code>seat()</code>），坐在任何位置都行，但是要给他安排索引最小的位置，也就是返回位置 0。<br>第二名学生进入时（再调用 <code>seat()</code>），要和旁边的人距离最远，也就是返回位置 4。<br>第三名学生进入时，要和旁边的人距离最远，应该做到中间，也就是座位 2。<br>如果再进一名学生，他可以坐在座位 1 或者 3，取较小的索引 1。<br>以此类推。<br>刚才所说的情况，没有调用 <code>leave</code> 函数，不过读者肯定能够发现规律：<br><strong>如果将每两个相邻的考生看做线段的两端点，新安排考生就是找最长的线段，然后让该考生在中间把这个线段「二分」，中点就是给他分配的座位。<code>leave(p)</code> 其实就是去除端点 <code>p</code>，使得相邻两个线段合并为一个</strong>。<br>核心思路很简单对吧，所以这个问题实际上实在考察你对数据结构的理解。对于上述这个逻辑，你用什么数据结构来实现呢？</p>
+<h3 id="一、思路分析"><a href="#一、思路分析" class="headerlink" title="一、思路分析"></a>一、思路分析</h3><p>根据上述思路，首先需要把坐在教室的学生抽象成线段，我们可以简单的用一个大小为 2 的数组表示。<br>另外，思路需要我们找到「最长」的线段，还需要去除线段，增加线段。<br><strong>但凡遇到在动态过程中取最值的要求，肯定要使用有序数据结构，我们常用的数据结构就是二叉堆和平衡二叉搜索树了</strong>。二叉堆实现的优先级队列取最值的时间复杂度是 O(logN)，但是只能删除最大值。平衡二叉树也可以取最值，也可以修改、删除任意一个值，而且时间复杂度都是 O(logN)。<br>综上，二叉堆不能满足 <code>leave</code> 操作，应该使用平衡二叉树。所以这里我们会用到 Java 的一种数据结构 <code>TreeSet</code>，这是一种有序数据结构，底层由红黑树维护有序性。<br>这里顺便提一下，一说到集合（Set）或者映射（Map），有的读者可能就想当然的认为是哈希集合（HashSet）或者哈希表（HashMap），这样理解是有点问题的。<br>因为哈希集合/映射底层是由哈希函数和数组实现的，特性是遍历无固定顺序，但是操作效率高，时间复杂度为 O(1)。<br>而集合/映射还可以依赖其他底层数据结构，常见的就是红黑树（一种平衡二叉搜索树），特性是自动维护其中元素的顺序，操作效率是 O(logN)。这种一般称为「有序集合/映射」。<br>我们使用的 <code>TreeSet</code> 就是一个有序集合，目的就是为了保持线段长度的有序性，快速查找最大线段，快速删除和插入。</p>
+<h3 id="二、简化问题"><a href="#二、简化问题" class="headerlink" title="二、简化问题"></a>二、简化问题</h3><p>首先，如果有多个可选座位，需要选择索引最小的座位对吧？<strong>我们先简化一下问题，暂时不管这个要求</strong>，实现上述思路。<br>这个问题还用到一个常用的编程技巧，就是使用一个「虚拟线段」让算法正确启动，这就和链表相关的算法需要「虚拟头结点」一个道理。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 将端点 p 映射到以 p 为左端点的线段</span><br><span class="hljs-keyword">private</span> Map&lt;Integer, <span class="hljs-keyword">int</span>[]&gt; startMap;<br><span class="hljs-comment">// 将端点 p 映射到以 p 为右端点的线段</span><br><span class="hljs-keyword">private</span> Map&lt;Integer, <span class="hljs-keyword">int</span>[]&gt; endMap;<br><span class="hljs-comment">// 根据线段长度从小到大存放所有线段</span><br><span class="hljs-keyword">private</span> TreeSet&lt;<span class="hljs-keyword">int</span>[]&gt; pq;<br><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> N;<br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ExamRoom</span><span class="hljs-params">(<span class="hljs-keyword">int</span> N)</span> </span>&#123;<br>    <span class="hljs-keyword">this</span>.N = N;<br>    startMap = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>    endMap = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>    pq = <span class="hljs-keyword">new</span> TreeSet&lt;&gt;((a, b) -&gt; &#123;<br>        <span class="hljs-comment">// 算出两个线段的长度</span><br>        <span class="hljs-keyword">int</span> distA = distance(a);<br>        <span class="hljs-keyword">int</span> distB = distance(b);<br>        <span class="hljs-comment">// 长度更长的更大，排后面</span><br>        <span class="hljs-keyword">return</span> distA - distB;<br>    &#125;);<br>    <span class="hljs-comment">// 在有序集合中先放一个虚拟线段</span><br>    addInterval(<span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[] &#123;-<span class="hljs-number">1</span>, N&#125;);<br>&#125;<br><span class="hljs-comment">/* 去除一个线段 */</span><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">removeInterval</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] intv)</span> </span>&#123;<br>    pq.remove(intv);<br>    startMap.remove(intv[<span class="hljs-number">0</span>]);<br>    endMap.remove(intv[<span class="hljs-number">1</span>]);<br>&#125;<br><span class="hljs-comment">/* 增加一个线段 */</span><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addInterval</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] intv)</span> </span>&#123;<br>    pq.add(intv);<br>    startMap.put(intv[<span class="hljs-number">0</span>], intv);<br>    endMap.put(intv[<span class="hljs-number">1</span>], intv);<br>&#125;<br><span class="hljs-comment">/* 计算一个线段的长度 */</span><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">distance</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] intv)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> intv[<span class="hljs-number">1</span>] - intv[<span class="hljs-number">0</span>] - <span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>「虚拟线段」其实就是为了将所有座位表示为一个线段：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%BA%A7%E4%BD%8D%E8%B0%83%E5%BA%A6/1.jpg"><br>有了上述铺垫，主要 API <code>seat</code> 和 <code>leave</code> 就可以写了：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">seat</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-comment">// 从有序集合拿出最长的线段</span><br>    <span class="hljs-keyword">int</span>[] longest = pq.last();<br>    <span class="hljs-keyword">int</span> x = longest[<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">int</span> y = longest[<span class="hljs-number">1</span>];<br>    <span class="hljs-keyword">int</span> seat;<br>    <span class="hljs-keyword">if</span> (x == -<span class="hljs-number">1</span>) &#123; <span class="hljs-comment">// 情况一</span><br>        seat = <span class="hljs-number">0</span>;<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (y == N) &#123; <span class="hljs-comment">// 情况二</span><br>        seat = N - <span class="hljs-number">1</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 情况三</span><br>        seat = (y - x) / <span class="hljs-number">2</span> + x;<br>    &#125;<br>    <span class="hljs-comment">// 将最长的线段分成两段</span><br>    <span class="hljs-keyword">int</span>[] left = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[] &#123;x, seat&#125;;<br>    <span class="hljs-keyword">int</span>[] right = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[] &#123;seat, y&#125;;<br>    removeInterval(longest);<br>    addInterval(left);<br>    addInterval(right);<br>    <span class="hljs-keyword">return</span> seat;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">leave</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p)</span> </span>&#123;<br>    <span class="hljs-comment">// 将 p 左右的线段找出来</span><br>    <span class="hljs-keyword">int</span>[] right = startMap.get(p);<br>    <span class="hljs-keyword">int</span>[] left = endMap.get(p);<br>    <span class="hljs-comment">// 合并两个线段成为一个线段</span><br>    <span class="hljs-keyword">int</span>[] merged = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[] &#123;left[<span class="hljs-number">0</span>], right[<span class="hljs-number">1</span>]&#125;;<br>    removeInterval(left);<br>    removeInterval(right);<br>    addInterval(merged);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%BA%A7%E4%BD%8D%E8%B0%83%E5%BA%A6/2.jpg" alt="三种情况"><br>至此，算法就基本实现了，代码虽多，但思路很简单：找最长的线段，从中间分隔成两段，中点就是 <code>seat()</code> 的返回值；找 <code>p</code> 的左右线段，合并成一个线段，这就是 <code>leave(p)</code> 的逻辑。</p>
+<h3 id="三、进阶问题"><a href="#三、进阶问题" class="headerlink" title="三、进阶问题"></a>三、进阶问题</h3><p>但是，题目要求多个选择时选择索引最小的那个座位，我们刚才忽略了这个问题。比如下面这种情况会出错：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%BA%A7%E4%BD%8D%E8%B0%83%E5%BA%A6/3.jpg"><br>现在有序集合里有线段 <code>[0,4]</code> 和 <code>[4,9]</code>，那么最长线段 <code>longest</code> 就是后者，按照 <code>seat</code> 的逻辑，就会分割 <code>[4,9]</code>，也就是返回座位 6。但正确答案应该是座位 2，因为 2 和 6 都满足最大化相邻考生距离的条件，二者应该取较小的。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%BA%A7%E4%BD%8D%E8%B0%83%E5%BA%A6/4.jpg"><br><strong>遇到题目的这种要求，解决方式就是修改有序数据结构的排序方式</strong>。具体到这个问题，就是修改 <code>TreeMap</code> 的比较函数逻辑：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">pq = <span class="hljs-keyword">new</span> TreeSet&lt;&gt;((a, b) -&gt; &#123;<br>    <span class="hljs-keyword">int</span> distA = distance(a);<br>    <span class="hljs-keyword">int</span> distB = distance(b);<br>    <span class="hljs-comment">// 如果长度相同，就比较索引</span><br>    <span class="hljs-keyword">if</span> (distA == distB)<br>        <span class="hljs-keyword">return</span> b[<span class="hljs-number">0</span>] - a[<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">return</span> distA - distB;<br>&#125;);<br></code></pre></td></tr></table></figure>
+<p>除此之外，还要改变 <code>distance</code> 函数，<strong>不能简单地让它计算一个线段两个端点间的长度，而是让它计算该线段中点和端点之间的长度</strong>。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">distance</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] intv)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> x = intv[<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">int</span> y = intv[<span class="hljs-number">1</span>];<br>    <span class="hljs-keyword">if</span> (x == -<span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> y;<br>    <span class="hljs-keyword">if</span> (y == N) <span class="hljs-keyword">return</span> N - <span class="hljs-number">1</span> - x;<br>    <span class="hljs-comment">// 中点和端点之间的长度</span><br>    <span class="hljs-keyword">return</span> (y - x) / <span class="hljs-number">2</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%BA%A7%E4%BD%8D%E8%B0%83%E5%BA%A6/5.jpg"><br>这样，<code>[0,4]</code> 和 <code>[4,9]</code> 的 <code>distance</code> 值就相等了，算法会比较二者的索引，取较小的线段进行分割。到这里，这道算法题目算是完全解决了。</p>
+<h3 id="四、最后总结"><a href="#四、最后总结" class="headerlink" title="四、最后总结"></a>四、最后总结</h3><p>本文聊的这个问题其实并不算难，虽然看起来代码很多。核心问题就是考察有序数据结构的理解和使用，来梳理一下。<br>处理动态问题一般都会用到有序数据结构，比如平衡二叉搜索树和二叉堆，二者的时间复杂度差不多，但前者支持的操作更多。<br>既然平衡二叉搜索树这么好用，还用二叉堆干嘛呢？因为二叉堆底层就是数组，实现简单啊，详见旧文「二叉堆详解」。你实现个红黑树试试？操作复杂，而且消耗的空间相对来说会多一些。具体问题，还是要选择恰当的数据结构来解决。<br>希望本文对大家有帮助。</p>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%B0%B4%E5%A1%98%E6%8A%BD%E6%A0%B7">上一篇：如何在无限序列中随机抽取元素</a><br><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/UnionFind%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3">下一篇：Union-Find算法详解</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%89%93%E5%8D%B0%E7%B4%A0%E6%95%B0/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%89%93%E5%8D%B0%E7%B4%A0%E6%95%B0/" itemprop="url">打印素数</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="如何高效寻找素数"><a href="#如何高效寻找素数" class="headerlink" title="如何高效寻找素数"></a>如何高效寻找素数</h1><p>素数的定义看起来很简单，如果一个数如果只能被 1 和它本身整除，那么这个数就是素数。<br>不要觉得素数的定义简单，恐怕没多少人真的能把素数相关的算法写得高效。比如让你写这样一个函数：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 返回区间 [2, n) 中有几个素数 </span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">countPrimes</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span><br><span class="hljs-function"><span class="hljs-comment">// 比如 countPrimes(10) 返回 4</span></span><br><span class="hljs-function"><span class="hljs-comment">// 因为 2,3,5,7 是素数</span></span><br></code></pre></td></tr></table></figure>
+<p>你会如何写这个函数？我想大家应该会这样写：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">countPrimes</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt; n; i++)<br>        <span class="hljs-keyword">if</span> (isPrim(i)) count++;<br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br><span class="hljs-comment">// 判断整数 n 是否是素数</span><br><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isPrime</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt; n; i++)<br>        <span class="hljs-keyword">if</span> (n % i == <span class="hljs-number">0</span>)<br>            <span class="hljs-comment">// 有其他整除因子</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样写的话时间复杂度 O(n^2)，问题很大。<strong>首先你用 isPrime 函数来辅助的思路就不够高效；而且就算你要用 isPrime 函数，这样写算法也是存在计算冗余的</strong>。<br>先来简单说下<strong>如果你要判断一个数是不是素数，应该如何写算法</strong>。只需稍微修改一下上面的 isPrim 代码中的 for 循环条件：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isPrime</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i * i &lt;= n; i++)<br>        ...<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>换句话说，<code>i</code> 不需要遍历到 <code>n</code>，而只需要到 <code>sqrt(n)</code> 即可。为什么呢，我们举个例子，假设 <code>n = 12</code>。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">12</span> = <span class="hljs-number">2</span> × <span class="hljs-number">6</span><br><span class="hljs-number">12</span> = <span class="hljs-number">3</span> × <span class="hljs-number">4</span><br><span class="hljs-number">12</span> = sqrt(<span class="hljs-number">12</span>) <span class="hljs-function">× <span class="hljs-title">sqrt</span><span class="hljs-params">(<span class="hljs-number">12</span>)</span></span><br><span class="hljs-function">12 </span>= <span class="hljs-number">4</span> × <span class="hljs-number">3</span><br><span class="hljs-number">12</span> = <span class="hljs-number">6</span> × <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+<p>可以看到，后两个乘积就是前面两个反过来，反转临界点就在 <code>sqrt(n)</code>。<br>换句话说，如果在 <code>[2,sqrt(n)]</code> 这个区间之内没有发现可整除因子，就可以直接断定 <code>n</code> 是素数了，因为在区间 <code>[sqrt(n),n]</code> 也一定不会发现可整除因子。<br>现在，<code>isPrime</code> 函数的时间复杂度降为 O(sqrt(N))，<strong>但是我们实现 <code>countPrimes</code> 函数其实并不需要这个函数</strong>，以上只是希望读者明白 <code>sqrt(n)</code> 的含义，因为等会还会用到。</p>
+<h3 id="高效实现-countPrimes"><a href="#高效实现-countPrimes" class="headerlink" title="高效实现 countPrimes"></a>高效实现 <code>countPrimes</code></h3><p>高效解决这个问题的核心思路是和上面的常规思路反着来：<br>首先从 2 开始，我们知道 2 是一个素数，那么 2 × 2 = 4, 3 × 2 = 6, 4 × 2 = 8… 都不可能是素数了。<br>然后我们发现 3 也是素数，那么 3 × 2 = 6, 3 × 3 = 9, 3 × 4 = 12… 也都不可能是素数了。<br>看到这里，你是否有点明白这个排除法的逻辑了呢？先看我们的第一版代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">countPrimes</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    <span class="hljs-keyword">boolean</span>[] isPrim = <span class="hljs-keyword">new</span> <span class="hljs-keyword">boolean</span>[n];<br>    <span class="hljs-comment">// 将数组都初始化为 true</span><br>    Arrays.fill(isPrim, <span class="hljs-keyword">true</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt; n; i++) <br>        <span class="hljs-keyword">if</span> (isPrim[i]) <br>            <span class="hljs-comment">// i 的倍数不可能是素数了</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">2</span> * i; j &lt; n; j += i) <br>                    isPrim[j] = <span class="hljs-keyword">false</span>;<br>    <br>    <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt; n; i++)<br>        <span class="hljs-keyword">if</span> (isPrim[i]) count++;<br>    <br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>如果上面这段代码你能够理解，那么你已经掌握了整体思路，但是还有两个细微的地方可以优化。<br>首先，回想刚才判断一个数是否是素数的 <code>isPrime</code> 函数，由于因子的对称性，其中的 for 循环只需要遍历 <code>[2,sqrt(n)]</code> 就够了。这里也是类似的，我们外层的 for 循环也只需要遍历到 <code>sqrt(n)</code>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i * i &lt; n; i++) <br>    <span class="hljs-keyword">if</span> (isPrim[i]) <br>        ...<br></code></pre></td></tr></table></figure>
+<p>除此之外，很难注意到内层的 for 循环也可以优化。我们之前的做法是：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">2</span> * i; j &lt; n; j += i) <br>    isPrim[j] = <span class="hljs-keyword">false</span>;<br></code></pre></td></tr></table></figure>
+<p>这样可以把 <code>i</code> 的整数倍都标记为 <code>false</code>，但是仍然存在计算冗余。<br>比如 <code>n = 25</code>，<code>i = 4</code> 时算法会标记 4 × 2 = 8，4 × 3 = 12 等等数字，但是这两个数字已经被 <code>i = 2</code> 和 <code>i = 3</code> 的 2 × 4 和 3 × 4 标记了。<br>我们可以稍微优化一下，让 <code>j</code> 从 <code>i</code> 的平方开始遍历，而不是从 <code>2 * i</code> 开始：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i * i; j &lt; n; j += i) <br>    isPrim[j] = <span class="hljs-keyword">false</span>;<br></code></pre></td></tr></table></figure>
+<p>这样，素数计数的算法就高效实现了，其实这个算法有一个名字，叫做 Sieve of Eratosthenes。看下完整的最终代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">countPrimes</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    <span class="hljs-keyword">boolean</span>[] isPrim = <span class="hljs-keyword">new</span> <span class="hljs-keyword">boolean</span>[n];<br>    Arrays.fill(isPrim, <span class="hljs-keyword">true</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i * i &lt; n; i++) <br>        <span class="hljs-keyword">if</span> (isPrim[i]) <br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i * i; j &lt; n; j += i) <br>                isPrim[j] = <span class="hljs-keyword">false</span>;<br>    <br>    <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt; n; i++)<br>        <span class="hljs-keyword">if</span> (isPrim[i]) count++;<br>    <br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>该算法的时间复杂度比较难算</strong>，显然时间跟这两个嵌套的 for 循环有关，其操作数应该是：<br>  n/2 + n/3 + n/5 + n/7 + …<br>= n × (1/2 + 1/3 + 1/5 + 1/7…)<br>括号中是素数的倒数。其最终结果是 O(N * loglogN)，有兴趣的读者可以查一下该算法的时间复杂度证明。<br>以上就是素数算法相关的全部内容。怎么样，是不是看似简单的问题却有不少细节可以打磨呀？</p>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/LRU%E7%AE%97%E6%B3%95">上一篇：如何实现LRU算法</a><br><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB">下一篇：如何计算编辑距离</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%8E%A5%E9%9B%A8%E6%B0%B4/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%8E%A5%E9%9B%A8%E6%B0%B4/" itemprop="url">接雨水</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="接雨水问题详解"><a href="#接雨水问题详解" class="headerlink" title="接雨水问题详解"></a>接雨水问题详解</h1><p>接雨水这道题目挺有意思，在面试题中出现频率还挺高的，本文就来步步优化，讲解一下这道题。<br>先看一下题目：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%8E%A5%E9%9B%A8%E6%B0%B4/title.png"><br>就是用一个数组表示一个条形图，问你这个条形图最多能接多少水。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">trap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] height)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>下面就来由浅入深介绍暴力解法 -&gt; 备忘录解法 -&gt; 双指针解法，在 O(N) 时间 O(1) 空间内解决这个问题。</p>
+<h3 id="一、核心思路"><a href="#一、核心思路" class="headerlink" title="一、核心思路"></a>一、核心思路</h3><p>我第一次看到这个问题，无计可施，完全没有思路，相信很多朋友跟我一样。所以对于这种问题，我们不要想整体，而应该去想局部；就像之前的文章处理字符串问题，不要考虑如何处理整个字符串，而是去思考应该如何处理每一个字符。<br>这么一想，可以发现这道题的思路其实很简单。具体来说，仅仅对于位置 i，能装下多少水呢？<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%8E%A5%E9%9B%A8%E6%B0%B4/0.jpg"><br>能装 2 格水。为什么恰好是两格水呢？因为 height[i] 的高度为 0，而这里最多能盛 2 格水，2-0=2。<br>为什么位置 i 最多能盛 2 格水呢？因为，位置 i 能达到的水柱高度和其左边的最高柱子、右边的最高柱子有关，我们分别称这两个柱子高度为 <code>l_max</code> 和 <code>r_max</code>；<strong>位置 i 最大的水柱高度就是 <code>min(l_max, r_max)</code>。</strong><br>更进一步，对于位置 i，能够装的水为：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">water[i] = min(<br>               <span class="hljs-comment"># 左边最高的柱子</span><br>               max(height[<span class="hljs-number">0.</span>.i]),  <br>               <span class="hljs-comment"># 右边最高的柱子</span><br>               max(height[i..end]) <br>            ) - height[i]<br>    <br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%8E%A5%E9%9B%A8%E6%B0%B4/1.jpg"><br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%8E%A5%E9%9B%A8%E6%B0%B4/2.jpg"><br>这就是本问题的核心思路，我们可以简单写一个暴力算法：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">trap</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; height)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = height.size();<br>    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n - <span class="hljs-number">1</span>; i++) &#123;<br>        <span class="hljs-keyword">int</span> l_max = <span class="hljs-number">0</span>, r_max = <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 找右边最高的柱子</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &lt; n; j++)<br>            r_max = max(r_max, height[j]);<br>        <span class="hljs-comment">// 找左边最高的柱子</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &gt;= <span class="hljs-number">0</span>; j--)<br>            l_max = max(l_max, height[j]);<br>        <span class="hljs-comment">// 如果自己就是最高的话，</span><br>        <span class="hljs-comment">// l_max == r_max == height[i]</span><br>        ans += min(l_max, r_max) - height[i];<br>    &#125;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>有之前的思路，这个解法应该是很直接粗暴的，时间复杂度 O(N^2)，空间复杂度 O(1)。但是很明显这种计算 <code>r_max</code> 和 <code>l_max</code> 的方式非常笨拙，一般的优化方法就是备忘录。</p>
+<h3 id="二、备忘录优化"><a href="#二、备忘录优化" class="headerlink" title="二、备忘录优化"></a>二、备忘录优化</h3><p>之前的暴力解法，不是在每个位置 i 都要计算 <code>r_max</code> 和 <code>l_max</code> 吗？我们直接把结果都缓存下来，别傻不拉几的每次都遍历，这时间复杂度不就降下来了嘛。<br>我们开两个<strong>数组</strong> <code>r_max</code> 和 <code>l_max</code> 充当备忘录，<code>l_max[i]</code> 表示位置 i 左边最高的柱子高度，<code>r_max[i]</code> 表示位置 i 右边最高的柱子高度。预先把这两个数组计算好，避免重复计算：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">trap</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; height)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (height.empty()) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> n = height.size();<br>    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 数组充当备忘录</span><br>    vector&lt;int&gt; l_max(n), r_max(n);<br>    <span class="hljs-comment">// 初始化 base case</span><br>    l_max[<span class="hljs-number">0</span>] = height[<span class="hljs-number">0</span>];<br>    r_max[n - <span class="hljs-number">1</span>] = height[n - <span class="hljs-number">1</span>];<br>    <span class="hljs-comment">// 从左向右计算 l_max</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++)<br>        l_max[i] = max(height[i], l_max[i - <span class="hljs-number">1</span>]);<br>    <span class="hljs-comment">// 从右向左计算 r_max</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = n - <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; i--) <br>        r_max[i] = max(height[i], r_max[i + <span class="hljs-number">1</span>]);<br>    <span class="hljs-comment">// 计算答案</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n - <span class="hljs-number">1</span>; i++) <br>        ans += min(l_max[i], r_max[i]) - height[i];<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这个优化其实和暴力解法差不多，就是避免了重复计算，把时间复杂度降低为 O(N)，已经是最优了，但是空间复杂度是 O(N)。下面来看一个精妙一些的解法，能够把空间复杂度降低到 O(1)。</p>
+<h3 id="三、双指针解法"><a href="#三、双指针解法" class="headerlink" title="三、双指针解法"></a>三、双指针解法</h3><p>这种解法的思路是完全相同的，但在实现手法上非常巧妙，我们这次也不要用备忘录提前计算了，而是用双指针<strong>边走边算</strong>，节省下空间复杂度。<br>首先，看一部分代码：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">trap</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; height)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = height.size();<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = n - <span class="hljs-number">1</span>;<br>    <br>    <span class="hljs-keyword">int</span> l_max = height[<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">int</span> r_max = height[n - <span class="hljs-number">1</span>];<br>    <br>    <span class="hljs-keyword">while</span> (left &lt;= right) &#123;<br>        l_max = max(l_max, height[left]);<br>        r_max = max(r_max, height[right]);<br>        left++; right--;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>对于这部分代码，请问 <code>l_max</code> 和 <code>r_max</code> 分别表示什么意义呢？<br>很容易理解，**<code>l_max</code> 是 <code>height[0..left]</code> 中最高柱子的高度，<code>r_max</code> 是 <code>height[right..end]</code> 的最高柱子的高度**。<br>明白了这一点，直接看解法：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">trap</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; height)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (height.empty()) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> n = height.size();<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = n - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>    <br>    <span class="hljs-keyword">int</span> l_max = height[<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">int</span> r_max = height[n - <span class="hljs-number">1</span>];<br>    <br>    <span class="hljs-keyword">while</span> (left &lt;= right) &#123;<br>        l_max = max(l_max, height[left]);<br>        r_max = max(r_max, height[right]);<br>        <br>        <span class="hljs-comment">// ans += min(l_max, r_max) - height[i]</span><br>        <span class="hljs-keyword">if</span> (l_max &lt; r_max) &#123;<br>            ans += l_max - height[left];<br>            left++; <br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            ans += r_max - height[right];<br>            right--;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>你看，其中的核心思想和之前一模一样，换汤不换药。但是细心的读者可能会发现次解法还是有点细节差异：<br>之前的备忘录解法，<code>l_max[i]</code> 和 <code>r_max[i]</code> 代表的是 <code>height[0..i]</code> 和 <code>height[i..end]</code> 的最高柱子高度。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">ans += min(l_max[i], r_max[i]) - height[i];<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%8E%A5%E9%9B%A8%E6%B0%B4/3.jpg"><br>但是双指针解法中，<code>l_max</code> 和 <code>r_max</code> 代表的是 <code>height[0..left]</code> 和 <code>height[right..end]</code> 的最高柱子高度。比如这段代码：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">if</span> (l_max &lt; r_max) &#123;<br>    ans += l_max - height[left];<br>    left++; <br>&#125; <br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%8E%A5%E9%9B%A8%E6%B0%B4/4.jpg"><br>此时的 <code>l_max</code> 是 <code>left</code> 指针左边的最高柱子，但是 <code>r_max</code> 并不一定是 <code>left</code> 指针右边最高的柱子，这真的可以得到正确答案吗？<br>其实这个问题要这么思考，我们只在乎 <code>min(l_max, r_max)</code>。对于上图的情况，我们已经知道 <code>l_max &lt; r_max</code> 了，至于这个 <code>r_max</code> 是不是右边最大的，不重要，重要的是 <code>height[i]</code> 能够装的水只和 <code>l_max</code> 有关。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E6%8E%A5%E9%9B%A8%E6%B0%B4/5.jpg"></p>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/koko%E5%81%B7%E9%A6%99%E8%95%89">上一篇：如何运用二分查找算法</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%A6%82%E4%BD%95%E5%8E%BB%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0">下一篇：如何去除有序数组的重复元素</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" itemprop="url">最长回文子串</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="如何寻找最长回文子串"><a href="#如何寻找最长回文子串" class="headerlink" title="如何寻找最长回文子串"></a>如何寻找最长回文子串</h1><p>回文串是面试常常遇到的问题（虽然问题本身没啥意义），本文就告诉你回文串问题的核心思想是什么。<br>首先，明确一下什：<strong>回文串就是正着读和反着读都一样的字符串</strong>。<br>比如说字符串 <code>aba</code> 和 <code>abba</code> 都是回文串，因为它们对称，反过来还是和本身一样。反之，字符串 <code>abac</code> 就不是回文串。<br>可以看到回文串的的长度可能是奇数，也可能是偶数，这就添加了回文串问题的难度，解决该类问题的核心是<strong>双指针</strong>。下面就通过一道最长回文子串的问题来具体理解一下回文串问题：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%9B%9E%E6%96%87/title.png"></p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">longestPalindrome</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s)</span> </span>&#123;&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="一、思考"><a href="#一、思考" class="headerlink" title="一、思考"></a>一、思考</h3><p>对于这个问题，我们首先应该思考的是，给一个字符串 <code>s</code>，如何在 <code>s</code> 中找到一个回文子串？<br>有一个很有趣的思路：既然回文串是一个正着反着读都一样的字符串，那么如果我们把 <code>s</code> 反转，称为 <code>s&#39;</code>，然后在 <code>s</code> 和 <code>s&#39;</code> 中寻找<strong>最长公共子串</strong>，这样应该就能找到最长回文子串。<br>比如说字符串 <code>abacd</code>，反过来是 <code>dcaba</code>，它的最长公共子串是 <code>aba</code>，也就是最长回文子串。<br>但是这个思路是错误的，比如说字符串 <code>aacxycaa</code>，反转之后是 <code>aacyxcaa</code>，最长公共子串是 <code>aac</code>，但是最长回文子串应该是 <code>aa</code>。<br>虽然这个思路不正确，但是<strong>这种把问题转化为其他形式的思考方式是非常值得提倡的</strong>。<br>下面，就来说一下正确的思路，如何使用双指针。<br><strong>寻找回文串的问题核心思想是：从中间开始向两边扩散来判断回文串</strong>。对于最长回文子串，就是这个意思：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> <span class="hljs-number">0</span> &lt;= i &lt; len(s):<br>    找到以 s[i] 为中心的回文串<br>    更新答案<br></code></pre></td></tr></table></figure>
+<p>但是呢，我们刚才也说了，回文串的长度可能是奇数也可能是偶数，如果是 <code>abba</code>这种情况，没有一个中心字符，上面的算法就没辙了。所以我们可以修改一下：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> <span class="hljs-number">0</span> &lt;= i &lt; len(s):<br>    找到以 s[i] 为中心的回文串<br>    找到以 s[i] 和 s[i+<span class="hljs-number">1</span>] 为中心的回文串<br>    更新答案<br></code></pre></td></tr></table></figure>
+<p>PS：读者可能发现这里的索引会越界，等会会处理。</p>
+<h3 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h3><p>按照上面的思路，先要实现一个函数来寻找最长回文串，这个函数是有点技巧的：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">palindrome</span><span class="hljs-params">(<span class="hljs-built_in">string</span>&amp; s, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;<br>    <span class="hljs-comment">// 防止索引越界</span><br>    <span class="hljs-keyword">while</span> (l &gt;= <span class="hljs-number">0</span> &amp;&amp; r &lt; s.size()<br>            &amp;&amp; s[l] == s[r]) &#123;<br>        <span class="hljs-comment">// 向两边展开</span><br>        l--; r++;<br>    &#125;<br>    <span class="hljs-comment">// 返回以 s[l] 和 s[r] 为中心的最长回文串</span><br>    <span class="hljs-keyword">return</span> s.substr(l + <span class="hljs-number">1</span>, r - l - <span class="hljs-number">1</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>为什么要传入两个指针 <code>l</code> 和 <code>r</code> 呢？<strong>因为这样实现可以同时处理回文串长度为奇数和偶数的情况</strong>：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> <span class="hljs-number">0</span> &lt;= i &lt; len(s):<br>    <span class="hljs-comment"># 找到以 s[i] 为中心的回文串</span><br>    palindrome(s, i, i)<br>    <span class="hljs-comment"># 找到以 s[i] 和 s[i+1] 为中心的回文串</span><br>    palindrome(s, i, i + <span class="hljs-number">1</span>)<br>    更新答案<br></code></pre></td></tr></table></figure>
+<p>下面看下 <code>longestPalindrome</code> 的完整代码：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">longestPalindrome</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s)</span> </span>&#123;<br>    <span class="hljs-built_in">string</span> res;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.size(); i++) &#123;<br>        <span class="hljs-comment">// 以 s[i] 为中心的最长回文子串</span><br>        <span class="hljs-built_in">string</span> s1 = palindrome(s, i, i);<br>        <span class="hljs-comment">// 以 s[i] 和 s[i+1] 为中心的最长回文子串</span><br>        <span class="hljs-built_in">string</span> s2 = palindrome(s, i, i + <span class="hljs-number">1</span>);<br>        <span class="hljs-comment">// res = longest(res, s1, s2)</span><br>        res = res.size() &gt; s1.size() ? res : s1;<br>        res = res.size() &gt; s2.size() ? res : s2;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>至此，这道最长回文子串的问题就解决了，时间复杂度 O(N^2)，空间复杂度 O(1)。<br>值得一提的是，这个问题可以用动态规划方法解决，时间复杂度一样，但是空间复杂度至少要 O(N^2) 来存储 DP table。这道题是少有的动态规划非最优解法的问题。<br>另外，这个问题还有一个巧妙的解法，时间复杂度只需要 O(N)，不过该解法比较复杂，我个人认为没必要掌握。该算法的名字叫 Manacher’s Algorithm（马拉车算法），有兴趣的读者可以自行搜索一下。</p>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%A6%82%E4%BD%95%E5%8E%BB%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0">上一篇：如何去除有序数组的重复元素</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/k%E4%B8%AA%E4%B8%80%E7%BB%84%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8">下一篇：如何k个一组反转链表</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%B0%B4%E5%A1%98%E6%8A%BD%E6%A0%B7/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%B0%B4%E5%A1%98%E6%8A%BD%E6%A0%B7/" itemprop="url">水塘抽样</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>我最近在 LeetCode 上做到两道非常有意思的题目，382 和 398 题，关于水塘抽样算法（Reservoir Sampling），本质上是一种随机概率算法，解法应该说会者不难，难者不会。<br>我第一次见到这个算法问题是谷歌的一道算法题：给你一个<strong>未知长度</strong>的链表，请你设计一个算法，<strong>只能遍历一次</strong>，随机地返回链表中的一个节点。<br>这里说的随机是均匀随机（uniform random），也就是说，如果有 <code>n</code> 个元素，每个元素被选中的概率都是 <code>1/n</code>，不可以有统计意义上的偏差。<br>一般的想法就是，我先遍历一遍链表，得到链表的总长度 <code>n</code>，再生成一个 <code>[1,n]</code> 之间的随机数为索引，然后找到索引对应的节点，不就是一个随机的节点了吗？<br>但题目说了，只能遍历一次，意味着这种思路不可行。题目还可以再泛化，给一个未知长度的序列，如何在其中随机地选择 <code>k</code> 个元素？想要解决这个问题，就需要著名的水塘抽样算法了。</p>
+<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><p><strong>先解决只抽取一个元素的问题</strong>，这个问题的难点在于，随机选择是「动态」的，比如说你现在你有 5 个元素，你已经随机选取了其中的某个元素 <code>a</code> 作为结果，但是现在再给你一个新元素 <code>b</code>，你应该留着 <code>a</code> 还是将 <code>b</code> 作为结果呢，以什么逻辑选择 <code>a</code> 和 <code>b</code> 呢，怎么证明你的选择方法在概率上是公平的呢？<br><strong>先说结论，当你遇到第 <code>i</code> 个元素时，应该有 <code>1/i</code> 的概率选择该元素，<code>1 - 1/i</code> 的概率保持原有的选择</strong>。看代码容易理解这个思路：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/* 返回链表中一个随机节点的值 */</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getRandom</span><span class="hljs-params">(ListNode head)</span> </span>&#123;<br>    Random r = <span class="hljs-keyword">new</span> Random();<br>    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, res = <span class="hljs-number">0</span>;<br>    ListNode p = head;<br>    <span class="hljs-comment">// while 循环遍历链表</span><br>    <span class="hljs-keyword">while</span> (p != <span class="hljs-keyword">null</span>) &#123;<br>        <span class="hljs-comment">// 生成一个 [0, i) 之间的整数</span><br>        <span class="hljs-comment">// 这个整数等于 0 的概率就是 1/i</span><br>        <span class="hljs-keyword">if</span> (r.nextInt(++i) == <span class="hljs-number">0</span>) &#123;<br>            res = p.val;<br>        &#125;<br>        p = p.next;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>对于概率算法，代码往往都是很浅显的，但是这种问题的关键在于证明，你的算法为什么是对的？为什么每次以 <code>1/i</code> 的概率更新结果就可以保证结果是平均随机（uniform random）？<br><strong>证明</strong>：假设总共有 <code>n</code> 个元素，我们要的随机性无非就是每个元素被选择的概率都是 <code>1/n</code> 对吧，那么对于第 <code>i</code> 个元素，它被选择的概率就是：<br>$$<br>\begin{aligned}<br>    &amp;\frac{1}{i} \times (1 - \frac{1}{i+1}) \times (1 - \frac{1}{i+2}) \times … \times (1 - \frac{1}{n}) \<br>    = &amp;\frac{1}{i} \times \frac{i}{i+1} \times \frac{i+1}{i+2} \times … \times \frac{n-1}{n} \<br>    = &amp;\frac{1}{n}<br>\end{aligned}<br>$$<br>第 <code>i</code> 个元素被选择的概率是 <code>1/i</code>，第 <code>i+1</code> 次不被替换的概率是 <code>1 - 1/(i+1)</code>，以此类推，相乘就是第 <code>i</code> 个元素最终被选中的概率，就是 <code>1/n</code>。<br>因此，该算法的逻辑是正确的。<br><strong>同理，如果要随机选择 <code>k</code> 个数，只要在第 <code>i</code> 个元素处以 <code>k/i</code> 的概率选择该元素，以 <code>1 - k/i</code> 的概率保持原有选择即可</strong>。代码如下：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/* 返回链表中 k 个随机节点的值 */</span><br><span class="hljs-keyword">int</span>[] getRandom(ListNode head, <span class="hljs-keyword">int</span> k) &#123;<br>    Random r = <span class="hljs-keyword">new</span> Random();<br>    <span class="hljs-keyword">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[k];<br>    ListNode p = head;<br>    <span class="hljs-comment">// 前 k 个元素先默认选上</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; k &amp;&amp; p != <span class="hljs-keyword">null</span>; j++) &#123;<br>        res[j] = p.val;<br>        p = p.next;<br>    &#125;<br>    <span class="hljs-keyword">int</span> i = k;<br>    <span class="hljs-comment">// while 循环遍历链表</span><br>    <span class="hljs-keyword">while</span> (p != <span class="hljs-keyword">null</span>) &#123;<br>        <span class="hljs-comment">// 生成一个 [0, i) 之间的整数</span><br>        <span class="hljs-keyword">int</span> j = r.nextInt(++i);<br>        <span class="hljs-comment">// 这个整数小于 k 的概率就是 k/i</span><br>        <span class="hljs-keyword">if</span> (j &lt; k) &#123;<br>            res[j] = p.val;<br>        &#125;<br>        p = p.next;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>对于数学证明，和上面区别不大：<br>$$<br>\begin{aligned}<br>    &amp;\frac{k}{i} \times (1 - \frac{k}{i+1} \times \frac{1}{k}) \times (1 - \frac{k}{i+2} \times \frac{1}{k}) \times … \times (1 - \frac{k}{n} \times \frac{1}{k}) \<br>    = &amp;\frac{k}{i} \times (1 - \frac{1}{i+1}) \times (1 - \frac{1}{i+2}) \times … \times (1 - \frac{1}{n}) \<br>    = &amp;\frac{k}{i} \times \frac{i}{i+1} \times \frac{i+1}{i+2} \times … \times \frac{n-1}{n} \<br>    = &amp;\frac{k}{n}<br>\end{aligned}<br>$$<br>因为虽然每次更新选择的概率增大了 <code>k</code> 倍，但是选到具体第 <code>i</code> 个元素的概率还是要乘 <code>1/k</code>，也就回到了上一个推导。</p>
+<h3 id="拓展延伸"><a href="#拓展延伸" class="headerlink" title="拓展延伸"></a>拓展延伸</h3><p>以上的抽样算法时间复杂度是 O(n)，但不是最优的方法，更优化的算法基于几何分布（geometric distribution），时间复杂度为 O(k + klog(n/k))。由于涉及的数学知识比较多，这里就不列出了，有兴趣的读者可以自行搜索一下。<br>还有一种思路是基于「Fisher–Yates 洗牌算法」的。随机抽取 <code>k</code> 个元素，等价于对所有元素洗牌，然后选取前 <code>k</code> 个。只不过，洗牌算法需要对元素的随机访问，所以只能对数组这类支持随机存储的数据结构有效。<br>另外有一种思路也比较有启发意义：给每一个元素关联一个随机数，然后把每个元素插入一个容量为 <code>k</code> 的二叉堆（优先级队列）按照配对的随机数进行排序，最后剩下的 <code>k</code> 个元素也是随机的。<br>这个方案看起来似乎有点多此一举，因为插入二叉堆需要 O(logk) 的时间复杂度，所以整个抽样算法就需要 O(nlogk) 的复杂度，还不如我们最开始的算法。但是，这种思路可以指导我们解决<strong>加权随机抽样算法</strong>，权重越高，被随机选中的概率相应增大，这种情况在现实生活中是很常见的，比如你不往游戏里充钱，就永远抽不到皮肤。<br>最后，我想说随机算法虽然不多，但其实很有技巧的，读者不妨思考两个常见且看起来很简单的问题：<br>1、如何对带有权重的样本进行加权随机抽取？比如给你一个数组 <code>w</code>，每个元素 <code>w[i]</code> 代表权重，请你写一个算法，按照权重随机抽取索引。比如 <code>w = [1,99]</code>，算法抽到索引 0 的概率是 1%，抽到索引 1 的概率是 99%。<br>2、实现一个生成器类，构造函数传入一个很长的数组，请你实现 <code>randomGet</code> 方法，每次调用随机返回数组中的一个元素，多次调用不能重复返回相同索引的元素。要求不能对该数组进行任何形式的修改，且操作的时间复杂度是 O(1)。<br>这两个问题都是比较困难的，以后有时间我会写一写相关的文章。</p>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%88%A4%E6%96%AD%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8">上一篇：如何判断回文链表</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%BA%A7%E4%BD%8D%E8%B0%83%E5%BA%A6">下一篇：如何调度考生的座位</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%B6%88%E5%A4%B1%E7%9A%84%E5%85%83%E7%B4%A0/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%B6%88%E5%A4%B1%E7%9A%84%E5%85%83%E7%B4%A0/" itemprop="url">消失的元素</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="如何寻找消失的元素"><a href="#如何寻找消失的元素" class="headerlink" title="如何寻找消失的元素"></a>如何寻找消失的元素</h1><p>之前也有文章写过几个有趣的智力题，今天再聊一道巧妙的题目。<br>题目非常简单：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E7%BC%BA%E5%A4%B1%E5%85%83%E7%B4%A0/title.png"><br>给一个长度为 n 的数组，其索引应该在 <code>[0,n)</code>，但是现在你要装进去 n + 1 个元素 <code>[0,n]</code>，那么肯定有一个元素装不下嘛，请你找出这个缺失的元素。<br>这道题不难的，我们应该很容易想到，把这个数组排个序，然后遍历一遍，不就很容易找到缺失的那个元素了吗？<br>或者说，借助数据结构的特性，用一个 HashSet 把数组里出现的数字都储存下来，再遍历 <code>[0,n]</code> 之间的数字，去 HashSet 中查询，也可以很容易查出那个缺失的元素。<br>排序解法的时间复杂度是 O(NlogN)，HashSet 的解法时间复杂度是 O(N)，但是还需要 O(N) 的空间复杂度存储 HashSet。<br><strong>第三种方法是位运算</strong>。<br>对于异或运算（<code>^</code>），我们知道它有一个特殊性质：一个数和它本身做异或运算结果为 0，一个数和 0 做异或运算还是它本身。<br>而且异或运算满足交换律和结合律，也就是说：<br>2 ^ 3 ^ 2 = 3 ^ (2 ^ 2) = 3 ^ 0 = 3<br>而这道题索就可以通过这些性质巧妙算出缺失的那个元素。比如说 <code>nums = [0,3,1,4]</code>：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E7%BC%BA%E5%A4%B1%E5%85%83%E7%B4%A0/1.jpg"></p>
+<p>为了容易理解，我们假设先把索引补一位，然后让每个元素和自己相等的索引相对应：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E7%BC%BA%E5%A4%B1%E5%85%83%E7%B4%A0/2.jpg"></p>
+<p>这样做了之后，就可以发现除了缺失元素之外，所有的索引和元素都组成一对儿了，现在如果把这个落单的索引 2 找出来，也就找到了缺失的那个元素。<br>如何找这个落单的数字呢，<strong>只要把所有的元素和索引做异或运算，成对儿的数字都会消为 0，只有这个落单的元素会剩下</strong>，也就达到了我们的目的。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">missingNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = nums.length;<br>    <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 先和新补的索引异或一下</span><br>    res ^= n;<br>    <span class="hljs-comment">// 和其他的元素、索引做异或</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        res ^= i ^ nums[i];<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E7%BC%BA%E5%A4%B1%E5%85%83%E7%B4%A0/3.jpg"><br>由于异或运算满足交换律和结合律，所以总是能把成对儿的数字消去，留下缺失的那个元素的。<br>至此，时间复杂度 O(N)，空间复杂度 O(1)，已经达到了最优，我们是否就应该打道回府了呢？<br>如果这样想，说明我们受算法的毒害太深，随着我们学习的知识越来越多，反而容易陷入思维定式，这个问题其实还有一个特别简单的解法：<strong>等差数列求和公式</strong>。<br>题目的意思可以这样理解：现在有个等差数列 0, 1, 2,…, n，其中少了某一个数字，请你把它找出来。那这个数字不就是 <code>sum(0,1,..n) - sum(nums)</code> 嘛？</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">missingNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = nums.length;<br>    <span class="hljs-comment">// 公式：(首项 + 末项) * 项数 / 2</span><br>    <span class="hljs-keyword">int</span> expect = (<span class="hljs-number">0</span> + n) * (n + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">int</span> sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> x : nums) <br>        sum += x;<br>    <span class="hljs-keyword">return</span> expect - sum;<br></code></pre></td></tr></table></figure>
+<p>你看，这种解法应该是最简单的，但说实话，我自己也没想到这个解法，而且我去问了几个大佬，他们也没想到这个最简单的思路。相反，如果去问一个初中生，他也许很快就能想到。<br>做到这一步了，我们是否就应该打道回府了呢？<br>如果这样想，说明我们对细节的把控还差点火候。在用求和公式计算 <code>expect</code> 时，你考虑过<strong>整型溢出</strong>吗？如果相乘的结果太大导致溢出，那么结果肯定是错误的。<br>刚才我们的思路是把两个和都加出来然后相减，为了避免溢出，干脆一边求和一边减算了。很类似刚才位运算解法的思路，仍然假设 <code>nums = [0,3,1,4]</code>，先补一位索引再让元素跟索引配对：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E7%BC%BA%E5%A4%B1%E5%85%83%E7%B4%A0/xor.png"></p>
+<p>我们让每个索引减去其对应的元素，再把相减的结果加起来，不就是那个缺失的元素吗？</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">missingNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = nums.length;<br>    <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 新补的索引</span><br>    res += n - <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 剩下索引和元素的差加起来</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) <br>        res += i - nums[i];<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>由于加减法满足交换律和结合律，所以总是能把成对儿的数字消去，留下缺失的那个元素的。<br>至此这道算法题目经历九曲十八弯，终于再也没有什么坑了。</p>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%90%88%E6%B3%95%E6%8B%AC%E5%8F%B7%E5%88%A4%E5%AE%9A">上一篇：如何判定括号合法性</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E7%BC%BA%E5%A4%B1%E5%92%8C%E9%87%8D%E5%A4%8D%E7%9A%84%E5%85%83%E7%B4%A0">下一篇：如何寻找缺失和重复的元素</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E7%BC%BA%E5%A4%B1%E5%92%8C%E9%87%8D%E5%A4%8D%E7%9A%84%E5%85%83%E7%B4%A0/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E7%BC%BA%E5%A4%B1%E5%92%8C%E9%87%8D%E5%A4%8D%E7%9A%84%E5%85%83%E7%B4%A0/" itemprop="url">缺失和重复的元素</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>今天就聊一道很看起来简单却十分巧妙的问题，寻找缺失和重复的元素。之前的一篇文章「寻找缺失元素」也写过类似的问题，不过这次的和上次的问题使用的技巧不同。<br>这是 LeetCode 645 题，我来描述一下这个题目：<br>给一个长度为 <code>N</code> 的数组 <code>nums</code>，其中本来装着 <code>[1..N]</code> 这 <code>N</code> 个元素，无序。但是现在出现了一些错误，<code>nums</code> 中的一个元素出现了重复，也就同时导致了另一个元素的缺失。请你写一个算法，找到 <code>nums</code> 中的重复元素和缺失元素的值。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 返回两个数字，分别是 &#123;dup, missing&#125;</span><br><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">findErrorNums</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>比如说输入：<code>nums = [1,2,2,4]</code>，算法返回 <code>[2,3]</code>。<br>其实很容易解决这个问题，先遍历一次数组，用一个哈希表记录每个数字出现的次数，然后遍历一次 <code>[1..N]</code>，看看那个元素重复出现，那个元素没有出现，就 OK 了。<br>但问题是，这个常规解法需要一个哈希表，也就是 O(N) 的空间复杂度。你看题目给的条件那么巧，在 <code>[1..N]</code> 的几个数字中恰好有一个重复，一个缺失，<strong>事出反常必有妖</strong>，对吧。<br>O(N) 的时间复杂度遍历数组是无法避免的，所以我们可以想想办法如何降低空间复杂度，是否可以在 O(1) 的空间复杂度之下找到重复和确实的元素呢？</p>
+<h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><p>这个问题的特点是，每个元素和数组索引有一定的对应关系。<br>我们现在自己改造下问题，<strong>暂且将 <code>nums</code> 中的元素变为 <code>[0..N-1]</code>，这样每个元素就和一个数组索引完全对应了，这样方便理解一些</strong>。<br>如果说 <code>nums</code> 中不存在重复元素和缺失元素，那么每个元素就和唯一一个索引值对应，对吧？<br>现在的问题是，有一个元素重复了，同时导致一个元素缺失了，这会产生什么现象呢？<strong>会导致有两个元素对应到了同一个索引，而且会有一个索引没有元素对应过去</strong>。<br>那么，如果我能够通过某些方法，找到这个重复对应的索引，不就是找到了那个重复元素么？找到那个没有元素对应的索引，不就是找到了那个缺失的元素了么？<br>那么，如何不使用额外空间判断某个索引有多少个元素对应呢？这就是这个问题的精妙之处了：<br><strong>通过将每个索引对应的元素变成负数，以表示这个索引被对应过一次了</strong>：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/dupmissing/1.gif"><br>如果出现重复元素 <code>4</code>，直观结果就是，索引 <code>4</code> 所对应的元素已经是负数了：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/dupmissing/2.jpg"><br>对于缺失元素 <code>3</code>，直观结果就是，索引 <code>3</code> 所对应的元素是正数：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/dupmissing/3.jpg"><br>对于这个现象，我们就可以翻译成代码了：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">findErrorNums</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = nums.size();<br>    <span class="hljs-keyword">int</span> dup = <span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        <span class="hljs-keyword">int</span> index = <span class="hljs-built_in">abs</span>(nums[i]);<br>        <span class="hljs-comment">// nums[index] 小于 0 则说明重复访问</span><br>        <span class="hljs-keyword">if</span> (nums[index] &lt; <span class="hljs-number">0</span>)<br>            dup = <span class="hljs-built_in">abs</span>(nums[i]);<br>        <span class="hljs-keyword">else</span><br>            nums[index] *= <span class="hljs-number">-1</span>;<br>    &#125;<br>    <span class="hljs-keyword">int</span> missing = <span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        <span class="hljs-comment">// nums[i] 大于 0 则说明没有访问</span><br>        <span class="hljs-keyword">if</span> (nums[i] &gt; <span class="hljs-number">0</span>)<br>            missing = i;<br>    <br>    <span class="hljs-keyword">return</span> &#123;dup, missing&#125;;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这个问题就基本解决了，别忘了我们刚才为了方便分析，假设元素是 <code>[0..N-1]</code>，但题目要求是 <code>[1..N]</code>，所以只要简单修改两处地方即可得到原题的答案：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">findErrorNums</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = nums.size();<br>    <span class="hljs-keyword">int</span> dup = <span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        <span class="hljs-comment">// 现在的元素是从 1 开始的</span><br>        <span class="hljs-keyword">int</span> index = <span class="hljs-built_in">abs</span>(nums[i]) - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (nums[index] &lt; <span class="hljs-number">0</span>)<br>            dup = <span class="hljs-built_in">abs</span>(nums[i]);<br>        <span class="hljs-keyword">else</span><br>            nums[index] *= <span class="hljs-number">-1</span>;<br>    &#125;<br>    <span class="hljs-keyword">int</span> missing = <span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        <span class="hljs-keyword">if</span> (nums[i] &gt; <span class="hljs-number">0</span>)<br>            <span class="hljs-comment">// 将索引转换成元素</span><br>            missing = i + <span class="hljs-number">1</span>;<br>    <br>    <span class="hljs-keyword">return</span> &#123;dup, missing&#125;;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>其实，元素从 1 开始是有道理的，也必须从一个非零数开始。因为如果元素从 0 开始，那么 0 的相反数还是自己，所以如果数字 0 出现了重复或者缺失，算法就无法判断 0 是否被访问过。我们之前的假设只是为了简化题目，更通俗易懂。</p>
+<h3 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h3><p>对于这种数组问题，<strong>关键点在于元素和索引是成对儿出现的，常用的方法是排序、异或、映射</strong>。<br>映射的思路就是我们刚才的分析，将每个索引和元素映射起来，通过正负号记录某个元素是否被映射。<br>排序的方法也很好理解，对于这个问题，可以想象如果元素都被从小到大排序，如果发现索引对应的元素如果不相符，就可以找到重复和缺失的元素。<br>异或运算也是常用的，因为异或性质 <code>a ^ a = 0, a ^ 0 = a</code>，如果将索引和元素同时异或，就可以消除成对儿的索引和元素，留下的就是重复或者缺失的元素。可以看看前文「寻找缺失元素」，介绍过这种方法。</p>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%B6%88%E5%A4%B1%E7%9A%84%E5%85%83%E7%B4%A0">上一篇：如何寻找消失的元素</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%88%A4%E6%96%AD%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8">下一篇：如何判断回文链表</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/" itemprop="url">高频面试系列</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="高频面试系列"><a href="#高频面试系列" class="headerlink" title="高频面试系列"></a>高频面试系列</h1><ul>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/LRU%E7%AE%97%E6%B3%95">如何实现LRU算法</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%89%93%E5%8D%B0%E7%B4%A0%E6%95%B0">如何高效寻找素数</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB">如何计算编辑距离</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/koko%E5%81%B7%E9%A6%99%E8%95%89">如何运用二分查找算法</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%8E%A5%E9%9B%A8%E6%B0%B4">如何高效解决接雨水问题</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%A6%82%E4%BD%95%E5%8E%BB%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0">如何去除有序数组的重复元素</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2">如何寻找最长回文子串</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/k%E4%B8%AA%E4%B8%80%E7%BB%84%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8">如何k个一组反转链表</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%90%88%E6%B3%95%E6%8B%AC%E5%8F%B7%E5%88%A4%E5%AE%9A">如何判定括号合法性</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%B6%88%E5%A4%B1%E7%9A%84%E5%85%83%E7%B4%A0">如何寻找消失的元素</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E7%BC%BA%E5%A4%B1%E5%92%8C%E9%87%8D%E5%A4%8D%E7%9A%84%E5%85%83%E7%B4%A0">如何寻找缺失和重复的元素</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%88%A4%E6%96%AD%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8">如何判断回文链表</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%B0%B4%E5%A1%98%E6%8A%BD%E6%A0%B7">如何在无限序列中随机抽取元素</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%BA%A7%E4%BD%8D%E8%B0%83%E5%BA%A6">如何调度考生的座位</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/UnionFind%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3">Union-Find算法详解</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/UnionFind%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8">Union-Find算法应用</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%A7%A3%E5%86%B3%E7%9A%84%E6%99%BA%E5%8A%9B%E9%A2%98">一行代码就能解决的算法题</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%88%A4%E5%AE%9A%E5%AD%90%E5%BA%8F%E5%88%97">二分查找高效判定子序列</a><br>8 说了，本章都是高频面试题，配合前面的动态规划系列，祝各位马到成功！</li>
+</ul>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/11/">&lt;i class&#x3D;&quot;fas fa-angle-left&quot; aria-label&#x3D;&quot;上一页&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/13/">&lt;i class&#x3D;&quot;fas fa-angle-right&quot; aria-label&#x3D;&quot;下一页&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

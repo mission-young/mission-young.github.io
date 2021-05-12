@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>论文--中文版编写 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2019/08/04/%E8%AE%BA%E6%96%87-%E4%B8%AD%E6%96%87%E7%89%88%E7%BC%96%E5%86%99/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">论文--中文版编写</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-04T11:49:46+08:00">2019-08-04 11:49:46</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h2 id="22Al的β衰变谱"><a href="#22Al的β衰变谱" class="headerlink" title="22Al的β衰变谱"></a>22Al的β衰变谱</h2><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>我们在兰州RIBLL1上开展了一个Al22衰变实验，主束为28Si. 半衰期91ms被测定。βp，β2p，βα，βγ的测定使得我们得以更新能级纲图。通过Geant4的模拟，我们进一步精确测定分支比，并对部分质子峰结构特征得以解释。</p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>在过去几十年里，原理稳定线的奇异核一直是核物理领域经久不衰的研究热点。原子核的诸多性质诸如同位旋、能级宽度等一系列物理量随着原子核向远离稳定线延申，产生了诸多奇异的效应。通过这些特性有助于我们深入研究原子核的结构信息和衰变机制。而在其中，通过β衰变谱来开展研究工作成为了滴线附近原子核结构信息和检验并完善壳模型理论的强有力的工具。<br>奇异核22Al是Al同位素中最缺中子的一个核素，有13个质子，9个中子，Tz为-2，结合能只有20keV. 1982年第一次被Cable观测到。在他的实验中，22Al通过24Mg(3He,p4n)的反应生成(110MeV)。Al原子通过He-jet技术被输运。在衰变谱中，仅仅高能区的两个峰(8212,8537keV)能够被观测到，低能区的部分由于其他核的污染，无法进行观测。 这两个峰被指认为从IAS态到Na21的基态和激发态。IAS态的激发能为13650keV。测定的半衰期为70ms。 由于实验条件的限制，没有确定绝对的分支比。随后，Cable在另一个实验中观测到了β2p衰变事件。在那个实验中，他观测到了两条beta2p衰变分支。基于能量的考虑，这两条分支归到Na20的基态和第一激发态。在最近的实验中，Blank测到了betaalpha衰变，通过将Al22注入到鬼探测器和气体探测器。测得的T1/2为59ms。精确的能级纲图以及实验分支比被测得。然而这个实验也受到了污染，在Ar36生成的次级束中，仅有30%的是Al22核素。那篇文章中还进行了壳模型计算。<br>尽管Al22这个核已经被研究了很久，但依旧有一些不确定和局限。 由于较强的污染，部分月前丢失或者被污染物中更强的分支掩盖。此外，先前的实验中也没有观测到γ射线。实验的目的是提高beta衰变的测量，通过不同的方式：更纯的22Al次级束，更高的统计，带电粒子测量更好的能量分辨，gamma探测器来辅助指认跃迁。</p>
+<h3 id="实验技术"><a href="#实验技术" class="headerlink" title="实验技术"></a>实验技术</h3><p>实验于2017年11月在兰州RIBLL1上开展。主束为74.27MeV/u，80enA的28Si14+，通过K69 Sector Focus Cyclotron和K450 Separate Sector Cyclotron 。次级束通过将28Si打到1581um厚的Be9靶上。RIBLL1的主要设置为筛选Al22做了优化。Al22的束流强度和纯度分别为（）和（）。次级束粒子通过ΔE和TOF来筛选想要的粒子。通过位于T1、T2的闪烁薄膜探测器给出的飞行时间（TOF）结合位于T2的QSDΔE1和QSDΔE2给出的能损信号（ΔE）可以建立ΔE–TOF图谱鉴别束流粒子，双重ΔE探测器的能量和时间信号都可以用于进一步提高对束流重离子的鉴别能力。本实验研究的核为Na20，Mg21，Al22，Si23.<br><img src="https://i.loli.net/2019/08/04/FOLX5uAalzvMxPw.png"><br>探测器阵列主要由三块双面硅条探测器（DSSD）、五块四分硅探测器（QSD）及外部五个Clover型的高纯锗探测器组成。经过上游铝降能片降能后的束流具有一定能散，目标核的射程分布在三块DSSD，即DSSD做停阻束流中目标核的注入探测器，并对注入核的衰变带电粒子进行测量，硅探测器对从内部发射的带电粒子具有极高的探测效率。每个DSSD x–y像素格都可视为独立探测器，这样在连续束、高束流注入率的条件下各单个像素格内仍能保持较低注入率，衰变事件和注入事件的时间关联仍然可以建立。三块DSSD的厚度分别为142um，40um，304um。Al22主要分布在后两块Si，QSD1用于探测DSSD中感兴趣核衰变产生的β粒子，QSD2和QSD3位于束流最下游，用于测量束流中的轻粒子（1H、2H、3H、4He等），反符合去掉穿透DSSD的轻粒子在DSSD中的能损信号。DSSD被五个clover环绕，下侧有三个LaBr3探测器，用来测量γ射线。</p>
+<h3 id="分析及结果"><a href="#分析及结果" class="headerlink" title="分析及结果"></a>分析及结果</h3><h4 id="能量刻度及注入深度分布"><a href="#能量刻度及注入深度分布" class="headerlink" title="能量刻度及注入深度分布"></a>能量刻度及注入深度分布</h4><p>重离子能量刻度通过将实验中任意两块DSSD组成的望远镜谱与LISE计算的望远镜谱做对照，调整刻度参数，使实验谱的中心与计算的de-E线基本重合；随后通过应用LISE计算得到的能量射程拟合函数计算注入重离子的注入深度。<br><img src="https://i.loli.net/2019/08/04/BeTNhFSp6qtcxYv.png"><br>质子能量刻度应用文献中给出的质子峰数据。采用了※，※，※，※，※几个峰参与能量刻度。（考虑了弹道亏损效应。）和（β叠加效应）。</p>
+<h4 id="质子探测效率模拟"><a href="#质子探测效率模拟" class="headerlink" title="质子探测效率模拟"></a>质子探测效率模拟</h4><p>我们采用了Geant4工具包来模拟计算质子探测效率。质子的注入深度以及x-y平面分布采用了实验数据，在Si内各向同性发射。我们每隔0.5MeV的能量发射100000个质子，绘制了E-Eff曲线。<br><img src="https://i.loli.net/2019/08/07/HloGSqhK7sBWP6a.png"><br>其中蓝线为40umSi的探测效率曲线，橙线为304umSi的探测效率曲线。</p>
+<h4 id="质子谱"><a href="#质子谱" class="headerlink" title="质子谱"></a>质子谱</h4><p><img src="https://raw.githubusercontent.com/mission-young/Pic/master//img/20190901152447.png"><br>这是最后一块Si的质子谱，其中蓝线未加入veto条件限制，而红线加入了veto条件限制。<br><img src="https://raw.githubusercontent.com/mission-young/Pic/master//img/20190901153304.png"><br>这是中间一块Si的质子谱。</p>
+<h4 id="Geant4模拟质子谱"><a href="#Geant4模拟质子谱" class="headerlink" title="Geant4模拟质子谱"></a>Geant4模拟质子谱</h4><p>随后，我们应用EPJA2006文章中给出的质子能量分支比数据作为Geant4模拟输入，来研究β叠加效应。<br><img src="https://i.loli.net/2019/08/05/WMw75niR9zBVlpH.png"><br>上图中实线为实验谱，虚线为经过归一之后的模拟谱。其中实验谱和模拟谱均未设置veto条件。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/08/03/%E6%9A%91%E5%81%87%E5%AE%B6%E6%95%99%E8%AE%B0%E5%BD%95/" rel="next" title="暑假家教记录"><i class="fas fa-angle-left"></i><span class="nav-title">暑假家教记录</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/08/04/Markdown%E6%96%87%E5%AD%97%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE/" rel="prev" title="Markdown文字样式设置"><span class="nav-title">Markdown文字样式设置</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#22Al%E7%9A%84%CE%B2%E8%A1%B0%E5%8F%98%E8%B0%B1"><span class="toc-text">22Al的β衰变谱</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%80%E6%9C%AF"><span class="toc-text">实验技术</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E5%88%86%E6%9E%90%E5%8F%8A%E7%BB%93%E6%9E%9C"><span class="toc-text">分析及结果</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E8%83%BD%E9%87%8F%E5%88%BB%E5%BA%A6%E5%8F%8A%E6%B3%A8%E5%85%A5%E6%B7%B1%E5%BA%A6%E5%88%86%E5%B8%83"><span class="toc-text">能量刻度及注入深度分布</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E8%B4%A8%E5%AD%90%E6%8E%A2%E6%B5%8B%E6%95%88%E7%8E%87%E6%A8%A1%E6%8B%9F"><span class="toc-text">质子探测效率模拟</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E8%B4%A8%E5%AD%90%E8%B0%B1"><span class="toc-text">质子谱</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Geant4%E6%A8%A1%E6%8B%9F%E8%B4%A8%E5%AD%90%E8%B0%B1"><span class="toc-text">Geant4模拟质子谱</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

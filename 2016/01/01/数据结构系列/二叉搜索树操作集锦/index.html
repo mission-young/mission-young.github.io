@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>二叉搜索树操作集锦 | 星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E6%93%8D%E4%BD%9C%E9%9B%86%E9%94%A6/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="远方">
+       <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">二叉搜索树操作集锦</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="二叉搜索树操作集锦"><a href="#二叉搜索树操作集锦" class="headerlink" title="二叉搜索树操作集锦"></a>二叉搜索树操作集锦</h1><p>通过之前的文章<a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%9A%84%E9%AB%98%E6%95%88%E6%96%B9%E6%B3%95">框架思维</a>，二叉树的遍历框架应该已经印到你的脑子里了，这篇文章就来实操一下，看看框架思维是怎么灵活运用，秒杀一切二叉树问题的。<br>二叉树算法的设计的总路线：明确一个节点要做的事情，然后剩下的事抛给框架。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">traverse</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>    <span class="hljs-comment">// root 需要做什么？在这做。</span><br>    <span class="hljs-comment">// 其他的不用 root 操心，抛给框架</span><br>    traverse(root.left);<br>    traverse(root.right);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>举两个简单的例子体会一下这个思路，热热身。<br><strong>1. 如何把二叉树所有的节点中的值加一？</strong></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">plusOne</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;<br>    root.val += <span class="hljs-number">1</span>;<br>    plusOne(root.left);<br>    plusOne(root.right);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>2. 如何判断两棵二叉树是否完全相同？</strong></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isSameTree</span><span class="hljs-params">(TreeNode root1, TreeNode root2)</span> </span>&#123;<br>    <span class="hljs-comment">// 都为空的话，显然相同</span><br>    <span class="hljs-keyword">if</span> (root1 == <span class="hljs-keyword">null</span> &amp;&amp; root2 == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    <span class="hljs-comment">// 一个为空，一个非空，显然不同</span><br>    <span class="hljs-keyword">if</span> (root1 == <span class="hljs-keyword">null</span> || root2 == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-comment">// 两个都非空，但 val 不一样也不行</span><br>    <span class="hljs-keyword">if</span> (root1.val != root2.val) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-comment">// root1 和 root2 该比的都比完了</span><br>    <span class="hljs-keyword">return</span> isSameTree(root1.left, root2.left)<br>        &amp;&amp; isSameTree(root1.right, root2.right);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>借助框架，上面这两个例子不难理解吧？如果可以理解，那么所有二叉树算法你都能解决。</p>
+<p>二叉搜索树（Binary Search Tree，简称 BST）是一种很常用的的二叉树。它的定义是：一个二叉树中，任意节点的值要大于等于左子树所有节点的值，且要小于等于右边子树的所有节点的值。<br>如下就是一个符合定义的 BST：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/BST/BST_example.png" alt="BST"></p>
+<p>下面实现 BST 的基础操作：判断 BST 的合法性、增、删、查。其中“删”和“判断合法性”略微复杂。<br><strong>零、判断 BST 的合法性</strong><br>这里是有坑的哦，我们按照刚才的思路，每个节点自己要做的事不就是比较自己和左右孩子吗？看起来应该这样写代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isValidBST</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    <span class="hljs-keyword">if</span> (root.left != <span class="hljs-keyword">null</span> &amp;&amp; root.val &lt;= root.left.val) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">if</span> (root.right != <span class="hljs-keyword">null</span> &amp;&amp; root.val &gt;= root.right.val) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">return</span> isValidBST(root.left)<br>        &amp;&amp; isValidBST(root.right);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>但是这个算法出现了错误，BST 的每个节点应该要小于右边子树的所有节点，下面这个二叉树显然不是 BST，但是我们的算法会把它判定为 BST。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/BST/%E5%81%87BST.png" alt="notBST"><br>出现错误，不要慌张，框架没有错，一定是某个细节问题没注意到。我们重新看一下 BST 的定义，root 需要做的不只是和左右子节点比较，而是要整个左子树和右子树所有节点比较。怎么办，鞭长莫及啊！<br>这种情况，我们可以使用辅助函数，增加函数参数列表，在参数中携带额外信息，请看正确的代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isValidBST</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> isValidBST(root, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isValidBST</span><span class="hljs-params">(TreeNode root, TreeNode min, TreeNode max)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    <span class="hljs-keyword">if</span> (min != <span class="hljs-keyword">null</span> &amp;&amp; root.val &lt;= min.val) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">if</span> (max != <span class="hljs-keyword">null</span> &amp;&amp; root.val &gt;= max.val) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">return</span> isValidBST(root.left, min, root) <br>        &amp;&amp; isValidBST(root.right, root, max);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>一、在 BST 中查找一个数是否存在</strong><br>根据我们的指导思想，可以这样写代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isInBST</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">if</span> (root.val == target) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    <span class="hljs-keyword">return</span> isInBST(root.left, target)<br>        || isInBST(root.right, target);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样写完全正确，充分证明了你的框架性思维已经养成。现在你可以考虑一点细节问题了：如何充分利用信息，把 BST 这个“左小右大”的特性用上？<br>很简单，其实不需要递归地搜索两边，类似二分查找思想，根据 target 和 root.val 的大小比较，就能排除一边。我们把上面的思路稍稍改动：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isInBST</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">if</span> (root.val == target)<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    <span class="hljs-keyword">if</span> (root.val &lt; target) <br>        <span class="hljs-keyword">return</span> isInBST(root.right, target);<br>    <span class="hljs-keyword">if</span> (root.val &gt; target)<br>        <span class="hljs-keyword">return</span> isInBST(root.left, target);<br>    <span class="hljs-comment">// root 该做的事做完了，顺带把框架也完成了，妙</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>于是，我们对原始框架进行改造，抽象出一套<strong>针对 BST 的遍历框架</strong>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BST</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root.val == target)<br>        <span class="hljs-comment">// 找到目标，做点什么</span><br>    <span class="hljs-keyword">if</span> (root.val &lt; target) <br>        BST(root.right, target);<br>    <span class="hljs-keyword">if</span> (root.val &gt; target)<br>        BST(root.left, target);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>二、在 BST 中插入一个数</strong><br>对数据结构的操作无非遍历 + 访问，遍历就是“找”，访问就是“改”。具体到这个问题，插入一个数，就是先找到插入位置，然后进行插入操作。<br>上一个问题，我们总结了 BST 中的遍历框架，就是“找”的问题。直接套框架，加上“改”的操作即可。一旦涉及“改”，函数就要返回 TreeNode 类型，并且对递归调用的返回值进行接收。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">TreeNode <span class="hljs-title">insertIntoBST</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>    <span class="hljs-comment">// 找到空位置插入新节点</span><br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> TreeNode(val);<br>    <span class="hljs-comment">// if (root.val == val)</span><br>    <span class="hljs-comment">//     BST 中一般不会插入已存在元素</span><br>    <span class="hljs-keyword">if</span> (root.val &lt; val) <br>        root.right = insertIntoBST(root.right, val);<br>    <span class="hljs-keyword">if</span> (root.val &gt; val) <br>        root.left = insertIntoBST(root.left, val);<br>    <span class="hljs-keyword">return</span> root;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>三、在 BST 中删除一个数</strong><br>这个问题稍微复杂，不过你有框架指导，难不住你。跟插入操作类似，先“找”再“改”，先把框架写出来再说：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">TreeNode <span class="hljs-title">deleteNode</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> key)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root.val == key) &#123;<br>        <span class="hljs-comment">// 找到啦，进行删除</span><br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (root.val &gt; key) &#123;<br>        root.left = deleteNode(root.left, key);<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (root.val &lt; key) &#123;<br>        root.right = deleteNode(root.right, key);<br>    &#125;<br>    <span class="hljs-keyword">return</span> root;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>找到目标节点了，比方说是节点 A，如何删除这个节点，这是难点。因为删除节点的同时不能破坏 BST 的性质。有三种情况，用图片来说明。<br>情况 1：A 恰好是末端节点，两个子节点都为空，那么它可以当场去世了。<br>图片来自 LeetCode<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/BST/bst_deletion_case_1.png" alt="1"></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (root.left == <span class="hljs-keyword">null</span> &amp;&amp; root.right == <span class="hljs-keyword">null</span>)<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br></code></pre></td></tr></table></figure>
+<p>情况 2：A 只有一个非空子节点，那么它要让这个孩子接替自己的位置。<br>图片来自 LeetCode<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/BST/bst_deletion_case_2.png" alt="2"></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 排除了情况 1 之后</span><br><span class="hljs-keyword">if</span> (root.left == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> root.right;<br><span class="hljs-keyword">if</span> (root.right == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> root.left;<br></code></pre></td></tr></table></figure>
+<p>情况 3：A 有两个子节点，麻烦了，为了不破坏 BST 的性质，A 必须找到左子树中最大的那个节点，或者右子树中最小的那个节点来接替自己。我们以第二种方式讲解。<br>图片来自 LeetCode<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/BST/bst_deletion_case_3.png" alt="2"></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (root.left != <span class="hljs-keyword">null</span> &amp;&amp; root.right != <span class="hljs-keyword">null</span>) &#123;<br>    <span class="hljs-comment">// 找到右子树的最小节点</span><br>    TreeNode minNode = getMin(root.right);<br>    <span class="hljs-comment">// 把 root 改成 minNode</span><br>    root.val = minNode.val;<br>    <span class="hljs-comment">// 转而去删除 minNode</span><br>    root.right = deleteNode(root.right, minNode.val);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>三种情况分析完毕，填入框架，简化一下代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">TreeNode <span class="hljs-title">deleteNode</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> key)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    <span class="hljs-keyword">if</span> (root.val == key) &#123;<br>        <span class="hljs-comment">// 这两个 if 把情况 1 和 2 都正确处理了</span><br>        <span class="hljs-keyword">if</span> (root.left == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> root.right;<br>        <span class="hljs-keyword">if</span> (root.right == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> root.left;<br>        <span class="hljs-comment">// 处理情况 3</span><br>        TreeNode minNode = getMin(root.right);<br>        root.val = minNode.val;<br>        root.right = deleteNode(root.right, minNode.val);<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (root.val &gt; key) &#123;<br>        root.left = deleteNode(root.left, key);<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (root.val &lt; key) &#123;<br>        root.right = deleteNode(root.right, key);<br>    &#125;<br>    <span class="hljs-keyword">return</span> root;<br>&#125;<br><span class="hljs-function">TreeNode <span class="hljs-title">getMin</span><span class="hljs-params">(TreeNode node)</span> </span>&#123;<br>    <span class="hljs-comment">// BST 最左边的就是最小的</span><br>    <span class="hljs-keyword">while</span> (node.left != <span class="hljs-keyword">null</span>) node = node.left;<br>    <span class="hljs-keyword">return</span> node;<br>&#125; <br></code></pre></td></tr></table></figure>
+<p>删除操作就完成了。注意一下，这个删除操作并不完美，因为我们一般不会通过 root.val = minNode.val 修改节点内部的值来交换节点，而是通过一系列略微复杂的链表操作交换 root 和 minNode 两个节点。因为具体应用中，val 域可能会很大，修改起来很耗时，而链表操作无非改一改指针，而不会去碰内部数据。<br>但这里忽略这个细节，旨在突出 BST 基本操作的共性，以及借助框架逐层细化问题的思维方式。<br><strong>四、最后总结</strong><br>通过这篇文章，你学会了如下几个技巧：</p>
+<ol>
+<li>二叉树算法设计的总路线：把当前节点要做的事做好，其他的交给递归框架，不用当前节点操心。</li>
+<li>如果当前节点会对下面的子节点有整体影响，可以通过辅助函数增长参数列表，借助参数传递信息。</li>
+<li>在二叉树框架之上，扩展出一套 BST 遍历框架：<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BST</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root.val == target)<br>        <span class="hljs-comment">// 找到目标，做点什么</span><br>    <span class="hljs-keyword">if</span> (root.val &lt; target) <br>        BST(root.right, target);<br>    <span class="hljs-keyword">if</span> (root.val &gt; target)<br>        BST(root.left, target);<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>掌握了 BST 的基本操作。</li>
+</ol>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/LRU%E7%AE%97%E6%B3%95">上一篇：LRU算法详解</a><br><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E6%A0%88">下一篇：特殊数据结构：单调栈</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E6%A0%88/" rel="next" title="单调栈"><i class="fas fa-angle-left"></i><span class="nav-title">单调栈</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E5%A0%86%E8%AF%A6%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97/" rel="prev" title="二叉堆详解实现优先级队列"><span class="nav-title">二叉堆详解实现优先级队列</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E6%93%8D%E4%BD%9C%E9%9B%86%E9%94%A6"><span class="toc-text">二叉搜索树操作集锦</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

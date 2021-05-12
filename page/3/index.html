@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+
+<div id="index" class="index page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2020/04/01/%E7%A8%8B%E8%A1%A8/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2020/04/01/%E7%A8%8B%E8%A1%A8/" itemprop="url">日程表</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-04-01T10:26:41+08:00">2020-04-01 10:26:41</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      Here's something encrypted, password is required to continue reading.
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2020/04/01/Hexo%E8%AE%BE%E7%BD%AE%E7%AB%AF%E5%8F%A3%E5%92%8Cip/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2020/04/01/Hexo%E8%AE%BE%E7%BD%AE%E7%AB%AF%E5%8F%A3%E5%92%8Cip/" itemprop="url">Hexo设置端口和ip</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-04-01T10:19:12+08:00">2020-04-01 10:19:12</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>在bash中输入</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo s -i -p 8000<br></code></pre></td></tr></table></figure>
+<p><code>-i</code> 可以开放外部网路访问，若去除该选项，则只能本机<code>localhost</code>访问.<br><code>-p 8000</code>可以用来设置端口，默认端口为4000.</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2020/03/27/Jupyter%E6%8C%87%E5%AE%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%90%AF%E5%8A%A8/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2020/03/27/Jupyter%E6%8C%87%E5%AE%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%90%AF%E5%8A%A8/" itemprop="url">Jupyter指定配置文件启动</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-03-27T13:32:00+08:00">2020-03-27 13:32:00</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p><code>jupyter</code>默认配置文件为<code>~/.jupyter/jupyter_notebook_config.py</code><br>若有多种配置需求如端口，启动路径，密码，是否允许远程访问，则可以将<code>jupyter_notebook_config.py</code>复制一份进行修改，随后重命名或者放置到其他目录。为了方便管理，可以修改名字，如<code>jupyter_notebook_config_remote.py</code>，启动jupyter命令为<br><code>jupyter-notebook --config=&#39;~/.jupyter/jupyter_notebook_config_remote.py&#39;</code>. 而默认的配置依旧可以使用<code>jupyter-notebook</code>启动.</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2020/03/26/%E8%A7%A3%E5%86%B3vscode-%E6%89%93%E5%BC%80WSL-%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95%E5%87%BA%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2020/03/26/%E8%A7%A3%E5%86%B3vscode-%E6%89%93%E5%BC%80WSL-%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95%E5%87%BA%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url">解决vscode 打开WSL 系统目录出错的问题</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-03-26T07:17:00+08:00">2020-03-26 07:17:00</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>更新系统至<code>windows v2004</code>版本之后，在非<code>Windows</code>系统目录(即非<code>/mnt</code>)打开<code>vscode</code>会提示错误，需要手动前往<code>\\wsl$\Arch\mnt\c...</code>之类的目录用<code>vscode</code>打开. 在<code>wsl</code>系统下输入<code>code \\wsl$\Arch\mnt\c...</code>也会同样报错。<br>解决此问题，只需要进入<code>Windows</code>系统目录，再执行<code>code //wsl$/Arch/home/yfs/...</code>即可。命令如下：</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">alias</span> code=<span class="hljs-string">&#x27;result=$(pwd | grep &quot;mnt&quot;);if [[ $result ]];then code .;else a=`pwd` &amp;&amp; cd /mnt/c/ &amp;&amp; code &quot;//wsl$/Arch$a&quot;&amp;&amp; cd $a;fi&#x27;</span><br></code></pre></td></tr></table></figure>
+<ol>
+<li>先判断当前目录是否包含mnt,若包含，则为windows目录环境，直接code即可;</li>
+<li>若为wsl系统目录，先记录当前目录，随后进入windows目录，code打开映射的wsl路径，随后返回原目录。<br>Tips:<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">linux环境下,alias 的优先级高于$PATH.<br></code></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/Magic/" rel="tag"><i class="fas fa-tags"></i>Magic</a>
+        
+        <a class="post-tag button" href="/tags/wsl/" rel="tag"><i class="fas fa-tags"></i>wsl</a>
+        
+        <a class="post-tag button" href="/tags/vscode/" rel="tag"><i class="fas fa-tags"></i>vscode</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2020/03/25/Jupyter%E7%A6%BB%E7%BA%BF%E9%85%8D%E7%BD%AE/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2020/03/25/Jupyter%E7%A6%BB%E7%BA%BF%E9%85%8D%E7%BD%AE/" itemprop="url">Jupyter离线配置</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-03-25T23:32:00+08:00">2020-03-25 23:32:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%A7%91%E7%A0%94/" itemprop="url" rel="index"><span itemprop="name">科研</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>此文档不是用于离线安装jupyter，而是解决jupyter因网络问题无法正常显示图像的问题。<br>修改文件：<code>~ /.jupyter/jupyter_notebook_config.py</code><br>定位到 <code>c.NotebookApp.extra_static_paths</code> 这一行，修改为<br><code>c.NotebookApp.extra_static_paths = [&#39;/usr/share/root/js&#39;]</code><br>其中<code>&#39;/usr/share/root/js&#39; </code>根据root安装的目录来确定.<br><img src="/images/pasted-2.png" alt="upload successful"><br>可以通过<code>find</code>命令来确定该路径.</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/Jupyter/" rel="tag"><i class="fas fa-tags"></i>Jupyter</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2019/11/24/python%E6%89%A7%E8%A1%8Cjupyter%E8%84%9A%E6%9C%AC%E5%B9%B6%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/11/24/python%E6%89%A7%E8%A1%8Cjupyter%E8%84%9A%E6%9C%AC%E5%B9%B6%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C/" itemprop="url">python执行jupyter脚本并返回结果</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-11-24T19:39:00+08:00">2019-11-24 19:39:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>系统中只存在python环境而没有jupyter环境可用，希望python能够直接执行jupyter脚本(*.ipynb)文件，并将结果返回（同时输出到*.ipynb脚本和终端）.<br><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/mission-young/python_scripts/master/jupyter.py">下载地址</a></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><code class="hljs python3">#!&#x2F;usr&#x2F;bin&#x2F;python3<br>import sys<br>import json<br>import os<br>class tovar():<br>    &quot;&quot;&quot;重定向python的输出至变量<br>    print()函数实际上是 sys.stdout 函数，默认输出到终端。<br>    这里将print()函数重定向到变量<br>    Attributes:<br>        str: 用于存储print函数输出的结果<br>    &quot;&quot;&quot;<br>    def __init__(self):<br>        &quot;&quot;&quot;<br>        初始化函数，必备函数<br>        &quot;&quot;&quot;<br>        self.str&#x3D;&#39;&#39;<br>    def write(self,s):<br>        &quot;&quot;&quot;<br>        将print的值暂存到str，如果多次print，则值会累加，必备函数<br>        &quot;&quot;&quot;<br>        self.str+&#x3D;s<br>    def flush(self):<br>        &quot;&quot;&quot;<br>        清空str，必备函数<br>        &quot;&quot;&quot;<br>        self.str&#x3D;&#39;&#39;<br>    def content(self):<br>        &quot;&quot;&quot;<br>        返回str，将暂存的输出返回到变量中<br>        &quot;&quot;&quot;<br>        return self.str.rstrip()<br><br>def writecode(s,mode&#x3D;&#39;update&#39;):<br>    &quot;&quot;&quot;<br>    update模式时，为累加模式<br>    recreate模式时，重写模式<br>    &quot;&quot;&quot;<br>    if mode &#x3D;&#x3D; &#39;recreate&#39;:<br>        w&#x3D;&#39;w&#39;<br>    else:<br>        w&#x3D;&#39;a&#39;<br>    fout &#x3D; open(&#39;tmp.py&#39;,w,encoding&#x3D;&#39;utf8&#39;)<br>    fout.write(s)<br>    fout.close()<br># 获得要转化的jupyter文件<br>filename&#x3D;sys.argv[1]<br># jupyter文件格式实际上是json格式，选择自带的json库来读取，读取后关闭文件<br>file&#x3D;open(filename)<br>data&#x3D;json.load(file)<br>file.close()<br>cells&#x3D;data[&#39;cells&#39;]<br># 命令单元格的id，必须设置，否则不会显示执行结果<br>id&#x3D;1<br># term暂存，为输出到终端，随后将print重定向到变量var<br>var&#x3D;tovar()<br>term&#x3D;sys.stdout<br>sys.stdout&#x3D;var<br><br>for cell in cells:<br>    cell_type&#x3D;cell[&#39;cell_type&#39;]<br>    # 单元格为markdown时，不需要处理，打开jupyter文件会自动转换<br>    if cell_type&#x3D;&#x3D;&#39;markdown&#39;:<br>        continue<br>    else:<br>        # 当jupyter清空了所有输出时，execution_count为null，如果不设置id的话，即使<br>        # 有执行结果，在jupyter中也不会显示。<br>        cell[&#39;execution_count&#39;]&#x3D;id<br>        # 将print重定向到终端，以便在终端输出进度，随后重定向到变量<br>        sys.stdout&#x3D;term<br>        print(&#39;process: %d&#x2F;%d&#39; %(id,len(cells)-1))<br>        sys.stdout&#x3D;var<br>        id+&#x3D;1<br>        codes&#x3D;cell[&#39;source&#39;]<br>        #新建代码单元格存储文件<br>        writecode(&#39;&#39;,&#39;recreate&#39;)<br>        for code in codes:<br>            # 修正jupyter中一些magic code<br>            if &#39;matplotlib inline&#39; in code:<br>                code&#x3D;&#39;import matplotlib.pyplot as plt\n&#39;<br>            # 逐行写入code cell的代码到文件中<br>            writecode(code)<br>        # 执行代码单元格代码，这种形式执行的好处在于，等价于直接把代码拷贝到主程序中，<br>        # 程序变量等信息保留。由于此时print重定向到tovar函数的str变量中，并不会在终端输出信息。<br>        exec(open(&#39;tmp.py&#39;).read())<br>        # 获取代码运行的结果<br>        result&#x3D;var.content()<br>        # 清空缓存，以便于存储下一次结果<br>        var.flush()<br>        # 代码运行为空跳过<br>        if(result.strip()!&#x3D;&#39;&#39;):<br>            # 这一点用来判定原jupyter是否有输出，如果没有输出，则需要新建dict，否则只需要替换<br>            # 相应部分既可以。<br>            if len(cell[&#39;outputs&#39;])&#x3D;&#x3D;0:<br>                out&#x3D;&#123;&#125;<br>                out[&#39;name&#39;]&#x3D;&#39;stdout&#39;<br>                out[&#39;output_type&#39;]&#x3D;&#39;stream&#39;<br>                out[&#39;text&#39;]&#x3D;[res + &#39;\n&#39; for res in result.split(&#39;\n&#39;)]<br>                cell[&#39;outputs&#39;].append(out)<br>            else:<br>                cell[&#39;outputs&#39;][0][&#39;name&#39;]&#x3D;&#39;stdout&#39;<br>                cell[&#39;outputs&#39;][0][&#39;output_type&#39;]&#x3D;&#39;stream&#39;<br>                cell[&#39;outputs&#39;][0][&#39;text&#39;]&#x3D;[res + &#39;\n&#39; for res in result.split(&#39;\n&#39;)]<br>            # 在终端中输出<br>            sys.stdout&#x3D;term<br>            print(result)<br>    # 每运行一次code cell，修改jupyter文件<br>    file&#x3D;open(filename,&#39;w&#39;)<br>    json.dump(data,file)<br>    file.close()<br></code></pre></td></tr></table></figure>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/Jupyter/" rel="tag"><i class="fas fa-tags"></i>Jupyter</a>
+        
+        <a class="post-tag button" href="/tags/Python3/" rel="tag"><i class="fas fa-tags"></i>Python3</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/" itemprop="url">机器学习资源汇总</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-11-05T09:41:00+08:00">2019-11-05 09:41:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <ul>
+<li>Grokking Deep Learning （图解深度学习）<br>  - 个人主页：<a target="_blank" rel="noopener" href="https://iamtrask.github.io/">https://iamtrask.github.io/</a><br>  - Github地址：<a target="_blank" rel="noopener" href="https://github.com/iamtrask/Grokking-Deep-Learning">https://github.com/iamtrask/Grokking-Deep-Learning</a><br>  - pdf文档 <a target="_blank" rel="noopener" href="https://github.com/mission-young/Hexo_attachment/blob/master/pdf/Manning.Grokking.Deep.Learning.pdf">https://github.com/mission-young/Hexo_attachment/blob/master/pdf/Manning.Grokking.Deep.Learning.pdf</a></li>
+</ul>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fas fa-tags"></i>机器学习</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2019/10/11/%E5%B7%A5%E4%BD%9C%E8%AE%A1%E5%88%92/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/10/11/%E5%B7%A5%E4%BD%9C%E8%AE%A1%E5%88%92/" itemprop="url">工作计划</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-10-11T14:50:44+08:00">2019-10-11 14:50:44</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="TODO："><a href="#TODO：" class="headerlink" title="TODO："></a>TODO：</h2><ol>
+<li>织围脖🧣</li>
+<li>双十一买内衣内裤</li>
+<li>提醒公考报名</li>
+<li>数据处理-吴鸿毅刻度</li>
+<li>数据处理-计算探测效率</li>
+<li>学习swiftui</li>
+<li>学习机器学习</li>
+<li>整理房间</li>
+<li>买西藏火车票</li>
+<li>定西藏的行程</li>
+<li>给宇宇买吃的</li>
+<li>去健身房健身</li>
+</ol>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2019/10/10/macOS%E9%85%8D%E7%BD%AEQt%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/10/10/macOS%E9%85%8D%E7%BD%AEQt%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" itemprop="url">macOS配置Qt开发环境</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-10-10T18:14:00+08:00">2019-10-10 18:14:00</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="安装qt和qtcreator"><a href="#安装qt和qtcreator" class="headerlink" title="安装qt和qtcreator"></a>安装qt和qtcreator</h2><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">brew install qt<br>brew cask install qt-creator<br></code></pre></td></tr></table></figure>
+<h2 id="配置qt环境"><a href="#配置qt环境" class="headerlink" title="配置qt环境"></a>配置qt环境</h2><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;export PATH=&quot;/usr/local/opt/qt/bin:$PATH&quot;&#x27;</span> &gt;&gt; ~/.zshrc<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;export LDFLAGS=&quot;-L/usr/local/opt/qt/lib&quot;&#x27;</span> &gt;&gt; ~/.zshrc<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;export CPPFLAGS=&quot;-I/usr/local/opt/qt/include&quot;&#x27;</span> &gt;&gt; ~/.zshrc<br></code></pre></td></tr></table></figure>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/macOS/" rel="tag"><i class="fas fa-tags"></i>macOS</a>
+        
+        <a class="post-tag button" href="/tags/qt/" rel="tag"><i class="fas fa-tags"></i>qt</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2019/10/10/macOS%E5%88%9D%E5%A7%8B%E5%8C%96/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/10/10/macOS%E5%88%9D%E5%A7%8B%E5%8C%96/" itemprop="url">macOS初始化</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-10-10T18:03:00+08:00">2019-10-10 18:03:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="安装homebrew"><a href="#安装homebrew" class="headerlink" title="安装homebrew"></a>安装homebrew</h2><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/usr/bin/ruby -e <span class="hljs-string">&quot;<span class="hljs-subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>&quot;</span><br></code></pre></td></tr></table></figure>
+<h2 id="安装第三方软件权限问题"><a href="#安装第三方软件权限问题" class="headerlink" title="安装第三方软件权限问题"></a>安装第三方软件权限问题</h2><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo spctl --master <span class="hljs-built_in">disable</span><br></code></pre></td></tr></table></figure>
+<h2 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h2><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;mission-young&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;yuanfangsee@pku.edu.cn&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;yuanfangsee@pku.edu.cn&quot;</span><br>cat ~/.ssh/id_rsa.pub<br><span class="hljs-comment">## paste it to github</span><br></code></pre></td></tr></table></figure>
+<h2 id="配置开发环境"><a href="#配置开发环境" class="headerlink" title="配置开发环境"></a>配置开发环境</h2><ul>
+<li><a href="https://mission-young.github.io/2019/08/18/%E5%A4%9A%E7%AB%AF%E7%BC%96%E8%BE%91Hexo%E5%8D%9A%E5%AE%A2/">Hexo博客</a></li>
+<li><a href="">Qt</a></li>
+<li>root<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">brew install root<br></code></pre></td></tr></table></figure></li>
+<li>tmux <figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">brew install tmux<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs .tmux.conf"># Send prefix<br>set-option -g prefix C-a<br>unbind-key C-a<br>bind-key C-a send-prefix<br># Use Alt-arrow keys to switch panes<br>bind -n M-Left select-pane -L<br>bind -n M-Right select-pane -R<br>bind -n M-Up select-pane -U<br>bind -n M-Down select-pane -D<br># Shift arrow to switch windows<br>bind -n S-Left previous-window<br>bind -n S-Right next-window<br># Mouse mode<br>set -g mouse on<br><br># Set easier window split keys<br>bind-key v split-window -h<br>bind-key h split-window -v<br># Easy config reload<br>bind-key r source-file ~&#x2F;.tmux.conf \; display-message &quot;tmux.conf reloaded&quot;<br></code></pre></td></tr></table></figure></li>
+<li>[geant4]</li>
+<li>ssh <figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;alias sshribll=&quot;ssh -Y -p 2727 wuchenguang@162.105.151.64&quot;&#x27;</span> &gt;&gt; ~/.zshrc<br></code></pre></td></tr></table></figure></li>
+<li>xquartz<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">brew cask install xquartz<br></code></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/%E9%85%8D%E7%BD%AE/" rel="tag"><i class="fas fa-tags"></i>配置</a>
+        
+        <a class="post-tag button" href="/tags/macOS/" rel="tag"><i class="fas fa-tags"></i>macOS</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/">&lt;i class&#x3D;&quot;fas fa-angle-left&quot; aria-label&#x3D;&quot;上一页&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/4/">&lt;i class&#x3D;&quot;fas fa-angle-right&quot; aria-label&#x3D;&quot;下一页&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

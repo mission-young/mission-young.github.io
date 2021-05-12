@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+
+<div id="index" class="index page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E6%8A%80%E6%9C%AF/%E5%9C%A8%E7%BA%BF%E7%BB%83%E4%B9%A0%E5%B9%B3%E5%8F%B0/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E6%8A%80%E6%9C%AF/%E5%9C%A8%E7%BA%BF%E7%BB%83%E4%B9%A0%E5%B9%B3%E5%8F%B0/" itemprop="url">在线练习平台</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>虽说我没事就喜欢喷应试教育，但我也从应试教育中发现了一个窍门：如果能够以刷题的形式学习某项技能，效率和效果是最佳的。对于技术的学习，我经常面临的困境是，<strong>理论知识知道的不少，但是有的场景实在无法模拟，缺少亲自动手实践的机会</strong>，如果能有一本带标准答案的习题册让我刷刷就好了。<br>所以在学习新技术时，我首先会去搜索是否有在线刷题平台，你还别说，有的大神真就做了很不错的在线练习平台，下面就介绍几个平台，分别是学习 Git、SQL、正则表达式的在线练习平台。</p>
+<h3 id="一、练习-Git"><a href="#一、练习-Git" class="headerlink" title="一、练习 Git"></a>一、练习 Git</h3><p>这是个叫做 Learning Git Branching 的项目，是我一定要推荐的：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/online/1.png"><br>正如对话框中的自我介绍，这确实也是我至今发现的<strong>最好</strong>的 Git 动画教程，没有之一。<br>想当年我用 Git 就会 <code>add .</code>，<code>clone</code>，<code>push</code>，<code>pull</code>，<code>commit</code> 几个命令，其他的命令完全不会，Git 就是一个下载器，Github 就是个资源网站加免费图床，命令能不能达成目的都是靠运气。什么版本控制，我根本搞不懂，也懒得去看那一堆乱七八糟的文档。<br>这个网站的教程不是给你举那种修改文件的细节例子，而是将每次 <code>commit</code> 都抽象成树的节点，<strong>用动画闯关的形式</strong>，让你自由使用 Git 命令完成目标：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/online/2.png"><br>所有 Git 分支都被可视化了，你只要在左侧的命令行输入 Git 命令，分支会进行相应的变化，只要达成任务目标，你就过关啦！网站还会记录你的命令数，试试能不能以最少的命令数过关！<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/online/3.png"><br>我一开始以为这个教程只包含本地 Git 仓库的版本管理，<strong>后来我惊奇地发现它还有远程仓库的操作教程</strong>！<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/online/4.png"><br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/online/5.png"><br>真的跟玩游戏一样，难度设计合理，流畅度很好，我一玩都停不下来了，几小时就打通了，哈哈哈！<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/online/6.png"><br>总之，这个教程很适合初学和进阶，如果你觉得自己对 Git 的掌握还不太好，用 Git 命令还是靠碰运气，就可以玩玩这个教程，相信能够让你更熟练地使用 Git。<br>它是一个开源项目，Github 项目地址：<br><a target="_blank" rel="noopener" href="https://github.com/pcottle/learnGitBranching">https://github.com/pcottle/learnGitBranching</a><br>教程网站地址：<br><a target="_blank" rel="noopener" href="https://learngitbranching.js.org/">https://learngitbranching.js.org</a></p>
+<h3 id="二、练习正则表达式"><a href="#二、练习正则表达式" class="headerlink" title="二、练习正则表达式"></a>二、练习正则表达式</h3><p><strong>正则表达式是个非常强有力的工具</strong>，可以说计算机中的一切数据都是字符，借助正则表达式这种模式匹配工具，操作计算机可以说是如虎添翼。<br>我这里要推荐两个网站，一个是练习平台，一个是测试正则表达式的平台。<br>先说练习平台，叫做 RegexOne：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/online/9.png"><br>前面有基本教程，后面有一些常见的正则表达式题目，比如判断邮箱、URL、电话号，或者抽取日志的关键信息等等。<br>只要写出符合要求的正则表达式，就可以进入下一个问题，关键是每道题还有标准答案，可以点击下面的 solution 按钮查看：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/online/10.png"><br>RegexOne 网址：<br><a target="_blank" rel="noopener" href="https://regexone.com/">https://regexone.com/</a><br>再说测试工具，是个叫做 RegExr 的 Github 项目，这是它的网站：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/online/11.png"><br>可以看见，输入文本和正则模式串后，<strong>网站会给正则表达式添加好看且容易辨认的样式，自动在文本中搜索模式串，高亮显示匹配的字符串，并且还会显示每个分组捕获的字符串</strong>。<br>这个网站可以配合前面的正则练习平台使用，在这里尝试各种表达式，成功匹配之后粘贴过去。<br>RegExr 网址：<br><a target="_blank" rel="noopener" href="https://regexr.com/">https://regexr.com/</a></p>
+<h3 id="三、练习-SQL"><a href="#三、练习-SQL" class="headerlink" title="三、练习 SQL"></a>三、练习 SQL</h3><p>这是一个叫做 SQLZOO 的网站，左侧是所有的练习内容：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/online/7.png"><br>SQLZOO 是一款很好用的 SQL 练习平台，英文不难理解，可以直接看英文版，但是也可以切换繁体中文，比较友好。<br>这里都是比较常用的 SQL 命令，给你一个需求，你写 SQL 语句实现正确的查询结果。<strong>最重要的是，这里不仅对每个命令的用法有详细解释，每个专题后面还有选择题（quiz），而且有判题系统，甚至有的比较难的题目还有视频讲解</strong>：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/online/8.png"><br>至于难度，循序渐进，即便对新手也很友好，靠后的问题确实比较有技巧性，相信这是热爱思维挑战的人喜欢的！LeetCode 也有 SQL 相关的题目，不过难度一般比较大，我觉得 SQLZOO 刷完基础 SQL 命令再去 LeetCode 刷比较合适。<br>网站地址：<br><a target="_blank" rel="noopener" href="https://sqlzoo.net/">https://sqlzoo.net/</a></p>
+<p><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/linux%E8%BF%9B%E7%A8%8B">上一篇：Linux的进程、线程、文件描述符是什么</a><br><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6">下一篇：动态规划详解</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E6%8A%80%E6%9C%AF/session%E5%92%8Ccookie/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E6%8A%80%E6%9C%AF/session%E5%92%8Ccookie/" itemprop="url">session和cookie</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>cookie 大家应该都熟悉，比如说登录某些网站一段时间后，就要求你重新登录；再比如有的同学很喜欢玩爬虫技术，有时候网站就是可以拦截住你的爬虫，这些都和 cookie 有关。如果你明白了服务器后端对于 cookie 和 session 的处理逻辑，就可以解释这些现象，甚至钻一些空子无限白嫖，待我慢慢道来。</p>
+<h3 id="一、session-和-cookie-简介"><a href="#一、session-和-cookie-简介" class="headerlink" title="一、session 和 cookie 简介"></a>一、session 和 cookie 简介</h3><p>cookie 的出现是因为 HTTP 是无状态的一种协议，换句话说，服务器记不住你，可能你每刷新一次网页，就要重新输入一次账号密码进行登录。这显然是让人无法接受的，cookie 的作用就好比服务器给你贴个标签，然后你每次向服务器再发请求时，服务器就能够 cookie 认出你。<br>抽象地概括一下：<strong>一个 cookie 可以认为是一个「变量」，形如 <code>name=value</code>，存储在浏览器；一个 session 可以理解为一种数据结构，多数情况是「映射」（键值对），存储在服务器上</strong>。<br>注意，我说的是「一个」cookie 可以认为是一个变量，但是服务器可以一次设置多个 cookie，所以有时候说 cookie 是「一组」键值对儿，这也可以说得通。<br>cookie 可以在服务器端通过 HTTP 的 SetCookie 字段设置 cookie，比如我用 Go 语言写的一个简单服务：</p>
+<figure class="hljs highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">cookie</span><span class="hljs-params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;<br>    <span class="hljs-comment">// 设置了两个 cookie </span><br>	http.SetCookie(w, &amp;http.Cookie&#123;<br>		Name:       <span class="hljs-string">&quot;name1&quot;</span>,<br>		Value:      <span class="hljs-string">&quot;value1&quot;</span>,<br>	&#125;)<br>	http.SetCookie(w, &amp;http.Cookie&#123;<br>		Name:  <span class="hljs-string">&quot;name2&quot;</span>,<br>		Value: <span class="hljs-string">&quot;value2&quot;</span>,<br>	&#125;)<br>    <span class="hljs-comment">// 将字符串写入网页</span><br>	fmt.Fprintln(w, <span class="hljs-string">&quot;页面内容&quot;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>当浏览器访问对应网址时，通过浏览器的开发者工具查看此次 HTTP 通信的细节，可以看见服务器的回应发出了两次 <code>SetCookie</code> 命令：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/session/1.png"><br>在这之后，浏览器的请求中的 <code>Cookie</code> 字段就带上了这两个 cookie：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/session/2.png"><br><strong>cookie 的作用其实就是这么简单，无非就是服务器给每个客户端（浏览器）打的标签</strong>，方便服务器辨认而已。当然，HTTP 还有很多参数可以设置 cookie，比如过期时间，或者让某个 cookie 只有某个特定路径才能使用等等。<br>但问题是，我们也知道现在的很多网站功能很复杂，而且涉及很多的数据交互，比如说电商网站的购物车功能，信息量大，而且结构也比较复杂，无法通过简单的 cookie 机制传递这么多信息，而且要知道 cookie 字段是存储在 HTTP header 中的，就算能够承载这些信息，也会消耗很多的带宽，比较消耗网络资源。<br>session 就可以配合 cookie 解决这一问题，比如说一个 cookie 存储这样一个变量 <code>sessionID=xxxx</code>，仅仅把这一个 cookie 传给服务器，然后服务器通过这个 ID 找到对应的 session，这个 session 是一个数据结构，里面存储着该用户的购物车等详细信息，服务器可以通过这些信息返回该用户的定制化网页，有效解决了追踪用户的问题。<br><strong>session 是一个数据结构，由网站的开发者设计，所以可以承载各种数据</strong>，只要客户端的 cookie 传来一个唯一的 session ID，服务器就可以找到对应的 session，认出这个客户。<br>当然，由于 session 存储在服务器中，肯定会消耗服务器的资源，所以 session 一般都会有一个过期时间，服务器一般会定期检查并删除过期的 session，如果后来该用户再次访问服务器，可能就会面临重新登录等等措施，然后服务器新建一个 session，将 session ID 通过 cookie 的形式传送给客户端。<br>那么，我们知道 cookie 和 session 的原理，有什么切实的好处呢？<strong>除了应对面试，我给你说一个鸡贼的用处，就是可以白嫖某些服务</strong>。<br>有些网站，你第一次使用它的服务，它直接免费让你试用，但是用一次之后，就让你登录然后付费继续使用该服务。而且你发现网站似乎通过某些手段记住了你的电脑，除非你换个电脑或者换个浏览器才能再白嫖一次。<br>那么问题来了，你试用的时候没有登录，网站服务器是怎么记住你的呢？这就很显然了，服务器一定是给你的浏览器打了 cookie，后台建立了对应的 session 记录你的状态。你的浏览器在每次访问该网站的时候都会听话地带着 cookie，服务器一查 session 就知道这个浏览器已经免费使用过了，得让它登录付费，不能让它继续白嫖了。<br>那如果我不让浏览器发送 cookie，每次都伪装成一个第一次来试用的小萌新，不就可以不断白嫖了么？浏览器会把网站的 cookie 以文件的形式存在某些地方（不同的浏览器配置不同），你把他们找到然后删除就行了。但是对于 Firefox 和 Chrome 浏览器，有很多插件可以直接编辑 cookie，比如我的 Chrome 浏览器就用的一款叫做 EditThisCookie 的插件，这是他们官网：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/session/3.png" alt="http://www.editthiscookie.com/"><br>这类插件可以读取浏览器在当前网页的 cookie，点开插件可以任意编辑和删除 cookie。<strong>当然，偶尔白嫖一两次还行，不鼓励高频率白嫖，想常用还是掏钱吧，否则网站赚不到钱，就只能取消免费试用这个机制了</strong>。<br>以上就是关于 cookie 和 session 的简单介绍，cookie 是 HTTP 协议的一部分，不算复杂，而 session 是可以定制的，所以下面详细看一下实现 session 管理的代码架构吧。</p>
+<h3 id="二、session-的实现"><a href="#二、session-的实现" class="headerlink" title="二、session 的实现"></a>二、session 的实现</h3><p>session 的原理不难，但是具体实现它可是很有技巧的，一般需要三个组件配合完成，它们分别是 <code>Manager</code>、<code>Provider</code> 和 <code>Session</code> 三个类（接口）。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/session/4.jpg"><br>1、浏览器通过 HTTP 协议向服务器请求路径 <code>/content</code> 的网页资源，对应路径上有一个 Handler 函数接收请求，解析 HTTP header 中的 cookie，得到其中存储的 sessionID，然后把这个 ID 发给 <code>Manager</code>。<br>2、<code>Manager</code> 充当一个 session 管理器的角色，主要存储一些配置信息，比如 session 的存活时间，cookie 的名字等等。而所有的 session 存在 <code>Manager</code> 内部的一个 <code>Provider</code> 中。所以 <code>Manager</code> 会把 <code>sid</code>（sessionID）传递给 <code>Provider</code>，让它去找这个 ID 对应的具体是哪个 session。<br>3、<code>Provider</code> 就是一个容器，最常见的应该就是一个散列表，将每个 <code>sid</code> 和对应的 session 一一映射起来。收到 <code>Manager</code> 传递的 <code>sid</code> 之后，它就找到 <code>sid</code> 对应的 session 结构，也就是 <code>Session</code> 结构，然后返回它。<br>4、<code>Session</code> 中存储着用户的具体信息，由 Handler 函数中的逻辑拿出这些信息，生成该用户的 HTML 网页，返回给客户端。<br>那么你也许会问，为什么搞这么麻烦，直接在 Handler 函数中搞一个哈希表，然后存储 <code>sid</code> 和 <code>Session</code> 结构的映射不就完事儿了？<br><strong>这就是设计层面的技巧了</strong>，下面就来说说，为什么分成 <code>Manager</code>、<code>Provider</code> 和 <code>Session</code>。</p>
+<p>先从最底层的 <code>Session</code> 说。既然 session 就是键值对，为啥不直接用哈希表，而是要抽象出这么一个数据结构呢？<br>第一，因为 <code>Session</code> 结构可能不止存储了一个哈希表，还可以存储一些辅助数据，比如 <code>sid</code>，访问次数，过期时间或者最后一次的访问时间，这样便于实现想 LRU、LFU 这样的算法。<br>第二，因为 session 可以有不同的存储方式。如果用编程语言内置的哈希表，那么 session 数据就是存储在内存中，如果数据量大，很容易造成程序崩溃，而且一旦程序结束，所有 session 数据都会丢失。所以可以有很多种 session 的存储方式，比如存入缓存数据库 Redis，或者存入 MySQL 等等。<br>因此，<code>Session</code> 结构提供一层抽象，屏蔽不同存储方式的差异，只要提供一组通用接口操纵键值对：</p>
+<figure class="hljs highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Session <span class="hljs-keyword">interface</span> &#123;<br>    <span class="hljs-comment">// 设置键值对</span><br>    Set(key, val <span class="hljs-keyword">interface</span>&#123;&#125;)<br>    <span class="hljs-comment">// 获取 key 对应的值</span><br>    Get(key <span class="hljs-keyword">interface</span>&#123;&#125;) <span class="hljs-keyword">interface</span>&#123;&#125;<br>    <span class="hljs-comment">// 删除键 key</span><br>	Delete(key <span class="hljs-keyword">interface</span>&#123;&#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>再说 <code>Provider</code> 为啥要抽象出来。我们上面那个图的 <code>Provider</code> 就是一个散列表，保存 <code>sid</code> 到 <code>Session</code> 的映射，但是实际中肯定会更加复杂。我们不是要时不时删除一些 session 吗，除了设置存活时间之外，还可以采用一些其他策略，比如 LRU 缓存淘汰算法，这样就需要 <code>Provider</code> 内部使用哈希链表这种数据结构来存储 session。<br>PS：关于 LRU 算法的奥妙，参见前文「LRU 算法详解」。<br>因此，<code>Provider</code> 作为一个容器，就是要屏蔽算法细节，以合理的数据结构和算法组织 <code>sid</code> 和 <code>Session</code> 的映射关系，只需要实现下面这几个方法实现对 session 的增删查改：</p>
+<figure class="hljs highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Provider <span class="hljs-keyword">interface</span> &#123;<br>    <span class="hljs-comment">// 新增并返回一个 session</span><br>    SessionCreate(sid <span class="hljs-keyword">string</span>) (Session, error)<br>    <span class="hljs-comment">// 删除一个 session</span><br>    SessionDestroy(sid <span class="hljs-keyword">string</span>)<br>    <span class="hljs-comment">// 查找一个 session</span><br>    SessionRead(sid <span class="hljs-keyword">string</span>) (Session, error)<br>    <span class="hljs-comment">// 修改一个session</span><br>    SessionUpdate(sid <span class="hljs-keyword">string</span>)<br>    <span class="hljs-comment">// 通过类似 LRU 的算法回收过期的 session</span><br>	SessionGC(maxLifeTime <span class="hljs-keyword">int64</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>最后说 <code>Manager</code>，大部分具体工作都委托给 <code>Session</code> 和 <code>Provider</code> 承担了，<code>Manager</code> 主要就是一个参数集合，比如 session 的存活时间，清理过期 session 的策略，以及 session 的可用存储方式。<code>Manager</code> 屏蔽了操作的具体细节，我们可以通过 <code>Manager</code> 灵活地配置 session 机制。<br>综上，session 机制分成几部分的最主要原因就是解耦，实现定制化。我在 Github 上看过几个 Go 语言实现的 session 服务，源码都很简单，有兴趣的朋友可以学习学习：<br><a target="_blank" rel="noopener" href="https://github.com/alexedwards/scs">https://github.com/alexedwards/scs</a><br><a target="_blank" rel="noopener" href="https://github.com/astaxie/build-web-application-with-golang">https://github.com/astaxie/build-web-application-with-golang</a></p>
+<p><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/linux%E8%BF%9B%E7%A8%8B">上一篇：Linux的进程、线程、文件描述符是什么</a><br><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/linuxshell">下一篇：关于 Linux shell 你必须知道的</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E6%8A%80%E6%9C%AF/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E6%8A%80%E6%9C%AF/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF/" itemprop="url">密码技术</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>说到密码，我们第一个想到的就是登陆账户的密码，但是从密码学的角度来看，这种根本就不算合格的密码。<br>为什么呢，因为我们的账户密码，是依靠隐蔽性来达到加密作用：密码藏在我心里，你不知道，所以你登不上我的账户。<br>然而密码技术认为，「保密」信息总有一天会被扒出来，所以加密算法不应该依靠「保密」来保证机密性，而应该做到：即便知道了加密算法，依然无计可施。说的魔幻一点就是，告诉你我的密码，你依然不知道我的密码。</p>
+<p>最玄学的就是 Diffie-Hellman 密钥交换算法，我当初就觉得很惊奇，两个人当着你的面互相报几个数字，他们就可以拥有一个共同的秘密，而你却根本不可能算出来这个秘密。下文会着重介绍一下这个算法。<br>本文讨论的密码技术要解决的主要是信息传输中的加密和解密问题。要假设数据传输过程是不安全的，所有信息都在被窃听的，所以发送端要把信息加密，接收方收到信息之后，肯定得知道如何解密。有意思的是，如果你能够让接收者知道如何解密，那么窃听者不是也能够知道如何解密了吗？<br>下面，<strong>我们会介绍对称加密算法、密钥交换算法、非对称加密算法、数字签名、公钥证书</strong>，看看解决安全传输问题的一路坎坷波折。</p>
+<h3 id="一、对称性加密"><a href="#一、对称性加密" class="headerlink" title="一、对称性加密"></a>一、对称性加密</h3><p>对称性密码，也叫共享密钥密码，顾名思义，这种加密方式用相同的密钥进行加密和解密。<br>比如我说一种最简单的对称加密的方法。首先我们知道信息都可以表示成 0/1 比特序列，也知道相同的两个比特序列做异或运算的结果为 0。<br>那么我们就可以生成一个长度和原始信息一样的随机比特序列作为密钥，然后用它对原始信息做异或运算，就生成了密文。反之，再用该密钥对密文做一次异或运算，就可以恢复原始信息。<br>这是一个简单例子，不过有些过于简单，有很多问题。比如密钥的长度和原始信息完全一致，如果原始信息很大，密钥也会一样大，而且生成大量真随机比特序列的计算开销也比较大。<br>当然，有很多更复杂优秀的对称加密算法解决了这些问题，比如 Rijndael 算法、三重 DES 算法等等。<strong>它们从算法上是无懈可击的，也就是拥有巨大的密钥空间，基本无法暴力破解，而且加密过程相对快速</strong>。<br><strong>但是，一切对称加密算法的软肋在于密钥的配送</strong>。加密和解密用同一个密钥，发送方必须设法把密钥发送给接收方。如果窃听者有能力窃取密文，肯定也可以窃取密钥，那么再无懈可击的算法依然不攻自破。<br>所以，下面介绍两种解决密钥配送问题最常见的算法，分别是 Diffie-Hellman 密钥交换算法和非对称加密算法。</p>
+<h3 id="二、密钥交换算法"><a href="#二、密钥交换算法" class="headerlink" title="二、密钥交换算法"></a>二、密钥交换算法</h3><p>我们所说的密钥一般就是一个很大的数字，算法用这个数加密、解密。问题在于，信道是不安全的，所有发出的数据都会被窃取。换句话说，有没有一种办法，能够让两个人在众目睽睽之下，光明正大地交换一个秘密，把对称性密钥安全地送到接收方的手中？<br>Diffie-Hellman 密钥交换算法可以做到。<strong>准确的说，该算法并不是把一个秘密安全地「送给」对方，而是通过一些共享的数字，双方「心中」各自「生成」了一个相同的秘密，而且双方的这个秘密，是第三方窃听者无法生成的</strong>。<br>也许这就是传说中的心有灵犀一点通吧。<br>这个算法规则不算复杂，你甚至都可以找个朋友尝试一下共享秘密，等会我会简单画出它的基本流程。在此之前，需要明确一个问题：<strong>并不是所有运算都有逆运算</strong>。<br>最简单的例子就是我们熟知的单向散列函数，给一个数字 <code>a</code> 和一个散列函数 <code>f</code>，你可以很快计算出 <code>f(a)</code>，但是如果给你 <code>f(a)</code> 和 <code>f</code>，推出 <code>a</code> 是一件基本做不到的事。密钥交换算法之所以看起来如此玄幻，就是利用了这种不可逆的性质。<br>下面，看下密钥交换算法的流程是什么，按照命名惯例，准备执行密钥交换算法的双方称为 Alice 和 Bob，在网络中企图窃取他俩通信内容的坏人称为 Hack 吧。<br>首先，Alice 和 Bob 协商出两个数字 <code>N</code> 和 <code>G</code> 作为生成元，当然协商过程可以被窃听者 Hack 窃取，所以我把这两个数画到中间，代表三方都知道：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF/1.jpg"><br>现在 Alice 和 Bob <strong>心中</strong>各自想一个数字出来，分别称为 <code>A</code> 和 <code>B</code> 吧：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF/2.jpg"><br>现在 Alice 将自己心里的这个数字 <code>A</code> 和 <code>G</code> 通过某些运算得出一个数 <code>AG</code>，然后发给 Bob；Bob 将自己心里的数 <code>B</code> 和 <code>G</code> 通过相同的运算得出一个数 <code>BG</code>，然后发给 Alice：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF/3.jpg"><br>现在的情况变成这样了：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF/4.jpg"><br>注意，类似刚才举的散列函数的例子，知道 <code>AG</code> 和 <code>G</code>，并不能反推出 <code>A</code> 是多少，<code>BG</code> 同理。<br>那么，Alice 可以通过 <code>BG</code> 和自己的 <code>A</code> 通过某些运算得到一个数 <code>ABG</code>，Bob 也可以通过 <code>AG</code> 和自己的 <code>B</code> 通过某些运算得到 <code>ABG</code>，这个数就是 Alice 和 Bob 共有的秘密。<br>而对于 Hack，可以窃取传输过程中的 <code>G</code>，<code>AG</code>，<code>BG</code>，但是由于计算不可逆，怎么都无法结合出 <code>ABG</code> 这个数字。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF/5.jpg"><br>以上就是基本流程，至于具体的数字取值是有讲究的，运算方法在百度上很容易找到，限于篇幅我就不具体写了。<br>该算法可以在第三者窃听的前提下，算出一个别人无法算出的秘密作为对称性加密算法的密钥，开始对称加密的通信。<br>对于该算法，Hack 又想到一种破解方法，不是窃听 Alice 和 Bob 的通信数据，而是直接同时冒充 Alice 和 Bob 的身份，也就是我们说的「<strong>中间人攻击</strong>」：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF/6.jpg"><br>这样，双方根本无法察觉在和 Hack 共享秘密，后果就是 Hack 可以解密甚至修改数据。<br><strong>可见，密钥交换算法也不算完全解决了密钥配送问题，缺陷在于无法核实对方身份</strong>。所以密钥交换算法之前一般要核实对方身份，比如使用数字签名。</p>
+<h3 id="三、非对称加密"><a href="#三、非对称加密" class="headerlink" title="三、非对称加密"></a>三、非对称加密</h3><p>非对称加密的思路就是，干脆别偷偷摸摸传输密钥了，我把加密密钥和解密密钥分开，公钥用于加密，私钥用于解密。只把公钥传送给对方，然后对方开始给我发送加密的数据，我用私钥就可以解密。至于窃听者，拿到公钥和加密数据也没用，因为只有我手上的私钥才能解密。<br>可以这样想，<strong>私钥是钥匙，而公钥是锁，可以把锁公开出去，让别人把数据锁起来发给我；而钥匙一定要留在自己手里，用于解锁</strong>。我们常见的 RSA 算法就是典型的非对称加密算法，具体实现比较复杂，我就不写了，网上很多资料。<br>在实际应用中，非对称性加密的运算速度要比对称性加密慢很多的，所以传输大量数据时，一般不会用公钥直接加密数据，而是加密对称性加密的密钥，传输给对方，然后双方使用对称性加密算法传输数据。<br>需要注意的是，类似 Diffie-Hellman 算法，<strong>非对称加密算法也无法确定通信双方的身份，依然会遭到中间人攻击</strong>。比如 Hack 拦截 Bob 发出的公钥，然后冒充 Bob 的身份给 Alice 发送自己的公钥，那么不知情的 Alice 就会把私密数据用 Hack 的公钥加密，Hack 可以通过私钥解密窃取。<br>那么，Diffie-Hellman 算法和 RSA 非对称加密算法都可以一定程度上解决密钥配送的问题，也具有相同的缺陷，二者的应用场景有什么区别呢？<br>简单来说，根据两种算法的基本原理就可以看出来：<br>如果双方有一个对称加密方案，希望加密通信，而且不能让别人得到钥匙，那么可以使用 Diffie-Hellman 算法交换密钥。<br>如果你希望任何人都可以对信息加密，而只有你能够解密，那么就使用 RSA 非对称加密算法，公布公钥。<br>下面，我们尝试着解决认证发送方身份的问题。</p>
+<h3 id="四、数字签名"><a href="#四、数字签名" class="headerlink" title="四、数字签名"></a>四、数字签名</h3><p>刚才说非对称加密，把公钥公开用于他人对数据加密然后发给你，只有用你手上对应的私钥才能将密文解密。其实，<strong>私钥也可用用来加密数据的，对于 RSA 算法，私钥加密的数据只有公钥才能解开</strong>。<br>数字签名也是利用了非对称性密钥的特性，但是和公钥加密完全颠倒过来：<strong>仍然公布公钥，但是用你的私钥加密数据，然后把加密的数据公布出去，这就是数字签名</strong>。<br>你可能问，这有什么用，公钥可以解开私钥加密，我还加密发出去，不是多此一举吗？<br>是的，但是<strong>数字签名的作用本来就不是保证数据的机密性，而是证明你的身份</strong>，证明这些数据确实是由你本人发出的。<br>你想想，你的私钥加密的数据，只有你的公钥才能解开，那么如果一份加密数据能够被你的公钥解开，不就说明这份数据是你（私钥持有者）本人发布的吗？<br>当然，加密数据仅仅是一个签名，签名应该和数据一同发出，具体流程应该是：<br>1、Bob 生成公钥和私钥，然后把公钥公布出去，私钥自己保留。<br>2、<strong>用私钥加密数据作为签名，然后将数据附带着签名一同发布出去</strong>。<br>3、Alice 收到数据和签名，需要检查此份数据是否是 Bob 所发出，于是用 Bob 之前发出的公钥尝试解密签名，将收到的数据和签名解密后的结果作对比，如果完全相同，说明数据没被篡改，且确实由 Bob 发出。<br>为什么 Alice 这么肯定呢，毕竟数据和签名是两部分，都可以被掉包呀？原因如下：<br>1、如果有人修改了数据，那么 Alice 解密签名之后，对比发现二者不一致，察觉出异常。<br>2、如果有人替换了签名，那么 Alice 用 Bob 的公钥只能解出一串乱码，显然和数据不一致。<br>3、也许有人企图修改数据，然后将修改之后的数据制成签名，使得 Alice 的对比无法发现不一致；但是一旦解开签名，就不可能再重新生成 Bob 的签名了，因为没有 Bob 的私钥。<br>综上，<strong>数字签名可以一定程度上认证数据的来源</strong>。之所以说是一定程度上，是因为这种方式依然可能受到中间人攻击。一旦涉及公钥的发布，接收方就可能收到中间人的假公钥，进行错误的认证，这个问题始终避免不了。<br>说来可笑，数字签名就是验证对方身份的一种方式，但是前提是对方的身份必须是真的… 这似乎陷入一个先有鸡还是先有蛋的死循环，<strong>要想确定对方的身份，必须有一个信任的源头，否则的话，再多的流程也只是在转移问题，而不是真正解决问题</strong>。</p>
+<h3 id="五、公钥证书"><a href="#五、公钥证书" class="headerlink" title="五、公钥证书"></a>五、公钥证书</h3><p><strong>证书其实就是公钥 + 签名，由第三方认证机构颁发</strong>。引入可信任的第三方，是终结信任循环的一种可行方案。<br>证书认证的流程大致如下：<br>1、Bob 去可信任的认证机构证实本人真实身份，并提供自己的公钥。<br>2、Alice 想跟 Bob 通信，首先向认证机构请求 Bob 的公钥，认证机构会把一张证书（Bob 的公钥以及自己对其公钥的签名）发送给 Alice。<br>3、Alice 检查签名，确定该公钥确实由这家认证机构发送，中途未被篡改。<br>4、Alice 通过这个公钥加密数据，开始和 Bob 通信。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF/7.jpg" alt="图片来自《图解密码技术》"><br>PS：以上只是为了说明，证书只需要安装一次，并不需要每次都向认证机构请求；一般是服务器直接给客户端发送证书，而不是认证机构。<br>也许有人问，Alice 要想通过数字签名确定证书的有效性，前提是要有该机构的（认证）公钥，这不是又回到刚才的死循环了吗？<br>我们安装的正规浏览器中都预存了正规认证机构的证书（包含其公钥），用于确认机构身份，所以说证书的认证是可信的。<br>Bob 向机构提供公钥的过程中，需要提供很多个人信息进行身份验证，比较严格，所以说也算是可靠的。<br>获得了 Bob 的可信公钥，Alice 和 Bob 之间的通信基于加密算法的保护，是完全无懈可击的。<br>现在的正规网站，大都使用 HTTPS 协议，就是在 HTTP 协议和 TCP 协议之间加了一个 SSL/TLS 安全层。在你的浏览器和网站服务器完成 TCP 握手后，SSL 协议层也会进行 SSL 握手交换安全参数，其中就包含该网站的证书，以便浏览器验证站点身份。SSL 安全层验证完成之后，上层的 HTTP 协议内容都会被加密，保证数据的安全传输。<br>这样一来，传统的中间人攻击就几乎没有了生存空间，攻击手段只能由技术缺陷转变为坑蒙拐骗。事实上，这种手段的效果反而更高效，比如我就发现<strong>网上不少下载网站发布的浏览器，不仅包含乱七八糟的导航和收藏网址，还包含一些不正规的认证机构证书。任何人都可以申请证书，这些不正规证书很可能造成安全隐患</strong>。</p>
+<h3 id="六、最后总结"><a href="#六、最后总结" class="headerlink" title="六、最后总结"></a>六、最后总结</h3><p>对称性加密算法使用同一个密钥加密和解密，难以破解，加密速度较快，但是存在密钥配送问题。<br>Diffie-Hellman 密钥交换算法可以让双方「心有灵犀一点通」，一定程度解决密钥配送问题，但是无法验证通信方的身份，所以可能受到中间人攻击。<br>非对称性加密算法生成一对儿密钥，把加密和解密的工作分开了。<br>RSA 算法作为经典的非对称加密算法，有两种用途：如果用于加密，可以把公钥发布出去用于加密，只有自己的私钥可以解密，保证了数据的机密性；如果用于数字签名，把公钥发布出去后，用私钥加密数据作为签名，以证明该数据由私钥持有者所发送。但是无论那种用法，涉及公钥的发布，都无法避免中间人攻击。<br>公钥证书就是公钥 + 签名，由可信任的第三方认证机构颁发。由于正规浏览器都预装了可信的认证机构的公钥，所以可以有效防止中间人攻击。<br>HTTPS 协议中的 SSL/TLS 安全层会组合使用以上几种加密方式，<strong>所以说不要安装非正规的浏览器，不要乱安装未知来源的证书</strong>。<br>密码技术只是安全的一小部分，即便是通过正规机构认证的 HTTPS 站点，也不意味着可信任，只能说明其数据传输是安全的。技术永远不可能真正保护你，最重要的还是得提高个人的安全防范意识，多留心眼儿，谨慎处理敏感数据。</p>
+<p><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/linuxshell">上一篇：关于 Linux shell 你必须知道的</a><br><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/%E5%9C%A8%E7%BA%BF%E7%BB%83%E4%B9%A0%E5%B9%B3%E5%8F%B0">下一篇：Git/SQL/正则表达式的在线练习平台</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E5%A0%86%E8%AF%A6%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E5%A0%86%E8%AF%A6%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97/" itemprop="url">二叉堆详解实现优先级队列</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="二叉堆详解实现优先级队列"><a href="#二叉堆详解实现优先级队列" class="headerlink" title="二叉堆详解实现优先级队列"></a>二叉堆详解实现优先级队列</h1><p>二叉堆（Binary Heap）没什么神秘，性质比二叉搜索树 BST 还简单。其主要操作就两个，<code>sink</code>（下沉）和 <code>swim</code>（上浮），用以维护二叉堆的性质。其主要应用有两个，首先是一种排序方法「堆排序」，第二是一种很有用的数据结构「优先级队列」。<br>本文就以实现优先级队列（Priority Queue）为例，通过图片和人类的语言来描述一下二叉堆怎么运作的。</p>
+<h3 id="一、二叉堆概览"><a href="#一、二叉堆概览" class="headerlink" title="一、二叉堆概览"></a>一、二叉堆概览</h3><p>首先，二叉堆和二叉树有啥关系呢，为什么人们总数把二叉堆画成一棵二叉树？<br>因为，二叉堆其实就是一种特殊的二叉树（完全二叉树），只不过存储在数组里。一般的链表二叉树，我们操作节点的指针，而在数组里，我们把数组索引作为指针：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 父节点的索引</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">parent</span><span class="hljs-params">(<span class="hljs-keyword">int</span> root)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> root / <span class="hljs-number">2</span>;<br>&#125;<br><span class="hljs-comment">// 左孩子的索引</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-keyword">int</span> root)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> root * <span class="hljs-number">2</span>;<br>&#125;<br><span class="hljs-comment">// 右孩子的索引</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-keyword">int</span> root)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> root * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>画个图你立即就能理解了，注意数组的第一个索引 0 空着不用，<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/heap/1.png" alt="1"><br>PS：因为数组索引是数组，为了方便区分，将字符作为数组元素。<br>你看到了，把 arr[1] 作为整棵树的根的话，每个节点的父节点和左右孩子的索引都可以通过简单的运算得到，这就是二叉堆设计的一个巧妙之处。为了方便讲解，下面都会画的图都是二叉树结构，相信你能把树和数组对应起来。<br>二叉堆还分为最大堆和最小堆。<strong>最大堆的性质是：每个节点都大于等于它的两个子节点。</strong>类似的，最小堆的性质是：每个节点都小于等于它的子节点。<br>两种堆核心思路都是一样的，本文以最大堆为例讲解。<br>对于一个最大堆，根据其性质，显然堆顶，也就是 arr[1] 一定是所有元素中最大的元素。</p>
+<h3 id="二、优先级队列概览"><a href="#二、优先级队列概览" class="headerlink" title="二、优先级队列概览"></a>二、优先级队列概览</h3><p>优先级队列这种数据结构有一个很有用的功能，你插入或者删除元素的时候，元素会自动排序，这底层的原理就是二叉堆的操作。<br>数据结构的功能无非增删查该，优先级队列有两个主要 API，分别是 <code>insert</code> 插入一个元素和 <code>delMax</code> 删除最大元素（如果底层用最小堆，那么就是 <code>delMin</code>）。<br>下面我们实现一个简化的优先级队列，先看下代码框架：<br>PS：为了清晰起见，这里用到 Java 的泛型，<code>Key</code> 可以是任何一种可比较大小的数据类型，你可以认为它是 int、char 等。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MaxPQ</span></span><br><span class="hljs-class">    &lt;<span class="hljs-title">Key</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Comparable</span>&lt;<span class="hljs-title">Key</span>&gt;&gt; </span>&#123;<br>    <span class="hljs-comment">// 存储元素的数组</span><br>    <span class="hljs-keyword">private</span> Key[] pq;<br>    <span class="hljs-comment">// 当前 Priority Queue 中的元素个数</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> N = <span class="hljs-number">0</span>;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MaxPQ</span><span class="hljs-params">(<span class="hljs-keyword">int</span> cap)</span> </span>&#123;<br>        <span class="hljs-comment">// 索引 0 不用，所以多分配一个空间</span><br>        pq = (Key[]) <span class="hljs-keyword">new</span> Comparable[cap + <span class="hljs-number">1</span>];<br>    &#125;<br>    <span class="hljs-comment">/* 返回当前队列中最大元素 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Key <span class="hljs-title">max</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> pq[<span class="hljs-number">1</span>];<br>    &#125;<br>    <span class="hljs-comment">/* 插入元素 e */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(Key e)</span> </span>&#123;...&#125;<br>    <span class="hljs-comment">/* 删除并返回当前队列中最大元素 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Key <span class="hljs-title">delMax</span><span class="hljs-params">()</span> </span>&#123;...&#125;<br>    <span class="hljs-comment">/* 上浮第 k 个元素，以维护最大堆性质 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swim</span><span class="hljs-params">(<span class="hljs-keyword">int</span> k)</span> </span>&#123;...&#125;<br>    <span class="hljs-comment">/* 下沉第 k 个元素，以维护最大堆性质 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sink</span><span class="hljs-params">(<span class="hljs-keyword">int</span> k)</span> </span>&#123;...&#125;<br>    <span class="hljs-comment">/* 交换数组的两个元素 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">exch</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j)</span> </span>&#123;<br>        Key temp = pq[i];<br>        pq[i] = pq[j];<br>        pq[j] = temp;<br>    &#125;<br>    <span class="hljs-comment">/* pq[i] 是否比 pq[j] 小？ */</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">less</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j)</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> pq[i].compareTo(pq[j]) &lt; <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-comment">/* 还有 left, right, parent 三个方法 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>空出来的四个方法是二叉堆和优先级队列的奥妙所在，下面用图文来逐个理解。</p>
+<h3 id="三、实现-swim-和-sink"><a href="#三、实现-swim-和-sink" class="headerlink" title="三、实现 swim 和 sink"></a>三、实现 swim 和 sink</h3><p>为什么要有上浮 swim 和下沉 sink 的操作呢？为了维护堆结构。<br>我们要讲的是最大堆，每个节点都比它的两个子节点大，但是在插入元素和删除元素时，难免破坏堆的性质，这就需要通过这两个操作来恢复堆的性质了。<br>对于最大堆，会破坏堆性质的有有两种情况：</p>
+<ol>
+<li>如果某个节点 A 比它的子节点（中的一个）小，那么 A 就不配做父节点，应该下去，下面那个更大的节点上来做父节点，这就是对 A 进行<strong>下沉</strong>。</li>
+<li>如果某个节点 A 比它的父节点大，那么 A 不应该做子节点，应该把父节点换下来，自己去做父节点，这就是对 A 的<strong>上浮</strong>。<br>当然，错位的节点 A 可能要上浮（或下沉）很多次，才能到达正确的位置，恢复堆的性质。所以代码中肯定有一个 <code>while</code> 循环。<br>细心的读者也许会问，这两个操作不是互逆吗，所以上浮的操作一定能用下沉来完成，为什么我还要费劲写两个方法？<br>是的，操作是互逆等价的，但是最终我们的操作只会在堆底和堆顶进行（等会讲原因），显然堆底的「错位」元素需要上浮，堆顶的「错位」元素需要下沉。</li>
+</ol>
+<p><strong>上浮的代码实现：</strong></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swim</span><span class="hljs-params">(<span class="hljs-keyword">int</span> k)</span> </span>&#123;<br>    <span class="hljs-comment">// 如果浮到堆顶，就不能再上浮了</span><br>    <span class="hljs-keyword">while</span> (k &gt; <span class="hljs-number">1</span> &amp;&amp; less(parent(k), k)) &#123;<br>        <span class="hljs-comment">// 如果第 k 个元素比上层大</span><br>        <span class="hljs-comment">// 将 k 换上去</span><br>        exch(parent(k), k);<br>        k = parent(k);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>画个 GIF 看一眼就明白了：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/heap/swim.gif" alt="2"><br><strong>下沉的代码实现：</strong><br>下沉比上浮略微复杂一点，因为上浮某个节点 A，只需要 A 和其父节点比较大小即可；但是下沉某个节点 A，需要 A 和其<strong>两个子节点</strong>比较大小，如果 A 不是最大的就需要调整位置，要把较大的那个子节点和 A 交换。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sink</span><span class="hljs-params">(<span class="hljs-keyword">int</span> k)</span> </span>&#123;<br>    <span class="hljs-comment">// 如果沉到堆底，就沉不下去了</span><br>    <span class="hljs-keyword">while</span> (left(k) &lt;= N) &#123;<br>        <span class="hljs-comment">// 先假设左边节点较大</span><br>        <span class="hljs-keyword">int</span> older = left(k);<br>        <span class="hljs-comment">// 如果右边节点存在，比一下大小</span><br>        <span class="hljs-keyword">if</span> (right(k) &lt;= N &amp;&amp; less(older, right(k)))<br>            older = right(k);<br>        <span class="hljs-comment">// 结点 k 比俩孩子都大，就不必下沉了</span><br>        <span class="hljs-keyword">if</span> (less(older, k)) <span class="hljs-keyword">break</span>;<br>        <span class="hljs-comment">// 否则，不符合最大堆的结构，下沉 k 结点</span><br>        exch(k, older);<br>        k = older;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>画个 GIF 看下就明白了：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/heap/sink.gif" alt="3"><br>至此，二叉堆的主要操作就讲完了，一点都不难吧，代码加起来也就十行。明白了 <code>sink</code> 和 <code>swim</code> 的行为，下面就可以实现优先级队列了。</p>
+<h3 id="四、实现-delMax-和-insert"><a href="#四、实现-delMax-和-insert" class="headerlink" title="四、实现 delMax 和 insert"></a>四、实现 delMax 和 insert</h3><p>这两个方法就是建立在 <code>swim</code> 和 <code>sink</code> 上的。<br>**<code>insert</code> 方法先把要插入的元素添加到堆底的最后，然后让其上浮到正确位置。**<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/heap/insert.gif" alt="4"></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(Key e)</span> </span>&#123;<br>    N++;<br>    <span class="hljs-comment">// 先把新元素加到最后</span><br>    pq[N] = e;<br>    <span class="hljs-comment">// 然后让它上浮到正确的位置</span><br>    swim(N);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong><code>delMax</code> 方法先把堆顶元素 A 和堆底最后的元素 B 对调，然后删除 A，最后让 B 下沉到正确位置。</strong></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> Key <span class="hljs-title">delMax</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-comment">// 最大堆的堆顶就是最大元素</span><br>    Key max = pq[<span class="hljs-number">1</span>];<br>    <span class="hljs-comment">// 把这个最大元素换到最后，删除之</span><br>    exch(<span class="hljs-number">1</span>, N);<br>    pq[N] = <span class="hljs-keyword">null</span>;<br>    N--;<br>    <span class="hljs-comment">// 让 pq[1] 下沉到正确位置</span><br>    sink(<span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">return</span> max;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/heap/delete.gif" alt="5"><br>至此，一个优先级队列就实现了，插入和删除元素的时间复杂度为 $O(logK)$，$K$ 为当前二叉堆（优先级队列）中的元素总数。因为我们时间复杂度主要花费在 <code>sink</code> 或者 <code>swim</code> 上，而不管上浮还是下沉，最多也就树（堆）的高度，也就是 log 级别。</p>
+<h3 id="五、最后总结"><a href="#五、最后总结" class="headerlink" title="五、最后总结"></a>五、最后总结</h3><p>二叉堆就是一种完全二叉树，所以适合存储在数组中，而且二叉堆拥有一些特殊性质。<br>二叉堆的操作很简单，主要就是上浮和下沉，来维护堆的性质（堆有序），核心代码也就十行。<br>优先级队列是基于二叉堆实现的，主要操作是插入和删除。插入是先插到最后，然后上浮到正确位置；删除是调换位置后再删除，然后下沉到正确位置。核心代码也就十行。<br>也许这就是数据结构的威力，简单的操作就能实现巧妙的功能，真心佩服发明二叉堆算法的人！</p>
+<p><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%954">上一篇：学习数据结构和算法读什么书</a><br><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/LRU%E7%AE%97%E6%B3%95">下一篇：LRU算法详解</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E6%93%8D%E4%BD%9C%E9%9B%86%E9%94%A6/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E6%93%8D%E4%BD%9C%E9%9B%86%E9%94%A6/" itemprop="url">二叉搜索树操作集锦</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="二叉搜索树操作集锦"><a href="#二叉搜索树操作集锦" class="headerlink" title="二叉搜索树操作集锦"></a>二叉搜索树操作集锦</h1><p>通过之前的文章<a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%9A%84%E9%AB%98%E6%95%88%E6%96%B9%E6%B3%95">框架思维</a>，二叉树的遍历框架应该已经印到你的脑子里了，这篇文章就来实操一下，看看框架思维是怎么灵活运用，秒杀一切二叉树问题的。<br>二叉树算法的设计的总路线：明确一个节点要做的事情，然后剩下的事抛给框架。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">traverse</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>    <span class="hljs-comment">// root 需要做什么？在这做。</span><br>    <span class="hljs-comment">// 其他的不用 root 操心，抛给框架</span><br>    traverse(root.left);<br>    traverse(root.right);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>举两个简单的例子体会一下这个思路，热热身。<br><strong>1. 如何把二叉树所有的节点中的值加一？</strong></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">plusOne</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;<br>    root.val += <span class="hljs-number">1</span>;<br>    plusOne(root.left);<br>    plusOne(root.right);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>2. 如何判断两棵二叉树是否完全相同？</strong></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isSameTree</span><span class="hljs-params">(TreeNode root1, TreeNode root2)</span> </span>&#123;<br>    <span class="hljs-comment">// 都为空的话，显然相同</span><br>    <span class="hljs-keyword">if</span> (root1 == <span class="hljs-keyword">null</span> &amp;&amp; root2 == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    <span class="hljs-comment">// 一个为空，一个非空，显然不同</span><br>    <span class="hljs-keyword">if</span> (root1 == <span class="hljs-keyword">null</span> || root2 == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-comment">// 两个都非空，但 val 不一样也不行</span><br>    <span class="hljs-keyword">if</span> (root1.val != root2.val) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-comment">// root1 和 root2 该比的都比完了</span><br>    <span class="hljs-keyword">return</span> isSameTree(root1.left, root2.left)<br>        &amp;&amp; isSameTree(root1.right, root2.right);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>借助框架，上面这两个例子不难理解吧？如果可以理解，那么所有二叉树算法你都能解决。</p>
+<p>二叉搜索树（Binary Search Tree，简称 BST）是一种很常用的的二叉树。它的定义是：一个二叉树中，任意节点的值要大于等于左子树所有节点的值，且要小于等于右边子树的所有节点的值。<br>如下就是一个符合定义的 BST：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/BST/BST_example.png" alt="BST"></p>
+<p>下面实现 BST 的基础操作：判断 BST 的合法性、增、删、查。其中“删”和“判断合法性”略微复杂。<br><strong>零、判断 BST 的合法性</strong><br>这里是有坑的哦，我们按照刚才的思路，每个节点自己要做的事不就是比较自己和左右孩子吗？看起来应该这样写代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isValidBST</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    <span class="hljs-keyword">if</span> (root.left != <span class="hljs-keyword">null</span> &amp;&amp; root.val &lt;= root.left.val) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">if</span> (root.right != <span class="hljs-keyword">null</span> &amp;&amp; root.val &gt;= root.right.val) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">return</span> isValidBST(root.left)<br>        &amp;&amp; isValidBST(root.right);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>但是这个算法出现了错误，BST 的每个节点应该要小于右边子树的所有节点，下面这个二叉树显然不是 BST，但是我们的算法会把它判定为 BST。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/BST/%E5%81%87BST.png" alt="notBST"><br>出现错误，不要慌张，框架没有错，一定是某个细节问题没注意到。我们重新看一下 BST 的定义，root 需要做的不只是和左右子节点比较，而是要整个左子树和右子树所有节点比较。怎么办，鞭长莫及啊！<br>这种情况，我们可以使用辅助函数，增加函数参数列表，在参数中携带额外信息，请看正确的代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isValidBST</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> isValidBST(root, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isValidBST</span><span class="hljs-params">(TreeNode root, TreeNode min, TreeNode max)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    <span class="hljs-keyword">if</span> (min != <span class="hljs-keyword">null</span> &amp;&amp; root.val &lt;= min.val) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">if</span> (max != <span class="hljs-keyword">null</span> &amp;&amp; root.val &gt;= max.val) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">return</span> isValidBST(root.left, min, root) <br>        &amp;&amp; isValidBST(root.right, root, max);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>一、在 BST 中查找一个数是否存在</strong><br>根据我们的指导思想，可以这样写代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isInBST</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">if</span> (root.val == target) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    <span class="hljs-keyword">return</span> isInBST(root.left, target)<br>        || isInBST(root.right, target);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样写完全正确，充分证明了你的框架性思维已经养成。现在你可以考虑一点细节问题了：如何充分利用信息，把 BST 这个“左小右大”的特性用上？<br>很简单，其实不需要递归地搜索两边，类似二分查找思想，根据 target 和 root.val 的大小比较，就能排除一边。我们把上面的思路稍稍改动：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isInBST</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">if</span> (root.val == target)<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    <span class="hljs-keyword">if</span> (root.val &lt; target) <br>        <span class="hljs-keyword">return</span> isInBST(root.right, target);<br>    <span class="hljs-keyword">if</span> (root.val &gt; target)<br>        <span class="hljs-keyword">return</span> isInBST(root.left, target);<br>    <span class="hljs-comment">// root 该做的事做完了，顺带把框架也完成了，妙</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>于是，我们对原始框架进行改造，抽象出一套<strong>针对 BST 的遍历框架</strong>：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BST</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root.val == target)<br>        <span class="hljs-comment">// 找到目标，做点什么</span><br>    <span class="hljs-keyword">if</span> (root.val &lt; target) <br>        BST(root.right, target);<br>    <span class="hljs-keyword">if</span> (root.val &gt; target)<br>        BST(root.left, target);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>二、在 BST 中插入一个数</strong><br>对数据结构的操作无非遍历 + 访问，遍历就是“找”，访问就是“改”。具体到这个问题，插入一个数，就是先找到插入位置，然后进行插入操作。<br>上一个问题，我们总结了 BST 中的遍历框架，就是“找”的问题。直接套框架，加上“改”的操作即可。一旦涉及“改”，函数就要返回 TreeNode 类型，并且对递归调用的返回值进行接收。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">TreeNode <span class="hljs-title">insertIntoBST</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>    <span class="hljs-comment">// 找到空位置插入新节点</span><br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> TreeNode(val);<br>    <span class="hljs-comment">// if (root.val == val)</span><br>    <span class="hljs-comment">//     BST 中一般不会插入已存在元素</span><br>    <span class="hljs-keyword">if</span> (root.val &lt; val) <br>        root.right = insertIntoBST(root.right, val);<br>    <span class="hljs-keyword">if</span> (root.val &gt; val) <br>        root.left = insertIntoBST(root.left, val);<br>    <span class="hljs-keyword">return</span> root;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>三、在 BST 中删除一个数</strong><br>这个问题稍微复杂，不过你有框架指导，难不住你。跟插入操作类似，先“找”再“改”，先把框架写出来再说：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">TreeNode <span class="hljs-title">deleteNode</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> key)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root.val == key) &#123;<br>        <span class="hljs-comment">// 找到啦，进行删除</span><br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (root.val &gt; key) &#123;<br>        root.left = deleteNode(root.left, key);<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (root.val &lt; key) &#123;<br>        root.right = deleteNode(root.right, key);<br>    &#125;<br>    <span class="hljs-keyword">return</span> root;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>找到目标节点了，比方说是节点 A，如何删除这个节点，这是难点。因为删除节点的同时不能破坏 BST 的性质。有三种情况，用图片来说明。<br>情况 1：A 恰好是末端节点，两个子节点都为空，那么它可以当场去世了。<br>图片来自 LeetCode<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/BST/bst_deletion_case_1.png" alt="1"></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (root.left == <span class="hljs-keyword">null</span> &amp;&amp; root.right == <span class="hljs-keyword">null</span>)<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br></code></pre></td></tr></table></figure>
+<p>情况 2：A 只有一个非空子节点，那么它要让这个孩子接替自己的位置。<br>图片来自 LeetCode<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/BST/bst_deletion_case_2.png" alt="2"></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 排除了情况 1 之后</span><br><span class="hljs-keyword">if</span> (root.left == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> root.right;<br><span class="hljs-keyword">if</span> (root.right == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> root.left;<br></code></pre></td></tr></table></figure>
+<p>情况 3：A 有两个子节点，麻烦了，为了不破坏 BST 的性质，A 必须找到左子树中最大的那个节点，或者右子树中最小的那个节点来接替自己。我们以第二种方式讲解。<br>图片来自 LeetCode<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/BST/bst_deletion_case_3.png" alt="2"></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (root.left != <span class="hljs-keyword">null</span> &amp;&amp; root.right != <span class="hljs-keyword">null</span>) &#123;<br>    <span class="hljs-comment">// 找到右子树的最小节点</span><br>    TreeNode minNode = getMin(root.right);<br>    <span class="hljs-comment">// 把 root 改成 minNode</span><br>    root.val = minNode.val;<br>    <span class="hljs-comment">// 转而去删除 minNode</span><br>    root.right = deleteNode(root.right, minNode.val);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>三种情况分析完毕，填入框架，简化一下代码：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">TreeNode <span class="hljs-title">deleteNode</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> key)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    <span class="hljs-keyword">if</span> (root.val == key) &#123;<br>        <span class="hljs-comment">// 这两个 if 把情况 1 和 2 都正确处理了</span><br>        <span class="hljs-keyword">if</span> (root.left == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> root.right;<br>        <span class="hljs-keyword">if</span> (root.right == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> root.left;<br>        <span class="hljs-comment">// 处理情况 3</span><br>        TreeNode minNode = getMin(root.right);<br>        root.val = minNode.val;<br>        root.right = deleteNode(root.right, minNode.val);<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (root.val &gt; key) &#123;<br>        root.left = deleteNode(root.left, key);<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (root.val &lt; key) &#123;<br>        root.right = deleteNode(root.right, key);<br>    &#125;<br>    <span class="hljs-keyword">return</span> root;<br>&#125;<br><span class="hljs-function">TreeNode <span class="hljs-title">getMin</span><span class="hljs-params">(TreeNode node)</span> </span>&#123;<br>    <span class="hljs-comment">// BST 最左边的就是最小的</span><br>    <span class="hljs-keyword">while</span> (node.left != <span class="hljs-keyword">null</span>) node = node.left;<br>    <span class="hljs-keyword">return</span> node;<br>&#125; <br></code></pre></td></tr></table></figure>
+<p>删除操作就完成了。注意一下，这个删除操作并不完美，因为我们一般不会通过 root.val = minNode.val 修改节点内部的值来交换节点，而是通过一系列略微复杂的链表操作交换 root 和 minNode 两个节点。因为具体应用中，val 域可能会很大，修改起来很耗时，而链表操作无非改一改指针，而不会去碰内部数据。<br>但这里忽略这个细节，旨在突出 BST 基本操作的共性，以及借助框架逐层细化问题的思维方式。<br><strong>四、最后总结</strong><br>通过这篇文章，你学会了如下几个技巧：</p>
+<ol>
+<li>二叉树算法设计的总路线：把当前节点要做的事做好，其他的交给递归框架，不用当前节点操心。</li>
+<li>如果当前节点会对下面的子节点有整体影响，可以通过辅助函数增长参数列表，借助参数传递信息。</li>
+<li>在二叉树框架之上，扩展出一套 BST 遍历框架：<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BST</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (root.val == target)<br>        <span class="hljs-comment">// 找到目标，做点什么</span><br>    <span class="hljs-keyword">if</span> (root.val &lt; target) <br>        BST(root.right, target);<br>    <span class="hljs-keyword">if</span> (root.val &gt; target)<br>        BST(root.left, target);<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>掌握了 BST 的基本操作。</li>
+</ol>
+<p><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/LRU%E7%AE%97%E6%B3%95">上一篇：LRU算法详解</a><br><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E6%A0%88">下一篇：特殊数据结构：单调栈</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E6%A0%88/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E6%A0%88/" itemprop="url">单调栈</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h3 id="如何使用单调栈解题"><a href="#如何使用单调栈解题" class="headerlink" title="如何使用单调栈解题"></a>如何使用单调栈解题</h3><p>栈（stack）是很简单的一种数据结构，先进后出的逻辑顺序，符合某些问题的特点，比如说函数调用栈。<br>单调栈实际上就是栈，只是利用了一些巧妙的逻辑，使得每次新元素入栈后，栈内的元素都保持有序（单调递增或单调递减）。<br>听起来有点像堆（heap）？不是的，单调栈用途不太广泛，只处理一种典型的问题，叫做 Next Greater Element。本文用讲解单调队列的算法模版解决这类问题，并且探讨处理「循环数组」的策略。<br>首先，讲解 Next Greater Number 的原始问题：给你一个数组，返回一个等长的数组，对应索引存储着下一个更大元素，如果没有更大的元素，就存 -1。不好用语言解释清楚，直接上一个例子：<br>给你一个数组 [2,1,2,4,3]，你返回数组 [4,2,4,-1,-1]。<br>解释：第一个 2 后面比 2 大的数是 4; 1 后面比 1 大的数是 2；第二个 2 后面比 2 大的数是 4; 4 后面没有比 4 大的数，填 -1；3 后面没有比 3 大的数，填 -1。<br>这道题的暴力解法很好想到，就是对每个元素后面都进行扫描，找到第一个更大的元素就行了。但是暴力解法的时间复杂度是 O(n^2)。<br>这个问题可以这样抽象思考：把数组的元素想象成并列站立的人，元素大小想象成人的身高。这些人面对你站成一列，如何求元素「2」的 Next Greater Number 呢？很简单，如果能够看到元素「2」，那么他后面可见的第一个人就是「2」的 Next Greater Number，因为比「2」小的元素身高不够，都被「2」挡住了，第一个露出来的就是答案。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8D%95%E8%B0%83%E6%A0%88/1.png" alt="ink-image"><br>这个情景很好理解吧？带着这个抽象的情景，先来看下代码。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">nextGreaterElement</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">ans</span><span class="hljs-params">(nums.size())</span></span>; <span class="hljs-comment">// 存放答案的数组</span><br>    <span class="hljs-built_in">stack</span>&lt;<span class="hljs-keyword">int</span>&gt; s;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = nums.size() - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123; <span class="hljs-comment">// 倒着往栈里放</span><br>        <span class="hljs-keyword">while</span> (!s.empty() &amp;&amp; s.top() &lt;= nums[i]) &#123; <span class="hljs-comment">// 判定个子高矮</span><br>            s.pop(); <span class="hljs-comment">// 矮个起开，反正也被挡着了。。。</span><br>        &#125;<br>        ans[i] = s.empty() ? <span class="hljs-number">-1</span> : s.top(); <span class="hljs-comment">// 这个元素身后的第一个高个</span><br>        s.push(nums[i]); <span class="hljs-comment">// 进队，接受之后的身高判定吧！</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这就是单调队列解决问题的模板。for 循环要从后往前扫描元素，因为我们借助的是栈的结构，倒着入栈，其实是正着出栈。while 循环是把两个“高个”元素之间的元素排除，因为他们的存在没有意义，前面挡着个“更高”的元素，所以他们不可能被作为后续进来的元素的 Next Great Number 了。<br>这个算法的时间复杂度不是那么直观，如果你看到 for 循环嵌套 while 循环，可能认为这个算法的复杂度也是 O(n^2)，但是实际上这个算法的复杂度只有 O(n)。<br>分析它的时间复杂度，要从整体来看：总共有 n 个元素，每个元素都被 push 入栈了一次，而最多会被 pop 一次，没有任何冗余操作。所以总的计算规模是和元素规模 n 成正比的，也就是 O(n) 的复杂度。<br>现在，你已经掌握了单调栈的使用技巧，来一个简单的变形来加深一下理解。<br>给你一个数组 T = [73, 74, 75, 71, 69, 72, 76, 73]，这个数组存放的是近几天的天气气温（这气温是铁板烧？不是的，这里用的华氏度）。你返回一个数组，计算：对于每一天，你还要至少等多少天才能等到一个更暖和的气温；如果等不到那一天，填 0 。<br>举例：给你 T = [73, 74, 75, 71, 69, 72, 76, 73]，你返回 [1, 1, 4, 2, 1, 1, 0, 0]。<br>解释：第一天 73 华氏度，第二天 74 华氏度，比 73 大，所以对于第一天，只要等一天就能等到一个更暖和的气温。后面的同理。<br>你已经对 Next Greater Number 类型问题有些敏感了，这个问题本质上也是找 Next Greater Number，只不过现在不是问你 Next Greater Number 是多少，而是问你当前距离 Next Greater Number 的距离而已。<br>相同类型的问题，相同的思路，直接调用单调栈的算法模板，稍作改动就可以啦，直接上代码把。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">dailyTemperatures</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; T)</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">ans</span><span class="hljs-params">(T.size())</span></span>;<br>    <span class="hljs-built_in">stack</span>&lt;<span class="hljs-keyword">int</span>&gt; s; <span class="hljs-comment">// 这里放元素索引，而不是元素</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = T.size() - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>        <span class="hljs-keyword">while</span> (!s.empty() &amp;&amp; T[s.top()] &lt;= T[i]) &#123;<br>            s.pop();<br>        &#125;<br>        ans[i] = s.empty() ? <span class="hljs-number">0</span> : (s.top() - i); <span class="hljs-comment">// 得到索引间距</span><br>        s.push(i); <span class="hljs-comment">// 加入索引，而不是元素</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>单调栈讲解完毕。下面开始另一个重点：如何处理「循环数组」。<br>同样是 Next Greater Number，现在假设给你的数组是个环形的，如何处理？<br>给你一个数组 [2,1,2,4,3]，你返回数组 [4,2,4,-1,4]。拥有了环形属性，最后一个元素 3 绕了一圈后找到了比自己大的元素 4 。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8D%95%E8%B0%83%E6%A0%88/2.png" alt="ink-image"></p>
+<p>首先，计算机的内存都是线性的，没有真正意义上的环形数组，但是我们可以模拟出环形数组的效果，一般是通过 % 运算符求模（余数），获得环形特效：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span>[] arr = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>&#125;;<br><span class="hljs-keyword">int</span> n = arr.length, index = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) &#123;<br>    print(arr[index % n]);<br>    index++;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>回到 Next Greater Number 的问题，增加了环形属性后，问题的难点在于：这个 Next 的意义不仅仅是当前元素的右边了，有可能出现在当前元素的左边（如上例）。<br>明确问题，问题就已经解决了一半了。我们可以考虑这样的思路：将原始数组“翻倍”，就是在后面再接一个原始数组，这样的话，按照之前“比身高”的流程，每个元素不仅可以比较自己右边的元素，而且也可以和左边的元素比较了。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8D%95%E8%B0%83%E6%A0%88/3.png" alt="ink-image (2)"><br>怎么实现呢？你当然可以把这个双倍长度的数组构造出来，然后套用算法模板。但是，我们可以不用构造新数组，而是利用循环数组的技巧来模拟。直接看代码吧：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">nextGreaterElements</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = nums.size();<br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">res</span><span class="hljs-params">(n)</span></span>; <span class="hljs-comment">// 存放结果</span><br>    <span class="hljs-built_in">stack</span>&lt;<span class="hljs-keyword">int</span>&gt; s;<br>    <span class="hljs-comment">// 假装这个数组长度翻倍了</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span> * n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>        <span class="hljs-keyword">while</span> (!s.empty() &amp;&amp; s.top() &lt;= nums[i % n])<br>            s.pop();<br>        res[i % n] = s.empty() ? <span class="hljs-number">-1</span> : s.top();<br>        s.push(nums[i % n]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>至此，你已经掌握了单调栈的设计方法及代码模板，学会了解决 Next Greater Number，并能够处理循环数组了。<br>你的在看，是对我的鼓励。关注公众号：labuladong</p>
+<p><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E6%93%8D%E4%BD%9C%E9%9B%86%E9%94%A6">上一篇：二叉搜索树操作集锦</a><br><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97">下一篇：特殊数据结构：单调队列</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" itemprop="url">单调队列</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="特殊数据结构：单调队列"><a href="#特殊数据结构：单调队列" class="headerlink" title="特殊数据结构：单调队列"></a>特殊数据结构：单调队列</h1><p>前文讲了一种特殊的数据结构「单调栈」monotonic stack，解决了一类问题「Next Greater Number」，本文写一个类似的数据结构「单调队列」。<br>也许这种数据结构的名字你没听过，其实没啥难的，就是一个「队列」，只是使用了一点巧妙的方法，使得队列中的元素单调递增（或递减）。这个数据结构有什么用？可以解决滑动窗口的一系列问题。<br>看一道 LeetCode 题目，难度 hard：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/title.png"></p>
+<h3 id="一、搭建解题框架"><a href="#一、搭建解题框架" class="headerlink" title="一、搭建解题框架"></a>一、搭建解题框架</h3><p>这道题不复杂，难点在于如何在 O(1) 时间算出每个「窗口」中的最大值，使得整个算法在线性时间完成。在之前我们探讨过类似的场景，得到一个结论：<br>在一堆数字中，已知最值，如果给这堆数添加一个数，那么比较一下就可以很快算出最值；但如果减少一个数，就不一定能很快得到最值了，而要遍历所有数重新找最值。<br>回到这道题的场景，每个窗口前进的时候，要添加一个数同时减少一个数，所以想在 O(1) 的时间得出新的最值，就需要「单调队列」这种特殊的数据结构来辅助了。<br>一个普通的队列一定有这两个操作：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Queue</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>;<br>    <span class="hljs-comment">// 或 enqueue，在队尾加入元素 n</span><br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-comment">// 或 dequeue，删除队头元素</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>一个「单调队列」的操作也差不多：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MonotonicQueue</span> </span>&#123;<br>    <span class="hljs-comment">// 在队尾添加元素 n</span><br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>;<br>    <span class="hljs-comment">// 返回当前队列中的最大值</span><br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-comment">// 队头元素如果是 n，删除它</span><br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>当然，这几个 API 的实现方法肯定跟一般的 Queue 不一样，不过我们暂且不管，而且认为这几个操作的时间复杂度都是 O(1)，先把这道「滑动窗口」问题的解答框架搭出来：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">maxSlidingWindow</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums, <span class="hljs-keyword">int</span> k)</span> </span>&#123;<br>    MonotonicQueue window;<br>    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; res;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.size(); i++) &#123;<br>        <span class="hljs-keyword">if</span> (i &lt; k - <span class="hljs-number">1</span>) &#123; <span class="hljs-comment">//先把窗口的前 k - 1 填满</span><br>            window.push(nums[i]);<br>        &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 窗口开始向前滑动</span><br>            window.push(nums[i]);<br>            res.push_back(window.max());<br>            window.pop(nums[i - k + <span class="hljs-number">1</span>]);<br>            <span class="hljs-comment">// nums[i - k + 1] 就是窗口最后的元素</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/1.png" alt="图示"><br>这个思路很简单，能理解吧？下面我们开始重头戏，单调队列的实现。</p>
+<h3 id="二、实现单调队列数据结构"><a href="#二、实现单调队列数据结构" class="headerlink" title="二、实现单调队列数据结构"></a>二、实现单调队列数据结构</h3><p>首先我们要认识另一种数据结构：deque，即双端队列。很简单：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">deque</span> </span>&#123;<br>    <span class="hljs-comment">// 在队头插入元素 n</span><br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push_front</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>;<br>    <span class="hljs-comment">// 在队尾插入元素 n</span><br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push_back</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>;<br>    <span class="hljs-comment">// 在队头删除元素</span><br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop_front</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-comment">// 在队尾删除元素</span><br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop_back</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-comment">// 返回队头元素</span><br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">front</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-comment">// 返回队尾元素</span><br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">back</span><span class="hljs-params">()</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>而且，这些操作的复杂度都是 O(1)。这其实不是啥稀奇的数据结构，用链表作为底层结构的话，很容易实现这些功能。<br>「单调队列」的核心思路和「单调栈」类似。单调队列的 push 方法依然在队尾添加元素，但是要把前面比新元素小的元素都删掉：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MonotonicQueue</span> &#123;</span><br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-built_in">deque</span>&lt;<span class="hljs-keyword">int</span>&gt; data;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">while</span> (!data.empty() &amp;&amp; data.back() &lt; n) <br>            data.pop_back();<br>        data.push_back(n);<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>你可以想象，加入数字的大小代表人的体重，把前面体重不足的都压扁了，直到遇到更大的量级才停住。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/2.png"><br>如果每个元素被加入时都这样操作，最终单调队列中的元素大小就会保持一个单调递减的顺序，因此我们的 max() API 可以可以这样写：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> data.front();<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>pop() API 在队头删除元素 n，也很好写：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (!data.empty() &amp;&amp; data.front() == n)<br>        data.pop_front();<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>之所以要判断 <code>data.front() == n</code>，是因为我们想删除的队头元素 n 可能已经被「压扁」了，这时候就不用删除了：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/3.png"><br>至此，单调队列设计完毕，看下完整的解题代码：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MonotonicQueue</span> &#123;</span><br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-built_in">deque</span>&lt;<span class="hljs-keyword">int</span>&gt; data;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">while</span> (!data.empty() &amp;&amp; data.back() &lt; n) <br>            data.pop_back();<br>        data.push_back(n);<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">()</span> </span>&#123; <span class="hljs-keyword">return</span> data.front(); &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (!data.empty() &amp;&amp; data.front() == n)<br>            data.pop_front();<br>    &#125;<br>&#125;;<br><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">maxSlidingWindow</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums, <span class="hljs-keyword">int</span> k)</span> </span>&#123;<br>    MonotonicQueue window;<br>    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; res;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.size(); i++) &#123;<br>        <span class="hljs-keyword">if</span> (i &lt; k - <span class="hljs-number">1</span>) &#123; <span class="hljs-comment">//先填满窗口的前 k - 1</span><br>            window.push(nums[i]);<br>        &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 窗口向前滑动</span><br>            window.push(nums[i]);<br>            res.push_back(window.max());<br>            window.pop(nums[i - k + <span class="hljs-number">1</span>]);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>三、算法复杂度分析</strong><br>读者可能疑惑，push 操作中含有 while 循环，时间复杂度不是 O(1) 呀，那么本算法的时间复杂度应该不是线性时间吧？<br>单独看 push 操作的复杂度确实不是 O(1)，但是算法整体的复杂度依然是 O(N) 线性时间。要这样想，nums 中的每个元素最多被 push_back 和 pop_back 一次，没有任何多余操作，所以整体的复杂度还是 O(N)。<br>空间复杂度就很简单了，就是窗口的大小 O(k)。<br><strong>四、最后总结</strong><br>有的读者可能觉得「单调队列」和「优先级队列」比较像，实际上差别很大的。<br>单调队列在添加元素的时候靠删除元素保持队列的单调性，相当于抽取出某个函数中单调递增（或递减）的部分；而优先级队列（二叉堆）相当于自动排序，差别大了去了。<br>赶紧去拿下 LeetCode 第 239 道题吧～</p>
+<p><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E6%A0%88">上一篇：特殊数据结构：单调栈</a><br><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E8%AE%BE%E8%AE%A1Twitter">下一篇：设计Twitter</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E8%AE%A1%E7%AE%97%E5%99%A8/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E8%AE%A1%E7%AE%97%E5%99%A8/" itemprop="url">实现计算器</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="拆解复杂问题：实现计算器"><a href="#拆解复杂问题：实现计算器" class="headerlink" title="拆解复杂问题：实现计算器"></a>拆解复杂问题：实现计算器</h1><p>我们最终要实现的计算器功能如下：</p>
+<p>1、输入一个字符串，可以包含<code>+ - * /</code>、数字、括号以及空格，你的算法返回运算结构。<br>2、要符合运算法则，括号的优先级最高，先乘除后加减。<br>3、除号是整数除法，无论正负都向 0 取整（5/2=2，-5/2=-2）。<br>4、可以假定输入的算式一定合法，且计算过程不会出现整型溢出，不会出现除数为 0 的意外情况。<br>比如输入如下字符串，算法会返回 9：<br><code>3 * (2-6 /(3 -7))</code><br>可以看到，这就已经非常接近我们实际生活中使用的计算器了，虽然我们以前肯定都用过计算器，但是如果简单思考一下其算法实现，就会大惊失色：<br>1、按照常理处理括号，要先计算最内层的括号，然后向外慢慢化简。这个过程我们手算都容易出错，何况写成算法呢！<br>2、要做到先乘除，后加减，这一点教会小朋友还不算难，但教给计算机恐怕有点困难。<br>3、要处理空格。我们为了美观，习惯性在数字和运算符之间打个空格，但是计算之中得想办法忽略这些空格。<br>我记得很多大学数据结构的教材上，在讲栈这种数据结构的时候，应该都会用计算器举例，但是有一说一，讲的真的垃圾，不知道多少未来的计算机科学家就被这种简单的数据结构劝退了。<br>那么本文就来聊聊怎么实现上述一个功能完备的计算器功能，<strong>关键在于层层拆解问题，化整为零，逐个击破</strong>，相信这种思维方式能帮大家解决各种复杂问题。<br>下面就来拆解，从最简单的一个问题开始。</p>
+<h3 id="一、字符串转整数"><a href="#一、字符串转整数" class="headerlink" title="一、字符串转整数"></a>一、字符串转整数</h3><p>是的，就是这么一个简单的问题，首先告诉我，怎么把一个字符串形式的<strong>正</strong>整数，转化成 int 型？</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">string</span> s = <span class="hljs-string">&quot;458&quot;</span>;<br><span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.size(); i++) &#123;<br>    <span class="hljs-keyword">char</span> c = s[i];<br>    n = <span class="hljs-number">10</span> * n + (c - <span class="hljs-string">&#x27;0&#x27;</span>);<br>&#125;<br><span class="hljs-comment">// n 现在就等于 458</span><br></code></pre></td></tr></table></figure>
+<p>这个还是很简单的吧，老套路了。但是即便这么简单，依然有坑：**<code>(c - &#39;0&#39;)</code>的这个括号不能省略，否则可能造成整型溢出**。<br>因为变量<code>c</code>是一个 ASCII 码，如果不加括号就会先加后减，想象一下<code>s</code>如果接近 INT_MAX，就会溢出。所以用括号保证先减后加才行。</p>
+<h3 id="二、处理加减法"><a href="#二、处理加减法" class="headerlink" title="二、处理加减法"></a>二、处理加减法</h3><p>现在进一步，<strong>如果输入的这个算式只包含加减法，而且不存在空格</strong>，你怎么计算结果？我们拿字符串算式<code>1-12+3</code>为例，来说一个很简单的思路：<br>1、先给第一个数字加一个默认符号<code>+</code>，变成<code>+1-12+3</code>。<br>2、把一个运算符和数字组合成一对儿，也就是三对儿<code>+1</code>，<code>-12</code>，<code>+3</code>，把它们转化成数字，然后放到一个栈中。<br>3、将栈中所有的数字求和，就是原算式的结果。<br>我们直接看代码，结合一张图就看明白了：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">calculate</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s)</span> </span>&#123;<br>    <span class="hljs-built_in">stack</span>&lt;<span class="hljs-keyword">int</span>&gt; stk;<br>    <span class="hljs-comment">// 记录算式中的数字</span><br>    <span class="hljs-keyword">int</span> num = <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 记录 num 前的符号，初始化为 +</span><br>    <span class="hljs-keyword">char</span> sign = <span class="hljs-string">&#x27;+&#x27;</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.size(); i++) &#123;<br>        <span class="hljs-keyword">char</span> c = s[i];<br>        <span class="hljs-comment">// 如果是数字，连续读取到 num</span><br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isdigit</span>(c)) <br>            num = <span class="hljs-number">10</span> * num + (c - <span class="hljs-string">&#x27;0&#x27;</span>);<br>        <span class="hljs-comment">// 如果不是数字，就是遇到了下一个符号，</span><br>        <span class="hljs-comment">// 之前的数字和符号就要存进栈中</span><br>        <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">isdigit</span>(c) || i == s.size() - <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">switch</span> (sign) &#123;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;+&#x27;</span>:<br>                    stk.push(num); <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;-&#x27;</span>:<br>                    stk.push(-num); <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-comment">// 更新符号为当前符号，数字清零</span><br>            sign = c;<br>            num = <span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 将栈中所有结果求和就是答案</span><br>    <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (!stk.empty()) &#123;<br>        res += stk.top();<br>        stk.pop();<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>我估计就是中间带<code>switch</code>语句的部分有点不好理解吧，<code>i</code>就是从左到右扫描，<code>sign</code>和<code>num</code>跟在它身后。当<code>s[i]</code>遇到一个运算符时，情况是这样的：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/calculator/1.jpg"><br>所以说，此时要根据<code>sign</code>的 case 不同选择<code>nums</code>的正负号，存入栈中，然后更新<code>sign</code>并清零<code>nums</code>记录下一对儿符合和数字的组合。<br>另外注意，不只是遇到新的符号会触发入栈，当<code>i</code>走到了算式的尽头（<code>i == s.size() - 1</code>），也应该将前面的数字入栈，方便后续计算最终结果。<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/calculator/2.jpg"><br>至此，仅处理紧凑加减法字符串的算法就完成了，请确保理解以上内容，后续的内容就基于这个框架修修改改就完事儿了。</p>
+<h3 id="三、处理乘除法"><a href="#三、处理乘除法" class="headerlink" title="三、处理乘除法"></a>三、处理乘除法</h3><p>其实思路跟仅处理加减法没啥区别，拿字符串<code>2-3*4+5</code>举例，核心思路依然是把字符串分解成符号和数字的组合。<br>比如上述例子就可以分解为<code>+2</code>，<code>-3</code>，<code>*4</code>，<code>+5</code>几对儿，我们刚才不是没有处理乘除号吗，很简单，<strong>其他部分都不用变</strong>，在<code>switch</code>部分加上对应的 case 就行了：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.size(); i++) &#123;<br>    <span class="hljs-keyword">char</span> c = s[i];<br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isdigit</span>(c)) <br>        num = <span class="hljs-number">10</span> * num + (c - <span class="hljs-string">&#x27;0&#x27;</span>);<br>    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">isdigit</span>(c) || i == s.size() - <span class="hljs-number">1</span>) &#123;<br>        <span class="hljs-keyword">switch</span> (sign) &#123;<br>            <span class="hljs-keyword">int</span> pre;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;+&#x27;</span>:<br>                stk.push(num); <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;-&#x27;</span>:<br>                stk.push(-num); <span class="hljs-keyword">break</span>;<br>            <span class="hljs-comment">// 只要拿出前一个数字做对应运算即可</span><br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;*&#x27;</span>:<br>                pre = stk.top();<br>                stk.pop();<br>                stk.push(pre * num);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;/&#x27;</span>:<br>                pre = stk.top();<br>                stk.pop();<br>                stk.push(pre / num);<br>                <span class="hljs-keyword">break</span>;<br>        &#125;<br>        <span class="hljs-comment">// 更新符号为当前符号，数字清零</span><br>        sign = c;<br>        num = <span class="hljs-number">0</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/calculator/3.jpg"><br><strong>乘除法优先于加减法体现在，乘除法可以和栈顶的数结合，而加减法只能把自己放入栈</strong>。<br>现在我们思考一下<strong>如何处理字符串中可能出现的空格字符</strong>。其实也非常简单，想想空格字符的出现，会影响我们现有代码的哪一部分？</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 如果 c 非数字</span><br><span class="hljs-keyword">if</span> (!<span class="hljs-built_in">isdigit</span>(c) || i == s.size() - <span class="hljs-number">1</span>) &#123;<br>    <span class="hljs-keyword">switch</span> (c) &#123;...&#125;<br>    sign = c;<br>    num = <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>显然空格会进入这个 if 语句，但是我们并不想让空格的情况进入这个 if，因为这里会更新<code>sign</code>并清零<code>nums</code>，空格根本就不是运算符，应该被忽略。<br>那么只要多加一个条件即可：</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">if</span> ((!<span class="hljs-built_in">isdigit</span>(c) &amp;&amp; c != <span class="hljs-string">&#x27; &#x27;</span>) || i == s.size() - <span class="hljs-number">1</span>) &#123;<br>    ...<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>好了，现在我们的算法已经可以按照正确的法则计算加减乘除，并且自动忽略空格符，剩下的就是如何让算法正确识别括号了。</p>
+<h3 id="四、处理括号"><a href="#四、处理括号" class="headerlink" title="四、处理括号"></a>四、处理括号</h3><p>处理算式中的括号看起来应该是最难的，但真没有看起来那么难。<br>为了规避编程语言的繁琐细节，我把前面解法的代码翻译成 Python 版本：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calculate</span>(<span class="hljs-params">s: str</span>) -&gt; int:</span><br>        <br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">helper</span>(<span class="hljs-params">s: List</span>) -&gt; int:</span><br>        stack = []<br>        sign = <span class="hljs-string">&#x27;+&#x27;</span><br>        num = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> len(s) &gt; <span class="hljs-number">0</span>:<br>            c = s.pop(<span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">if</span> c.isdigit():<br>                num = <span class="hljs-number">10</span> * num + int(c)<br>            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">not</span> c.isdigit() <span class="hljs-keyword">and</span> c != <span class="hljs-string">&#x27; &#x27;</span>) <span class="hljs-keyword">or</span> len(s) == <span class="hljs-number">0</span>:<br>                <span class="hljs-keyword">if</span> sign == <span class="hljs-string">&#x27;+&#x27;</span>:<br>                    stack.append(num)<br>                <span class="hljs-keyword">elif</span> sign == <span class="hljs-string">&#x27;-&#x27;</span>:<br>                    stack.append(-num)<br>                <span class="hljs-keyword">elif</span> sign == <span class="hljs-string">&#x27;*&#x27;</span>:<br>                    stack[<span class="hljs-number">-1</span>] = stack[<span class="hljs-number">-1</span>] * num<br>                <span class="hljs-keyword">elif</span> sign == <span class="hljs-string">&#x27;/&#x27;</span>:<br>                    <span class="hljs-comment"># python 除法向 0 取整的写法</span><br>                    stack[<span class="hljs-number">-1</span>] = int(stack[<span class="hljs-number">-1</span>] / float(num))                    <br>                num = <span class="hljs-number">0</span><br>                sign = c<br>        <span class="hljs-keyword">return</span> sum(stack)<br>    <span class="hljs-comment"># 需要把字符串转成列表方便操作</span><br>    <span class="hljs-keyword">return</span> helper(list(s))<br></code></pre></td></tr></table></figure>
+<p>这段代码跟刚才 C++ 代码完全相同，唯一的区别是，不是从左到右遍历字符串，而是不断从左边<code>pop</code>出字符，本质还是一样的。<br>那么，为什么说处理括号没有看起来那么难呢，<strong>因为括号具有递归性质</strong>。我们拿字符串<code>3*(4-5/2)-6</code>举例：<br>calculate(<code>3*(4-5/2)-6</code>)<br>= 3 * calculate(<code>4-5/2</code>) - 6<br>= 3 * 2 - 6<br>= 0<br>可以脑补一下，无论多少层括号嵌套，通过 calculate 函数递归调用自己，都可以将括号中的算式化简成一个数字。<strong>换句话说，括号包含的算式，我们直接视为一个数字就行了</strong>。<br>现在的问题是，递归的开始条件和结束条件是什么？<strong>遇到<code>(</code>开始递归，遇到<code>)</code>结束递归</strong>：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calculate</span>(<span class="hljs-params">s: str</span>) -&gt; int:</span><br>        <br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">helper</span>(<span class="hljs-params">s: List</span>) -&gt; int:</span><br>        stack = []<br>        sign = <span class="hljs-string">&#x27;+&#x27;</span><br>        num = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> len(s) &gt; <span class="hljs-number">0</span>:<br>            c = s.pop(<span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">if</span> c.isdigit():<br>                num = <span class="hljs-number">10</span> * num + int(c)<br>            <span class="hljs-comment"># 遇到左括号开始递归计算 num</span><br>            <span class="hljs-keyword">if</span> c == <span class="hljs-string">&#x27;(&#x27;</span>:<br>                num = helper(s)<br>            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">not</span> c.isdigit() <span class="hljs-keyword">and</span> c != <span class="hljs-string">&#x27; &#x27;</span>) <span class="hljs-keyword">or</span> len(s) == <span class="hljs-number">0</span>:<br>                <span class="hljs-keyword">if</span> sign == <span class="hljs-string">&#x27;+&#x27;</span>: ...<br>                <span class="hljs-keyword">elif</span> sign == <span class="hljs-string">&#x27;-&#x27;</span>: ... <br>                <span class="hljs-keyword">elif</span> sign == <span class="hljs-string">&#x27;*&#x27;</span>: ...<br>                <span class="hljs-keyword">elif</span> sign == <span class="hljs-string">&#x27;/&#x27;</span>: ...<br>                num = <span class="hljs-number">0</span><br>                sign = c<br>            <span class="hljs-comment"># 遇到右括号返回递归结果</span><br>            <span class="hljs-keyword">if</span> c == <span class="hljs-string">&#x27;)&#x27;</span>: <span class="hljs-keyword">break</span><br>        <span class="hljs-keyword">return</span> sum(stack)<br>    <span class="hljs-keyword">return</span> helper(list(s))<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/calculator/4.jpg"><br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/calculator/5.jpg"><br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/calculator/6.jpg"><br>你看，加了两三行代码，就可以处理括号了，这就是递归的魅力。至此，计算器的全部功能就实现了，通过对问题的层层拆解化整为零，再回头看，这个问题似乎也没那么复杂嘛。</p>
+<h3 id="五、最后总结"><a href="#五、最后总结" class="headerlink" title="五、最后总结"></a>五、最后总结</h3><p>本文借实现计算器的问题，主要想表达的是一种处理复杂问题的思路。<br>我们首先从字符串转数字这个简单问题开始，进而处理只包含加减法的算式，进而处理包含加减乘除四则运算的算式，进而处理空格字符，进而处理包含括号的算式。<br><strong>可见，对于一些比较困难的问题，其解法并不是一蹴而就的，而是步步推进，螺旋上升的</strong>。如果一开始给你原题，你不会做，甚至看不懂答案，都很正常，关键在于我们自己如何简化问题，如何以退为进。<br><strong>退而求其次是一种很聪明策略</strong>。你想想啊，假设这是一道考试题，你不会实现这个计算器，但是你写了字符串转整数的算法并指出了容易溢出的陷阱，那起码可以得 20 分吧；如果你能够处理加减法，那可以得 40 分吧；如果你能处理加减乘除四则运算，那起码够 70 分了；再加上处理空格字符，80 有了吧。我就是不会处理括号，那就算了，80 已经很 OK 了好不好。</p>
+<p><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BD%8D%E6%93%8D%E4%BD%9C">上一篇：常用的位操作</a><br><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E7%83%A7%E9%A5%BC%E6%8E%92%E5%BA%8F">下一篇：烧饼排序</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/" itemprop="url">数据结构系列</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="数据结构系列"><a href="#数据结构系列" class="headerlink" title="数据结构系列"></a>数据结构系列</h1><ul>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%9A%84%E9%AB%98%E6%95%88%E6%96%B9%E6%B3%95">学习算法和刷题的思路指南</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%954">学习数据结构和算法读什么书</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E5%A0%86%E8%AF%A6%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97">二叉堆详解实现优先级队列</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/LRU%E7%AE%97%E6%B3%95">LRU算法详解</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E6%93%8D%E4%BD%9C%E9%9B%86%E9%94%A6">二叉搜索树操作集锦</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E6%A0%88">特殊数据结构：单调栈</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97">特殊数据结构：单调队列</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E8%AE%BE%E8%AE%A1Twitter">设计Twitter</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E9%80%92%E5%BD%92%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86">递归反转链表的一部分</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97">队列实现栈|栈实现队列</a><br>这一章主要是一些特殊的数据结构设计，比如单调栈解决 Next Greater Number，单调队列解决滑动窗口问题；还有常用数据结构的操作，比如链表、树、二叉堆。</li>
+</ul>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E8%AE%BE%E8%AE%A1Twitter/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E8%AE%BE%E8%AE%A1Twitter/" itemprop="url">设计Twitter</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-01T19:20:00+08:00">2016-01-01 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="设计Twitter"><a href="#设计Twitter" class="headerlink" title="设计Twitter"></a>设计Twitter</h1><p>「design Twitter」是 LeetCode 上第 335 道题目，不仅题目本身很有意思，而且把合并多个有序链表的算法和面向对象设计（OO design）结合起来了，很有实际意义，本文就带大家来看看这道题。<br>至于 Twitter 的什么功能跟算法有关系，等我们描述一下题目要求就知道了。</p>
+<h3 id="一、题目及应用场景简介"><a href="#一、题目及应用场景简介" class="headerlink" title="一、题目及应用场景简介"></a>一、题目及应用场景简介</h3><p>Twitter 和微博功能差不多，我们主要要实现这样几个 API：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Twitter</span> </span>&#123;<br>    <span class="hljs-comment">/** user 发表一条 tweet 动态 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">postTweet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> userId, <span class="hljs-keyword">int</span> tweetId)</span> </span>&#123;&#125;<br>    <br>    <span class="hljs-comment">/** 返回该 user 关注的人（包括他自己）最近的动态 id，</span><br><span class="hljs-comment">    最多 10 条，而且这些动态必须按从新到旧的时间线顺序排列。*/</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title">getNewsFeed</span><span class="hljs-params">(<span class="hljs-keyword">int</span> userId)</span> </span>&#123;&#125;<br>    <br>    <span class="hljs-comment">/** follower 关注 followee，如果 Id 不存在则新建 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">follow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> followerId, <span class="hljs-keyword">int</span> followeeId)</span> </span>&#123;&#125;<br>    <br>    <span class="hljs-comment">/** follower 取关 followee，如果 Id 不存在则什么都不做 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unfollow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> followerId, <span class="hljs-keyword">int</span> followeeId)</span> </span>&#123;&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>举个具体的例子，方便大家理解 API 的具体用法：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java">Twitter twitter = <span class="hljs-keyword">new</span> Twitter();<br>twitter.postTweet(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>);<br><span class="hljs-comment">// 用户 1 发送了一条新推文 5</span><br>twitter.getNewsFeed(<span class="hljs-number">1</span>);<br><span class="hljs-comment">// return [5]，因为自己是关注自己的</span><br>twitter.follow(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br><span class="hljs-comment">// 用户 1 关注了用户 2</span><br>twitter.postTweet(<span class="hljs-number">2</span>, <span class="hljs-number">6</span>);<br><span class="hljs-comment">// 用户2发送了一个新推文 (id = 6)</span><br>twitter.getNewsFeed(<span class="hljs-number">1</span>);<br><span class="hljs-comment">// return [6, 5]</span><br><span class="hljs-comment">// 解释：用户 1 关注了自己和用户 2，所以返回他们的最近推文</span><br><span class="hljs-comment">// 而且 6 必须在 5 之前，因为 6 是最近发送的</span><br>twitter.unfollow(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br><span class="hljs-comment">// 用户 1 取消关注了用户 2</span><br>twitter.getNewsFeed(<span class="hljs-number">1</span>);<br><span class="hljs-comment">// return [5]</span><br></code></pre></td></tr></table></figure>
+<p>这个场景在我们的现实生活中非常常见。拿朋友圈举例，比如我刚加到女神的微信，然后我去刷新一下我的朋友圈动态，那么女神的动态就会出现在我的动态列表，而且会和其他动态按时间排好序。只不过 Twitter 是单向关注，微信好友相当于双向关注。除非，被屏蔽…<br>这几个 API 中大部分都很好实现，最核心的功能难点应该是 <code>getNewsFeed</code>，因为返回的结果必须在时间上有序，但问题是用户的关注是动态变化的，怎么办？<br><strong>这里就涉及到算法了</strong>：如果我们把每个用户各自的推文存储在链表里，每个链表节点存储文章 id 和一个时间戳 time（记录发帖时间以便比较），而且这个链表是按 time 有序的，那么如果某个用户关注了 k 个用户，我们就可以用合并 k 个有序链表的算法合并出有序的推文列表，正确地 <code>getNewsFeed</code> 了！<br>具体的算法等会讲解。不过，就算我们掌握了算法，应该如何编程表示用户 user 和推文动态 tweet 才能把算法流畅地用出来呢？<strong>这就涉及简单的面向对象设计了</strong>，下面我们来由浅入深，一步一步进行设计。</p>
+<h3 id="二、面向对象设计"><a href="#二、面向对象设计" class="headerlink" title="二、面向对象设计"></a>二、面向对象设计</h3><p>根据刚才的分析，我们需要一个 User 类，储存 user 信息，还需要一个 Tweet 类，储存推文信息，并且要作为链表的节点。所以我们先搭建一下整体的框架：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Twitter</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> timestamp = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tweet</span> </span>&#123;&#125;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>&#123;&#125;<br>    <span class="hljs-comment">/* 还有那几个 API 方法 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">postTweet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> userId, <span class="hljs-keyword">int</span> tweetId)</span> </span>&#123;&#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title">getNewsFeed</span><span class="hljs-params">(<span class="hljs-keyword">int</span> userId)</span> </span>&#123;&#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">follow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> followerId, <span class="hljs-keyword">int</span> followeeId)</span> </span>&#123;&#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unfollow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> followerId, <span class="hljs-keyword">int</span> followeeId)</span> </span>&#123;&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>之所以要把 Tweet 和 User 类放到 Twitter 类里面，是因为 Tweet 类必须要用到一个全局时间戳 timestamp，而 User 类又需要用到 Tweet 类记录用户发送的推文，所以它们都作为内部类。不过为了清晰和简洁，下文会把每个内部类和 API 方法单独拿出来实现。<br><strong>1、Tweet 类的实现</strong><br>根据前面的分析，Tweet 类很容易实现：每个 Tweet 实例需要记录自己的 tweetId 和发表时间 time，而且作为链表节点，要有一个指向下一个节点的 next 指针。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tweet</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> id;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> time;<br>    <span class="hljs-keyword">private</span> Tweet next;<br>    <span class="hljs-comment">// 需要传入推文内容（id）和发文时间</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Tweet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id, <span class="hljs-keyword">int</span> time)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.id = id;<br>        <span class="hljs-keyword">this</span>.time = time;<br>        <span class="hljs-keyword">this</span>.next = <span class="hljs-keyword">null</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E8%AE%BE%E8%AE%A1Twitter/tweet.jpg" alt="tweet"><br><strong>2、User 类的实现</strong><br>我们根据实际场景想一想，一个用户需要存储的信息有 userId，关注列表，以及该用户发过的推文列表。其中关注列表应该用集合（Hash Set）这种数据结构来存，因为不能重复，而且需要快速查找；推文列表应该由链表这种数据结构储存，以便于进行有序合并的操作。画个图理解一下：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E8%AE%BE%E8%AE%A1Twitter/user.jpg" alt="User"><br>除此之外，根据面向对象的设计原则，「关注」「取关」和「发文」应该是 User 的行为，况且关注列表和推文列表也存储在 User 类中，所以我们也应该给 User 添加 follow，unfollow 和 post 这几个方法：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// static int timestamp = 0</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> id;<br>    <span class="hljs-keyword">public</span> Set&lt;Integer&gt; followed;<br>    <span class="hljs-comment">// 用户发表的推文链表头结点</span><br>    <span class="hljs-keyword">public</span> Tweet head;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">User</span><span class="hljs-params">(<span class="hljs-keyword">int</span> userId)</span> </span>&#123;<br>        followed = <span class="hljs-keyword">new</span> HashSet&lt;&gt;();<br>        <span class="hljs-keyword">this</span>.id = userId;<br>        <span class="hljs-keyword">this</span>.head = <span class="hljs-keyword">null</span>;<br>        <span class="hljs-comment">// 关注一下自己</span><br>        follow(id);<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">follow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> userId)</span> </span>&#123;<br>        followed.add(userId);<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unfollow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> userId)</span> </span>&#123;<br>        <span class="hljs-comment">// 不可以取关自己</span><br>        <span class="hljs-keyword">if</span> (userId != <span class="hljs-keyword">this</span>.id)<br>            followed.remove(userId);<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">post</span><span class="hljs-params">(<span class="hljs-keyword">int</span> tweetId)</span> </span>&#123;<br>        Tweet twt = <span class="hljs-keyword">new</span> Tweet(tweetId, timestamp);<br>        timestamp++;<br>        <span class="hljs-comment">// 将新建的推文插入链表头</span><br>        <span class="hljs-comment">// 越靠前的推文 time 值越大</span><br>        twt.next = head;<br>        head = twt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>3、几个 API 方法的实现</strong></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Twitter</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> timestamp = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tweet</span> </span>&#123;...&#125;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>&#123;...&#125;<br>    <span class="hljs-comment">// 我们需要一个映射将 userId 和 User 对象对应起来</span><br>    <span class="hljs-keyword">private</span> HashMap&lt;Integer, User&gt; userMap = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>    <span class="hljs-comment">/** user 发表一条 tweet 动态 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">postTweet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> userId, <span class="hljs-keyword">int</span> tweetId)</span> </span>&#123;<br>        <span class="hljs-comment">// 若 userId 不存在，则新建</span><br>        <span class="hljs-keyword">if</span> (!userMap.containsKey(userId))<br>            userMap.put(userId, <span class="hljs-keyword">new</span> User(userId));<br>        User u = userMap.get(userId);<br>        u.post(tweetId);<br>    &#125;<br>    <br>    <span class="hljs-comment">/** follower 关注 followee */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">follow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> followerId, <span class="hljs-keyword">int</span> followeeId)</span> </span>&#123;<br>        <span class="hljs-comment">// 若 follower 不存在，则新建</span><br>		<span class="hljs-keyword">if</span>(!userMap.containsKey(followerId))&#123;<br>			User u = <span class="hljs-keyword">new</span> User(followerId);<br>			userMap.put(followerId, u);<br>		&#125;<br>        <span class="hljs-comment">// 若 followee 不存在，则新建</span><br>		<span class="hljs-keyword">if</span>(!userMap.containsKey(followeeId))&#123;<br>			User u = <span class="hljs-keyword">new</span> User(followeeId);<br>			userMap.put(followeeId, u);<br>		&#125;<br>		userMap.get(followerId).follow(followeeId);<br>    &#125;<br>    <br>    <span class="hljs-comment">/** follower 取关 followee，如果 Id 不存在则什么都不做 */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unfollow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> followerId, <span class="hljs-keyword">int</span> followeeId)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (userMap.containsKey(followerId)) &#123;<br>            User flwer = userMap.get(followerId);<br>            flwer.unfollow(followeeId);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/** 返回该 user 关注的人（包括他自己）最近的动态 id，</span><br><span class="hljs-comment">    最多 10 条，而且这些动态必须按从新到旧的时间线顺序排列。*/</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title">getNewsFeed</span><span class="hljs-params">(<span class="hljs-keyword">int</span> userId)</span> </span>&#123;<br>        <span class="hljs-comment">// 需要理解算法，见下文</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="三、算法设计"><a href="#三、算法设计" class="headerlink" title="三、算法设计"></a>三、算法设计</h3><p>实现合并 k 个有序链表的算法需要用到优先级队列（Priority Queue），这种数据结构是「二叉堆」最重要的应用，你可以理解为它可以对插入的元素自动排序。乱序的元素插入其中就被放到了正确的位置，可以按照从小到大（或从大到小）有序地取出元素。</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">PriorityQueue pq<br><span class="hljs-comment"># 乱序插入</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> &#123;<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">1</span>,<span class="hljs-number">9</span>,<span class="hljs-number">6</span>&#125;:<br>    pq.add(i)<br><span class="hljs-keyword">while</span> pq <span class="hljs-keyword">not</span> empty:<br>    <span class="hljs-comment"># 每次取出第一个（最小）元素</span><br>    print(pq.pop())<br><span class="hljs-comment"># 输出有序：1,2,4,6,9</span><br></code></pre></td></tr></table></figure>
+<p>借助这种牛逼的数据结构支持，我们就很容易实现这个核心功能了。注意我们把优先级队列设为按 time 属性<strong>从大到小降序排列</strong>，因为 time 越大意味着时间越近，应该排在前面：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title">getNewsFeed</span><span class="hljs-params">(<span class="hljs-keyword">int</span> userId)</span> </span>&#123;<br>    List&lt;Integer&gt; res = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>    <span class="hljs-keyword">if</span> (!userMap.containsKey(userId)) <span class="hljs-keyword">return</span> res;<br>    <span class="hljs-comment">// 关注列表的用户 Id</span><br>    Set&lt;Integer&gt; users = userMap.get(userId).followed;<br>    <span class="hljs-comment">// 自动通过 time 属性从大到小排序，容量为 users 的大小</span><br>    PriorityQueue&lt;Tweet&gt; pq = <br>        <span class="hljs-keyword">new</span> PriorityQueue&lt;&gt;(users.size(), (a, b)-&gt;(b.time - a.time));<br>    <span class="hljs-comment">// 先将所有链表头节点插入优先级队列</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> id : users) &#123;<br>        Tweet twt = userMap.get(id).head;<br>        <span class="hljs-keyword">if</span> (twt == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">continue</span>;<br>        pq.add(twt);<br>    &#125;<br>    <span class="hljs-keyword">while</span> (!pq.isEmpty()) &#123;<br>        <span class="hljs-comment">// 最多返回 10 条就够了</span><br>        <span class="hljs-keyword">if</span> (res.size() == <span class="hljs-number">10</span>) <span class="hljs-keyword">break</span>;<br>        <span class="hljs-comment">// 弹出 time 值最大的（最近发表的）</span><br>        Tweet twt = pq.poll();<br>        res.add(twt.id);<br>        <span class="hljs-comment">// 将下一篇 Tweet 插入进行排序</span><br>        <span class="hljs-keyword">if</span> (twt.next != <span class="hljs-keyword">null</span>) <br>            pq.add(twt.next);<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这个过程是这样的，下面是我制作的一个 GIF 图描述合并链表的过程。假设有三个 Tweet 链表按 time 属性降序排列，我们把他们降序合并添加到 res 中。注意图中链表节点中的数字是 time 属性，不是 id 属性：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E8%AE%BE%E8%AE%A1Twitter/merge.gif" alt="gif"><br>至此，这道一个极其简化的 Twitter 时间线功能就设计完毕了。</p>
+<h3 id="四、最后总结"><a href="#四、最后总结" class="headerlink" title="四、最后总结"></a>四、最后总结</h3><p>本文运用简单的面向对象技巧和合并 k 个有序链表的算法设计了一套简化的时间线功能，这个功能其实广泛地运用在许多社交应用中。<br>我们先合理地设计出 User 和 Tweet 两个类，然后基于这个设计之上运用算法解决了最重要的一个功能。可见实际应用中的算法并不是孤立存在的，需要和其他知识混合运用，才能发挥实际价值。<br>当然，实际应用中的社交 App 数据量是巨大的，考虑到数据库的读写性能，我们的设计可能承受不住流量压力，还是有些太简化了。而且实际的应用都是一个极其庞大的工程，比如下图，是 Twitter 这样的社交网站大致的系统结构：<br><img src="/images/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/%E8%AE%BE%E8%AE%A1Twitter/design.png" alt="design"><br>我们解决的问题应该只能算 Timeline Service 模块的一小部分，功能越多，系统的复杂性可能是指数级增长的。所以说合理的顶层设计十分重要，其作用是远超某一个算法的。<br>最后，Github 上有一个优秀的开源项目叫 <a target="_blank" rel="noopener" href="https://github.com/donnemartin/system-design-primer">system-design-primer</a>，专门收集了很多大型系统设计的案例和解析，而且有中文版本，上面这个图也出自该项目。对系统设计感兴趣的读者可以点击链接查看。<br>PS：本文前两张图片和 GIF 是我第一次尝试用平板的绘图软件制作的，花了很多时间，尤其是 GIF 图，需要一帧一帧制作。如果本文内容对你有帮助，点个赞分个享，鼓励一下我呗！</p>
+<p><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97">上一篇：特殊数据结构：单调队列</a><br><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E9%80%92%E5%BD%92%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86">下一篇：递归反转链表的一部分</a><br><a href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5#%E7%9B%AE%E5%BD%95">目录</a></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/7/">&lt;i class&#x3D;&quot;fas fa-angle-left&quot; aria-label&#x3D;&quot;上一页&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/9/">&lt;i class&#x3D;&quot;fas fa-angle-right&quot; aria-label&#x3D;&quot;下一页&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

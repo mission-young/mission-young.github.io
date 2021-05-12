@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="星光荡开宇宙" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>星光荡开宇宙 - 科学闪耀其中</title>
+  <meta name="generator" content="Hexo 5.1.1"></head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">星光荡开宇宙</a></h1>
+        <h2 class="subtitle">科学闪耀其中</h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/" class="current"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+
+<div id="index" class="index page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2050/08/05/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url">LeetCode破局攻略</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2050-08-05T19:20:00+08:00">2050-08-05 19:20:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode%E7%A0%B4%E5%B1%80%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">LeetCode破局攻略</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本专栏转载于<a target="_blank" rel="noopener" href="https://github.com/labuladong/fucking-algorithm">Githublabuladong/fucking-algorithm</a>. 用于个人学习算法所需.</p>
+<p>本仓库总共 60 多篇原创文章，基本上都是基于 LeetCode 的题目，涵盖了所有题型和技巧，而且一定要做到<strong>举一反三，通俗易懂</strong>，绝不是简单的代码堆砌，后面有目录。<br>我先吐槽几句。<strong>刷题刷题，刷的是题，培养的是思维，本仓库的目的就是传递这种算法思维</strong>。我要是只写一个包含 LeetCode 题目代码的仓库，有个锤子用？没有思路解释，没有思维框架，顶多写个时间复杂度，那玩意一眼就能看出来。<br>只想要答案的话很容易，题目评论区五花八门的答案，动不动就秀 python 一行代码解决，有那么多人点赞。问题是，你去做算法题，是去学习编程语言的奇技淫巧的，还是学习算法思维的呢？你的快乐，到底源自复制别人的一行代码通过测试，已完成题目 +1，还是源自自己通过逻辑推理和算法框架不看答案写出解法？<br>网上总有大佬喷我，说我写这玩意太基础了，根本没必要啰嗦。我只能说大家刷算法就是找工作吃饭的，不是打竞赛的，我也是一路摸爬滚打过来的，我们要的是清楚明白有所得，不是故弄玄虚无所指。不想办法做到通俗易懂，难道要上来先把《算法导论》吹上天，然后把人家都心怀敬仰地劝退？别的不说，公众号几万读者，PDF 版本上万次下载，联系我的出版社都好几家，说明质量还过得去吧？<br><strong>做啥事情做多了，都能发现套路的，我把各种算法套路框架总结出来，相信可以帮助其他人少走弯路</strong>。我这个纯靠自学的小童鞋，花了一年时间刷题和总结，自己写了一份算法小抄，后面有目录，这里就不废话了。</p>
+<p><strong>PS：如果想下载此仓库到本地学习，不要用 git 命令下载，点击 GitHub 网页上的下载按钮直接下载 zip 文件，这样就不会下载 git 历史，大大加快下载速度</strong>。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li>第零章、必读系列<ul>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%9A%84%E9%AB%98%E6%95%88%E6%96%B9%E6%B3%95">学习算法和刷题的框架思维</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%954">学习数据结构和算法读什么书</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6">动态规划解题框架</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%9C%80%E4%BC%98%E5%AD%90%E7%BB%93%E6%9E%84">动态规划答疑篇</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E4%BF%AE%E8%AE%A2%E7%89%88">回溯算法解题框架</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E8%AF%A6%E8%A7%A3">二分查找解题框架</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%8A%80%E5%B7%A7">滑动窗口解题框架</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%8F%8C%E6%8C%87%E9%92%88%E6%8A%80%E5%B7%A7">双指针技巧解题框架</a></li>
+<li><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/linux%E8%BF%9B%E7%A8%8B">Linux的进程、线程、文件描述符是什么</a></li>
+<li><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/%E5%9C%A8%E7%BA%BF%E7%BB%83%E4%B9%A0%E5%B9%B3%E5%8F%B0">Git/SQL/正则表达式的在线练习平台</a></li>
+</ul>
+</li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97">第一章、动态规划系列</a><ul>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A6%E8%A7%A3%E8%BF%9B%E9%98%B6">动态规划详解</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%9C%80%E4%BC%98%E5%AD%90%E7%BB%93%E6%9E%84">动态规划答疑篇</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AE%BE%E8%AE%A1%EF%BC%9A%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97">动态规划设计：最长递增子序列</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB">编辑距离</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E9%AB%98%E6%A5%BC%E6%89%94%E9%B8%A1%E8%9B%8B%E9%97%AE%E9%A2%98">经典动态规划问题：高楼扔鸡蛋</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E9%AB%98%E6%A5%BC%E6%89%94%E9%B8%A1%E8%9B%8B%E8%BF%9B%E9%98%B6">经典动态规划问题：高楼扔鸡蛋（进阶）</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98%E6%A8%A1%E6%9D%BF">动态规划之子序列问题解题模板</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%8D%9A%E5%BC%88%E9%97%AE%E9%A2%98">动态规划之博弈问题</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E4%B9%8B%E5%8C%BA%E9%97%B4%E8%B0%83%E5%BA%A6%E9%97%AE%E9%A2%98">贪心算法之区间调度问题</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8BKMP%E5%AD%97%E7%AC%A6%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95">动态规划之KMP字符匹配算法</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%9B%A2%E7%81%AD%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98">团灭 LeetCode 股票买卖问题</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%8A%A2%E6%88%BF%E5%AD%90">团灭 LeetCode 打家劫舍问题</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E5%9B%9B%E9%94%AE%E9%94%AE%E7%9B%98">动态规划之四键键盘</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE">动态规划之正则表达</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97">最长公共子序列</a></li>
+</ul>
+</li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97">第二章、数据结构系列</a><ul>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%9A%84%E9%AB%98%E6%95%88%E6%96%B9%E6%B3%95">学习算法和刷题的思路指南</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%954">学习数据结构和算法读什么书</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E5%A0%86%E8%AF%A6%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97">二叉堆详解实现优先级队列</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/LRU%E7%AE%97%E6%B3%95">LRU算法详解</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E6%93%8D%E4%BD%9C%E9%9B%86%E9%94%A6">二叉搜索树操作集锦</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E6%A0%88">特殊数据结构：单调栈</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97">特殊数据结构：单调队列</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E8%AE%BE%E8%AE%A1Twitter">设计Twitter</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E9%80%92%E5%BD%92%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86">递归反转链表的一部分</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97">队列实现栈|栈实现队列</a></li>
+</ul>
+</li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97">第三章、算法思维系列</a><ul>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF">算法学习之路</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E4%BF%AE%E8%AE%A2%E7%89%88">回溯算法详解</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%AD%90%E9%9B%86%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88">回溯算法团灭排列、组合、子集问题</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E8%AF%A6%E8%A7%A3">二分查找详解</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%8F%8C%E6%8C%87%E9%92%88%E6%8A%80%E5%B7%A7">双指针技巧总结</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%8A%80%E5%B7%A7">滑动窗口技巧</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/twoSum%E9%97%AE%E9%A2%98%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3">twoSum问题的核心思想</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BD%8D%E6%93%8D%E4%BD%9C">常用的位操作</a></li>
+<li><a href="/2016/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E5%AE%9E%E7%8E%B0%E8%AE%A1%E7%AE%97%E5%99%A8">拆解复杂问题：实现计算器</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E7%83%A7%E9%A5%BC%E6%8E%92%E5%BA%8F">烧饼排序</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%89%8D%E7%BC%80%E5%92%8C%E6%8A%80%E5%B7%A7">前缀和技巧</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%98%E6%B3%95">字符串乘法</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/FloodFill%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8">FloodFill算法详解及应用</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%8C%BA%E9%97%B4%E8%B0%83%E5%BA%A6%E9%97%AE%E9%A2%98%E4%B9%8B%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6">区间调度之区间合并问题</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%8C%BA%E9%97%B4%E4%BA%A4%E9%9B%86%E9%97%AE%E9%A2%98">区间调度之区间交集问题</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%BF%A1%E5%B0%81%E5%B5%8C%E5%A5%97%E9%97%AE%E9%A2%98">信封嵌套问题</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E5%87%A0%E4%B8%AA%E5%8F%8D%E7%9B%B4%E8%A7%89%E7%9A%84%E6%A6%82%E7%8E%87%E9%97%AE%E9%A2%98">几个反直觉的概率问题</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95">洗牌算法</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E9%80%92%E5%BD%92%E8%AF%A6%E8%A7%A3">递归详解</a></li>
+</ul>
+</li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97">第四章、高频面试系列</a><ul>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/LRU%E7%AE%97%E6%B3%95">如何实现LRU算法</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%89%93%E5%8D%B0%E7%B4%A0%E6%95%B0">如何高效寻找素数</a></li>
+<li><a href="/2016/01/01/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB">如何计算编辑距离</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/koko%E5%81%B7%E9%A6%99%E8%95%89">如何运用二分查找算法</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%8E%A5%E9%9B%A8%E6%B0%B4">如何高效解决接雨水问题</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%A6%82%E4%BD%95%E5%8E%BB%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0">如何去除有序数组的重复元素</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2">如何寻找最长回文子串</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/k%E4%B8%AA%E4%B8%80%E7%BB%84%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8">如何k个一组反转链表</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%90%88%E6%B3%95%E6%8B%AC%E5%8F%B7%E5%88%A4%E5%AE%9A">如何判定括号合法性</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%B6%88%E5%A4%B1%E7%9A%84%E5%85%83%E7%B4%A0">如何寻找消失的元素</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E7%BC%BA%E5%A4%B1%E5%92%8C%E9%87%8D%E5%A4%8D%E7%9A%84%E5%85%83%E7%B4%A0">如何寻找缺失和重复的元素</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%88%A4%E6%96%AD%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8">如何判断回文链表</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E6%B0%B4%E5%A1%98%E6%8A%BD%E6%A0%B7">如何在无限序列中随机抽取元素</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E5%BA%A7%E4%BD%8D%E8%B0%83%E5%BA%A6">如何调度考生的座位</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/UnionFind%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3">Union-Find算法详解</a></li>
+<li><a href="/2016/01/01/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/UnionFind%E7%AE%97%E6%B3%95%E5%BA%94%E7%94%A8">Union-Find算法应用</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%A7%A3%E5%86%B3%E7%9A%84%E6%99%BA%E5%8A%9B%E9%A2%98">一行代码就能解决的算法题</a></li>
+<li><a href="/2016/01/01/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%88%A4%E5%AE%9A%E5%AD%90%E5%BA%8F%E5%88%97">二分查找高效判定子序列</a></li>
+</ul>
+</li>
+<li>第五章、计算机技术<ul>
+<li><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/linux%E8%BF%9B%E7%A8%8B">Linux的进程、线程、文件描述符是什么</a></li>
+<li><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/session%E5%92%8Ccookie">一文看懂 session 和 cookie</a></li>
+<li><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/linuxshell">关于 Linux shell 你必须知道的</a></li>
+<li><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF">加密算法的前身今世</a></li>
+<li><a href="/2016/01/01/%E6%8A%80%E6%9C%AF/%E5%9C%A8%E7%BA%BF%E7%BB%83%E4%B9%A0%E5%B9%B3%E5%8F%B0">Git/SQL/正则表达式的在线练习平台</a><h1 id="感谢如下大佬参与翻译"><a href="#感谢如下大佬参与翻译" class="headerlink" title="感谢如下大佬参与翻译"></a>感谢如下大佬参与翻译</h1>按照昵称字典序排名：<br><a target="_blank" rel="noopener" href="https://github.com/ABCpril">ABCpril</a>,<br><a target="_blank" rel="noopener" href="https://github.com/andavid">andavid</a>,<br><a target="_blank" rel="noopener" href="https://github.com/bryceustc">bryceustc</a>,<br><a target="_blank" rel="noopener" href="https://github.com/build2645">build2645</a>,<br><a target="_blank" rel="noopener" href="https://github.com/CarrieOn">CarrieOn</a>,<br><a target="_blank" rel="noopener" href="https://github.com/xiaochuhub">cooker</a>,<br><a target="_blank" rel="noopener" href="https://github.com/Coder2Programmer">Dong Wang</a>,<br><a target="_blank" rel="noopener" href="https://github.com/ExcaliburEX">ExcaliburEX</a>,<br><a target="_blank" rel="noopener" href="https://github.com/floatLig">floatLig</a>,<br><a target="_blank" rel="noopener" href="https://github.com/foreversolar">ForeverSolar</a>,<br><a target="_blank" rel="noopener" href="https://fulinli.github.io/">Fulin Li</a>,<br><a target="_blank" rel="noopener" href="https://github.com/Funnyyanne">Funnyyanne</a>,<br><a target="_blank" rel="noopener" href="https://github.com/GYHHAHA">GYHHAHA</a>,<br><a target="_blank" rel="noopener" href="https://hiarcher.top/">Hi_archer</a>,<br><a target="_blank" rel="noopener" href="https://github.com/Iruze">Iruze</a>,<br><a target="_blank" rel="noopener" href="https://github.com/Jieyixia">Jieyixia</a>,<br><a target="_blank" rel="noopener" href="https://github.com/Justin-YGG">Justin</a>,<br><a target="_blank" rel="noopener" href="https://github.com/Kevin-free">Kevin</a>,<br><a target="_blank" rel="noopener" href="https://github.com/Lrc123">Lrc123</a>,<br><a target="_blank" rel="noopener" href="https://github.com/lriy">lriy</a>,<br><a target="_blank" rel="noopener" href="https://github.com/Lyjeeq">Lyjeeq</a>,<br><a target="_blank" rel="noopener" href="https://greenwichmt.github.io/">MasonShu</a>,<br><a target="_blank" rel="noopener" href="https://github.com/Master-cai">Master-cai</a>,<br><a target="_blank" rel="noopener" href="https://github.com/miaoxiaozui2017">miaoxiaozui2017</a>,<br><a target="_blank" rel="noopener" href="https://github.com/natsunoyoru97">natsunoyoru97</a>,<br><a target="_blank" rel="noopener" href="https://github.com/nettee">nettee</a>,<br><a target="_blank" rel="noopener" href="https://github.com/PaperJets">PaperJets</a>,<br><a target="_blank" rel="noopener" href="https://github.com/qy-yang">qy-yang</a>,<br><a target="_blank" rel="noopener" href="https://github.com/realism0331">realism0331</a>,<br><a target="_blank" rel="noopener" href="https://github.com/HuangZiSheng001">SCUhzs</a>,<br><a target="_blank" rel="noopener" href="https://github.com/Seaworth">Seaworth</a>,<br><a target="_blank" rel="noopener" href="https://github.com/shazi4399">shazi4399</a>,<br><a target="_blank" rel="noopener" href="https://github.com/ShuoZheLi/">ShuozheLi</a>,<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/SinjoyWong">sinjoywong</a>,<br><a target="_blank" rel="noopener" href="https://github.com/sunqiuming526">sunqiuming526</a>,<br><a target="_blank" rel="noopener" href="https://github.com/tianhaoz95">Tianhao Zhou</a>,<br><a target="_blank" rel="noopener" href="https://github.com/timmmGZ">timmmGZ</a>,<br><a target="_blank" rel="noopener" href="https://github.com/tommytim0515">tommytim0515</a>,<br><a target="_blank" rel="noopener" href="https://github.com/upbin">upbin</a>,<br><a target="_blank" rel="noopener" href="https://github.com/wadegrc">wadegrc</a>,<br><a target="_blank" rel="noopener" href="https://github.com/walsvid">walsvid</a>,<br><a target="_blank" rel="noopener" href="https://github.com/warmingkkk">warmingkkk</a>,<br><a target="_blank" rel="noopener" href="https://github.com/Wonderxie">Wonderxie</a>,<br><a target="_blank" rel="noopener" href="https://github.com/wsyzxxxx">wsyzxxxx</a>,<br><a target="_blank" rel="noopener" href="https://github.com/xiaodp">xiaodp</a>,<br><a target="_blank" rel="noopener" href="https://github.com/youyun">youyun</a>,<br><a target="_blank" rel="noopener" href="https://github.com/yx-tan">yx-tan</a>,<br><a target="_blank" rel="noopener" href="https://github.com/Mr2er0">Zero</a>,<br><a target="_blank" rel="noopener" href="https://github.com/ML-ZimingMeng/LeetCode-Python3">Ziming</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/LeetCode/" rel="tag"><i class="fas fa-tags"></i>LeetCode</a>
+        
+        <a class="post-tag button" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2021/03/08/jupyterlab%E6%B1%89%E5%8C%96/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2021/03/08/jupyterlab%E6%B1%89%E5%8C%96/" itemprop="url">jupyterlab汉化</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2021-03-08T18:06:33+08:00">2021-03-08 18:06:33</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>mac安装jupyterlab，使用<code>pip3 install jupyterlab</code>实际上安装的还是jupyter，并不起作用，仍然需要一系列操作来完成。可以使用<code>brew install jupyterlab</code>的方式完成安装。</p>
+<p>但此时<code>jupyterlab</code>和<code>python3</code>是什么关系呢？</p>
+<p>实际上，<code>jupyterlab</code>依旧是引用的<code>python3</code>,而非独立安装了一份python，且两者的<code>pip</code>库通用。<code>jupyterlab</code>的库的位置在<code>/usr/local/Cellar/jupyterlab/3.0.9/libexec/lib/python3.9/site-packages</code>，而<code>python3</code>的库位置在<code>/usr/local/lib/python3.9/site-packages</code>。对于在<code>jupyterlab</code>网页界面安装的插件，会同步安装，但是通过系统<code>pip3</code>安装的，则只会安装到<code>python3</code>所在的库位置，并不会同步，且不会作用于<code>jupyterlab</code>。</p>
+<p>比如这里我们所需要的汉化插件，<code>jupyterlab-language-pack-zh-CN</code>，若只采用默认安装的方式，并不能汉化成功，而同步安装在<code>jupyterlab</code>库的位置之后，汉化正常。</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2021/03/08/%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BDjupyter/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2021/03/08/%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BDjupyter/" itemprop="url">完全卸载jupyter</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2021-03-08T18:04:00+08:00">2021-03-08 18:04:00</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>使用<code>pip(3) uninstall jupyter</code>的方式无法卸载完全，使用<code>pip-autoremove</code>包也如此，因而只能采用以下方式：</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 uninstall -y jupyter<br>pip3 uninstall -y jupyter_core<br>pip3 uninstall -y jupyter-client<br>pip3 uninstall -y jupyter-console<br>pip3 uninstall -y notebook<br>pip3 uninstall -y qtconsole<br>pip3 uninstall -y nbconvert<br>pip3 uninstall -y nbformat<br></code></pre></td></tr></table></figure>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/python3/" rel="tag"><i class="fas fa-tags"></i>python3</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2020/09/14/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-%E5%8F%AF%E8%A7%86%E5%8C%96frp/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2020/09/14/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-%E5%8F%AF%E8%A7%86%E5%8C%96frp/" itemprop="url">内网穿透-可视化frp</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-09-14T14:57:57+08:00">2020-09-14 14:57:57</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="软件工具"><a href="#软件工具" class="headerlink" title="软件工具"></a>软件工具</h2><p><a target="_blank" rel="noopener" href="https://www.natfrp.com/">Sakura Frp</a>(Frp二次开发，可视化)</p>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ol>
+<li>注册账号并登陆</li>
+<li>每日领取流量</li>
+</ol>
+<p><img src="/images/pasted-14.png" alt="upload successful"></p>
+<ol start="3">
+<li>软件下载</li>
+</ol>
+<p><img src="/images/pasted-15.png" alt="upload successful"></p>
+<p>推荐使用自动安装脚本，按照提示填入id和秘钥</p>
+<p><img src="/images/pasted-16.png" alt="upload successful"></p>
+<ol start="4">
+<li>添加和管理隧道</li>
+</ol>
+<p><img src="/images/pasted-17.png" alt="upload successful"></p>
+<p>隧道协议分为tcp,udp,http,https,xtcp等，不同协议的区别参见网页右下方。<br>    <br>  <img src="/images/pasted-19.png" alt="upload successful"><br>  对于我们常用的远程桌面(rdp)，ssh，均可用这种方式。
+         </p>
+<h3 id="服务器选择"><a href="#服务器选择" class="headerlink" title="服务器选择"></a>服务器选择</h3><p>        <br><img src="/images/pasted-20.png" alt="upload successful"><br>可建站表示支持http隧道服务映射。？M表示带宽，优先使用国内的服务器，速度较快。
+        </p>
+<h3 id="TCP隧道设置"><a href="#TCP隧道设置" class="headerlink" title="TCP隧道设置"></a>TCP隧道设置</h3><p><img src="/images/pasted-21.png" alt="upload successful"></p>
+<p>隧道名称和备注随意设置，本机地址留空即可，本地端口即为内网服务器的端口，比如ssh默认22，rdp默认3389，远程端口可以自己设置，符合规则即可，默认留空也可以。</p>
+<p>下方的加密传输和压缩数据可打开。
+        </p>
+<h3 id="HTTP隧道设置"><a href="#HTTP隧道设置" class="headerlink" title="HTTP隧道设置"></a>HTTP隧道设置</h3><p>        <br><img src="/images/pasted-22.png" alt="upload successful"><br>        和TCP协议对比，域名替代了远程端口。需要自己注册域名。绑定自己域名后，可以直接不带端口地访问自己域名。<br>        <br><img src="/images/pasted-23.png" alt="upload successful"></p>
+<ul>
+<li><p>备注：选择服务器时需选择 可建站的类型！</p>
+</li>
+<li><p>备注：建站也未必需要http隧道，使用tcp隧道也可以，但需要带端口访问。 <a target="_blank" rel="noopener" href="https://gitproxy.qianqu.me/wiki/#/panel/faq?id=%e5%ae%9e%e5%90%8d%e8%ae%a4%e8%af%81%e5%88%b0%e5%ba%95%e5%8f%af%e4%bb%a5%e5%81%9a%e4%bb%80%e4%b9%88">参考链接</a>. 
+         </p>
+<h3 id="配置文件："><a href="#配置文件：" class="headerlink" title="配置文件："></a>配置文件：</h3><p>使用脚本安装软件后，会提示创建系统服务，按照提示输入token和隧道之后，会自动创建systemd服务。根据自身需要，可以对配置文件进行修改。<br>     <br>服务脚本类似如下：</p>
+</li>
+</ul>
+<p><img src="/images/pasted-24.png" alt="upload successful"></p>
+<p>其中被遮挡的部分为个人秘钥，数字部分为隧道列表<br>    <br><img src="/images/pasted-25.png" alt="upload successful"><br>    <br>可以看出，355729隧道正常启动，通过yfsonline.top即可访问.</p>
+<p>对于同一个服务器的不同隧道端口，可以修改配置文件<br>    <br><img src="/images/pasted-26.png" alt="upload successful"></p>
+<p>对于不同的服务器，比如上面所列，则对于每一个服务器需要额外配置。目前所采用的方式为新建systemd服务(很蠢但有效)，如下：<br>    <br><img src="/images/pasted-27.png" alt="upload successful"></p>
+<p>随后通过<code>systemctl enable/restart *.service</code>的方式即可配置好服务。</p>
+<h2 id="可能遇到的部分很蠢的问题"><a href="#可能遇到的部分很蠢的问题" class="headerlink" title="可能遇到的部分很蠢的问题"></a>可能遇到的部分很蠢的问题</h2><ol>
+<li><p>服务无法正常启动<br>检查服务配置文件的隧道ID，里面的id为初次配置时生成的，在反复测试的过程中可能这个隧道已经被你删除了。</p>
+</li>
+<li><p>按教程配置好之后，依旧无法远程访问ssh服务<br>sshd端口是否输入正确？ sshd服务有没有开启？</p>
+</li>
+<li><p>服务配置文件中使用’command1 &amp;&amp; command2’开启两个服务后，无法正常访问服务<br>systemctl如何在一个service中开启两个进程，这个目前还没搞明白，就很蠢地手动创建另一个服务吧！</p>
+</li>
+</ol>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2020/08/14/Pandas-Series%E6%96%B9%E6%B3%95-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2020/08/14/Pandas-Series%E6%96%B9%E6%B3%95-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" itemprop="url">Pandas Series方法 性能测试</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-08-14T14:08:56+08:00">2020-08-14 14:08:56</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>对于pandas的Series数据，进行整体的数据变换是常见的事，包括类型转换，字符串切割，数据计算等等，如何高性能地完成这些数据变换，对于大规模的数据处理至关重要。</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs python3">import numpy as np<br>import pandas as pd<br>import timeit<br><br>a &#x3D; pd.Series(range(1000))<br><br># %timeit a.apply(lambda x:x+2)  385us<br><br>def func1(x):<br>	return x + 2<br><br># %timeit func1(a) 88us<br><br># %timeit a.astype(&#39;str&#39;) 524us<br><br>def func2(x):<br>	return str(x)<br><br># %timeit func2(a) 383us<br><br>b &#x3D; pd.Series([&#39;abcdefg&#39; for i in range(1000)])<br><br># %timeit b.str[3:5]  287us<br><br>def func3(x):<br>	return x[3:5]<br>    <br># func3(b) mistake<br><br># 3    abcdefg<br># 4    abcdefg<br># dtype: object<br></code></pre></td></tr></table></figure>
+<h3 id="series作为函数参数传入"><a href="#series作为函数参数传入" class="headerlink" title="series作为函数参数传入"></a>series作为函数参数传入</h3><p>series作为函数参数传入，由于未指定函数参数类型，因而该函数可以传入标量，也可以传入向量，传入向量则为向量运算。但需要注意的是，对于<code>[]</code>切片运算，如果传入的是向量，并不会对内部标量进行切割，而是对向量本身进行切割，这也导致了执行<code>func3(b)</code>的时候，没能达成我们想要的目标。由于是向量运算，这种方式执行的速度比较快。</p>
+<h3 id="series作为主体，调用函数"><a href="#series作为主体，调用函数" class="headerlink" title="series作为主体，调用函数"></a>series作为主体，调用函数</h3><p>series作为主题，通过<code>.func</code>的形式调用函数，这种方式的速度较慢，耗时较长。尤其是通常使用的<code>.astype</code>和<code>.apply</code>，会降低运行效率。</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2020/08/14/Python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2020/08/14/Python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">Python 学习笔记</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-08-14T13:08:48+08:00">2020-08-14 13:08:48</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <ul>
+<li><code>str</code>是<code>python</code>的内建数据类型</li>
+</ul>
+<h2 id="Pandas-Series-字符串操作"><a href="#Pandas-Series-字符串操作" class="headerlink" title="Pandas Series 字符串操作"></a>Pandas Series 字符串操作</h2><p><code>pandas</code>的series内元素为<code>str</code>类型时，如果需要对整列的字符串进行变换，是无法直接调用字符串函数的，如<code>[]</code>截取操作，<code>count</code>计数，<code>split</code>分割操作等。</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python3">s &#x3D; pd.Series([&#39;A&#39;,&#39;b&#39;,&#39;C&#39;,&#39;bbhello&#39;,&#39;123&#39;,np.nan,&#39;hj&#39;])<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plain">0          A<br>1          b<br>2          C<br>3    bbhello<br>4        123<br>5        NaN<br>6         hj<br>dtype: object<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">type(s)<br>&lt;class &#39;pandas.core.series.Series&#39;&gt;<br></code></pre></td></tr></table></figure>
+<p>如<code>s[0:1]</code>实际上截取的是<code>series</code>的第一个元素，即<code>A</code>，而不是所有数据的第一个字母组成的<code>series</code>. 使用<code>s.count(&#39;b&#39;)</code>会提示非法调用。</p>
+<p>为了实现序列元素的批操作，可以将<code>series</code>转化为<code>strings.StringMethods</code>.</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python3">type(s.str)<br>&lt;class &#39;pandas.core.strings.StringMethods&#39;&gt;<br></code></pre></td></tr></table></figure>
+<p>再对<code>s.str</code>进行字符串操作就可以成功了。如</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plain">s.str.count(&#39;b&#39;)<br>0    0.0<br>1    1.0<br>2    0.0<br>3    2.0<br>4    0.0<br>5    NaN<br>6    0.0<br>dtype: float64<br></code></pre></td></tr></table></figure>
+
+<p>如何对<code>Series</code>进行内部元素数据类型转换，可以使用<code>s.astype(&#39;&#39;)</code>来实现。</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2020/08/12/windows-rdp%E6%9C%8D%E5%8A%A1%E5%BC%80%E5%90%AF/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2020/08/12/windows-rdp%E6%9C%8D%E5%8A%A1%E5%BC%80%E5%90%AF/" itemprop="url">windows rdp服务开启</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-08-12T22:56:15+08:00">2020-08-12 22:56:15</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>经过对办公室电脑一系列猛如虎的操作(安装rdpwrapper、升级企业版、升级专业版)但依旧无法远程连接rdp之后，我几乎放弃了rdp这条路，无奈地向向日葵投降。虽然能够通过网云穿和utools NAT来访问办公室电脑的jupyter服务，但处理起来数据总归是不太爽。看看高额的蒲公英rdp映射服务，还是放弃了氪金。然而，俗话说，“有志者，事竟成”，在不懈的坚持下，还是成功地得以在家连上办公室的电脑。Bingo！</p>
+<p>远程桌面的访问其实分为三个部分：</p>
+<h2 id="远程桌面服务器的搭建"><a href="#远程桌面服务器的搭建" class="headerlink" title="远程桌面服务器的搭建"></a>远程桌面服务器的搭建</h2><p>其实用搭建这个词不算很合适，但一时找不到合适的词，暂用此。<code>win10</code>家庭版比较尴尬的一点是，并不自带远程桌面服务器，只有企业版和专业版提供。尽管我们可以用<code>Github</code>的<code>RDP wrapper</code>来‘曲线救国’，但在当时测试时，也是bug连连，及其烦人。为了省事起见，先是用密钥升级了企业版，又用密钥升级了专业版…(我也不懂为啥当初有这种神奇操作)。考虑到使用的是公司的电脑，会不会产生法律风险。。。暂时还不知道，先不管了。</p>
+<h2 id="公网ip"><a href="#公网ip" class="headerlink" title="公网ip"></a>公网ip</h2><p>这一步也是最为烦人的一步。我之前的<code>vps</code>服务器基本到期，没有额外的公网ip做映射。网云穿等一些列服务商也由于政策原因(真的，还是接口？)，关闭了免费的3389映射服务，并将其设为收费专线服务，一年几百大洋，太黑了。一想到自己搭建<code>vps</code>，还得买主机，配置<code>frp</code>，妈耶，要疯了。</p>
+<p>后来发现了知乎上有人推荐的两款工具，<a target="_blank" rel="noopener" href="http://www.natfrp.com/">SakuraLauncher</a>和<a target="_blank" rel="noopener" href="http://www.zerotier.com/">ZeroTiger</a>. 前者是基于<code>frp</code>，开放了免费的<code>frp</code>服务线路，后者应用<code>VPN异地组网技术</code>。简单的设置后，即可实现公网<code>ip</code>的映射。</p>
+<h2 id="rdp服务开启"><a href="#rdp服务开启" class="headerlink" title="rdp服务开启"></a>rdp服务开启</h2><p>理论上来说，以上两步完成之后，就已经可以愉快地远程办公了。但很不幸，failed。</p>
+<p>防火墙的问题？关闭防火墙也不行。允许应用通过防火墙？该通过不该通过的都通过了也不行… = = </p>
+<p>看着<code>frp log</code>不断地报错，心都要碎了。一直拒绝、拒绝、拒绝连接。以为是有其他应用抢占<code>3389</code>端口，但用 <code>netstat -ano | findstr 3389</code> 一直为空。</p>
+<p>此时，灵光一现，这他喵不会是没有开启远程桌面服务导致的吧？然后赶快把本机执行了一下上面命令：</p>
+<p><img src="/images/pasted-12.png" alt="upload successful"></p>
+<p>你说尴尬不尴尬，办公室那台，没有开启3389服务？什么鬼，我明明什么都没有做啊！</p>
+<p>硬着头皮上网搜，“如何开启3389服务”，找到救命稻草<a target="_blank" rel="noopener" href="https://www.cnblogs.com/dsli/p/7452535.html">cmd开启3389</a><br>启发下，打开注册表，定位到<code>HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server</code>，修改<code>fDenyTSConnections</code>的字段为<code>0</code>，即不阻止远程连接。</p>
+<p>备注：修改端口可以通过修改<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\Tds\tcp</code>字段<code>PortNumber</code>来实现。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title=" 总结"></a> 总结</h2><p>回顾这一路，也是坑位连连。有系统的限制、网络资源的限制以及潜在的各种深坑。其中注册表那部分最初最令人困惑。怀疑是从家庭版升级到企业版后，安全策略会禁止远程访问，导致注册表字段修改。而升级到专业版后，则继承了这一点。表现为系统设置处显示可用，但本地并没监听3389端口，导致实际无法连接。<br><img src="/images/pasted-13.png" alt="upload successful"></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2020/08/06/windows-%E6%89%B9%E5%A4%84%E7%90%86%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2020/08/06/windows-%E6%89%B9%E5%A4%84%E7%90%86%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6/" itemprop="url">windows 批处理解压缩文件</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-08-06T21:47:17+08:00">2020-08-06 21:47:17</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>今天在黑翼实习的过程中，廖师兄提到接下来数据处理要放到linux下的原因是数据解压的考虑。观察数据压缩的格式为7z后缀，而windows其实是有7z压缩软件的，相比能够通过命令行的形式来实现解压缩，从而结合脚本完成批量解压。</p>
+<p>数据处理用的语言为python，最初的想法是调用python的逻辑来实现解压，后来觉得又没有太大的必要。因而考虑用bat脚本来实现。</p>
+<p>7z的使用说明如下：</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>7z，全称7-Zip， 是一款开源软件。是目前公认的压缩比例最大的压缩解压软件。</p>
+<ul>
+<li>主页：<a target="_blank" rel="noopener" href="http://www.7-zip.org/">http://www.7-zip.org/</a></li>
+<li>中文主页：<a target="_blank" rel="noopener" href="http://7z.sparanoid.com/">http://7z.sparanoid.com/</a></li>
+<li>命令行版本下载：<a target="_blank" rel="noopener" href="http://7z.sparanoid.com/download.html">http://7z.sparanoid.com/download.html</a></li>
+<li>主要特征：<ul>
+<li>全新的LZMA算法加大了7z格式的压缩比</li>
+<li>支持格式：<ul>
+<li>压缩 / 解压缩：7z, XZ, BZIP2, GZIP, TAR, ZIP</li>
+<li>仅解压缩：ARJ, CAB, CHM, CPIO, DEB, DMG, FAT, HFS, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, RAR, RPM, UDF, VHD, WIM, XAR, Z</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="退出代码"><a href="#退出代码" class="headerlink" title="退出代码"></a>退出代码</h3><ul>
+<li>0 ： 正常，没有错误；</li>
+<li>1 ： 警告，没有致命的错误，例如某些文件正在被使用，没有被压缩；</li>
+<li>2 ： 致命错误；</li>
+<li>7 ： 命令行错误；</li>
+<li>8 ： 没有足够的内存；</li>
+<li>255 ： 用户停止了操作；</li>
+</ul>
+<h3 id="使用语法"><a href="#使用语法" class="headerlink" title="使用语法"></a>使用语法</h3><p>7z &lt;命令行&gt; [&lt;选项&gt;…] &lt;基本档案名称&gt; [&lt;参数变量&gt;…]</p>
+<ul>
+<li>在方括号内的表达式(“[” 和 “]”之间的字符)是可选的。</li>
+<li>在书名号内的表达式(“&lt;” 和 “&gt;”之间的字符)是必须替换的表达式(而且要去掉括号)。</li>
+</ul>
+<p>7-Zip 支持和 Windows 相类似的通配符：</p>
+<ul>
+<li>“*”可以使用星号代替零个或多个字符。 </li>
+<li>“?”可以用问号代替名称中的单个字符。</li>
+</ul>
+<p>如果只用*，7-Zip 会将其视为任何扩展名的全部文件。</p>
+<h3 id="命令及实例"><a href="#命令及实例" class="headerlink" title="命令及实例"></a>命令及实例</h3><ol>
+<li><p>a 添加文件到压缩档案。</p>
+<ul>
+<li>7z a archive1.zip subdir\ ：增加subdir文件夹下的所有的文件和子文件夹到archive1.zip中，archived1.zip中的文件名包含subdir\前缀。</li>
+<li>7z a archive2.zip .\subdir* ：增加subdir文件夹下的所有的文件和子文件夹到archive1.zip中，archived2.zip中的文件名不包含subdir\前缀。</li>
+<li>cd /D c:\dir1\ </li>
+<li>7z a c:\archive3.zip dir2\dir3\ ：archiive3.zip中的文件名将包含dir2\dir3\前缀，但是不包含c:\dir1前缀。</li>
+<li>7z a Files.7z *.txt -r ： 增加当前文件夹及其子文件夹下的所有的txt文件到Files.7z中。</li>
+</ul>
+</li>
+<li><p>b 测试 CPU 运行速度及检查内存错误。</p>
+</li>
+<li><p>d 从压缩档案删除文件。</p>
+<ul>
+<li>7z d archive.zip *.bak -r ：从archive.zip中删除所有的bak文件。</li>
+</ul>
+</li>
+<li><p>e 从压缩档案中释放文件到当前目录中。或者到指定的输出文件夹。输出文件夹设置可以通过 -o (设置输出文件夹) 选项来更改。此命令会将所有被释放的文件放置到一个文件夹。如果您想使用完整路径释放文件，您必须使用 x (完整路径释放) 命令。 </p>
+<ul>
+<li>7z e archive.zip ：从压缩档案 archive.zip 中释放所有文件到当前文件夹。</li>
+<li>7z e archive.zip -oc:\soft *.cpp ：从压缩档案 archive.zip 中释放 *.cpp 文件到 c:\soft 文件夹。</li>
+</ul>
+</li>
+<li><p>l 列出压缩档案内容。</p>
+<ul>
+<li>7z l archiv.zip ：列出压缩档案 archive.zip 的内容。</li>
+</ul>
+</li>
+<li><p>t 测试压缩档案文件的完整性。</p>
+<ul>
+<li>7z t archive.zip *.doc ：在压缩档案 archive.zip 中测试 *.doc 文件的完整性。</li>
+</ul>
+</li>
+<li><p>u 在压缩档案文件中使用较新的文件替换掉较旧的文件。</p>
+<ul>
+<li>7z u archive.zip *.doc ：在压缩档案 archive.zip 中更新 *.doc 文件。</li>
+</ul>
+</li>
+<li><p>x 在当前目录中，使用完整路径从压缩档案中释放文件.或者到指定的输出文件夹。<br> -7z x archive.zip ：从压缩档案 archive.zip 中释放所有文件到当前文件夹。<br> -7z x archive.zip -oc:\soft *.cpp ：从压缩档案 archive.zip 中释放 *.cpp 文件到 c:\soft 文件夹。</p>
+</li>
+</ol>
+<h3 id="更多的选项"><a href="#更多的选项" class="headerlink" title="更多的选项"></a>更多的选项</h3><ol>
+<li><p>–在命令行中使“–”后的选项开关“-”都失效。这样就允许在命令行中使用文件名以“-”开头的文件。</p>
+<ul>
+<li>7z t – -ArchiveName.7z ：测试 -ArchiveName.7z 压缩档案.</li>
+</ul>
+</li>
+<li><p>-i 指定压缩时附加文件或一类文件。此选项可附件添加多个类型。</p>
+<ul>
+<li>i[<recurse_type>]<file_ref> 其中<recurse_type>为可以为r[- | 0]（具体的-r选项见后面-r），<file_ref>可以为@{listfile} | !{wildcard}。</li>
+<li>7z a -tzip src.zip <em>.txt -ir!DIR1\</em>.cpp ：从当前目录中添加 *.txt 文件，和 DIR1 目录及其子目录中的 *.cpp 文件到 src.zip 压缩档案。</li>
+</ul>
+</li>
+<li><p>-x 指定某一文件或某一类文件从操作中排除。此选项可同时排除多个类型。</p>
+<ul>
+<li>x[<recurse_type>]<file_ref> 其中<recurse_type>为可以为r[- | 0]（具体的-r选项见后面-r），<file_ref>可以为@{listfile} | !{wildcard}。</li>
+<li>7z a -tzip archive.zip <em>.txt -x!temp.</em> ：添加除 temp.* 文件之外的所有 *.txt 文件到压缩档案 archive.zip。</li>
+</ul>
+</li>
+<li><p>-o 指定释放文件的输出文件夹。此选项只能和释放命令配合使用。</p>
+<ul>
+<li>7z x archive.zip -oc:\Doc ：从 archive.zip 压缩档案释放所有文件到 c:\Doc 文件夹。</li>
+</ul>
+</li>
+<li><p>-r 递归子目录选项。</p>
+</li>
+<li><p>-r 开启递归子目录。对于 e (释放)、l (列表)、t (测试)、x (完整路径释放) 这些在压缩档案中操作的命令， 会默认使用此选项。 </p>
+</li>
+<li><p>-r- 关闭递归子目录。对于 a (添加)、d (删除)、u (更新) 等所有需扫描磁盘文件的命令，会默认使用此选项。 </p>
+</li>
+<li><p>-r0 开启递归子目录。但只应用于通配符。 </p>
+<ul>
+<li>7z l archive.zip -r- *.doc ：列出在 archive.zip 压缩档案中根目录下的 *.doc 文件。 </li>
+<li>7z a -tzip archive.zip -r src*.cpp src*.h ：将 src 目录及其子目录中的 *.cpp 及 *.h 文件添加到 archive.zip 压缩档案。</li>
+</ul>
+</li>
+<li><p>-t 指定压缩档案格式。指定压缩档案格式。它们可以是：zip、7z、rar、cab、gzip、bzip2、tar 或其它格式。而 默认值是 7z 格式。 </p>
+<ul>
+<li>7z a -tzip archive.zip *.txt ：使用 zip 格式从当前目录中添加所有 *.txt 文件到压缩档案 archive.zip。</li>
+</ul>
+</li>
+<li><p>-y 使 7-Zip 执行命令时的大多数提示失效。您可以使用此选项来阻止在 e (释放) 和 x (完整路径释放) 命令中文件覆盖时的提示。</p>
+<ul>
+<li>7z x src.zip -y ：从 src.zip 释放所有文件。所有的覆盖提示将被阻止且所有相同文件名的文件将被覆盖。</li>
+</ul>
+</li>
+<li><p>-v指定分卷大小。</p>
+<ul>
+<li>{Size}[b | k | m | g] </li>
+<li>指定分卷大小，可以使用字节、KB(1 KB＝1024 字节)，MB(1 MB = 1024 KB)或 GB(1 GB = 1024 MB)。如果您只指定了 {Size}，7-zip 将把它视为字。 </li>
+<li>7z a a.7z *.txt -v10k -v15k -v2m ： 创建 a.7z 分卷压缩档案。第一个分卷为 10 KB，第二个为 15 KB，剩下全部为 2 MB。</li>
+</ul>
+</li>
+<li><p>-p 指定密码。</p>
+<ul>
+<li>7z x archive.zip -psecret ：将设有密码“secret”的压缩档案 archive.zip 中所有文件释放。</li>
+</ul>
+</li>
+<li><p>-ao 指定在释放期间如何覆盖硬盘上现有的同名文件。</p>
+<ul>
+<li>语法：-ao[a | s | u ]</li>
+<li>-aoa 直接覆盖现有文件，而没有任何提示。 </li>
+<li>-aos 跳过现有文件，其不会被覆盖。 </li>
+<li>-aou 如果相同文件名的文件以存在，将自动重命名被释放的文件。举个例子，文件 file.txt 将被自动重命名为 file_1.txt。 </li>
+<li>-aot 如果相同文件名的文件以存在，将自动重命名现有的文件。举个例子，文件 file.txt 将被自动重命名为 file_1.txt。 </li>
+<li>7z x test.zip -aoa ：从压缩档案 test.zip 中释放所有文件并却不做提示直接覆盖现有文件。</li>
+</ul>
+</li>
+<li><p>-an 不解析命令行中的 archive_name 区域。此选项必须和 -i (附加文件) 开关一起使用。比如您为压缩档案使用列表文件，您就需要指定 -ai 选项，所以您需要禁止解析命令行中的 archive_name 区域。<br>实例见后面的-ai和-ax中。</p>
+</li>
+<li><p>-ai 指定附加文件，包括压缩档案文件名及通配符。此选项可同时附加多个类型。</p>
+<ul>
+<li>ai[<recurse_type>]<file_ref> 其中<recurse_type>为可以为r[- | 0]（具体的-r选项见后面-r），<file_ref>可以为@{listfile} | !{wildcard}。</li>
+<li>7z t -an -air!*.7z ： 在当前目录及子目录下测试 *.7z 压缩档案。</li>
+</ul>
+</li>
+<li><p>-ax 指定必须从操作中排除的压缩档案。此选项可同时排除多个类型。</p>
+<ul>
+<li>ax[<recurse_type>]<file_ref> 其中<recurse_type>为可以为r[- | 0]（具体的-r选项见后面-r），<file_ref>可以为@{listfile} | !{wildcard}。</li>
+<li>7z t -an -ai!<em>.7z -ax!a</em>.7z ：测试除 a*.7z 之外的 *.7z 压缩档案。</li>
+</ul>
+</li>
+</ol>
+<p>更多的不常用的选项，可以查看帮助。例如：-m设置压缩算法；-scs 设置要压缩的文件的列表文件的字符集；-seml通过电子邮件发送压缩档；-sfx创建自释放档；-si从标准输入读入数据，-so从输出到标准输出；-slp设置大内存模式；-slt显示技术信息；-ssc设置区分大小写；-ssw压缩正在写入的文件；-u更新选项。</p>
+<p><code>7z -e</code> 后面跟的是相对路径，<code>7z -x</code>后面跟的是绝对路径。</p>
+<p>下面是bat的脚本</p>
+<figure class="hljs highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bat">@<span class="hljs-built_in">echo</span> off<br><span class="hljs-comment">REM %cd% 终端当前目录</span><br><span class="hljs-comment">REM %%~dp0 为脚本所在目录</span><br><span class="hljs-comment">REM %%用在脚本中</span><br><span class="hljs-comment">REM %s用在命令行中</span><br><span class="hljs-comment">REM 7z x 后面跟绝对路径</span><br><span class="hljs-comment">REM 7z e 后面跟相对路径</span><br><span class="hljs-comment">REM 7z -aos 表示若文件已存在，跳过解压</span><br><span class="hljs-comment">REM 两行cd 源于 7z x -aos %%s -o%%~dps 在for循环中无法正常执行，用反复进退目录的方式曲线救国。这么做效率会下降，以后再修正。</span><br><span class="hljs-comment">REM /R 表示递归搜索</span><br><br><span class="hljs-built_in">set</span> work_path=&quot;<span class="hljs-variable">%cd%</span>&quot;<br><span class="hljs-built_in">echo</span> work_path=<span class="hljs-variable">%work_path%</span><br><span class="hljs-keyword">for</span> /R <span class="hljs-variable">%work_path%</span> <span class="hljs-variable">%%s</span> <span class="hljs-keyword">in</span> (*.<span class="hljs-number">7</span>z.<span class="hljs-number">001</span>) <span class="hljs-keyword">do</span> (<br>    <span class="hljs-built_in">cd</span> <span class="hljs-variable">%%~</span>dps<br>    <span class="hljs-number">7</span>z x -aos <span class="hljs-variable">%%s</span><br>    <span class="hljs-built_in">cd</span> <span class="hljs-variable">%work_path%</span><br>)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>REM 表示bat脚本的注释</li>
+<li><code>7z x -aos</code> 表示 解压到当前目录</li>
+<li>%%s表示与<code>*.7z.001</code>匹配的文件全路径</li>
+</ul>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs log">%I 引用I<br>%~I         - expands %I removing any surrounding quotes (&quot;)<br>%~fI        - expands %I to a fully qualified path name<br>%~dI        - expands %I to a drive letter only<br>%~pI        - expands %I to a path only<br>%~nI        - expands %I to a file name only<br>%~xI        - expands %I to a file extension only<br>%~sI        - expanded path contains short names only<br>%~aI        - expands %I to file attributes of file<br>%~tI        - expands %I to date&#x2F;time of file<br>%~zI        - expands %I to size of file<br><br>The modifiers can be combined to get compound results:<br>%~dpI       - expands %I to a drive letter and path only<br>%~nxI       - expands %I to a file name and extension only<br>%~fsI       - expands %I to a full path name with short names only<br></code></pre></td></tr></table></figure>
+<p>在上面，给出了cmd下提取路径或文件名的一些操作，如果用在脚本中，<code>%</code>改为<code>%%</code>即可。其中<code>I</code>表示变量，在这里，我们用的是<code>S</code>. </p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2020/07/05/%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%90%91/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2020/07/05/%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%90%91/" itemprop="url">工作方向</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-07-05T10:08:07+08:00">2020-07-05 10:08:07</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="晚饭"><a href="#晚饭" class="headerlink" title="晚饭"></a>晚饭</h2><p>董必杰、郭爽什么身份，开会内容主要是什么？我参与的意义在哪里？</p>
+<h2 id="基金"><a href="#基金" class="headerlink" title="基金"></a>基金</h2><p>晚饭时提及，项目可能要延期开展（这部分确认一下），确认是否可行，大概日期，需要准备什么，任职岗位及预期待遇，发展前景。</p>
+<h2 id="投资顾问"><a href="#投资顾问" class="headerlink" title="投资顾问"></a>投资顾问</h2><p>感兴趣的几个方向：</p>
+<ol>
+<li>教育，感觉市场比较大，投资者对这个领域关注比较多，尤其是在线教育这个行业。</li>
+<li>文娱，受众面比较广，受舆论、热评比较较大，需要对不同产品方向的受众有一定了解。</li>
+<li>环保，新兴领域，受政府扶持较大。</li>
+</ol>
+<p>教育依赖教育部，文娱依赖大企业，环保依赖政府机构。这几点都是初步的想法，有什么建议及推荐的方向，如果要做到的话，需要准备些什么？</p>
+<h2 id="会计"><a href="#会计" class="headerlink" title="会计"></a>会计</h2><p>用友，能否进，怎么进，做什么，需要准备什么？</p>
+<p>管理方向的会计</p>
+<p>根据简历适合投递什么岗位？</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://mission-young.github.io/2020/05/14/windows-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="远方">
+        <meta itemprop="description" content="我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="星光荡开宇宙">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2020/05/14/windows-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/" itemprop="url">windows 开机自启</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-05-14T22:15:23+08:00">2020-05-14 22:15:23</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>windows开机自启软件的方式有很多，有些可以通过软件自身设置完成，有些可以通过win10 自带任务管理完成。比较便捷的方式，直接把快捷方式移到指定目录即可。</p>
+<p><code>C:\Users\[yourname]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code></p>
+<p>打开此目录的便捷方式为 打开<code>运行</code>，输入<code>shell:startup</code>.</p>
+<p><img src="/images/pasted-10.png" alt="upload successful"></p>
+<p><img src="/images/pasted-11.png" alt="upload successful"></p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fas fa-angle-right&quot; aria-label&#x3D;&quot;下一页&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="远方">
+  
+  <h1 class="author-name">远方</h1>
+  <h2 class="author-description">我就像在海边玩耍的小孩,偶尔拾到美丽的贝壳,就高兴不已。但面对真理海洋,我仍一无所知。</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">124</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">7</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">38</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:yuanfangsee@126.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/mission-young" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://localhost:4000/admin" target="_blank">LocalAdmin</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="http://blog.yfs.life:8000/admin" target="_blank">RemoteAdmin</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">远方</span><span class="year"><i class="far fa-copyright"></i>true - 2021</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">BY 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://mission-young.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
